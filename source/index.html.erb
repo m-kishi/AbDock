@@ -1,10 +1,27 @@
 ---
-title: Welcome to Middleman
+title: Abook 設計書
+header_title: 設計書
+header_project: project.mk
+header_appname: Abook
+header_subname:
 ---
+<h1>【<%= current_page.data.title%>】</h1>
 
-<div class="welcome">
-  <h1>Middleman is Watching</h1>
-  <p class="doc">
-    <%= link_to "Read Online Documentation", "http://middlemanapp.com/" %>
-  </p><!-- .doc -->
-</div><!-- .welcome -->
+<h2>機能設計</h2>
+<ol>
+  <li><%= link_general    %></li>
+  <li><%= link_dbfile     %></li>
+  <li><%= link_transition %></li>
+  <li>画面設計</li>
+  <ul>
+    <% data.form.keys.each do |k| %>
+      <li><%= form_link k %></li>
+    <% end %>
+  </ul>
+  <li><%= link_type '一覧' %></li>
+  <li><%= link_message     %></li>
+</ol>
+
+<!--
+<h2>技術設計</h2>
+-->

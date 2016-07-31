@@ -1,0 +1,171 @@
+FOOD:
+  name: 食費
+  note:
+  expense: true
+  private: false
+  summary_expe: true
+  balance_earn: false
+  balance_expe: true
+  descriptions: 主に家庭内で消費する食料品に関する支出．食料，飲料，調味料など．
+OTFD:
+  name: 外食費
+  note:
+  expense: true
+  private: false
+  summary_expe: true
+  balance_earn: false
+  balance_expe: true
+  descriptions: 外食に関する支出．飲み会なら交際費だったり旅行中なら遊行費だったり，より適切な種別の場合はそちらへ．
+GOOD:
+  name: 雑貨
+  note:
+  expense: true
+  private: false
+  summary_expe: true
+  balance_earn: false
+  balance_expe: true
+  descriptions: 他の種別へ分類することが難しい雑多な支出．洗剤などの日用品，ノートなどの文房具，散髪など．食器や調理器具もこの種別．
+FRND:
+  name: 交際費
+  note:
+  expense: true
+  private: false
+  summary_expe: true
+  balance_earn: false
+  balance_expe: true
+  descriptions: 建前上での人付き合いに関する支出．会社の飲み会やイベントの参加費など．
+TRFC:
+  name: 交通費
+  note:
+  expense: true
+  private: false
+  summary_expe: true
+  balance_earn: false
+  balance_expe: true
+  descriptions: 交通機関の料金の支出．電車やバス，駐車代など．
+PLAY:
+  name: 遊行費
+  note:
+  expense: true
+  private: false
+  summary_expe: true
+  balance_earn: false
+  balance_expe: true
+  descriptions: 純粋な浪費の場合の支出．友人との飲み会や旅行など．
+HOUS:
+  name: 家賃
+  note:
+  expense: true
+  private: false
+  summary_expe: true
+  balance_earn: false
+  balance_expe: true
+  descriptions: 住居に関する毎月の支出．賃貸なら毎月の家賃．持ち家ならローンなど．
+ENGY:
+  name: 光熱費
+  note:
+  expense: true
+  private: false
+  summary_expe: true
+  balance_earn: false
+  balance_expe: true
+  descriptions: 毎月の光熱費に関する支出．主に電気代，ガス代，水道代．
+CNCT:
+  name: 通信費
+  note:
+  expense: true
+  private: false
+  summary_expe: true
+  balance_earn: false
+  balance_expe: true
+  descriptions: 通信に関する支出．携帯電話，スマートフォン，インターネット回線の使用料など．
+MEDI:
+  name: 医療費
+  note:
+  expense: true
+  private: false
+  summary_expe: true
+  balance_earn: false
+  balance_expe: true
+  descriptions: 病院での診察料や薬などに関する支出．歯科検診や健康診断も含まれる．
+INSU:
+  name: 保険料
+  note:
+  expense: true
+  private: false
+  summary_expe: true
+  balance_earn: false
+  balance_expe: true
+  descriptions: 各種保険に関する支出．医療保険，生命保険など．
+OTHR:
+  name: その他
+  note:
+  expense: true
+  private: false
+  summary_expe: true
+  balance_earn: false
+  balance_expe: true
+  descriptions: どの種別にも含まれないような支出．例えば，毎月の家賃の振込手数料など．
+EARN:
+  name: 収入
+  note:
+  expense: true
+  private: false
+  summary_expe: false
+  balance_earn: true
+  balance_expe: false
+  descriptions: 毎月ごとに継続して得られる収入．給料．
+TTAL:
+  name: 合計
+  note: 月次タブでの合計
+  expense: false
+  private: false
+  summary_expe: false
+  balance_earn: false
+  balance_expe: false
+  descriptions:
+BLNC:
+  name: 収支
+  note: 月次タブでの収支
+  expense: false
+  private: false
+  summary_expe: false
+  balance_earn: false
+  balance_expe: false
+  descriptions:
+BNUS:
+  name: 特入
+  note:
+  expense: true
+  private: false
+  summary_expe: false
+  balance_earn: true
+  balance_expe: false
+  descriptions: 収入のうち不定期だったり，極端に金額が大きかったりするもの．ボーナスなど．これらが通常の収入に含まれると月単位での収支の把握が難しくなるため，この種別にて分ける．特入は年単位の収支に計上される．
+SPCL:
+  name: 特出
+  note:
+  expense: true
+  private: false
+  summary_expe: false
+  balance_earn: false
+  balance_expe: false
+  descriptions: 滅多に発生せず，それなりに金額が大きい支出．特入と同様にこれらが月単位の支出に含まれるとその月の収支の把握が難しくなる．特出は年単位の収支に計上される．
+PRVI:
+  name: 秘密入
+  note:
+  expense: true
+  private: true
+  summary_expe: false
+  balance_earn: false
+  balance_expe: false
+  descriptions: 通常の家計管理とは別で扱いたい収入．小遣いなど．
+PRVO:
+  name: 秘密出
+  note:
+  expense: true
+  private: true
+  summary_expe: false
+  balance_earn: false
+  balance_expe: false
+  descriptions: 通常の家計管理とは別で扱いたい支出．小遣いを使っての買い物など．

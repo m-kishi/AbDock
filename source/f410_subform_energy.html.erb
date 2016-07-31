@@ -1,0 +1,130 @@
+---
+title: 光熱費サブフォーム
+header_title: 画面設計
+header_project: project.mk
+header_appname: Abook
+header_subname:
+---
+<h1>【<%= current_page.data.title %>】</h1>
+<section>
+  <h2>レイアウト</h2>
+  <table>
+    <tr>
+      <td class="layout energy">
+        <figure>
+          <%= image_tag 'subform_energy_el_001.png', class: 'energy' %>
+          <figcaption>1-1.電気代タブ(電気代の支出情報なし)</figcaption>
+        </figure>
+      </td>
+      <td rowspan="6" class="overview">
+        <figure>
+          <figcaption>概要</figcaption>
+          <ul>
+            <li>年度ごと月ごとの光熱費を一覧表示するサブフォーム</li>
+            <li>光熱費として<%= data.char.EL %>，<%= data.char.GS %>，<%= data.char.WT %>を対象とする．</li>
+            <li>各DGVの最終行に月ごとの平均金額を表示する．</li>
+            <li>各DGVの中で月ごとに最大値を赤字，最小値を青字とする．</li>
+            <li>光熱費の支出情報が0件の場合，各DGVは0行で平均金額の行も表示しない．</li>
+          </ul>
+        </figure>
+        <figure>
+          <figcaption>フォーム属性</figcaption>
+          <table class="form-property">
+            <tr><th>タイトル          </th><td>光熱費                        </td></tr>
+            <tr><th>アイコン          </th><td><%= data.char.NASI          %></td></tr>
+            <tr><th>画面サイズ        </th><td>704 x 306                     </td></tr>
+            <tr><th>サイズ変更        </th><td><%= data.char.FUKA          %></td></tr>
+            <tr><th>初期表示位置      </th><td><%= data.char.CENTER_SCREEN %></td></tr>
+            <tr><th>ウィンドウの最大化</th><td><%= data.char.FUKA          %></td></tr>
+            <tr><th>ウィンドウの最小化</th><td><%= data.char.FUKA          %></td></tr>
+            <tr><th>タスクバーへの表示</th><td><%= data.char.NASI          %></td></tr>
+          </table>
+        </figure>
+        <br />
+        <figure>
+          <figcaption>各DGVの設定(電気代，ガス代，水道代すべて共通)</figcaption>
+          <table class="dgv-property">
+            <tr><th>行追加        </th><td><%= data.char.FUKA            %></td></tr>
+            <tr><th>行削除        </th><td><%= data.char.FUKA            %></td></tr>
+            <tr><th>ReadOnly      </th><td><%= data.char.BOOLT           %></td></tr>
+            <tr><th>列の幅変更    </th><td><%= data.char.FUKA            %></td></tr>
+            <tr><th>列のソート    </th><td><%= data.char.FUKA            %></td></tr>
+            <tr><th>選択モード    </th><td><%= data.char.SELECT_CEL      %></td></tr>
+            <tr><th>スクロールバー</th><td><%= data.char.SCROLL_VERTICAL %></td></tr>
+          </table>
+        </figure>
+      </td>
+    </tr>
+    <tr><td class="layout energy"><figure><%= image_tag 'subform_energy_el_002.png', class: 'energy' %><figcaption>1-2.電気代タブ(電気代の支出情報あり)</figcaption></figure></td></tr>
+    <tr><td class="layout energy"><figure><%= image_tag 'subform_energy_gs_001.png', class: 'energy' %><figcaption>2-1.ガス代タブ(ガス代の支出情報なし)</figcaption></figure></td></tr>
+    <tr><td class="layout energy"><figure><%= image_tag 'subform_energy_gs_002.png', class: 'energy' %><figcaption>2-2.ガス代タブ(ガス代の支出情報あり)</figcaption></figure></td></tr>
+    <tr><td class="layout energy"><figure><%= image_tag 'subform_energy_wt_001.png', class: 'energy' %><figcaption>3-1.水道代タブ(水道代の支出情報なし)</figcaption></figure></td></tr>
+    <tr><td class="layout energy"><figure><%= image_tag 'subform_energy_wt_002.png', class: 'energy' %><figcaption>3-2.水道代タブ(水道代の支出情報あり)</figcaption></figure></td></tr>
+  </table>
+</section>
+<section>
+  <h2>画面項目</h2>
+  <table class="controls">
+    <tr><th class="no-l">No.     </th><th>名称            </th><th>ＩＤ      </th><th>テキスト             </th><th                >align                   </th><th>種別                     </th><th>備考                        </th></tr>
+    <tr><td class="no-l">1       </td><td>タブコンロロール</td><td>TabControl</td><td>                     </td><td class="align-c">                        </td><td>TabControl               </td><td>                            </td></tr>
+    <tr><td class="no-l">1-1     </td><td>電気代タブ      </td><td>TabEl     </td><td>"<%= data.char.EL %>"</td><td class="align-c">                        </td><td>TabPage                  </td><td>                            </td></tr>
+    <tr><td class="no-l">1-1-1   </td><td>電気代DGV       </td><td>DgvEl     </td><td>                     </td><td class="align-c">                        </td><td>DataGridView             </td><td>                            </td></tr>
+    <tr><td class="no-l">1-1-1-1 </td><td>年度列          </td><td>ColElYr   </td><td>"年度"               </td><td class="align-c"><%= data.char.ALIGN_C %></td><td>DataGridViewTextBoxColumn</td><td>                            </td></tr>
+    <tr><td class="no-l">1-1-1-2 </td><td>4月列           </td><td>ColEl04   </td><td>"4月"                </td><td class="align-c"><%= data.char.ALIGN_R %></td><td>DataGridViewTextBoxColumn</td><td><%= data.char.FMT_CUR_YEN %></td></tr>
+    <tr><td class="no-l">1-1-1-3 </td><td>5月列           </td><td>ColEl05   </td><td>"5月"                </td><td class="align-c"><%= data.char.ALIGN_R %></td><td>DataGridViewTextBoxColumn</td><td><%= data.char.FMT_CUR_YEN %></td></tr>
+    <tr><td class="no-l">1-1-1-4 </td><td>6月列           </td><td>ColEl06   </td><td>"6月"                </td><td class="align-c"><%= data.char.ALIGN_R %></td><td>DataGridViewTextBoxColumn</td><td><%= data.char.FMT_CUR_YEN %></td></tr>
+    <tr><td class="no-l">1-1-1-5 </td><td>7月列           </td><td>ColEl07   </td><td>"7月"                </td><td class="align-c"><%= data.char.ALIGN_R %></td><td>DataGridViewTextBoxColumn</td><td><%= data.char.FMT_CUR_YEN %></td></tr>
+    <tr><td class="no-l">1-1-1-6 </td><td>8月列           </td><td>ColEl08   </td><td>"8月"                </td><td class="align-c"><%= data.char.ALIGN_R %></td><td>DataGridViewTextBoxColumn</td><td><%= data.char.FMT_CUR_YEN %></td></tr>
+    <tr><td class="no-l">1-1-1-7 </td><td>9月列           </td><td>ColEl09   </td><td>"9月"                </td><td class="align-c"><%= data.char.ALIGN_R %></td><td>DataGridViewTextBoxColumn</td><td><%= data.char.FMT_CUR_YEN %></td></tr>
+    <tr><td class="no-l">1-1-1-8 </td><td>10月列          </td><td>ColEl10   </td><td>"10月"               </td><td class="align-c"><%= data.char.ALIGN_R %></td><td>DataGridViewTextBoxColumn</td><td><%= data.char.FMT_CUR_YEN %></td></tr>
+    <tr><td class="no-l">1-1-1-9 </td><td>11月列          </td><td>ColEl11   </td><td>"11月"               </td><td class="align-c"><%= data.char.ALIGN_R %></td><td>DataGridViewTextBoxColumn</td><td><%= data.char.FMT_CUR_YEN %></td></tr>
+    <tr><td class="no-l">1-1-1-10</td><td>12月列          </td><td>ColEl12   </td><td>"12月"               </td><td class="align-c"><%= data.char.ALIGN_R %></td><td>DataGridViewTextBoxColumn</td><td><%= data.char.FMT_CUR_YEN %></td></tr>
+    <tr><td class="no-l">1-1-1-11</td><td>1月列           </td><td>ColEl01   </td><td>"1月"                </td><td class="align-c"><%= data.char.ALIGN_R %></td><td>DataGridViewTextBoxColumn</td><td><%= data.char.FMT_CUR_YEN %></td></tr>
+    <tr><td class="no-l">1-1-1-12</td><td>2月列           </td><td>ColEl02   </td><td>"2月"                </td><td class="align-c"><%= data.char.ALIGN_R %></td><td>DataGridViewTextBoxColumn</td><td><%= data.char.FMT_CUR_YEN %></td></tr>
+    <tr><td class="no-l">1-1-1-13</td><td>3月列           </td><td>ColEl03   </td><td>"3月"                </td><td class="align-c"><%= data.char.ALIGN_R %></td><td>DataGridViewTextBoxColumn</td><td><%= data.char.FMT_CUR_YEN %></td></tr>
+    <tr><td class="no-l">1-2     </td><td>ガス代タブ      </td><td>TabGs     </td><td>"<%= data.char.GS %>"</td><td class="align-c">                        </td><td>TabPage                  </td><td>                            </td></tr>
+    <tr><td class="no-l">1-2-1   </td><td>ガス代DGV       </td><td>DgvGs     </td><td>                     </td><td class="align-c">                        </td><td>DataGridView             </td><td>                            </td></tr>
+    <tr><td class="no-l">1-2-1-1 </td><td>年度列          </td><td>ColGsYr   </td><td>"年度"               </td><td class="align-c"><%= data.char.ALIGN_C %></td><td>DataGridViewTextBoxColumn</td><td>                            </td></tr>
+    <tr><td class="no-l">1-2-1-2 </td><td>4月列           </td><td>ColGs04   </td><td>"4月"                </td><td class="align-c"><%= data.char.ALIGN_R %></td><td>DataGridViewTextBoxColumn</td><td><%= data.char.FMT_CUR_YEN %></td></tr>
+    <tr><td class="no-l">1-2-1-3 </td><td>5月列           </td><td>ColGs05   </td><td>"5月"                </td><td class="align-c"><%= data.char.ALIGN_R %></td><td>DataGridViewTextBoxColumn</td><td><%= data.char.FMT_CUR_YEN %></td></tr>
+    <tr><td class="no-l">1-2-1-4 </td><td>6月列           </td><td>ColGs06   </td><td>"6月"                </td><td class="align-c"><%= data.char.ALIGN_R %></td><td>DataGridViewTextBoxColumn</td><td><%= data.char.FMT_CUR_YEN %></td></tr>
+    <tr><td class="no-l">1-2-1-5 </td><td>7月列           </td><td>ColGs07   </td><td>"7月"                </td><td class="align-c"><%= data.char.ALIGN_R %></td><td>DataGridViewTextBoxColumn</td><td><%= data.char.FMT_CUR_YEN %></td></tr>
+    <tr><td class="no-l">1-2-1-6 </td><td>8月列           </td><td>ColGs08   </td><td>"8月"                </td><td class="align-c"><%= data.char.ALIGN_R %></td><td>DataGridViewTextBoxColumn</td><td><%= data.char.FMT_CUR_YEN %></td></tr>
+    <tr><td class="no-l">1-2-1-7 </td><td>9月列           </td><td>ColGs09   </td><td>"9月"                </td><td class="align-c"><%= data.char.ALIGN_R %></td><td>DataGridViewTextBoxColumn</td><td><%= data.char.FMT_CUR_YEN %></td></tr>
+    <tr><td class="no-l">1-2-1-8 </td><td>10月列          </td><td>ColGs10   </td><td>"10月"               </td><td class="align-c"><%= data.char.ALIGN_R %></td><td>DataGridViewTextBoxColumn</td><td><%= data.char.FMT_CUR_YEN %></td></tr>
+    <tr><td class="no-l">1-2-1-9 </td><td>11月列          </td><td>ColGs11   </td><td>"11月"               </td><td class="align-c"><%= data.char.ALIGN_R %></td><td>DataGridViewTextBoxColumn</td><td><%= data.char.FMT_CUR_YEN %></td></tr>
+    <tr><td class="no-l">1-2-1-10</td><td>12月列          </td><td>ColGs12   </td><td>"12月"               </td><td class="align-c"><%= data.char.ALIGN_R %></td><td>DataGridViewTextBoxColumn</td><td><%= data.char.FMT_CUR_YEN %></td></tr>
+    <tr><td class="no-l">1-2-1-11</td><td>1月列           </td><td>ColGs01   </td><td>"1月"                </td><td class="align-c"><%= data.char.ALIGN_R %></td><td>DataGridViewTextBoxColumn</td><td><%= data.char.FMT_CUR_YEN %></td></tr>
+    <tr><td class="no-l">1-2-1-12</td><td>2月列           </td><td>ColGs02   </td><td>"2月"                </td><td class="align-c"><%= data.char.ALIGN_R %></td><td>DataGridViewTextBoxColumn</td><td><%= data.char.FMT_CUR_YEN %></td></tr>
+    <tr><td class="no-l">1-2-1-13</td><td>3月列           </td><td>ColGs03   </td><td>"3月"                </td><td class="align-c"><%= data.char.ALIGN_R %></td><td>DataGridViewTextBoxColumn</td><td><%= data.char.FMT_CUR_YEN %></td></tr>
+    <tr><td class="no-l">1-3     </td><td>水道代タブ      </td><td>TabWt     </td><td>"<%= data.char.WT %>"</td><td class="align-c">                        </td><td>TabPage                  </td><td>                            </td></tr>
+    <tr><td class="no-l">1-3-1   </td><td>水道代DGV       </td><td>DgvWt     </td><td>                     </td><td class="align-c">                        </td><td>DataGridView             </td><td>                            </td></tr>
+    <tr><td class="no-l">1-3-1-1 </td><td>年度列          </td><td>ColWtYr   </td><td>"年度"               </td><td class="align-c"><%= data.char.ALIGN_C %></td><td>DataGridViewTextBoxColumn</td><td>                            </td></tr>
+    <tr><td class="no-l">1-3-1-2 </td><td>4月列           </td><td>ColWt04   </td><td>"4月"                </td><td class="align-c"><%= data.char.ALIGN_R %></td><td>DataGridViewTextBoxColumn</td><td><%= data.char.FMT_CUR_YEN %></td></tr>
+    <tr><td class="no-l">1-3-1-3 </td><td>5月列           </td><td>ColWt05   </td><td>"5月"                </td><td class="align-c"><%= data.char.ALIGN_R %></td><td>DataGridViewTextBoxColumn</td><td><%= data.char.FMT_CUR_YEN %></td></tr>
+    <tr><td class="no-l">1-3-1-4 </td><td>6月列           </td><td>ColWt06   </td><td>"6月"                </td><td class="align-c"><%= data.char.ALIGN_R %></td><td>DataGridViewTextBoxColumn</td><td><%= data.char.FMT_CUR_YEN %></td></tr>
+    <tr><td class="no-l">1-3-1-5 </td><td>7月列           </td><td>ColWt07   </td><td>"7月"                </td><td class="align-c"><%= data.char.ALIGN_R %></td><td>DataGridViewTextBoxColumn</td><td><%= data.char.FMT_CUR_YEN %></td></tr>
+    <tr><td class="no-l">1-3-1-6 </td><td>8月列           </td><td>ColWt08   </td><td>"8月"                </td><td class="align-c"><%= data.char.ALIGN_R %></td><td>DataGridViewTextBoxColumn</td><td><%= data.char.FMT_CUR_YEN %></td></tr>
+    <tr><td class="no-l">1-3-1-7 </td><td>9月列           </td><td>ColWt09   </td><td>"9月"                </td><td class="align-c"><%= data.char.ALIGN_R %></td><td>DataGridViewTextBoxColumn</td><td><%= data.char.FMT_CUR_YEN %></td></tr>
+    <tr><td class="no-l">1-3-1-8 </td><td>10月列          </td><td>ColWt10   </td><td>"10月"               </td><td class="align-c"><%= data.char.ALIGN_R %></td><td>DataGridViewTextBoxColumn</td><td><%= data.char.FMT_CUR_YEN %></td></tr>
+    <tr><td class="no-l">1-3-1-9 </td><td>11月列          </td><td>ColWt11   </td><td>"11月"               </td><td class="align-c"><%= data.char.ALIGN_R %></td><td>DataGridViewTextBoxColumn</td><td><%= data.char.FMT_CUR_YEN %></td></tr>
+    <tr><td class="no-l">1-3-1-10</td><td>12月列          </td><td>ColWt12   </td><td>"12月"               </td><td class="align-c"><%= data.char.ALIGN_R %></td><td>DataGridViewTextBoxColumn</td><td><%= data.char.FMT_CUR_YEN %></td></tr>
+    <tr><td class="no-l">1-3-1-11</td><td>1月列           </td><td>ColWt01   </td><td>"1月"                </td><td class="align-c"><%= data.char.ALIGN_R %></td><td>DataGridViewTextBoxColumn</td><td><%= data.char.FMT_CUR_YEN %></td></tr>
+    <tr><td class="no-l">1-3-1-12</td><td>2月列           </td><td>ColWt02   </td><td>"2月"                </td><td class="align-c"><%= data.char.ALIGN_R %></td><td>DataGridViewTextBoxColumn</td><td><%= data.char.FMT_CUR_YEN %></td></tr>
+    <tr><td class="no-l">1-3-1-13</td><td>3月列           </td><td>ColWt03   </td><td>"3月"                </td><td class="align-c"><%= data.char.ALIGN_R %></td><td>DataGridViewTextBoxColumn</td><td><%= data.char.FMT_CUR_YEN %></td></tr>
+  </table>
+</section>
+<section>
+  <h2>イベント</h2>
+  <dl class="event">
+    <dt>初期表示</dt>
+    <dd>
+      <%= link_dbfile %>から支出情報を読み込み，名称が"<%= data.char.EL %>"，"<%= data.char.GS %>"，"<%= data.char.WT %>"の支出情報で絞り込む．<br />
+      絞り込んだ支出情報が0件の場合，そのDGVは0行とする．<br />
+      年度ごと月ごとに"<%= data.char.EL %>"，"<%= data.char.GS %>"，"<%= data.char.WT %>"をそれぞれ集計する．<br />
+      それぞれの月ごとに平均金額を計算して、集計結果と合わせて各タブの各DGVへ設定する．<br />
+      電気代タブを表示して電気代DGV1行目の年度列のセルを選択状態とする．<br />
+      DBファイルの読み込みに失敗した場合，エラーダイアログを表示してフォームを閉じる(エラーダイアログは<%= link_main %>の初期表示と同様)．
+    </dd>
+  </dl>
+</section>

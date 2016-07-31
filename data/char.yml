@@ -1,0 +1,64 @@
+MARU: '○'
+BATU: '×'
+
+AARI: 'あり'
+NASI: 'なし'
+
+KANO: '可能'
+FUKA: '不可'
+
+CENTER_SCREEN: '画面中央'
+
+SCROLL_VERTICAL: '縦のみ'
+
+BOOLT: 'True'
+BOOLF: 'False'
+
+SELECT_ROW: '行選択'
+SELECT_CEL: 'セル選択'
+
+ABOOK    : 'Abook'
+ABOOK_DB : 'Abook.db'
+ABOOK_EXE: 'Abook.exe'
+
+FMT_DT: 'YYYY-MM-DD'
+FMT_YM: 'YYYY年MM月'
+FMT_MM: 'MM'
+FMT_COMMA: 'カンマ編集'
+FMT_YM_PRV: 'YYYY-MM'
+FMT_CUR_YEN: '通貨形式(&yen;)'
+
+MENU_F: 'ファイル(F)'
+MENU_Q: '終了(Q)'
+MENU_D: 'データ(D)'
+MENU_E: '光熱費(E)'
+MENU_U: 'アップロード(U)'
+MENU_H: 'ヘルプ(H)'
+MENU_A: 'バージョン情報(A)'
+
+TYPE_EXP    : '*1'
+TYPE_PRV    : '*2'
+TYPE_SUM_EXP: '*3'
+TYPE_BLN_ERN: '*4'
+TYPE_BLN_EXP: '*5'
+
+LINE_CODE: 'LF'
+CHAR_CODE: 'UTF-8'
+CSV_FIELD: '常にダブルクォーテーションで囲む'
+
+ATTR_NUM: '数値'
+ATTR_STR: '文字列'
+
+ALIGN_L: '左'
+ALIGN_R: '右'
+ALIGN_C: '中央'
+
+TAB_EXPENSE: '支出'
+TAB_SUMMARY: '月次'
+TAB_GRAPHIC: 'グラフ'
+TAB_BALANCE: '収支'
+TAB_PRIVATE: '秘密'
+
+EL: '電気代'
+GS: 'ガス代'
+WT: '水道代'

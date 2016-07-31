@@ -1,0 +1,66 @@
+---
+title: DBファイル
+header_title: DBファイル
+header_project: project.mk
+header_appname: Abook
+header_subname:
+---
+<h1>【<%= current_page.data.title %>】</h1>
+<section>
+  <h2>概要</h2>
+  <p>
+    Abookのデータはすべて1つのファイルに保存される(図1)．
+    このファイルをDBファイルと呼び，DBファイルに保存されるデータを支出情報と呼ぶ．
+  </p>
+  <table>
+    <tr>
+      <td class="io">
+        <figure>
+          <%= image_tag 'abook_io.png', class: 'io' %>
+          <figcaption>1.AbookとDBファイル</figcaption>
+        </figure>
+      </td>
+    </tr>
+  </table>
+</section>
+<section>
+  <h2>ファイル設計</h2>
+  <table>
+    <tr>
+      <td class="layout dbfile">
+        <figure>
+          <%= image_tag 'dbfile.png', class: 'dbfile' %>
+          <figcaption>2.DBファイルと支出情報</figcaption>
+        </figure>
+      </td>
+      <td class="overview">
+        <figure>
+          <figcaption>DBファイル仕様</figcaption>
+          <ul>
+            <li>ファイル名は"<%= data.char.ABOOK_DB %>"</li>
+            <li>DBファイルはCSV形式とする．</li>
+            <li>CSVフォーマットは<%= link_to 'RFC4180', 'http://www.kasai.fm/wiki/rfc4180jp', target: '_blank' %>に準拠する．</li>
+            <li>ただし，以下の通りとする．
+              <table class="csv-format">
+                <tr><th>文字コード</th><td><%= data.char.CHAR_CODE %></td></tr>
+                <tr><th>改行コード</th><td><%= data.char.LINE_CODE %></td></tr>
+                <tr><th>ヘッダ行  </th><td><%= data.char.NASI      %></td></tr>
+                <tr><th>フィールド</th><td><%= data.char.CSV_FIELD %></td></tr>
+              </table>
+            </li>
+          </ul>
+        </figure>
+      </td>
+    </tr>
+  </table>
+</section>
+<section>
+  <h2>ファイル項目</h2>
+  <table class="controls">
+    <tr><th class="no-s">No.</th><th>フィールド</th><th class="maru"   >必須                 </th><th>入力制限                                               </th></tr>
+    <tr><td class="no-s">1  </td><td>日付      </td><td class="align-c"><%= data.char.MARU %></td><td><%= data.char.FMT_DT %>                                </td></tr>
+    <tr><td class="no-s">2  </td><td>名称      </td><td class="align-c"><%= data.char.MARU %></td><td>                                                       </td></tr>
+    <tr><td class="no-s">3  </td><td>種別      </td><td class="align-c"><%= data.char.MARU %></td><td><%= link_type data.char.TYPE_EXP %>のみ                </td></tr>
+    <tr><td class="no-s">4  </td><td>金額      </td><td class="align-c"><%= data.char.MARU %></td><td>数値，マイナス不可，'79228162514264337593543950335'以下</td></tr>
+  </table>
+</section>

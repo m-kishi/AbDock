@@ -1,0 +1,34 @@
+F400_MAIN:
+  name: メインフォーム
+  link: 'f400_form_main.html'
+F400_MENU:
+  name: メニュー
+  link: 'f400_form_menu.html'
+F400_TAB_EXPENSE:
+  name: 支出タブ
+  link: 'f400_tab_expense.html'
+F400_TAB_SUMMARY:
+  name: 月次タブ
+  link: 'f400_tab_summary.html'
+F400_TAB_GRAPHIC:
+  name: グラフタブ
+  link: 'f400_tab_graphic.html'
+F400_TAB_BALANCE:
+  name: 収支タブ
+  link: 'f400_tab_balance.html'
+F400_TAB_PRIVATE:
+  name: 秘密タブ
+  link: 'f400_tab_private.html'
+F410_SUB_TYPE:
+  name: 種別サブフォーム
+  link: 'f410_subform_type.html'
+F410_SUB_ENERGY:
+  name: 光熱費サブフォーム
+  link: 'f410_subform_energy.html'
+F410_SUB_UPLOADS:
+  name: アップロードサブフォーム
+  link: 'f410_subform_uploads.html'
+F410_SUB_VERSION:
+  name: バージョン情報サブフォーム
+  link: 'f410_subform_version.html'
+

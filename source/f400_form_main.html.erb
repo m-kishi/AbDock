@@ -1,0 +1,86 @@
+---
+title: メインフォーム
+header_title: 画面設計
+header_project: project.mk
+header_appname: Abook
+header_subname:
+---
+<h1>【<%= current_page.data.title %>】</h1>
+<section>
+  <h2>レイアウト</h2>
+  <table>
+    <tr>
+      <td class="layout">
+        <figure>
+          <%= image_tag 'tab_expense_001.png' %>
+          <figcaption>1.<%= current_page.data.title %></figcaption>
+        </figure>
+      </td>
+      <td class="overview">
+        <figure>
+          <figcaption>概要</figcaption>
+          <ul>
+            <li><%= data.char.ABOOK %>の<%= current_page.data.title %></li>
+            <li>サブフォームで表示すべき情報以外はすべてこのフォーム上に表示する．</li>
+          </ul>
+          <figure>
+            <figcaption>フォーム属性</figcaption>
+            <table class="form-property">
+              <tr><th>タイトル          </th><td><%= data.char.ABOOK         %></td></tr>
+              <tr><th>アイコン          </th><td><%= image_tag 'abook.png'   %></td></tr>
+              <tr><th>画面サイズ        </th><td>416 x 343                     </td></tr>
+              <tr><th>サイズ変更        </th><td><%= data.char.FUKA          %></td></tr>
+              <tr><th>初期表示位置      </th><td><%= data.char.CENTER_SCREEN %></td></tr>
+              <tr><th>ウィンドウの最大化</th><td><%= data.char.FUKA          %></td></tr>
+              <tr><th>ウィンドウの最小化</th><td><%= data.char.KANO          %></td></tr>
+              <tr><th>タスクバーへの表示</th><td><%= data.char.AARI          %></td></tr>
+            </table>
+          </figure>
+        </figure>
+      </td>
+    </tr>
+  </table>
+</section>
+<section>
+  <h2>画面項目</h2>
+  <table class="controls">
+    <tr><th class="no-m">No.</th><th>名称               </th><th>ＩＤ      </th><th>テキスト                      </th><th>種別      </th></tr>
+    <tr><td class="no-m">1  </td><td><%= link_menu    %></td><td>MenuStrip </td><td>                              </td><td>MenuStrip </td></tr>
+    <tr><td class="no-m">2  </td><td>タブコントロール   </td><td>TabControl</td><td>                              </td><td>TabControl</td></tr>
+    <tr><td class="no-m">2-1</td><td><%= link_expense %></td><td>TabExpense</td><td>"<%= data.char.TAB_EXPENSE %>"</td><td>TabPage   </td></tr>
+    <tr><td class="no-m">2-2</td><td><%= link_summary %></td><td>TabSummary</td><td>"<%= data.char.TAB_SUMMARY %>"</td><td>TabPage   </td></tr>
+    <tr><td class="no-m">2-3</td><td><%= link_graphic %></td><td>TabGraphic</td><td>"<%= data.char.TAB_GRAPHIC %>"</td><td>TabPage   </td></tr>
+    <tr><td class="no-m">2-4</td><td><%= link_balance %></td><td>TabBalance</td><td>"<%= data.char.TAB_BALANCE %>"</td><td>TabPage   </td></tr>
+    <tr><td class="no-m">2-5</td><td><%= link_private %></td><td>TabPrivate</td><td>"<%= data.char.TAB_PRIVATE %>"</td><td>TabPage   </td></tr>
+  </table>
+</section>
+<section>
+  <h2>イベント</h2>
+  <dl class="event">
+    <dt>初期表示</dt>
+    <dd>
+      <%= link_dbfile %>から支出情報を読み込んで各タブを初期化し，支出タブを表示する．<br />
+      DBファイルの読み込みに失敗した場合，エラーダイアログを表示してアプリケーションを終了する．
+      <ul class="event">
+        <li><%= message_link '初回起動時のDBファイル作成に失敗'          , :CSV_CREATE     %></li>
+        <li><%= message_link 'DBファイルのフィールド数が少ない'          , :CSV_FIELD_LESS %></li>
+        <li><%= message_link 'DBファイルのフィールド数が多い'            , :CSV_FIELD_MORE %></li>
+        <li><%= message_link 'DBファイルの日付フィールドが空'            , :DATE_NULL      %></li>
+        <li><%= message_link 'DBファイルの日付フィールドが日付形式でない', :DATE_FORMAT    %></li>
+        <li><%= message_link 'DBファイルの名称フィールドが空'            , :NAME_NULL      %></li>
+        <li><%= message_link 'DBファイルの種別フィールドが空'            , :TYPE_NULL      %></li>
+        <li><%= message_link 'DBファイルの種別フィールドが不正'          , :TYPE_WRONG     %>(<%= link_type data.char.TYPE_EXP %>以外)</li>
+        <li><%= message_link 'DBファイルの金額フィールドが空'            , :COST_NULL      %></li>
+        <li><%= message_link 'DBファイルの金額フィールドが数値でない'    , :COST_FORMAT    %></li>
+        <li><%= message_link 'DBファイルの金額フィールドがマイナス'      , :COST_MINUS     %></li>
+        <li><%= message_link 'DBファイルの金額フィールドが大き過ぎる'    , :COST_OVERFLOW  %></li>
+      </ul>
+    </dd>
+    <dt>メニューを選択</dt>
+    <dd>選択されたメニューに応じた処理を行う．</dd>
+    <dt>タブ選択</dt>
+    <dd>選択されたタブを表示する．</dd>
+    <dt>システム例外発生</dt>
+    <dd>発生した例外メッセージを表示してアプリケーションを終了する．</dd>
+  </dl>
+</section>

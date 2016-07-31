@@ -1,0 +1,42 @@
+---
+title: 種別一覧
+header_title: 種別一覧
+header_project: project.mk
+header_appname: Abook
+header_subname:
+---
+<h1>【<%= current_page.data.title %>】</h1>
+
+<table class="type">
+  <tr>
+    <th class="no"   >No. </th>
+    <th              >ID  </th>
+    <th              >名称</th>
+    <th class="check"><%= data.char.TYPE_EXP     %></th>
+    <th class="check"><%= data.char.TYPE_PRV     %></th>
+    <th class="check"><%= data.char.TYPE_SUM_EXP %></th>
+    <th class="check"><%= data.char.TYPE_BLN_ERN %></th>
+    <th class="check"><%= data.char.TYPE_BLN_EXP %></th>
+    <th>備考</th>
+  </tr>
+  <% data.type.each_with_index do |(k, v), i| %>
+    <tr>
+      <td class="no"   ><%= i+1                                        %></td>
+      <td              ><%= k                                          %></td>
+      <td              ><%= link_to v.name, '#', title: v.descriptions %></td>
+      <td class="check"><%= v.expense       ? data.char.MARU : ''      %></td>
+      <td class="check"><%= v.private       ? data.char.MARU : ''      %></td>
+      <td class="check"><%= v.summary_expe  ? data.char.MARU : ''      %></td>
+      <td class="check"><%= v.balance_earn  ? data.char.MARU : ''      %></td>
+      <td class="check"><%= v.balance_expe  ? data.char.MARU : ''      %></td>
+      <td              ><%= v.note                                     %></td>
+    </tr>
+  <% end %>
+</table>
+<ul>
+  <li>*1：<%= link_dbfile  %>の種別として指定可能な種別かどうか．</li>
+  <li>*2：<%= link_private %>での表示対象かどうか．              </li>
+  <li>*3：<%= link_summary %>での支出対象かどうか．              </li>
+  <li>*4：<%= link_balance %>での収入対象かどうか．              </li>
+  <li>*5：<%= link_balance %>での支出対象かどうか．              </li>
+</ul>
