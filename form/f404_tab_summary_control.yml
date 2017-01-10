@@ -1,0 +1,68 @@
+CONTROL:
+  - ID: HeadSummary
+    NAME: ヘッダコントロール
+    TEXT:
+    ATTR:
+    ALGN:
+    TYPE: <%= cAB_HEADER %>
+    NOTE:
+    CHILDREN:
+      - ID: LblTitle
+        NAME: タイトル
+        TEXT: <%= cYYYY_MM_JP %>
+        ATTR:
+        ALGN:
+        TYPE: <%= cLABEL %>
+        NOTE:
+      - ID: BtnPrevYear
+        NAME: 前年ボタン
+        TEXT: "<<"
+        ATTR:
+        ALGN:
+        TYPE: <%= cBUTTON %>
+        NOTE:
+      - ID: BtnPrevMonth
+        NAME: 前月ボタン
+        TEXT: "<"
+        ATTR:
+        ALGN:
+        TYPE: <%= cBUTTON %>
+        NOTE:
+      - ID: BtnNextMonth
+        NAME: 翌月ボタン
+        TEXT: ">"
+        ATTR:
+        ALGN:
+        TYPE: <%= cBUTTON %>
+        NOTE:
+      - ID: BtnNextYear
+        NAME: 翌年ボタン
+        TEXT: ">>"
+        ATTR:
+        ALGN:
+        TYPE: <%= cBUTTON %>
+        NOTE:
+<% show_in_summary_type.each do |k, v| %>
+  - ID: Lbl<%= k.to_s.capitalize %>
+    NAME: ラベル(<%= v.NAME %>)
+    TEXT:
+    ATTR:
+    ALGN:
+    TYPE: <%= cAB_LABEL %>
+    NOTE:
+    CHILDREN:
+      - ID: _Label
+        NAME: 種別
+        TEXT: <%= v.NAME %>
+        ATTR: <%= cSTR %>
+        ALGN: <%= cLEFT %>
+        TYPE: <%= cLABEL %>
+        NOTE:
+      - ID: _Value
+        NAME: 金額
+        TEXT: "&yen;Z,ZZ9"
+        ATTR: <%= cSTR %>
+        ALGN: <%= cRIGHT %>
+        TYPE: <%= cLABEL %>
+        NOTE: <%= cCURRENCY %>
+<% end %>

@@ -1,34 +1,34 @@
-F400_MAIN:
-  name: メインフォーム
-  link: 'f400_form_main.html'
-F400_MENU:
-  name: メニュー
-  link: 'f400_form_menu.html'
-F400_TAB_EXPENSE:
-  name: 支出タブ
-  link: 'f400_tab_expense.html'
-F400_TAB_SUMMARY:
-  name: 月次タブ
-  link: 'f400_tab_summary.html'
-F400_TAB_GRAPHIC:
-  name: グラフタブ
-  link: 'f400_tab_graphic.html'
-F400_TAB_BALANCE:
-  name: 収支タブ
-  link: 'f400_tab_balance.html'
-F400_TAB_PRIVATE:
-  name: 秘密タブ
-  link: 'f400_tab_private.html'
-F410_SUB_TYPE:
-  name: 種別サブフォーム
-  link: 'f410_subform_type.html'
-F410_SUB_ENERGY:
-  name: 光熱費サブフォーム
-  link: 'f410_subform_energy.html'
-F410_SUB_UPLOADS:
-  name: アップロードサブフォーム
-  link: 'f410_subform_uploads.html'
-F410_SUB_VERSION:
-  name: バージョン情報サブフォーム
-  link: 'f410_subform_version.html'
+F401_MAIN:
+  NAME: メインフォーム
+  LINK: f401_form_main.html
+F402_MENU:
+  NAME: メニュー
+  LINK: f402_form_menu.html
+F403_TAB_EXPENSE:
+  NAME: 支出タブ
+  LINK: f403_tab_expense.html
+F404_TAB_SUMMARY:
+  NAME: 月次タブ
+  LINK: f404_tab_summary.html
+F405_TAB_GRAPHIC:
+  NAME: 推移タブ
+  LINK: f405_tab_graphic.html
+F406_TAB_BALANCE:
+  NAME: 収支タブ
+  LINK: f406_tab_balance.html
+F407_TAB_PRIVATE:
+  NAME: 秘密タブ
+  LINK: f407_tab_private.html
+F501_SUB_TYPE:
+  NAME: 種別サブフォーム
+  LINK: f501_subform_type.html
+F502_SUB_ENERGY:
+  NAME: 光熱費サブフォーム
+  LINK: f502_subform_energy.html
+F503_SUB_UPLOAD:
+  NAME: アップロードサブフォーム
+  LINK: f503_subform_upload.html
+F504_SUB_VERSION:
+  NAME: バージョン情報サブフォーム
+  LINK: f504_subform_version.html
 

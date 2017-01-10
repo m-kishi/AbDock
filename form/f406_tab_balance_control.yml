@@ -1,0 +1,44 @@
+CONTROL:
+  - ID: DgvBalance
+    NAME: 収支DGV
+    TEXT:
+    ATTR:
+    ALGN:
+    TYPE: <%= cDGV %>
+    NOTE:
+    CHILDREN:
+      - ID: ColYear
+        NAME: 年度列
+        TEXT: 年度
+        ATTR: <%= cNUM %>
+        ALGN: <%= cCENTER %>
+        TYPE: <%= cDGV_TEXT %>
+        NOTE:
+      - ID: ColEarn
+        NAME: 収入列
+        TEXT: 収入
+        ATTR: <%= cNUM %>
+        ALGN: <%= cRIGHT %>
+        TYPE: <%= cDGV_TEXT %>
+        NOTE: <%= cCURRENCY %>
+      - ID: ColExpense
+        NAME: 支出列
+        TEXT: 支出
+        ATTR: <%= cNUM %>
+        ALGN: <%= cRIGHT %>
+        TYPE: <%= cDGV_TEXT %>
+        NOTE: <%= cCURRENCY %>
+      - ID: ColSpecial
+        NAME: 特出列
+        TEXT: 特出
+        ATTR: <%= cNUM %>
+        ALGN: <%= cRIGHT %>
+        TYPE: <%= cDGV_TEXT %>
+        NOTE: <%= cCURRENCY %>
+      - ID: ColBalance
+        NAME: 収支列
+        TEXT: 収支
+        ATTR: <%= cNUM %>
+        ALGN: <%= cRIGHT %>
+        TYPE: <%= cDGV_TEXT %>
+        NOTE: <%= cCURRENCY %>

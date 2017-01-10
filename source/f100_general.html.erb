@@ -1,20 +1,18 @@
 ---
 title: 全体設計
 header_title: 全体設計
-header_project: project.mk
-header_appname: Abook
-header_subname:
 ---
 <h1>【<%= current_page.data.title %>】</h1>
+
 <section>
   <h2>ファイル構成</h2>
-  <p><%= data.char.ABOOK %>はアプリケーション本体であるEXEファイルと，支出情報を保存する<%= link_dbfile %>からなる．</p>
+  <p><%= cABOOK %>はアプリケーション本体であるEXEファイルと，<%= cEXP_INFO %>を保存する<%= lnDBFile %>からなる．</p>
   <table class="general">
-    <tr><th>ファイル                  </th><th>説明                      </th></tr>
-    <tr><td><%= data.char.ABOOK_EXE %></td><td>アプリケーション本体      </td></tr>
-    <tr><td><%= data.char.ABOOK_DB  %></td><td>支出情報を保存するファイル</td></tr>
+    <tr><th class="no-s">No.</th><th>ファイル         </th><th>説明                              </th></tr>
+    <tr><td class="no-s">1  </td><td><%= cABOOK_EXE %></td><td>アプリケーション本体              </td></tr>
+    <tr><td class="no-s">2  </td><td><%= cABOOK_DB  %></td><td><%= cEXP_INFO %>を保存するファイル</td></tr>
   </table>
-  <p>アプリケーション起動時に，EXEファイルと同じフォルダにDBファイルが存在しない場合，空のDBファイルを作成する．</p>
+  <p>アプリケーション起動時に，EXEファイルと同じフォルダに<%= cDB_FILE %>が存在しない場合，空の<%= cDB_FILE %>を作成する．</p>
   <table>
     <tr>
       <td class="layout general">
@@ -31,7 +29,7 @@ header_subname:
       <td class="layout general">
         <figure>
           <%= image_tag 'folder_002.png', class: 'general' %>
-          <figcaption>2.アプリケーション起動時にDBファイルが存在しなければ空で作成</figcaption>
+          <figcaption>2.アプリケーション起動時に<%= cDB_FILE %>が存在しなければ空で作成</figcaption>
         </figure>
       </td>
     </tr>

@@ -1,0 +1,27 @@
+MESSAGE:
+  - ID: DATE_FORMAT
+    TERM: 支出DGVの<%= cCOL_DATE %>列の値が日付形式でない
+  - ID: TYPE_WRONG
+    TERM: 支出DGVの<%= cCOL_TYPE %>列の値が不正
+  - ID: COST_FORMAT
+    TERM: 支出DGVの<%= cCOL_COST %>列の値が数値でない
+  - ID: COST_MINUS
+    TERM: 支出DGVの<%= cCOL_COST %>列の値がマイナス
+  - ID: COST_OVERFLOW
+    TERM: 支出DGVの<%= cCOL_COST %>列の値が大き過ぎる
+
+AUTO_COMPLETE:
+  - PNG1: tab_expense_complete_001.png
+    CAPTION1: <%= cDB_FILE %>の<%= cEXP_INFO %>
+  - PNG1: tab_expense_complete_002.png
+    CAPTION1: 「おにぎり」は「食費」が1件のみ
+    PNG2: tab_expense_complete_003.png
+    CAPTION2: 「食費」で補完される
+  - PNG1: tab_expense_complete_004.png
+    CAPTION1: 「カレー」は「食費」が2件，「外食費」が1件
+    PNG2: tab_expense_complete_005.png
+    CAPTION2: 「食費」で補完される
+  - PNG1: tab_expense_complete_006.png
+    CAPTION1: 「うどん」は「食費」と「外食費」が2件ずつ
+    PNG2: tab_expense_complete_007.png
+    CAPTION2: 「食費」と「外食費」が空白区切りで補完される

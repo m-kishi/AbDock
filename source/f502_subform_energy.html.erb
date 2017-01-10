@@ -1,0 +1,35 @@
+---
+header_title: 画面設計
+layouts: f502_subform_energy_layouts.yml
+control: f502_subform_energy_control.yml
+---
+<h1>【<%= fF502 %>】</h1>
+<% form_layouts = load_form_data(current_page.data.layouts) %>
+<% form_control = load_form_data(current_page.data.control) %>
+
+<%# レイアウト %>
+<section>
+  <%= partial 'flayouts', locals: { form: form_layouts } %>
+</section>
+
+<%# 画面項目 %>
+<section>
+  <%= partial 'fcontrol', locals: { form: form_control } %>
+</section>
+
+<%# イベント %>
+<section>
+  <h2>イベント</h2>
+  <dl class="event">
+    <dt>初期表示</dt>
+    <dd>
+      <ul class="description">
+        <li><%= lnDBFile %>から<%= cEXP_INFO %>を読み込み，<%= cCOL_NAME %>が"<%= cEL %>"，"<%= cGS %>"，"<%= cWT %>"の<%= cEXP_INFO %>で絞り込む．</li>
+        <li>絞り込んだ<%= cEXP_INFO %>が0件の場合，そのDGVは0行とする．</li>
+        <li>年度ごと月ごとに"<%= cEL %>"，"<%= cGS %>"，"<%= cWT %>"をそれぞれ集計する．</li>
+        <li><%= cEL %>タブを表示して電気代DGV1行目の年度列のセルを選択状態とする．</li>
+        <li><%= cDB_FILE %>の読み込みに失敗した場合，エラーダイアログを表示してフォームを閉じる(エラーダイアログは<%= lnForm :F401_MAIN %>の初期表示と同様)．</li>
+      </ul>
+    </dd>
+  </dl>
+</section>

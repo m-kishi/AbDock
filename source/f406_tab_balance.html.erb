@@ -1,0 +1,57 @@
+---
+header_title: 画面設計
+layouts: f406_tab_balance_layouts.yml
+control: f406_tab_balance_control.yml
+several: f406_tab_balance_several.yml
+---
+<h1>【<%= fF406 %>】</h1>
+
+<% form_layouts = load_form_data(current_page.data.layouts) %>
+<% form_control = load_form_data(current_page.data.control) %>
+<% form_several = load_form_data(current_page.data.several) %>
+
+<%# レイアウト %>
+<section>
+  <%= partial 'flayouts', locals: { form: form_layouts } %>
+</section>
+
+<%# 画面項目 %>
+<section>
+  <%= partial 'fcontrol', locals: { form: form_control } %>
+</section>
+
+<%# イベント %>
+<section>
+  <h2>イベント</h2>
+  <dl class="event">
+    <dt>初期表示</dt>
+    <dd>
+      <ul class="description">
+        <li><%= lnDBFile %>から読み込んだ<%= cEXP_INFO %>を年度ごとに以下の定義に従って集計する(<%= lnType cEXP_TYPE_PRV %>に該当する<%= cEXP_INFO %>は除く)．</li>
+        <table class="balance">
+          <tr><th class="no">No.</th><th>列  </th><th>集計方法</th></tr>
+          <tr><td class="no">1  </td><td>収入</td><td><%= lnType cEXP_TYPE_BLN_ERN %>に該当する<%= cEXP_INFO %>の<%= cCOL_COST %>の合計</td></tr>
+          <tr><td class="no">2  </td><td>支出</td><td><%= lnType cEXP_TYPE_BLN_EXP %>に該当する<%= cEXP_INFO %>の<%= cCOL_COST %>の合計</td></tr>
+          <tr><td class="no">3  </td><td>特出</td><td><%= lnType %>が"<%= type_spcl %>"の<%= cEXP_INFO %>の<%= cCOL_COST %>の合計</td></tr>
+          <tr><td class="no">4  </td><td>収支</td><td>(<%= lnType cEXP_TYPE_BLN_ERN %>に該当する<%= cEXP_INFO %>の<%= cCOL_COST %>の合計) - (<%= lnType cEXP_TYPE_BLN_ERN %>に該当しない<%= cEXP_INFO %>の<%= cCOL_COST %>の合計)</td></tr>
+        </table>
+        <li>合計行を集計して収支DGVへ表示し，収支DGVの1行目を選択状態とする．</li>
+        <li>集計処理中にチェックエラーが発生した場合，エラーダイアログを表示してアプリケーションを終了する．</li>
+        <table class="balance-check-error">
+          <tr>
+            <th class="no">No.</th>
+            <th>条件</th>
+            <th>メッセージ</th>
+          </tr>
+          <% form_several.MESSAGE.each.with_index(1) do |chk, i| %>
+            <tr>
+              <td class="no"><%= i %></td>
+              <td><%= chk.TERM         %></td>
+              <td><%= lnMessage chk.ID %></td>
+            </tr>
+          <% end %>
+        </table>
+      </ul>
+    </dd>
+  </dl>
+</section>

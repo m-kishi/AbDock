@@ -1,0 +1,21 @@
+IMAGE:
+  - PNG: tab_expense_001.png
+    CAPTION: <%= cEXP_INFO %><%= cNASI %>
+  - PNG: tab_expense_002.png
+    CAPTION: <%= cEXP_INFO %><%= cARI %>
+
+OVERVIEW:
+  - <%= cEXP_INFO %>を登録する画面
+  - <%= lnMain %>の初期表示時に<%= lnDBFile %>から読み込んだ<%= cEXP_INFO %>を表示する．
+  - <%= cDB_FILE %>から読み込んだ<%= cEXP_INFO %>が0件の場合，支出DGVは0行とする．
+  - <%= cEXP_INFO %>を初期表示するとき，支出DGVは最終行までスクロールして，<%= cCOL_DATE %>列のセルを選択状態とする．
+
+DGV:
+  CAPTION  : 支出DGVの設定
+  ADD_ROW  : <%= cFUKA %>
+  DEL_ROW  : <%= cKANO %>
+  READONLY : <%= cBATU %>
+  SORTABLE : <%= cFUKA %>
+  COL_WIDTH: <%= cFUKA %>
+  SELECTION: <%= cSELECT_ROW %>
+  SCROLLBAR: <%= cSCROLL_VERTICAL %>

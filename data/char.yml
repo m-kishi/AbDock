@@ -1,64 +1,89 @@
-MARU: '○'
-BATU: '×'
+APP:
+  ABOOK: Abook
+  ABDAT: Abook.db
+  ABEXE: Abook.exe
+  EXP_INFO: 支出情報
+  DAT_FILE: DBファイル
+  EXE_FILE: EXEファイル
+ABOOK_DB:
+  LINE_CODE: LF
+  CHAR_CODE: UTF-8
+  HEAD_LINE: 出力しない
+  CSV_FIELD: 常にダブルクォートで囲む
+MENU:
+  FILE:
+    TEXT: ファイル
+    ICON: F
+  QUIT:
+    TEXT: 終了
+    ICON: Q
+  DATA:
+    TEXT: データ
+    ICON: D
+  ENGY:
+    TEXT: 光熱費
+    ICON: E
+  UPLD:
+    TEXT: アップロード
+    ICON: U
+  HELP:
+    TEXT: ヘルプ
+    ICON: H
+  VRSN:
+    TEXT: バージョン情報
+    ICON: A
+TAB:
+  EXPENSE: 支出
+  SUMMARY: 月次
+  GRAPHIC: 推移
+  BALANCE: 収支
+  PRIVATE: 秘密
+ENERGY:
+  EL: 電気代
+  GS: ガス代
+  WT: 水道代
+EXPENSE_TYPE:
+  EXP    : '*1'
+  PRV    : '*2'
+  SUM_EXP: '*3'
+  BLN_ERN: '*4'
+  BLN_EXP: '*5'
+CHAR:
+  MARU: ○
+  BATU: ×
+  ARI : あり
+  NASI: なし
+  KANO: 可能
+  FUKA: 不可
+CONTROL:
+  LBL: Label
+  BTN: Button
+  DGV: DataGridView
+  DGV_TXT: DataGridViewTextBoxColumn
+  MENU_STRP: MenuStrip
+  MENU_ITEM: MenuItem
+  CUSTOM:
+    AB_LBL : AbLabelControl
+    AB_HEAD: AbHeaderControl
+ATTRIBUTE:
+  NUM: 数値
+  STR: 文字列
+  FORM:
+    CENTER_SCREEN: 画面中央
+  GRID:
+    SELECT_ROW: 行選択
+    SELECT_CEL: セル選択
+    SCROLL_VERTICAL: 縦のみ
+  ALIGN:
+    LEFT  : 左
+    CENTER: 中
+    RRIGHT: 右
+FORMAT:
+  DATE:
+    MM: MM
+    YYYY_MM: YYYY年MM月
+    YYYY_MM_DD: YYYY-MM-DD
+  COST:
+    COMMA: Z,ZZ9
+    CURRENCY: 通貨形式(&yen;)
 
-AARI: 'あり'
-NASI: 'なし'
-
-KANO: '可能'
-FUKA: '不可'
-
-CENTER_SCREEN: '画面中央'
-
-SCROLL_VERTICAL: '縦のみ'
-
-BOOLT: 'True'
-BOOLF: 'False'
-
-SELECT_ROW: '行選択'
-SELECT_CEL: 'セル選択'
-
-ABOOK    : 'Abook'
-ABOOK_DB : 'Abook.db'
-ABOOK_EXE: 'Abook.exe'
-
-FMT_DT: 'YYYY-MM-DD'
-FMT_YM: 'YYYY年MM月'
-FMT_MM: 'MM'
-FMT_COMMA: 'カンマ編集'
-FMT_YM_PRV: 'YYYY-MM'
-FMT_CUR_YEN: '通貨形式(&yen;)'
-
-MENU_F: 'ファイル(F)'
-MENU_Q: '終了(Q)'
-MENU_D: 'データ(D)'
-MENU_E: '光熱費(E)'
-MENU_U: 'アップロード(U)'
-MENU_H: 'ヘルプ(H)'
-MENU_A: 'バージョン情報(A)'
-
-TYPE_EXP    : '*1'
-TYPE_PRV    : '*2'
-TYPE_SUM_EXP: '*3'
-TYPE_BLN_ERN: '*4'
-TYPE_BLN_EXP: '*5'
-
-LINE_CODE: 'LF'
-CHAR_CODE: 'UTF-8'
-CSV_FIELD: '常にダブルクォーテーションで囲む'
-
-ATTR_NUM: '数値'
-ATTR_STR: '文字列'
-
-ALIGN_L: '左'
-ALIGN_R: '右'
-ALIGN_C: '中央'
-
-TAB_EXPENSE: '支出'
-TAB_SUMMARY: '月次'
-TAB_GRAPHIC: 'グラフ'
-TAB_BALANCE: '収支'
-TAB_PRIVATE: '秘密'
-
-EL: '電気代'
-GS: 'ガス代'
-WT: '水道代'

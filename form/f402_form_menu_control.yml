@@ -1,0 +1,61 @@
+CONTROL:
+  - ID: MenuStrip
+    NAME: メニュー
+    TEXT:
+    ATTR:
+    ALGN:
+    TYPE: <%= cMENU_STRIP %>
+    NOTE:
+    CHILDREN:
+      - ID: MenuFile
+        NAME: <%= cFILE %>
+        TEXT: <%= cFILE! %>
+        ATTR:
+        ALGN:
+        TYPE: <%= cMENU_ITEM %>
+        NOTE:
+        CHILDREN:
+          - ID: MenuExit
+            NAME: <%= cQUIT %>
+            TEXT: <%= cQUIT! %>
+            ATTR:
+            ALGN:
+            TYPE: <%= cMENU_ITEM %>
+            NOTE:
+      - ID: MenuData
+        NAME: <%= cDATA %>
+        TEXT: <%= cDATA! %>
+        ATTR:
+        ALGN:
+        TYPE: <%= cMENU_ITEM %>
+        NOTE:
+        CHILDREN:
+          - ID: MenuEnergy
+            NAME: <%= cENGY %>
+            TEXT: <%= cENGY! %>
+            ATTR:
+            ALGN:
+            TYPE: <%= cMENU_ITEM %>
+            NOTE:
+          - ID: MenuUpload
+            NAME: <%= cUPLD %>
+            TEXT: <%= cUPLD! %>
+            ATTR:
+            ALGN:
+            TYPE: <%= cMENU_ITEM %>
+            NOTE:
+      - ID: MenuHelp
+        NAME: <%= cHELP %>
+        TEXT: <%= cHELP! %>
+        ATTR:
+        ALGN:
+        TYPE: <%= cMENU_ITEM %>
+        NOTE:
+        CHILDREN:
+          - ID: MenuVersion
+            NAME: <%= cVRSN %>
+            TEXT: <%= cVRSN! %>
+            ATTR:
+            ALGN:
+            TYPE: <%= cMENU_ITEM %>
+            NOTE:

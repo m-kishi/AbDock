@@ -1,0 +1,37 @@
+CONTROL:
+  - ID: DgvPrivate
+    NAME: 秘密DGV
+    TEXT:
+    ATTR:
+    ALGN:
+    TYPE: <%= cDGV %>
+    NOTE:
+    CHILDREN:
+      - ID: ColPrvDate
+        NAME: 年月列
+        TEXT: 年月
+        ATTR: <%= cSTR %>
+        ALGN: <%= cCENTER %>
+        TYPE: <%= cDGV_TEXT %>
+        NOTE: <%= cYYYY_MM %>
+      - ID: ColPrvName
+        NAME: 名称列
+        TEXT: 名称
+        ATTR: <%= cSTR %>
+        ALGN: <%= cLEFT %>
+        TYPE: <%= cDGV_TEXT %>
+        NOTE:
+      - ID: ColPrvCost
+        NAME: 金額列
+        TEXT: 金額
+        ATTR: <%= cNUM %>
+        ALGN: <%= cRIGHT %>
+        TYPE: <%= cDGV_TEXT %>
+        NOTE: <%= cCURRENCY %>
+      - ID: ColPrvBlnc
+        NAME: 収支列
+        TEXT: 収支
+        ATTR: <%= cNUM %>
+        ALGN: <%= cRIGHT %>
+        TYPE: <%= cDGV_TEXT %>
+        NOTE: <%= cCURRENCY %>

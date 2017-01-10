@@ -1,0 +1,87 @@
+CONTROL:
+  - ID: HeadGraphic
+    NAME: ヘッダコントロール
+    TEXT:
+    ATTR:
+    ALGN:
+    TYPE: <%= cAB_HEADER %>
+    NOTE:
+    CHILDREN:
+      - ID: LblTitle
+        NAME: タイトル
+        TEXT: <%= cYYYY_MM_JP %>
+        ATTR:
+        ALGN:
+        TYPE: <%= cLABEL %>
+        NOTE:
+      - ID: BtnPrevYear
+        NAME: 前年ボタン
+        TEXT: "&lt;&lt;"
+        ATTR:
+        ALGN:
+        TYPE: <%= cBUTTON %>
+        NOTE:
+      - ID: BtnPrevMonth
+        NAME: 前月ボタン
+        TEXT: "&lt;"
+        ATTR:
+        ALGN:
+        TYPE: <%= cBUTTON %>
+        NOTE:
+      - ID: BtnNextMonth
+        NAME: 翌月ボタン
+        TEXT: "&gt;&gt;"
+        ATTR:
+        ALGN:
+        TYPE: <%= cBUTTON %>
+        NOTE:
+      - ID: BtnNextYear
+        NAME: 翌年ボタン
+        TEXT: "&gt;"
+        ATTR:
+        ALGN:
+        TYPE: <%= cBUTTON %>
+        NOTE:
+<% graphic_legend.each do |k, v| %>
+  - ID: LblLine<%= v[:color_en] %>
+    NAME: 凡例線(<%= v[:type] %>)
+    TEXT: "--"
+    ATTR: <%= cSTR %>
+    ALGN: <%= cLEFT %>
+    TYPE: <%= cLABEL %>
+    NOTE: 文字色：<%= v[:color_jp] %>
+  - ID: LblLine<%= k.to_s.capitalize %>
+    NAME: 凡例名(<%= v[:type] %>)
+    TEXT: <%= v[:type] %>
+    ATTR: <%= cSTR %>
+    ALGN: <%= cLEFT %>
+    TYPE: <%= cLABEL %>
+    NOTE:
+<% end %>
+  - ID: PboxGraph
+    NAME: グラフ描画領域
+    TEXT:
+    ATTR:
+    ALGN:
+    TYPE: <%= cPICTURE_BOX %>
+    NOTE:
+<% (1..6).each do |i| %>
+  - ID: LblX<%= i %>
+    NAME: 横軸ラベル<%= i %>
+    TEXT: <%= if i==6 then "現在表示月" else "現在表示月-#{12-(2*i)}ヶ月" end %>
+    ATTR: <%= cSTR %>
+    ALGN: <%= cLEFT %>
+    TYPE: <%= cLABEL %>
+    NOTE:
+<% end %>
+<%# YAMLをロードするときになぜか&yen;のところでパースラーとなるため，%>
+<%# 確実に文字列として扱ってもらうために以下のように記述している %>
+<% [{ key: 5000, text: '"&yen;5,000"' }, { key: 10000, text: '"&yen;10,000"' }].each.with_index(1) do |h, i| %>
+  - ID: LblYen<%= h[:key] %>
+    NAME: 縦軸ラベル<%= i %>
+    TEXT: <%= h[:text] %>
+    ATTR: <%= cSTR %>
+    ALGN: <%= cRIGHT %>
+    TYPE: <%= cLABEL %>
+    NOTE:
+<% end %>

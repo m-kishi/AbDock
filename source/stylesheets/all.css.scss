@@ -156,8 +156,14 @@ table.general {
     text-align: left;
     background-color: $table-th-color;
   }
+  th.no-s {
+    width: 30px;
+  }
   td {
     border: 1px dotted #000000;
+  }
+  td.no-s {
+    text-align: center;
   }
 }
 
@@ -180,6 +186,10 @@ table.csv-format {
 figure.transition {
   margin-top: 30px;
   margin-left: 30px;
+}
+
+table.layout {
+  width: 100%;
 }
 
 table.controls {
@@ -222,6 +232,7 @@ table.form-property {
   width: 100%;
   border: 1px solid #000000;
   border-collapse: collapse;
+  margin-bottom: 1em;
   th {
     width: 160px;
     border: 1px solid #000000;
@@ -310,13 +321,23 @@ table.message {
   margin-top: 16px;
   border: 1px solid #000000;
   border-collapse: collapse;
+  tr.fragment {
+    color: red;
+  }
   th {
     border: 1px solid #000000;
     text-align: left;
     background-color: $table-th-color;
   }
+  th.no {
+    width: 30px;
+  }
   td {
     border: 1px dotted #000000;
+  }
+  td.no {
+    width: 30px;
+    text-align: center;
   }
 }
 
@@ -332,16 +353,23 @@ dl.event {
     margin-left: 15px;
     margin-bottom: 15px;
   }
-}
+  ul.description {
+    list-style-type: circle;
+    -webkit-margin-after: 0;
+    -webkit-margin-before: 0;
+    -webkit-padding-start: 18px;
+  }
+  ul.event {
+    list-style-type: none;
+    margin-top: 10px;
+    margin-left: -30px;
+    margin-bottom: 10px;
+  }
 
-ul.event {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-ol.event {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  ol.event {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
 }
 
 table.event {
@@ -352,6 +380,26 @@ table.event {
   }
   .small {
     width: 80%;
+  }
+}
+
+table.db-file-load-error {
+  width: 100%;
+  border: 1px solid #000000;
+  th {
+    border: 1px solid #000000;
+    text-align: left;
+    background-color: $table-th-color;
+  }
+  th.no {
+    width: 30px;
+  }
+  td {
+    border: 1px solid #000000;
+  }
+  td.no {
+    width: 30px;
+    text-align: center;
   }
 }
 
@@ -373,16 +421,36 @@ table.input-error {
   }
 }
 
+table.db-file-store-error {
+  width: 100%;
+  border: 1px solid #000000;
+  th {
+    border: 1px solid #000000;
+    text-align: left;
+    background-color: $table-th-color;
+  }
+  th.no {
+    width: 30px;
+  }
+  td {
+    border: 1px solid #000000;
+  }
+  td.no {
+    width: 30px;
+    text-align: center;
+  }
+}
+
 table.auto-complete {
   width: 100%;
   margin-top: 10px;
   td {
     width: 50%;
-    text-align: center;
+    text-align: left;
     padding-bottom: 16px;
   }
   .small {
-    width: 80%;
+    width: 90%;
   }
 }
 
@@ -395,8 +463,14 @@ table.summary {
     text-align: left;
     background-color: $table-th-color;
   }
+  th.no {
+    width: 30px;
+  }
   td {
     border: 1px dotted #000000;
+  }
+  td.no {
+    text-align: center;
   }
   td.type {
     width: 80px;
@@ -421,8 +495,37 @@ table.balance {
     text-align: left;
     background-color: $table-th-color;
   }
+  th.no {
+    width: 30px;
+    text-align: center;
+  }
   td {
     border: 1px dotted #000000;
+  }
+  td.no {
+    text-align: center;
+  }
+}
+
+table.balance-check-error {
+  width: 100%;
+  border: 1px solid #000000;
+  border-collapse: collapse;
+  margin-bottom: 10px;
+  th {
+    border: 1px solid #000000;
+    text-align: left;
+    background-color: $table-th-color;
+  }
+  th.no {
+    width: 30px;
+    text-align: center;
+  }
+  td {
+    border: 1px dotted #000000;
+  }
+  td.no {
+    text-align: center;
   }
 }
 
@@ -436,8 +539,106 @@ table.private {
     text-align: left;
     background-color: $table-th-color;
   }
+  th.no {
+    width: 30px;
+    text-align: center;
+  }
   td {
     border: 1px dotted #000000;
+  }
+  td.no {
+    text-align: center;
+  }
+}
+
+table.private-check-error {
+  width: 100%;
+  border: 1px solid #000000;
+  border-collapse: collapse;
+  margin-bottom: 10px;
+  th {
+    border: 1px solid #000000;
+    text-align: left;
+    background-color: $table-th-color;
+  }
+  th.no {
+    width: 30px;
+    text-align: center;
+  }
+  td {
+    border: 1px dotted #000000;
+  }
+  td.no {
+    text-align: center;
+  }
+}
+
+table.upload-check-error {
+  width: 100%;
+  border: 1px solid #000000;
+  border-collapse: collapse;
+  margin-bottom: 10px;
+  th {
+    border: 1px solid #000000;
+    text-align: left;
+    background-color: $table-th-color;
+  }
+  th.no {
+    width: 30px;
+    text-align: center;
+  }
+  td {
+    border: 1px dotted #000000;
+  }
+  td.no {
+    text-align: center;
+  }
+}
+
+table.upload-view-change {
+  border: 1px solid #000000;
+  margin-bottom: 10px;
+  th {
+    border: 1px solid #000000;
+    text-align: left;
+    background-color: $table-th-color;
+  }
+  th.no {
+    width: 30px;
+    text-align: center;
+  }
+  td {
+    border: 1px dotted #000000;
+  }
+  td.no {
+    text-align: center;
+  }
+}
+
+table.upload-server-error {
+  width: 100%;
+  border: 1px solid #000000;
+  margin-bottom: 10px;
+  th {
+    border: 1px solid #000000;
+    text-align: left;
+    background-color: $table-th-color;
+  }
+  td.message {
+    border: 1px solid #000000;
+  }
+  td.example {
+    border-style: none none none none;
+  }
+  td.example-img {
+  }
+}
+
+table.upload-server-error-example {
+  width: 100%;
+  margin-bottom: 10px;
+  td {
+    text-align: center;
   }
 }
 
@@ -453,5 +654,18 @@ table.version-setting {
   td {
     border: 1px dotted #000000;
   }
+}
+
+a.type-description:link {
+  color: black;
+  font-weight: normal;
+}
+a.type-description:visited {
+  color: black;
+  font-weight: normal;
+}
+a.type-description:hover {
+  color: black;
+  font-weight: normal;
 }
 

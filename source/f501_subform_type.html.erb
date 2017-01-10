@@ -1,0 +1,35 @@
+---
+header_title: 画面設計
+layouts: f501_subform_type_layouts.yml
+control: f501_subform_type_control.yml
+---
+<h1>【<%= fF501 %>】</h1>
+<% form_layouts = load_form_data(current_page.data.layouts) %>
+<% form_control = load_form_data(current_page.data.control) %>
+
+<%# レイアウト %>
+<section>
+  <%= partial 'flayouts', locals: { form: form_layouts } %>
+</section>
+
+<%# 画面項目 %>
+<section>
+  <%= partial 'fcontrol', locals: { form: form_control } %>
+</section>
+
+<%# イベント %>
+<section>
+  <h2>イベント</h2>
+  <dl class="event">
+    <dt>初期表示</dt>
+    <dd>
+      <ul class="description">
+        <li><%= lnDBFile %>から<%= cEXP_INFO %>を読み込み，<%= lnSummary %>で選択された年月と<%= cCOL_TYPE %>で絞り込む．</li>
+        <li>絞り込んだ<%= cEXP_INFO %>を支出DGVへ表示する．<br /></li>
+        <li>絞り込んだ<%= cEXP_INFO %>が0件の場合，支出DGVは0行とする．<br /></li>
+        <li>支出DGVの1行目を選択状態とする．<br /></li>
+        <li><%= cDB_FILE %>の読み込みに失敗した場合，エラーダイアログを表示してフォームを閉じる(エラーダイアログは<%= lnForm :F401_MAIN %>の初期表示と同様)．</li>
+      </ul>
+    </dd>
+  </dl>
+</section>

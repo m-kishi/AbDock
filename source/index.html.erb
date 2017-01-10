@@ -1,27 +1,21 @@
 ---
 title: Abook 設計書
 header_title: 設計書
-header_project: project.mk
-header_appname: Abook
-header_subname:
 ---
 <h1>【<%= current_page.data.title%>】</h1>
 
 <h2>機能設計</h2>
 <ol>
-  <li><%= link_general    %></li>
-  <li><%= link_dbfile     %></li>
-  <li><%= link_transition %></li>
-  <li>画面設計</li>
+  <li><%= lnGeneral    %></li>
+  <li><%= lnDBFile     %></li>
+  <li><%= lnTransition %></li>
+  <li><%= lnForm '画面設計', :F401_MAIN %></li>
   <ul>
-    <% data.form.keys.each do |k| %>
-      <li><%= form_link k %></li>
+    <% data.form.keys.each do |key| %>
+      <li><%= lnForm key %></li>
     <% end %>
   </ul>
-  <li><%= link_type '一覧' %></li>
-  <li><%= link_message     %></li>
+  <li><%= lnType '一覧' %></li>
+  <li><%= lnMessagePage %></li>
 </ol>
 
-<!--
-<h2>技術設計</h2>
--->

@@ -1,0 +1,19 @@
+IMAGE:
+  - PNG: subform_uploads_001.png
+    CAPTION: アップロード画面
+  - PNG: subform_uploads_002.png
+    CAPTION: アップロード中の表示
+
+OVERVIEW:
+  - <%= cEXP_INFO %>をAbShipへアップロードする
+  - 現在実験中の機能であり今後のバージョンアップでは削除される可能性がある
+
+PROPERTY:
+  ICON: <%= cNASI %>
+  TITLE: アップロード
+  SIZABLE: <%= cFUKA %>
+  MINIMUM: <%= cFUKA %>
+  MAXIMUM: <%= cFUKA %>
+  SCREEN_SIZE: (252, 96)
+  START_POSITION: <%= cCENTER_SCREEN %>
+  SHOW_IN_TASKBAR: <%= cNASI %>
