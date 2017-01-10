@@ -1,0 +1,43 @@
+CONTROL:
+  - ID: TabControl
+    NAME: タブコントロール
+    TEXT:
+    ATTR:
+    ALGN:
+    TYPE: <%= cTAB %>
+    NOTE:
+    CHILDREN:
+<% { EL: cEL, GS: cGS, WT: cWT }.each do |k, v| %>
+      - ID: Tab<%= k.to_s.capitalize %>
+        NAME: <%= v %>タブ
+        TEXT: <%= v %>
+        ATTR:
+        ALGN:
+        TYPE: <%= cTAB_PAGE %>
+        NOTE:
+        CHILDREN:
+          - ID: Dgv<%= k.to_s.capitalize %>
+            NAME: <%= v %>DGV
+            TEXT:
+            ATTR:
+            ALGN:
+            TYPE: <%= cDGV %>
+            NOTE:
+            CHILDREN:
+              - ID: Col<%= k.to_s.capitalize %>Yr
+                NAME: 年度列
+                TEXT: 年度
+                ATTR: <%= cNUM %>
+                ALGN: <%= cCENTER %>
+                TYPE: <%= cDGV_TEXT %>
+                NOTE:
+  <% (4..12).to_a.concat((1..3).to_a).each do |m| %>
+              - ID: Col<%= k.to_s.capitalize %><%= format('%02d', m) %>
+                NAME: <%= m %>月列
+                TEXT: <%= m %>月
+                ATTR: <%= cNUM %>
+                ALGN: <%= cRIGHT %>
+                TYPE: <%= cDGV_TEXT %>
+                NOTE: <%= cCURRENCY %>
+  <% end %>
+<% end %>

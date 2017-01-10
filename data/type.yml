@@ -1,0 +1,171 @@
+FOOD:
+  NAME: 食費
+  EXPENSE: true
+  PRIVATE: false
+  SUMMARY_EXP: true
+  BALANCE_ERN: false
+  BALANCE_EXP: true
+  SHOW_IN_SUM: true
+  DESCRIPTION: 主に家庭内で消費する食料品に関する支出．食料，飲料，調味料など．
+OTFD:
+  NAME: 外食費
+  EXPENSE: true
+  PRIVATE: false
+  SUMMARY_EXP: true
+  BALANCE_ERN: false
+  BALANCE_EXP: true
+  SHOW_IN_SUM: true
+  DESCRIPTION: 外食に関する支出．飲み会なら交際費だったり旅行中なら遊行費だったり，より適切な種別の場合はそちらへ．
+GOOD:
+  NAME: 雑貨
+  EXPENSE: true
+  PRIVATE: false
+  SUMMARY_EXP: true
+  BALANCE_ERN: false
+  BALANCE_EXP: true
+  SHOW_IN_SUM: true
+  DESCRIPTION: 他の種別へ分類することが難しい雑多な支出．洗剤などの日用品，ノートなどの文房具，散髪など．食器や調理器具もこの種別．
+FRND:
+  NAME: 交際費
+  EXPENSE: true
+  PRIVATE: false
+  SUMMARY_EXP: true
+  BALANCE_ERN: false
+  BALANCE_EXP: true
+  SHOW_IN_SUM: true
+  DESCRIPTION: 建前上での人付き合いに関する支出．会社の飲み会やイベントの参加費など．
+TRFC:
+  NAME: 交通費
+  EXPENSE: true
+  PRIVATE: false
+  SUMMARY_EXP: true
+  BALANCE_ERN: false
+  BALANCE_EXP: true
+  SHOW_IN_SUM: true
+  DESCRIPTION: 交通機関の料金の支出．電車やバス，駐車代など．
+PLAY:
+  NAME: 遊行費
+  EXPENSE: true
+  PRIVATE: false
+  SUMMARY_EXP: true
+  BALANCE_ERN: false
+  BALANCE_EXP: true
+  SHOW_IN_SUM: true
+  DESCRIPTION: 純粋な浪費の場合の支出．友人との飲み会や旅行など．
+HOUS:
+  NAME: 家賃
+  EXPENSE: true
+  PRIVATE: false
+  SUMMARY_EXP: true
+  BALANCE_ERN: false
+  BALANCE_EXP: true
+  SHOW_IN_SUM: true
+  DESCRIPTION: 住居に関する毎月の支出．賃貸なら毎月の家賃．持ち家ならローンなど．
+ENGY:
+  NAME: 光熱費
+  EXPENSE: true
+  PRIVATE: false
+  SUMMARY_EXP: true
+  BALANCE_ERN: false
+  BALANCE_EXP: true
+  SHOW_IN_SUM: true
+  DESCRIPTION: 毎月の光熱費に関する支出．主に電気代，ガス代，水道代．
+CNCT:
+  NAME: 通信費
+  EXPENSE: true
+  PRIVATE: false
+  SUMMARY_EXP: true
+  BALANCE_ERN: false
+  BALANCE_EXP: true
+  SHOW_IN_SUM: true
+  DESCRIPTION: 通信に関する支出．携帯電話，スマートフォン，インターネット回線の使用料など．
+MEDI:
+  NAME: 医療費
+  EXPENSE: true
+  PRIVATE: false
+  SUMMARY_EXP: true
+  BALANCE_ERN: false
+  BALANCE_EXP: true
+  SHOW_IN_SUM: true
+  DESCRIPTION: 病院での診察料や薬などに関する支出．歯科検診や健康診断も含まれる．
+INSU:
+  NAME: 保険料
+  EXPENSE: true
+  PRIVATE: false
+  SUMMARY_EXP: true
+  BALANCE_ERN: false
+  BALANCE_EXP: true
+  SHOW_IN_SUM: true
+  DESCRIPTION: 各種保険に関する支出．医療保険，生命保険など．
+OTHR:
+  NAME: その他
+  EXPENSE: true
+  PRIVATE: false
+  SUMMARY_EXP: true
+  BALANCE_ERN: false
+  BALANCE_EXP: true
+  SHOW_IN_SUM: true
+  DESCRIPTION: どの種別にも含まれないような支出．例えば，毎月の家賃の振込手数料など．
+EARN:
+  NAME: 収入
+  EXPENSE: true
+  PRIVATE: false
+  SUMMARY_EXP: false
+  BALANCE_ERN: true
+  BALANCE_EXP: false
+  SHOW_IN_SUM: false
+  DESCRIPTION: 毎月ごとに継続して得られる収入．給料．
+TTAL:
+  NAME: 合計
+  EXPENSE: false
+  PRIVATE: false
+  SUMMARY_EXP: false
+  BALANCE_ERN: false
+  BALANCE_EXP: false
+  SHOW_IN_SUM: true
+  DESCRIPTION: 月ごとの支出の合計．その月の種別※3の合計がこの値となる．
+BLNC:
+  NAME: 収支
+  EXPENSE: false
+  PRIVATE: false
+  SUMMARY_EXP: false
+  BALANCE_ERN: false
+  BALANCE_EXP: false
+  SHOW_IN_SUM: true
+  DESCRIPTION: 月ごとの収支．その月の「支出の合計 - 収入の合計」がこの値となる．
+BNUS:
+  NAME: 特入
+  EXPENSE: true
+  PRIVATE: false
+  SUMMARY_EXP: false
+  BALANCE_ERN: true
+  BALANCE_EXP: false
+  SHOW_IN_SUM: false
+  DESCRIPTION: 収入のうち不定期だったり，極端に金額が大きかったりするもの．ボーナスなど．これらが通常の収入に含まれると月単位での収支の把握が難しくなるため，この種別にて分ける．特入は年単位の収支に計上される．
+SPCL:
+  NAME: 特出
+  EXPENSE: true
+  PRIVATE: false
+  SUMMARY_EXP: false
+  BALANCE_ERN: false
+  BALANCE_EXP: true
+  SHOW_IN_SUM: false
+  DESCRIPTION: 滅多に発生せず，それなりに金額が大きい支出．特入と同様にこれらが月単位の支出に含まれるとその月の収支の把握が難しくなる．特出は年単位の収支に計上される．
+PRVI:
+  NAME: 秘密入
+  EXPENSE: true
+  PRIVATE: true
+  SUMMARY_EXP: false
+  BALANCE_ERN: false
+  BALANCE_EXP: false
+  SHOW_IN_SUM: false
+  DESCRIPTION: 通常の家計管理とは別で扱いたい収入．小遣いなど．
+PRVO:
+  NAME: 秘密出
+  EXPENSE: true
+  PRIVATE: true
+  SUMMARY_EXP: false
+  BALANCE_ERN: false
+  BALANCE_EXP: false
+  SHOW_IN_SUM: false
+  DESCRIPTION: 通常の家計管理とは別で扱いたい支出．小遣いを使っての買い物など．

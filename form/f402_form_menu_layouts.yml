@@ -1,0 +1,14 @@
+IMAGE:
+  - PNG: menu_001.png
+    CAPTION: メニュー
+  - PNG: menu_002.png
+    CAPTION: <%= cFILE! %>
+  - PNG: menu_003.png
+    CAPTION: <%= cDATA! %>
+  - PNG: menu_004.png
+    CAPTION: <%= cHELP! %>
+
+OVERVIEW:
+  - フォーム上部にメニューを表示する．
+  - メニューに応じたサブメニューを展開する．
+  - 選択されたサブメニューごとにそれぞれの処理を行う．

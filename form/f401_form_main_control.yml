@@ -1,0 +1,51 @@
+CONTROL:
+  - ID: MenuStrip
+    NAME: <%= lnMenu %>
+    TEXT:
+    ATTR:
+    ALGN:
+    TYPE: <%= cMENU_STRIP %>
+    NOTE:
+  - ID: TabControl
+    NAME: タブコントロール
+    TEXT:
+    ATTR:
+    ALGN:
+    TYPE: <%= cTAB %>
+    NOTE:
+    CHILDREN:
+      - ID: TabExpense
+        NAME: <%= lnExpense %>
+        TEXT: <%= cEXPENSE %>
+        ATTR:
+        ALGN:
+        TYPE: <%= cTAB_PAGE %>
+        NOTE:
+      - ID: TabSummary
+        NAME: <%= lnSummary %>
+        TEXT: <%= cSUMMARY %>
+        ATTR:
+        ALGN:
+        TYPE: <%= cTAB_PAGE %>
+        NOTE:
+      - ID: TabGraphic
+        NAME: <%= lnGraphic %>
+        TEXT: <%= cGRAPHIC %>
+        ATTR:
+        ALGN:
+        TYPE: <%= cTAB_PAGE %>
+        NOTE:
+      - ID: TabBalance
+        NAME: <%= lnBalance %>
+        TEXT: <%= cBALANCE %>
+        ATTR:
+        ALGN:
+        TYPE: <%= cTAB_PAGE %>
+        NOTE:
+      - ID: TabPrivate
+        NAME: <%= lnPrivate %>
+        TEXT: <%= cPRIVATE %>
+        ATTR:
+        ALGN:
+        TYPE: <%= cTAB_PAGE %>
+        NOTE:

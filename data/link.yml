@@ -1,0 +1,5 @@
+F100_GENERAL   : '/f100_general.html'
+F200_DBFILE    : '/f200_dbfile.html'
+F300_TRANSITION: '/f300_transition.html'
+F600_TYPE      : '/f600_type_define.html'
+F700_MESSAGE   : '/f700_message_list.html'

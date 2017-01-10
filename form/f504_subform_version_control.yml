@@ -1,0 +1,43 @@
+CONTROL:
+  - ID: PboxIcon
+    NAME: アプリアイコン
+    TEXT:
+    ATTR:
+    ALGN:
+    TYPE: <%= cPICTURE_BOX %>
+    NOTE:
+  - ID: LblProduct
+    NAME: 製品名
+    TEXT: Account Book
+    ATTR:
+    ALGN: <%= cLEFT %>
+    TYPE: <%= cLABEL %>
+    NOTE:
+  - ID: LblVersion
+    NAME: バージョン
+    TEXT: Version 5.5.1
+    ATTR:
+    ALGN: <%= cLEFT %>
+    TYPE: <%= cLABEL %>
+    NOTE:
+  - ID: LblCopyright
+    NAME: コピーライト
+    TEXT: Copyright @ 2010-2016 m-kishi
+    ATTR:
+    ALGN: <%= cLEFT %>
+    TYPE: <%= cLABEL %>
+    NOTE:
+  - ID: LblDescription
+    NAME: 詳細情報
+    TEXT: This is my account book application.
+    ATTR:
+    ALGN: <%= cLEFT %>
+    TYPE: <%= cLABEL %>
+    NOTE:
+  - ID: BtnOK
+    NAME: OKボタン
+    TEXT: OK
+    ATTR:
+    ALGN:
+    TYPE: <%= cBUTTON %>
+    NOTE:

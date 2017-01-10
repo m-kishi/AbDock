@@ -1,0 +1,89 @@
+APP:
+  ABOOK: Abook
+  ABDAT: Abook.db
+  ABEXE: Abook.exe
+  EXP_INFO: 支出情報
+  DAT_FILE: DBファイル
+  EXE_FILE: EXEファイル
+ABOOK_DB:
+  LINE_CODE: LF
+  CHAR_CODE: UTF-8
+  HEAD_LINE: 出力しない
+  CSV_FIELD: 常にダブルクォートで囲む
+MENU:
+  FILE:
+    TEXT: ファイル
+    ICON: F
+  QUIT:
+    TEXT: 終了
+    ICON: Q
+  DATA:
+    TEXT: データ
+    ICON: D
+  ENGY:
+    TEXT: 光熱費
+    ICON: E
+  UPLD:
+    TEXT: アップロード
+    ICON: U
+  HELP:
+    TEXT: ヘルプ
+    ICON: H
+  VRSN:
+    TEXT: バージョン情報
+    ICON: A
+TAB:
+  EXPENSE: 支出
+  SUMMARY: 月次
+  GRAPHIC: 推移
+  BALANCE: 収支
+  PRIVATE: 秘密
+ENERGY:
+  EL: 電気代
+  GS: ガス代
+  WT: 水道代
+EXPENSE_TYPE:
+  EXP    : '*1'
+  PRV    : '*2'
+  SUM_EXP: '*3'
+  BLN_ERN: '*4'
+  BLN_EXP: '*5'
+CHAR:
+  MARU: ○
+  BATU: ×
+  ARI : あり
+  NASI: なし
+  KANO: 可能
+  FUKA: 不可
+CONTROL:
+  LBL: Label
+  BTN: Button
+  DGV: DataGridView
+  DGV_TXT: DataGridViewTextBoxColumn
+  MENU_STRP: MenuStrip
+  MENU_ITEM: MenuItem
+  CUSTOM:
+    AB_LBL : AbLabelControl
+    AB_HEAD: AbHeaderControl
+ATTRIBUTE:
+  NUM: 数値
+  STR: 文字列
+  FORM:
+    CENTER_SCREEN: 画面中央
+  GRID:
+    SELECT_ROW: 行選択
+    SELECT_CEL: セル選択
+    SCROLL_VERTICAL: 縦のみ
+  ALIGN:
+    LEFT  : 左
+    CENTER: 中
+    RRIGHT: 右
+FORMAT:
+  DATE:
+    MM: MM
+    YYYY_MM: YYYY年MM月
+    YYYY_MM_DD: YYYY-MM-DD
+  COST:
+    COMMA: Z,ZZ9
+    CURRENCY: 通貨形式(&yen;)
+

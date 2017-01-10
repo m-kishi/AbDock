@@ -1,0 +1,51 @@
+CONTROL:
+  - ID: BtnEntry
+    NAME: 登録ボタン
+    TEXT: 登録
+    ATTR:
+    ALGN:
+    TYPE: <%= cBUTTON %>
+    NOTE:
+  - ID: BtnAddRow
+    NAME: 追加ボタン
+    TEXT: ＋
+    ATTR:
+    ALGN:
+    TYPE: <%= cBUTTON %>
+    NOTE:
+  - ID: DgvExpense
+    NAME: 支出DGV
+    TEXT:
+    ATTR:
+    ALGN:
+    TYPE: <%= cDGV %>
+    NOTE:
+    CHILDREN:
+      - ID: ColDate
+        NAME: <%= cCOL_DATE %>列
+        TEXT: <%= cCOL_DATE %>
+        ATTR: <%= cSTR %>
+        ALGN: <%= cLEFT %>
+        TYPE: <%= cDGV_TEXT %>
+        NOTE: <%= cYYYY_MM_DD %>
+      - ID: ColName
+        NAME: <%= cCOL_NAME %>列
+        TEXT: <%= cCOL_NAME %>
+        ATTR: <%= cSTR %>
+        ALGN: <%= cLEFT %>
+        TYPE: <%= cDGV_TEXT %>
+        NOTE:
+      - ID: ColType
+        NAME: <%= cCOL_TYPE %>列
+        TEXT: <%= cCOL_TYPE %>
+        ATTR: <%= cSTR %>
+        ALGN: <%= cCENTER %>
+        TYPE: <%= cDGV_TEXT %>
+        NOTE: <%= lnType cEXP_TYPE_EXP %>のみ
+      - ID: ColCost
+        NAME: <%= cCOL_COST %>列
+        TEXT: <%= cCOL_COST %>
+        ATTR: <%= cNUM %>
+        ALGN: <%= cRIGHT %>
+        TYPE: <%= cDGV_TEXT %>
+        NOTE: <%= cCOMMA %>

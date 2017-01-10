@@ -1,0 +1,70 @@
+DATE_NULL:
+  MSG: '日付がありません。'
+NAME_NULL:
+  MSG: '名称がありません。'
+TYPE_NULL:
+  MSG: '種別がありません。'
+COST_NULL:
+  MSG: '金額がありません。'
+TYPE_WRONG:
+  MSG: '種別が正しくありません。'
+COST_MINUS:
+  MSG: '金額がマイナスです。'
+DATE_FORMAT:
+  MSG: '日付が正しくありません。'
+COST_FORMAT:
+  MSG: '金額が正しくありません。'
+COST_OVERFLOW:
+  MSG: '金額が大き過ぎます。'
+CSV_NULL:
+  MSG: 'CSVファイルがありません。'
+CSV_LOAD:
+  MSG: '{0} 行目: {1}'
+  ARG:
+    - '{0}:行番号'
+    - '{1}:エラーメッセージ'
+CSV_STORE:
+  MSG: '{0} 行目: {1}'
+  ARG:
+    - '{0}:行番号'
+    - '{1}:エラーメッセージ'
+CSV_CREATE:
+  MSG: 'CSVファイルの作成に失敗しました。'
+CSV_FIELD_LESS:
+  MSG: 'フィールド数が少ないです。'
+CSV_FIELD_MORE:
+  MSG: 'フィールド数が多いです。'
+CSV_RECORD_NOTHING:
+  MSG: '登録するデータがありません。'
+EXPENSE_NULL:
+  MSG: '支出情報がありません。'
+EXPENSES_NULL:
+  MSG: '支出情報リストがありません。'
+SUMMARIES_NULL:
+  MSG: '集計値リストがありません。'
+YEAR_MINUS:
+  MSG: '年度がマイナスです。'
+EARN_MINUS:
+  MSG: '収入がマイナスです。'
+EXPENSE_MINUS:
+  MSG: '支出がマイナスです。'
+SPECIAL_MINUS:
+  MSG: '特出がマイナスです。'
+BALANCE_INCORRECT:
+  MSG: '収支が合いません。'
+TYPE_PRIVATE_ERR:
+  MSG: '種別が正しくありません。'
+MAIL_NULL:
+  MSG: 'MAILを入力してください。'
+PASS_NULL:
+  MSG: 'PASSを入力してください。'
+LOGIN_NULL:
+  MSG: 'ログインURLがありません。'
+UPLOAD_NULL:
+  MSG: 'アップロードURLがありません。'
+DB_DOES_NOT_EXIST:
+  MSG: 'DBファイルが見つかりませんでした。'
+UPD_REQ_FAILED:
+  MSG: 'サーバへのアップロードに失敗しました。'
+UPD_RECORD_NOTHING:
+  MSG: 'アップロードするデータがありません。'

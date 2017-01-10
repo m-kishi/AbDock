@@ -1,0 +1,11 @@
+MESSAGE:
+  - ID: YEAR_MINUS
+    TERM: 年度がマイナス
+  - ID: EARN_MINUS
+    TERM: 収入がマイナス
+  - ID: EXPENSE_MINUS
+    TERM: 支出がマイナス
+  - ID: SPECIAL_MINUS
+    TERM: 特出がマイナス
+  - ID: BALANCE_INCORRECT
+    TERM: 収支が正しくない[収入 - (支出 + 特出) != 収支]

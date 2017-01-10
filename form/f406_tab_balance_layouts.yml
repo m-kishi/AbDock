@@ -1,0 +1,21 @@
+IMAGE:
+  - PNG: tab_balance_001.png
+    CAPTION: <%= cEXP_INFO %><%= cNASI %>
+  - PNG: tab_balance_002.png
+    CAPTION: <%= cEXP_INFO %><%= cARI %>
+
+OVERVIEW:
+  - 年度の収支を表示する画面
+  - 年度とはその年の4月〜翌年の3月までをいう．<br />例) 2016年度は2016年4月〜2017年3月
+  - 該当年度の<%= cEXP_INFO %>が存在しない場合，その年度の収支は表示しない．
+  - 年度の収支が1行でも存在する場合，収支DGVの末尾に合計行を表示する(年度は9999とする)．
+
+DGV:
+  CAPTION  : 収支DGVの設定
+  ADD_ROW  : <%= cFUKA %>
+  DEL_ROW  : <%= cFUKA %>
+  READONLY : <%= cMARU %>
+  SORTABLE : <%= cFUKA %>
+  COL_WIDTH: <%= cFUKA %>
+  SELECTION: <%= cSELECT_ROW %>
+  SCROLLBAR: <%= cSCROLL_VERTICAL %>

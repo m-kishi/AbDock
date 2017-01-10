@@ -1,10 +1,21 @@
 ---
-title: Welcome to Middleman
+title: Abook 設計書
+header_title: 設計書
 ---
+<h1>【<%= current_page.data.title%>】</h1>
 
-<div class="welcome">
-  <h1>Middleman is Watching</h1>
-  <p class="doc">
-    <%= link_to "Read Online Documentation", "http://middlemanapp.com/" %>
-  </p><!-- .doc -->
-</div><!-- .welcome -->
+<h2>機能設計</h2>
+<ol>
+  <li><%= lnGeneral    %></li>
+  <li><%= lnDBFile     %></li>
+  <li><%= lnTransition %></li>
+  <li><%= lnForm '画面設計', :F401_MAIN %></li>
+  <ul>
+    <% data.form.keys.each do |key| %>
+      <li><%= lnForm key %></li>
+    <% end %>
+  </ul>
+  <li><%= lnType '一覧' %></li>
+  <li><%= lnMessagePage %></li>
+</ol>
+

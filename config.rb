@@ -41,17 +41,25 @@ configure :development do
 end
 
 # Methods defined in the helpers block are available in templates
-# helpers do
-#   def some_helper
-#     "Helping"
-#   end
-# end
+helpers do
+
+  #==================================================
+  # 設計情報ファイル読み込み
+  #==================================================
+  def load_form_data(yml)
+    path = Pathname.new(Middleman::Application.root_path).join(config[:form_dir]).join(yml)
+    Middleman::Util.recursively_enhance(YAML.load(ERB.new(File.read(path)).result(binding)))
+  end
+
+end
 
 set :css_dir, 'stylesheets'
 
 set :js_dir, 'javascripts'
 
 set :images_dir, 'images'
+
+set :form_dir, 'form'
 
 # Build-specific configuration
 configure :build do
