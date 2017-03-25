@@ -113,10 +113,12 @@ several: f403_tab_expense_several.yml
     <dt>支出DGVのセル編集終了(CellEndEdit)</dt>
     <dd>
       <ul class="description">
-        <li>編集したセルが<%= cCOL_NAME %>列ならば，<%= cCOL_TYPE %>の自動補完を行う．</li>
+        <li>編集したセルが<%= cCOL_NAME %>列ならば，<%= cCOL_TYPE %>と<%= cCOL_COST %>の自動補完を行う．</li>
+        <li>編集したセルが<%= cCOL_TYPE %>列ならば，<%= cCOL_COST %>の自動補完を行う．</li>
         <li>入力された<%= cCOL_NAME %>が既に<%= cEXP_INFO %>に登録されているなら，<%= cCOL_TYPE %>もそれと同じだろうという推測に基づく．</li>
+        <li>金額は<%= cCOL_NAME %>と<%= cCOL_TYPE %>の組み合せで直近3件の金額のどれかの可能性が高いだろうという推測に基づく．</li>
         <li>
-          具体的な補完手順は以下の通り．
+          <%= cCOL_TYPE %>の具体的な補完手順は以下の通り．
           <ol class="event">
             <li><%= cDB_FILE %>から読み込んだ<%= cEXP_INFO %>で編集したセルの<%= cCOL_NAME %>と同じ<%= cEXP_INFO %>をすべて取得する．<br />
                 ※支出DGVに現在表示されている<%= cEXP_INFO %>でないことに注意</li>
@@ -127,10 +129,10 @@ several: f403_tab_expense_several.yml
           </ol>
         </li>
         <li>
-          自動補完の例を以下に示す．
+          <%= cCOL_TYPE %>の自動補完の例を以下に示す．
           <table class="auto-complete">
             <% cap = "5" %>
-            <% form_several.AUTO_COMPLETE.each.with_index(1) do |img, i| %>
+            <% form_several.TYPE_AUTO_COMPLETE.each.with_index(1) do |img, i| %>
               <tr>
                 <% unless img.key?("PNG2") %>
                   <td>
@@ -159,13 +161,59 @@ several: f403_tab_expense_several.yml
             <% end %>
           </table>
         </li>
+        <li>
+          <%= cCOL_COST %>の具体的な補完手順は以下の通り．
+          <ol class="event">
+            <li><%= cDB_FILE %>から読み込んだ<%= cEXP_INFO %>のうち，編集したセルの<%= cCOL_NAME %> + <%= cCOL_TYPE %>の組み合せに当てはまる<%= cEXP_INFO %>をすべて取得する．<br />
+                ※支出DGVに現在表示されている<%= cEXP_INFO %>でないことに注意</li>
+            </li>
+            <li>取得した<%= cEXP_INFO %>が0件の場合，編集したセルの行の<%= cCOL_COST %>列を空白に設定する．</li>
+            <li>取得した<%= cEXP_INFO %>が1件以上の場合，日付の新しい順に上位3件の<%= cCOL_COST %>を取得する．</li>
+            <li>取得した<%= cCOL_COST %>で重複は一つにまとめる(SQLでのDISTINCT)．</li>
+            <li>取得した<%= cCOL_COST %>を"/"で区切って編集したセルの行の<%= cCOL_COST %>列に設定する．<br />
+                ※<%= cCOL_COST %>はカンマ編集する</li>
+          </ol>
+        </li>
+        <li>
+          <%= cCOL_COST %>の自動補完の例を以下に示す．
+          <table class="auto-complete">
+            <% cap = "6" %>
+            <% form_several.COST_AUTO_COMPLETE.each.with_index(1) do |img, i| %>
+              <tr>
+                <% unless img.key?("PNG2") %>
+                  <td>
+                    <figure>
+                      <%= image_tag img.PNG1, class: 'small' %>
+                      <figcaption><%= "#{cap}-#{i}.#{img.CAPTION1}" %></figcaption>
+                    </figure>
+                  </td>
+                  <td></td>
+                <% else %>
+                  <td>
+                    <figure>
+                      <%= image_tag img.PNG1 %>
+                      <figcaption><%= "#{cap}-#{i}-1.#{img.CAPTION1}" %></figcaption>
+                    </figure>
+                  </td>
+                  <td>
+                    <figure>
+                      <%= image_tag img.PNG2 %>
+                      <figcaption><%= "#{cap}-#{i}-2.#{img.CAPTION2}" %></figcaption>
+                    </figure>
+                  </td>
+                <% end %>
+              </tr>
+            <% end %>
+          </table>
+        </li>
       </ul>
     </dd>
     <dt>支出DGV上でのキー押下(KeyDown)</dt>
     <dd>
       <ul class="description">
         <li>押下されたキーがCtrl+V(ペースト)の場合，現在選択されてるセルにクリップボードの値をペーストする．</li>
-        <li>現在選択されているセルが<%= cCOL_NAME %>列の場合，ペースト終了後に<%= cCOL_TYPE %>の自動補完を行う．</li>
+        <li>現在選択されているセルが<%= cCOL_NAME %>列の場合，ペースト終了後に<%= cCOL_TYPE %>と<%= cCOL_COST %>の自動補完を行う．</li>
+        <li>現在選択されているセルが<%= cCOL_TYPE %>列の場合，ペースト終了後に<%= cCOL_COST %>の自動補完を行う．</li>
       </ul>
     </dd>
   </dl>
