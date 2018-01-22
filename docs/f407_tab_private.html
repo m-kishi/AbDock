@@ -1,0 +1,223 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title>AbDock</title>
+    <link href="/AbDock/stylesheets/normalize.css" rel="stylesheet" /><link href="/AbDock/stylesheets/all.css" rel="stylesheet" />
+    <script src="/AbDock/javascripts/all.js"></script>
+  </head>
+  <body class="f407_tab_private">
+    <header>
+  <table class="header">
+    <colgroup>
+      <col class="title"   />
+      <col class="project" />
+      <col class="appname" />
+      <col class="subname" />
+      <col class="version" />
+    </colgroup>
+    <tbody>
+      <tr>
+        <td class="title"   rowspan="2">画面設計</td>
+        <td class="project" rowspan="2">project.mk</td>
+        <td class="appname" rowspan="2">Abook</td>
+        <td class="subname" rowspan="2"></td>
+        <td class="version">バージョン</td>
+      </tr>
+      <tr>
+        <td class="version-number">5.5.1</td>
+      </tr>
+    </tbody>
+  </table>
+</header>
+
+    <div class="content">
+      <h1>【秘密タブ】</h1>
+
+
+<section>
+  <h2>レイアウト</h2>
+
+<table class="layout">
+    <tr>
+      <td class="layout ">
+        <figure>
+            <img class="" src="/AbDock/images/tab_private_001.png" />
+            <figcaption>
+              1.<a href="/AbDock/f600_type_define.html">種別※2</a>の支出情報なし
+            </figcaption>
+        </figure>
+      </td>
+        <td rowspan="2" class="overview">
+          <figure>
+            <figcaption>＜概要＞</figcaption>
+              <ul>
+                  <li><a href="/AbDock/f600_type_define.html">種別※2</a>の支出情報のみの収支を表示する画面</li>
+                  <li>秘密入は通常の家計管理には含めない収入を意味する．</li>
+                  <li>秘密出は通常の家計管理には含めない支出を意味する．</li>
+                  <li>すなわち，この画面では通常の家計には含めたくない収支の管理を行う．</li>
+                  <li>表示対象となる支出情報が0件の場合，秘密DGVは0行とする．</li>
+              </ul>
+              <figure>
+                <figcaption>＜秘密DGVの設定＞</figcaption>
+                <table class="dgv-property">
+                  <tr><th>行追加        </th><td>不可</td></tr>
+                  <tr><th>行削除        </th><td>不可</td></tr>
+                  <tr><th>ReadOnly      </th><td>○</td></tr>
+                  <tr><th>列のソート    </th><td>不可</td></tr>
+                  <tr><th>列の幅変更    </th><td>不可</td></tr>
+                  <tr><th>選択モード    </th><td>行選択</td></tr>
+                  <tr><th>スクロールバー</th><td>縦のみ</td></tr>
+                </table>
+              </figure>
+          </figure>
+        </td>
+    </tr>
+    <tr>
+      <td class="layout ">
+        <figure>
+            <img class="" src="/AbDock/images/tab_private_002.png" />
+            <figcaption>
+              2.<a href="/AbDock/f600_type_define.html">種別※2</a>の支出情報あり
+            </figcaption>
+        </figure>
+      </td>
+    </tr>
+</table>
+
+</section>
+
+<section>
+  <h2>画面項目</h2>
+
+
+  <table class="controls">
+    <tr>
+      <th class="no-m">No.</th>
+      <th>名称</th>
+      <th>ＩＤ</th>
+      <th>テキスト</th>
+      <th>属性</th>
+      <th>align</th>
+      <th>種別</th>
+      <th>備考</th>
+    </tr>
+      <tr>
+  <td                >1</td>
+  <td                >秘密DGV</td>
+  <td                >DgvPrivate</td>
+  <td                ></td>
+  <td                ></td>
+  <td class="align-c"></td>
+  <td                >DataGridView</td>
+  <td                ></td>
+</tr>
+
+    <tr>
+  <td                >1-1</td>
+  <td                >年月列</td>
+  <td                >ColPrvDate</td>
+  <td                >年月</td>
+  <td                >文字列</td>
+  <td class="align-c">中</td>
+  <td                >DataGridViewTextBoxColumn</td>
+  <td                >YYYY-MM</td>
+</tr>
+
+
+    <tr>
+  <td                >1-2</td>
+  <td                >名称列</td>
+  <td                >ColPrvName</td>
+  <td                >名称</td>
+  <td                >文字列</td>
+  <td class="align-c">左</td>
+  <td                >DataGridViewTextBoxColumn</td>
+  <td                ></td>
+</tr>
+
+
+    <tr>
+  <td                >1-3</td>
+  <td                >金額列</td>
+  <td                >ColPrvCost</td>
+  <td                >金額</td>
+  <td                >数値</td>
+  <td class="align-c">右</td>
+  <td                >DataGridViewTextBoxColumn</td>
+  <td                >通貨形式(&yen;)</td>
+</tr>
+
+
+    <tr>
+  <td                >1-4</td>
+  <td                >収支列</td>
+  <td                >ColPrvBlnc</td>
+  <td                >収支</td>
+  <td                >数値</td>
+  <td class="align-c">右</td>
+  <td                >DataGridViewTextBoxColumn</td>
+  <td                >通貨形式(&yen;)</td>
+</tr>
+
+
+
+  </table>
+
+</section>
+
+<section>
+  <h2>イベント</h2>
+  <dl class="event">
+    <dt>初期表示</dt>
+    <dd>
+      <ul class="description">
+        <li><a href="/AbDock/f200_dbfile.html">DBファイル</a>から読み込んだ支出情報を以下の定義に従って表示する(<a href="/AbDock/f600_type_define.html">種別※2</a>に該当する支出情報のみが対象)．</li>
+        <li>該当する支出情報が0件の場合，秘密DGVは0行とする．</li>
+        <table class="private">
+          <tr><th class="no">No.</th><th>列  </th><th>定義</th></tr>
+          <tr><td class="no">1  </td><td>年月</td><td>支出情報の日付(YYYY-MM形式)</td></tr>
+          <tr><td class="no">2  </td><td>名称</td><td>支出情報の名称</td></tr>
+          <tr><td class="no">3  </td><td>金額</td><td>支出情報の金額(種別が"秘密出"ならマイナス)</td></tr>
+          <tr><td class="no">4  </td><td>収支</td><td>秘密DGVの一つ上の行の収支 + 支出情報の金額(種別が"秘密出"ならマイナス)</td></tr>
+        </table>
+        <li>秘密DGVを最終行までスクロールして，最終行を選択状態とする．</li>
+        <li>表示処理中にチェックエラーが発生した場合，エラーダイアログを表示してアプリケーションを終了する．</li>
+        <table class="private-check-error">
+          <tr>
+            <th class="no">No.</th>
+            <th>条件</th>
+            <th>メッセージ</th>
+          </tr>
+          <tr>
+            <td class="no">1</td>
+            <td>"秘密入"と"秘密出"以外の種別</td>
+            <td><a href="/AbDock/f700_message_list.html#TYPE_PRIVATE_ERR">種別が正しくありません。</a></td>
+          </tr>
+        </table>
+      </ul>
+    </dd>
+  </dl>
+</section>
+
+    </div>
+    <footer>
+  <table class="footer">
+    <tr>
+      <td>
+        <a href="/AbDock/">トップ</a>
+      </td>
+    </tr>
+    <tr>
+      <td class="copy-rights">
+        Copyright &copy; 2016 m-kishi All Rights Reserved.
+      </td>
+    </tr>
+  </table>
+</footer>
+
+  </body>
+</html>

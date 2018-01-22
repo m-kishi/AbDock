@@ -1,0 +1,298 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title>AbDock</title>
+    <link href="/AbDock/stylesheets/normalize.css" rel="stylesheet" /><link href="/AbDock/stylesheets/all.css" rel="stylesheet" />
+    <script src="/AbDock/javascripts/all.js"></script>
+  </head>
+  <body class="f401_form_main">
+    <header>
+  <table class="header">
+    <colgroup>
+      <col class="title"   />
+      <col class="project" />
+      <col class="appname" />
+      <col class="subname" />
+      <col class="version" />
+    </colgroup>
+    <tbody>
+      <tr>
+        <td class="title"   rowspan="2">画面設計</td>
+        <td class="project" rowspan="2">project.mk</td>
+        <td class="appname" rowspan="2">Abook</td>
+        <td class="subname" rowspan="2"></td>
+        <td class="version">バージョン</td>
+      </tr>
+      <tr>
+        <td class="version-number">5.5.1</td>
+      </tr>
+    </tbody>
+  </table>
+</header>
+
+    <div class="content">
+      <h1>【メインフォーム】</h1>
+
+<section>
+  <h2>レイアウト</h2>
+
+<table class="layout">
+    <tr>
+      <td class="layout ">
+        <figure>
+            <img class="" src="/AbDock/images/tab_expense_001.png" />
+            <figcaption>
+              1.メインフォーム
+            </figcaption>
+        </figure>
+      </td>
+        <td rowspan="1" class="overview">
+          <figure>
+            <figcaption>＜概要＞</figcaption>
+              <ul>
+                  <li>Abookのメインフォーム</li>
+                  <li>サブフォームで表示すべき情報以外はすべてこのフォーム上に表示する．</li>
+              </ul>
+              <figure>
+                <figcaption>＜フォーム属性＞</figcaption>
+                <table class="form-property">
+                  <tr><th>タイトル          </th><td>Abook</td></tr>
+                    <tr><th>アイコン        </th><td style="padding-top:8px;padding-left:5px;"><img src="/AbDock/images/abook.png" /></td></tr>
+                  <tr><th>画面サイズ        </th><td>(416, 343)</td></tr>
+                  <tr><th>サイズ変更        </th><td>不可</td></tr>
+                  <tr><th>初期表示位置      </th><td>画面中央</td></tr>
+                  <tr><th>ウィンドウの最大化</th><td>不可</td></tr>
+                  <tr><th>ウィンドウの最小化</th><td>可能</td></tr>
+                  <tr><th>タスクバーへの表示</th><td>あり</td></tr>
+                </table>
+              </figure>
+          </figure>
+        </td>
+    </tr>
+</table>
+
+</section>
+
+<section>
+  <h2>画面項目</h2>
+
+
+  <table class="controls">
+    <tr>
+      <th class="no-m">No.</th>
+      <th>名称</th>
+      <th>ＩＤ</th>
+      <th>テキスト</th>
+      <th>属性</th>
+      <th>align</th>
+      <th>種別</th>
+      <th>備考</th>
+    </tr>
+      <tr>
+  <td                >1</td>
+  <td                ><a href="/AbDock/f402_form_menu.html">メニュー</a></td>
+  <td                >MenuStrip</td>
+  <td                ></td>
+  <td                ></td>
+  <td class="align-c"></td>
+  <td                >MenuStrip</td>
+  <td                ></td>
+</tr>
+
+
+      <tr>
+  <td                >2</td>
+  <td                >タブコントロール</td>
+  <td                >TabControl</td>
+  <td                ></td>
+  <td                ></td>
+  <td class="align-c"></td>
+  <td                >TabControl</td>
+  <td                ></td>
+</tr>
+
+    <tr>
+  <td                >2-1</td>
+  <td                ><a href="/AbDock/f403_tab_expense.html">支出タブ</a></td>
+  <td                >TabExpense</td>
+  <td                >支出</td>
+  <td                ></td>
+  <td class="align-c"></td>
+  <td                >TabPage</td>
+  <td                ></td>
+</tr>
+
+
+    <tr>
+  <td                >2-2</td>
+  <td                ><a href="/AbDock/f404_tab_summary.html">月次タブ</a></td>
+  <td                >TabSummary</td>
+  <td                >月次</td>
+  <td                ></td>
+  <td class="align-c"></td>
+  <td                >TabPage</td>
+  <td                ></td>
+</tr>
+
+
+    <tr>
+  <td                >2-3</td>
+  <td                ><a href="/AbDock/f405_tab_graphic.html">推移タブ</a></td>
+  <td                >TabGraphic</td>
+  <td                >推移</td>
+  <td                ></td>
+  <td class="align-c"></td>
+  <td                >TabPage</td>
+  <td                ></td>
+</tr>
+
+
+    <tr>
+  <td                >2-4</td>
+  <td                ><a href="/AbDock/f406_tab_balance.html">収支タブ</a></td>
+  <td                >TabBalance</td>
+  <td                >収支</td>
+  <td                ></td>
+  <td class="align-c"></td>
+  <td                >TabPage</td>
+  <td                ></td>
+</tr>
+
+
+    <tr>
+  <td                >2-5</td>
+  <td                ><a href="/AbDock/f407_tab_private.html">秘密タブ</a></td>
+  <td                >TabPrivate</td>
+  <td                >秘密</td>
+  <td                ></td>
+  <td class="align-c"></td>
+  <td                >TabPage</td>
+  <td                ></td>
+</tr>
+
+
+
+  </table>
+
+</section>
+
+<section>
+  <h2>イベント</h2>
+  <dl class="event">
+    <dt>初期表示</dt>
+    <dd>
+      <ul class="description">
+        <li><a href="/AbDock/f200_dbfile.html">DBファイル</a>から支出情報を読み込んで各タブを初期化し，支出タブを表示する．</li>
+        <li>DBファイルの読み込みに失敗した場合，エラーダイアログを表示してアプリケーションを終了する．</li>
+        <table class="db-file-load-error">
+          <tr>
+            <th class="no">No.</th>
+            <th>条件</th>
+            <th>メッセージ</th>
+          </tr>
+            <tr>
+              <td class="no">1</td>
+              <td>初回起動時のDBファイル作成に失敗</td>
+              <td><a href="/AbDock/f700_message_list.html#CSV_CREATE">CSVファイルの作成に失敗しました。</a></td>
+            </tr>
+            <tr>
+              <td class="no">2</td>
+              <td>DBファイルのフィールド数が少ない</td>
+              <td><a href="/AbDock/f700_message_list.html#CSV_FIELD_LESS">フィールド数が少ないです。</a></td>
+            </tr>
+            <tr>
+              <td class="no">3</td>
+              <td>DBファイルのフィールド数が多い</td>
+              <td><a href="/AbDock/f700_message_list.html#CSV_FIELD_MORE">フィールド数が多いです。</a></td>
+            </tr>
+            <tr>
+              <td class="no">4</td>
+              <td>DBファイルの日付フィールドが空</td>
+              <td><a href="/AbDock/f700_message_list.html#DATE_NULL">日付がありません。</a></td>
+            </tr>
+            <tr>
+              <td class="no">5</td>
+              <td>DBファイルの日付フィールドが日付形式でない</td>
+              <td><a href="/AbDock/f700_message_list.html#DATE_FORMAT">日付が正しくありません。</a></td>
+            </tr>
+            <tr>
+              <td class="no">6</td>
+              <td>DBファイルの名称フィールドが空</td>
+              <td><a href="/AbDock/f700_message_list.html#NAME_NULL">名称がありません。</a></td>
+            </tr>
+            <tr>
+              <td class="no">7</td>
+              <td>DBファイルの種別フィールドが空</td>
+              <td><a href="/AbDock/f700_message_list.html#TYPE_NULL">種別がありません。</a></td>
+            </tr>
+            <tr>
+              <td class="no">8</td>
+              <td>DBファイルの種別フィールドが不正(<a href="/AbDock/f600_type_define.html">種別※1</a>以外)</td>
+              <td><a href="/AbDock/f700_message_list.html#TYPE_WRONG">種別が正しくありません。</a></td>
+            </tr>
+            <tr>
+              <td class="no">9</td>
+              <td>DBファイルの金額フィールドが空</td>
+              <td><a href="/AbDock/f700_message_list.html#COST_NULL">金額がありません。</a></td>
+            </tr>
+            <tr>
+              <td class="no">10</td>
+              <td>DBファイルの金額フィールドが数値でない</td>
+              <td><a href="/AbDock/f700_message_list.html#COST_FORMAT">金額が正しくありません。</a></td>
+            </tr>
+            <tr>
+              <td class="no">11</td>
+              <td>DBファイルの金額フィールドがマイナス</td>
+              <td><a href="/AbDock/f700_message_list.html#COST_MINUS">金額がマイナスです。</a></td>
+            </tr>
+            <tr>
+              <td class="no">12</td>
+              <td>DBファイルの金額フィールドが大き過ぎる</td>
+              <td><a href="/AbDock/f700_message_list.html#COST_OVERFLOW">金額が大き過ぎます。</a></td>
+            </tr>
+        </table>
+      </ul>
+    </dd>
+    <dt>メニューを選択</dt>
+    <dd>
+      <ul class="description">
+        <li>選択されたメニューに応じた処理を行う(詳細は<a href="/AbDock/f402_form_menu.html">メニュー</a>を参照)．</li>
+      </ul>
+    </dd>
+    <dt>タブ選択</dt>
+    <dd>
+      <ul class="description">
+        <li>選択されたタブを表示する．</li>
+      </ul>
+    </dd>
+    <dt>システム例外発生</dt>
+    <dd>
+      <ul class="description">
+        <li>発生した例外メッセージを表示してアプリケーションを終了する．</li>
+      </ul>
+    </dd>
+  </dl>
+</section>
+
+    </div>
+    <footer>
+  <table class="footer">
+    <tr>
+      <td>
+        <a href="/AbDock/">トップ</a>
+      </td>
+    </tr>
+    <tr>
+      <td class="copy-rights">
+        Copyright &copy; 2016 m-kishi All Rights Reserved.
+      </td>
+    </tr>
+  </table>
+</footer>
+
+  </body>
+</html>

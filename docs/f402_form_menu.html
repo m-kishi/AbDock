@@ -1,0 +1,260 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title>AbDock</title>
+    <link href="/AbDock/stylesheets/normalize.css" rel="stylesheet" /><link href="/AbDock/stylesheets/all.css" rel="stylesheet" />
+    <script src="/AbDock/javascripts/all.js"></script>
+  </head>
+  <body class="f402_form_menu">
+    <header>
+  <table class="header">
+    <colgroup>
+      <col class="title"   />
+      <col class="project" />
+      <col class="appname" />
+      <col class="subname" />
+      <col class="version" />
+    </colgroup>
+    <tbody>
+      <tr>
+        <td class="title"   rowspan="2">画面設計</td>
+        <td class="project" rowspan="2">project.mk</td>
+        <td class="appname" rowspan="2">Abook</td>
+        <td class="subname" rowspan="2"></td>
+        <td class="version">バージョン</td>
+      </tr>
+      <tr>
+        <td class="version-number">5.5.1</td>
+      </tr>
+    </tbody>
+  </table>
+</header>
+
+    <div class="content">
+      <h1>【メニュー】</h1>
+
+<section>
+  <h2>レイアウト</h2>
+
+<table class="layout">
+    <tr>
+      <td class="layout ">
+        <figure>
+            <img class="" src="/AbDock/images/menu_001.png" />
+            <figcaption>
+              1.メニュー
+            </figcaption>
+        </figure>
+      </td>
+        <td rowspan="4" class="overview">
+          <figure>
+            <figcaption>＜概要＞</figcaption>
+              <ul>
+                  <li>フォーム上部にメニューを表示する．</li>
+                  <li>メニューに応じたサブメニューを展開する．</li>
+                  <li>選択されたサブメニューごとにそれぞれの処理を行う．</li>
+              </ul>
+          </figure>
+        </td>
+    </tr>
+    <tr>
+      <td class="layout ">
+        <figure>
+            <img class="" src="/AbDock/images/menu_002.png" />
+            <figcaption>
+              2.ファイル(F)
+            </figcaption>
+        </figure>
+      </td>
+    </tr>
+    <tr>
+      <td class="layout ">
+        <figure>
+            <img class="" src="/AbDock/images/menu_003.png" />
+            <figcaption>
+              3.データ(D)
+            </figcaption>
+        </figure>
+      </td>
+    </tr>
+    <tr>
+      <td class="layout ">
+        <figure>
+            <img class="" src="/AbDock/images/menu_004.png" />
+            <figcaption>
+              4.ヘルプ(H)
+            </figcaption>
+        </figure>
+      </td>
+    </tr>
+</table>
+
+</section>
+
+<section>
+  <h2>画面項目</h2>
+
+
+  <table class="controls">
+    <tr>
+      <th class="no-l">No.</th>
+      <th>名称</th>
+      <th>ＩＤ</th>
+      <th>テキスト</th>
+      <th>属性</th>
+      <th>align</th>
+      <th>種別</th>
+      <th>備考</th>
+    </tr>
+      <tr>
+  <td                >1</td>
+  <td                >メニュー</td>
+  <td                >MenuStrip</td>
+  <td                ></td>
+  <td                ></td>
+  <td class="align-c"></td>
+  <td                >MenuStrip</td>
+  <td                ></td>
+</tr>
+
+    <tr>
+  <td                >1-1</td>
+  <td                >ファイル</td>
+  <td                >MenuFile</td>
+  <td                >ファイル(F)</td>
+  <td                ></td>
+  <td class="align-c"></td>
+  <td                >MenuItem</td>
+  <td                ></td>
+</tr>
+
+    <tr>
+  <td                >1-1-1</td>
+  <td                >終了</td>
+  <td                >MenuExit</td>
+  <td                >終了(Q)</td>
+  <td                ></td>
+  <td class="align-c"></td>
+  <td                >MenuItem</td>
+  <td                ></td>
+</tr>
+
+
+
+    <tr>
+  <td                >1-2</td>
+  <td                >データ</td>
+  <td                >MenuData</td>
+  <td                >データ(D)</td>
+  <td                ></td>
+  <td class="align-c"></td>
+  <td                >MenuItem</td>
+  <td                ></td>
+</tr>
+
+    <tr>
+  <td                >1-2-1</td>
+  <td                >光熱費</td>
+  <td                >MenuEnergy</td>
+  <td                >光熱費(E)</td>
+  <td                ></td>
+  <td class="align-c"></td>
+  <td                >MenuItem</td>
+  <td                ></td>
+</tr>
+
+
+    <tr>
+  <td                >1-2-2</td>
+  <td                >アップロード</td>
+  <td                >MenuUpload</td>
+  <td                >アップロード(U)</td>
+  <td                ></td>
+  <td class="align-c"></td>
+  <td                >MenuItem</td>
+  <td                ></td>
+</tr>
+
+
+
+    <tr>
+  <td                >1-3</td>
+  <td                >ヘルプ</td>
+  <td                >MenuHelp</td>
+  <td                >ヘルプ(H)</td>
+  <td                ></td>
+  <td class="align-c"></td>
+  <td                >MenuItem</td>
+  <td                ></td>
+</tr>
+
+    <tr>
+  <td                >1-3-1</td>
+  <td                >バージョン情報</td>
+  <td                >MenuVersion</td>
+  <td                >バージョン情報(A)</td>
+  <td                ></td>
+  <td class="align-c"></td>
+  <td                >MenuItem</td>
+  <td                ></td>
+</tr>
+
+
+
+
+  </table>
+
+</section>
+
+<section>
+  <h2>イベント</h2>
+  <dl class="event">
+    <dt>終了(Q)選択</dt>
+    <dd>
+      <ul class="description">
+        <li>アプリケーションを終了する．</li>
+      </ul>
+    </dd>
+    <dt>光熱費(E)選択</dt>
+    <dd>
+      <ul class="description">
+        <li><a href="/AbDock/f502_subform_energy.html">光熱費サブフォーム</a>を表示する．</li>
+      </ul>
+    </dd>
+    <dt>アップロード(U)選択</dt>
+    <dd>
+      <ul class="description">
+        <li><a href="/AbDock/f503_subform_upload.html">アップロードサブフォーム</a>を表示する．</li>
+      </ul>
+    </dd>
+    <dt>バージョン情報(A)選択</dt>
+    <dd>
+      <ul class="description">
+        <li><a href="/AbDock/f504_subform_version.html">バージョン情報サブフォーム</a>を表示する．</li>
+      </ul>
+    </dd>
+  </dl>
+</section>
+
+    </div>
+    <footer>
+  <table class="footer">
+    <tr>
+      <td>
+        <a href="/AbDock/">トップ</a>
+      </td>
+    </tr>
+    <tr>
+      <td class="copy-rights">
+        Copyright &copy; 2016 m-kishi All Rights Reserved.
+      </td>
+    </tr>
+  </table>
+</footer>
+
+  </body>
+</html>
