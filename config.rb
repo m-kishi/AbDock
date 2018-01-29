@@ -63,6 +63,7 @@ set :form_dir, 'form'
 
 # Build-specific configuration
 configure :build do
+
   # For example, change the Compass output style for deployment
   # activate :minify_css
 
@@ -75,6 +76,7 @@ configure :build do
   # Use relative URLs
   # activate :relative_assets
 
-  # Or use a different image path
-  # set :http_prefix, "/Content/images/"
+  # デプロイするためのリンクパス設定
+  # GitHub Pages(https://m-kishi.github.io/AbDock)
+  set :http_prefix, "/AbDock"
 end
