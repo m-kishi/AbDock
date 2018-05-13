@@ -31,6 +31,8 @@
 ###
 # Helpers
 ###
+require 'helper/abdock'
+helpers AbDockHelpers
 
 # Automatic image dimensions on image_tag helper
 # activate :automatic_image_sizes

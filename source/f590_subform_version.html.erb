@@ -1,0 +1,39 @@
+---
+title: バージョン情報サブフォーム
+header_title: 画面設計
+layouts: f590_subform_version_layouts.yml
+control: f590_subform_version_control.yml
+---
+<h1>【<%= cSUB_VERSION %>】</h1>
+<% form_layouts = load_form_data(current_page.data.layouts) %>
+<% form_control = load_form_data(current_page.data.control) %>
+
+<%# レイアウト %>
+<%= render_layouts({ form: form_layouts }) %>
+
+<%# 画面項目 %>
+<%= render_control({ form: form_control }) %>
+
+<h2>イベント</h2>
+<dl class="event">
+  <dt>初期表示</dt>
+  <dd>
+    <ul class="description">
+      <li>アプリケーションのアセンブリ情報を取得して，以下の項目を設定する．</li>
+      <table class="version-setting">
+        <tr><th>項目        </th><th>取得元クラス</th><th>取得属性                    </th></tr>
+        <tr><td>タイトル    </td><td>Application </td><td>ProductName                 </td></tr>
+        <tr><td>製品名      </td><td>Application </td><td>ProductName                 </td></tr>
+        <tr><td>バージョン  </td><td>Application </td><td>ProductVersion              </td></tr>
+        <tr><td>コピーライト</td><td>Assembly    </td><td>AssemblyCopyrightAttribute  </td></tr>
+        <tr><td>詳細情報    </td><td>Assembly    </td><td>AssemblyDescriptionAttribute</td></tr>
+      </table>
+    </ul>
+  </dd>
+  <dt>OKボタン押下</dt>
+  <dd>
+    <ul class="description">
+      <li>バージョン情報サブフォームを閉じる．</li>
+    </ul>
+  </dd>
+</dl>

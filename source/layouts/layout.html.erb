@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title><%= current_page.data.title || 'AbDock' %></title>
+    <%= favicon_tag 'images/abdock.ico' %>
+    <%= stylesheet_link_tag 'normalize', 'all' %>
+    <%= stylesheet_link_tag 'mermaid.forest.min' %>
+    <%= javascript_include_tag 'all' %>
+    <%= javascript_include_tag 'mermaid.min' %>
+  </head>
+  <body class="<%= page_classes %>">
+    <%= render_header %>
+    <div class="content">
+      <%= yield %>
+    </div>
+    <%= render_footer %>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+  </body>
+</html>

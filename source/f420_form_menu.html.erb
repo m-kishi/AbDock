@@ -1,0 +1,49 @@
+---
+title: メニュー
+header_title: 画面設計
+layouts: f420_form_menu_layouts.yml
+control: f420_form_menu_control.yml
+---
+<h1>【<%= cFORM_MENU %>】</h1>
+<% form_layouts = load_form_data(current_page.data.layouts) %>
+<% form_control = load_form_data(current_page.data.control) %>
+
+<%# レイアウト %>
+<%= render_layouts({ form: form_layouts }) %>
+
+<%# 画面項目 %>
+<%= render_control({ form: form_control }) %>
+
+<h2>イベント</h2>
+<dl class="event">
+  <dt><%= cQUIT! %>選択</dt>
+  <dd>
+    <ul class="description">
+      <li>アプリケーションを終了する．</li>
+    </ul>
+  </dd>
+  <dt><%= cSRCH! %>選択</dt>
+  <dd>
+    <ul class="description">
+      <li><%= lnSubSearch %>を表示する．</li>
+    </ul>
+  </dd>
+  <dt><%= cENGY! %>選択</dt>
+  <dd>
+    <ul class="description">
+      <li><%= lnSubEnergy %>を表示する．</li>
+    </ul>
+  </dd>
+  <dt><%= cUPLD! %>選択</dt>
+  <dd>
+    <ul class="description">
+      <li><%= lnSubUpload %>を表示する．</li>
+    </ul>
+  </dd>
+  <dt><%= cVRSN! %>選択</dt>
+  <dd>
+    <ul class="description">
+      <li><%= lnSubVersion %>を表示する．</li>
+    </ul>
+  </dd>
+</dl>
