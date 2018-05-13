@@ -1,0 +1,60 @@
+---
+title: メインフォーム
+header_title: 画面設計
+layouts: f410_form_main_layouts.yml
+control: f410_form_main_control.yml
+several: f410_form_main_several.yml
+---
+<h1>【<%= cFORM_MAIN %>】</h1>
+<% form_layouts = load_form_data(current_page.data.layouts) %>
+<% form_control = load_form_data(current_page.data.control) %>
+<% form_several = load_form_data(current_page.data.several) %>
+
+<%# レイアウト %>
+<%= render_layouts({ form: form_layouts }) %>
+
+<%# 画面項目 %>
+<%= render_control({ form: form_control })%>
+
+<h2>イベント</h2>
+<dl class="event">
+  <dt>初期表示</dt>
+  <dd>
+    <ul class="description">
+      <li><%= lnDBFile %>から<%= cEXP_INFO %>を読み込んで各タブを初期化し，<%= cEXPENSE %>タブを表示する．</li>
+      <li>DBファイルの読み込みに失敗した場合，エラーダイアログを表示してアプリケーションを終了する．</li>
+      <table class="db-file-load-error">
+        <tr>
+          <th class="no">No.</th>
+          <th>条件</th>
+          <th>メッセージ</th>
+        </tr>
+        <% form_several.MESSAGE.each.with_index(1) do |chk, i| %>
+          <tr>
+            <td class="no"><%= i %></td>
+            <td><%= chk.TERM         %></td>
+            <td><%= lnMessage chk.ID %></td>
+          </tr>
+        <% end %>
+      </table>
+    </ul>
+  </dd>
+  <dt>メニューを選択</dt>
+  <dd>
+    <ul class="description">
+      <li>選択されたメニューに応じた処理を行う(詳細は<%= lnMenu %>を参照)．</li>
+    </ul>
+  </dd>
+  <dt>タブ選択</dt>
+  <dd>
+    <ul class="description">
+      <li>選択されたタブを表示する．</li>
+    </ul>
+  </dd>
+  <dt>システム例外発生</dt>
+  <dd>
+    <ul class="description">
+      <li>発生した例外メッセージを表示してアプリケーションを終了する．</li>
+    </ul>
+  </dd>
+</dl>

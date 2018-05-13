@@ -1,0 +1,17 @@
+IMAGE:
+  - PNG: tab_expense_001.png
+    CAPTION: <%= cFORM_MAIN %>
+
+OVERVIEW:
+  - <%= cABOOK %>の<%= cFORM_MAIN %>
+  - サブフォームで表示すべき情報以外はすべてこのフォーム上に表示する．
+
+PROPERTY:
+  ICON: abook.png
+  TITLE: <%= cABOOK %>
+  SIZABLE: <%= cFUKA %>
+  MINIMUM: <%= cKANO %>
+  MAXIMUM: <%= cFUKA %>
+  SCREEN_SIZE: (416, 343)
+  START_POSITION: <%= cCENTER_SCREEN %>
+  SHOW_IN_TASKBAR: <%= cARI %>

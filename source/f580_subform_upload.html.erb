@@ -1,0 +1,92 @@
+---
+title: アップロードサブフォーム
+header_title: 画面設計
+layouts: f580_subform_upload_layouts.yml
+control: f580_subform_upload_control.yml
+several: f580_subform_upload_several.yml
+---
+<h1>【<%= cSUB_UPLOAD %><span style="color:red;">(実験中)</span>】</h1>
+<% form_layouts = load_form_data(current_page.data.layouts) %>
+<% form_control = load_form_data(current_page.data.control) %>
+<% form_several = load_form_data(current_page.data.several) %>
+
+<%# レイアウト %>
+<%= render_layouts({ form: form_layouts }) %>
+
+<%# 画面項目 %>
+<%= render_control({ form: form_control }) %>
+
+<h2>イベント</h2>
+<dl class="event">
+  <dt>初期表示</dt>
+  <dd>
+    <ul class="description">
+      <li>特になし．</li>
+    </ul>
+  </dd>
+  <dt>アップロードボタン押下</dt>
+  <dd>
+    <ul class="description">
+      <li>入力内容とアップロード情報のチェックを行い，エラーの場合はダイアログを表示して処理を終了する．</li>
+      <table class="upload-check-error">
+        <tr>
+          <th class="no">No.</th>
+          <th>条件</th>
+          <th>メッセージ</th>
+        </tr>
+        <% form_several.MESSAGE.each.with_index(1) do |chk, i| %>
+          <tr>
+            <td class="no"><%= i %></td>
+            <td><%= chk.TERM %></td>
+            <td><%= lnMessage chk.ID %></td>
+          </tr>
+        <% end %>
+      </table>
+      <li>画面項目の表示を更新する．</li>
+      <table class="upload-view-change">
+        <tr><th class="no">No.</th><th>項目名                 </th><th>表示</th></tr>
+        <tr><td class="no"> 1 </td><td>進捗バー               </td><td>表示</td></tr>
+        <tr><td class="no"> 2 </td><td>メールラベル/入力欄    </td><td>非表示</td></tr>
+        <tr><td class="no"> 3 </td><td>パスワードラベル/入力欄</td><td>非表示</td></tr>
+        <tr><td class="no"> 4 </td><td>アップロードボタン     </td><td>Disabled</td></tr>
+        <tr><td class="no"> 5 </td><td>キャンセルボタン       </td><td>Disabled</td></tr>
+      </table>
+      <li><%= cEXP_INFO %>のアップロード処理を行う．</li>
+      <li>アップロード処理で異常が発生した場合，画面項目の表示を戻してエラーダイアログを表示する</li>
+      <table class="upload-server-error">
+        <tr>
+          <th>メッセージ</th>
+          <td class="message"><%= lnMessage :UPD_REQ_FAILED %></td>
+        </tr>
+      </table>
+      <table class="upload-server-error-example">
+        <tr>
+          <% form_several.SERVER_ERROR.each.with_index(1) do |img, i| %>
+            <td>
+              <figure>
+                <%= image_tag img.PNG %>
+                <figcaption><%= "例#{i}.#{img.CAPTION}" %></figcaption>
+              </figure>
+            </td>
+          <% end %>
+        </tr>
+      </table>
+      <li>
+        アップロード処理が正常終了した場合，OKダイアログを表示して画面を閉じる．
+        <ul class="event">
+          <li>
+            アップロード：成功しました．
+            <figure><%= image_tag 'subform_uploads_success.png' %></figure>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </dd>
+  <dt>キャンセルボタン押下</dt>
+  <dd>
+    <ul class="description">
+      <li>画面を閉じる．</li>
+      <li>ただし，アップロード処理中の場合，アップロード処理が終了するまで画面を閉じることはできない．</li>
+    </ul>
+  </dd>
+</dl>

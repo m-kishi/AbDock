@@ -31,6 +31,8 @@
 ###
 # Helpers
 ###
+require 'helper/abdock'
+helpers AbDockHelpers
 
 # Automatic image dimensions on image_tag helper
 # activate :automatic_image_sizes
@@ -77,6 +79,6 @@ configure :build do
   # activate :relative_assets
 
   # デプロイするためのリンクパス設定
-  # GitHub Pages(https://m-kishi.github.io/AbDock)に
+  # GitHub Pages(https://m-kishi.github.io/AbDock)
   set :http_prefix, "/AbDock"
 end

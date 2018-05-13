@@ -4,9 +4,10 @@ source 'https://rubygems.org'
 
 gem "middleman", "~>3.4.0"
 gem "middleman-jquery"
+gem "json", github: "flori/json", branch: "v1.8"
 
 # Live-reloading plugin
-gem "middleman-livereload", "~> 3.1.0"
+#gem "middleman-livereload", "~> 3.1.0"
 
 # For faster file watcher updates on Windows:
 gem "wdm", "~> 0.1.0", :platforms => [:mswin, :mingw]

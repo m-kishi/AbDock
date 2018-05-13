@@ -1,0 +1,71 @@
+---
+title: 推移タブ
+header_title: 画面設計
+layouts: f450_tab_graphic_layouts.yml
+control: f450_tab_graphic_control.yml
+---
+<h1>【<%= cTAB_GRAPHIC %>】</h1>
+
+<% form_layouts = load_form_data(current_page.data.layouts) %>
+<% form_control = load_form_data(current_page.data.control) %>
+
+<%# レイアウト %>
+<%= render_layouts({ form: form_layouts }) %>
+
+<%# 画面項目 %>
+<%= render_control({ form: form_control }) %>
+
+<h2>イベント</h2>
+<dl class="event">
+  <dt>初期表示</dt>
+  <dd>
+    <ul class="description">
+      <li><%= lnDBFile %>から読み込んだ<%= cEXP_INFO %>のうち，システム日付の年月〜1年前までの<%= cEXP_INFO %>を対象とする．</li>
+      <li>範囲内の年月で<%= cEXP_INFO %>がない年月の場合，<%= cCOL_COST %>はすべて&yen;0とする．</li>
+      <li>範囲内の年月それぞれで以下の項目ごとに<%= cCOL_COST %>を集計する．</li>
+      <ul class="event">
+        <li>種別：<%= type_food %></li>
+        <li>種別：<%= type_otfd %></li>
+        <li>名称：<%= cEL %></li>
+        <li>名称：<%= cGS %></li>
+        <li>名称：<%= cWT %></li>
+      </ul>
+      <li>集計した結果をグラフ描画領域に表示する．</li>
+      <li>グラフ描画領域の縦軸が集計金額で，描画範囲は&yen;0〜&yen;15,000とする．</li>
+      <li>&yen;2,500ごとに灰色の横点線を描画する．</li>
+    </ul>
+  </dd>
+  <dt>前年ボタン押下</dt>
+  <dd>
+    <ul class="description">
+      <li>現在のグラフの表示範囲を-1年分ずらす．</li>
+    <ul>
+  </dd>
+  <dt>前月ボタン押下</dt>
+  <dd>
+    <ul class="description">
+      <li>現在のグラフの表示範囲を-1ヶ月ずらす．</li>
+    <ul>
+  </dd>
+  <dt>翌月ボタン押下</dt>
+  <dd>
+    <ul class="description">
+      <li>現在のグラフの表示範囲を+1ヶ月ずらす．</li>
+    <ul>
+  </dd>
+  <dt>翌年ボタン押下</dt>
+  <dd>
+    <ul class="description">
+      <li>現在のグラフの表示範囲を+1年分ずらす．</li>
+    <ul>
+  </dd>
+</dl>
+
+<script>
+  // 画像切り替え処理の設定
+  $(function() {
+    var env = '<%= build? ? 0 : 1 %>';
+    var prefix = '<%= config[:http_prefix] %>';
+    graphic_obj.setup_image(env, prefix);
+  });
+</script>

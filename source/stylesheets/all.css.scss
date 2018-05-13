@@ -36,12 +36,11 @@ footer {
 }
 
 .content {
-  width: 100%;
+  width: 950px;
   height: auto;
+  padding: 10px 15px;
   margin-top: $header-height;
-  padding-top: 10px;
   margin-bottom: $footer-height;
-  padding-bottom: 10px;
 }
 
 h1 {
@@ -130,7 +129,11 @@ table.footer {
     color: white;
     font-size: 12px;
   }
+  td.link {
+    padding-left: 8px;
+  }
   td.copy-rights {
+    padding-right: 8px;
     text-align: right;
   }
   a {
@@ -145,6 +148,13 @@ table.footer {
   a:hover {
     color: $table-th-color;
   }
+}
+
+ul.menu {
+  list-style-type: disc;
+  -webkit-margin-after: 0;
+  -webkit-margin-before: 0;
+  -webkit-padding-start: 18px;
 }
 
 table.general {
@@ -193,7 +203,7 @@ table.layout {
 }
 
 table.controls {
-  width: $page-width;
+  width: 950px;
   border: 1px solid #000000;
   border-collapse: collapse;
   th {
@@ -226,6 +236,10 @@ td.layout {
 td.overview {
   padding-left: 16px;
   vertical-align: top;
+}
+
+ul.overview {
+  margin-top: 0px;
 }
 
 table.form-property {
@@ -292,16 +306,8 @@ img.general {
   width: 98%;
 }
 
-td.io {
-  text-align: center;
-}
-
 td.dbfile {
   width: 50%;
-}
-
-img.io {
-  margin-bottom: 10px;
 }
 
 img.dbfile {
@@ -454,6 +460,18 @@ table.auto-complete {
   }
 }
 
+table.subform-auto-complete {
+  width: 46%;
+  margin-top: 10px;
+  td {
+    text-align: center;
+    padding-bottom: 16px;
+  }
+  .small {
+    width: 90%;
+  }
+}
+
 table.summary {
   width: 100%;
   border: 1px solid #000000;
@@ -569,6 +587,28 @@ table.private-check-error {
     border: 1px dotted #000000;
   }
   td.no {
+    text-align: center;
+  }
+}
+
+table.subform-load-error {
+  width: 100%;
+  border: 1px solid #000000;
+  border-collapse: collapse;
+  margin-bottom: 10px;
+  th {
+    border: 1px solid #000000;
+    text-align: left;
+    background-color: $table-th-color;
+  }
+  th.no {
+    width: 30px;
+  }
+  td {
+    border: 1px solid #000000;
+  }
+  td.no {
+    width: 30px;
     text-align: center;
   }
 }

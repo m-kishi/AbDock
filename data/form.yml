@@ -1,34 +1,36 @@
-F401_MAIN:
+FORM_MAIN:
   NAME: メインフォーム
-  LINK: f401_form_main.html
-F402_MENU:
+  LINK: f410_form_main.html
+FORM_MENU:
   NAME: メニュー
-  LINK: f402_form_menu.html
-F403_TAB_EXPENSE:
+  LINK: f420_form_menu.html
+FORM_TAB_EXPENSE:
   NAME: 支出タブ
-  LINK: f403_tab_expense.html
-F404_TAB_SUMMARY:
+  LINK: f430_tab_expense.html
+FORM_TAB_SUMMARY:
   NAME: 月次タブ
-  LINK: f404_tab_summary.html
-F405_TAB_GRAPHIC:
+  LINK: f440_tab_summary.html
+FORM_TAB_GRAPHIC:
   NAME: 推移タブ
-  LINK: f405_tab_graphic.html
-F406_TAB_BALANCE:
+  LINK: f450_tab_graphic.html
+FORM_TAB_BALANCE:
   NAME: 収支タブ
-  LINK: f406_tab_balance.html
-F407_TAB_PRIVATE:
+  LINK: f460_tab_balance.html
+FORM_TAB_PRIVATE:
   NAME: 秘密タブ
-  LINK: f407_tab_private.html
-F501_SUB_TYPE:
+  LINK: f470_tab_private.html
+FORM_SUB_TYPE:
   NAME: 種別サブフォーム
-  LINK: f501_subform_type.html
-F502_SUB_ENERGY:
+  LINK: f510_subform_type.html
+FORM_SUB_SEARCH:
+  NAME: 検索サブフォーム
+  LINK: f520_subform_search.html
+FORM_SUB_ENERGY:
   NAME: 光熱費サブフォーム
-  LINK: f502_subform_energy.html
-F503_SUB_UPLOAD:
+  LINK: f530_subform_energy.html
+FORM_SUB_UPLOAD:
   NAME: アップロードサブフォーム
-  LINK: f503_subform_upload.html
-F504_SUB_VERSION:
+  LINK: f580_subform_upload.html
+FORM_SUB_VERSION:
   NAME: バージョン情報サブフォーム
-  LINK: f504_subform_version.html
-
+  LINK: f590_subform_version.html

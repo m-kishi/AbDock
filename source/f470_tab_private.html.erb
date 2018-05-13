@@ -1,0 +1,48 @@
+---
+title: 秘密タブ
+header_title: 画面設計
+layouts: f470_tab_private_layouts.yml
+control: f470_tab_private_control.yml
+---
+<h1>【<%= cTAB_PRIVATE %>】</h1>
+
+<% form_layouts = load_form_data(current_page.data.layouts) %>
+<% form_control = load_form_data(current_page.data.control) %>
+
+<%# レイアウト %>
+<%= render_layouts({ form: form_layouts }) %>
+
+<%# 画面項目 %>
+<%= render_control({ form: form_control }) %>
+
+<h2>イベント</h2>
+<dl class="event">
+  <dt>初期表示</dt>
+  <dd>
+    <ul class="description">
+      <li><%= lnDBFile %>から読み込んだ<%= cEXP_INFO %>を以下の定義に従って表示する(<%= lnType cEXP_TYPE_PRV %>に該当する<%= cEXP_INFO %>のみが対象)．</li>
+      <li>該当する<%= cEXP_INFO %>が0件の場合，秘密DGVは0行とする．</li>
+      <table class="private">
+        <tr><th class="no">No.</th><th>列  </th><th>定義</th></tr>
+        <tr><td class="no">1  </td><td>年月</td><td><%= cEXP_INFO %>の<%= cCOL_DATE %>(<%= cYYYY_MM %>形式)</td></tr>
+        <tr><td class="no">2  </td><td>名称</td><td><%= cEXP_INFO %>の<%= cCOL_NAME %></td></tr>
+        <tr><td class="no">3  </td><td>金額</td><td><%= cEXP_INFO %>の<%= cCOL_COST %>(<%= cCOL_TYPE %>が"<%= type_prvo %>"ならマイナス)</td></tr>
+        <tr><td class="no">4  </td><td>収支</td><td>秘密DGVの一つ上の行の収支 + <%= cEXP_INFO %>の<%= cCOL_COST %>(<%= cCOL_TYPE %>が"<%= type_prvo %>"ならマイナス)</td></tr>
+      </table>
+      <li>秘密DGVを最終行までスクロールして，最終行を選択状態とする．</li>
+      <li>表示処理中にチェックエラーが発生した場合，エラーダイアログを表示してアプリケーションを終了する．</li>
+      <table class="private-check-error">
+        <tr>
+          <th class="no">No.</th>
+          <th>条件</th>
+          <th>メッセージ</th>
+        </tr>
+        <tr>
+          <td class="no">1</td>
+          <td>"<%= type_prvi %>"と"<%= type_prvo %>"以外の<%= cCOL_TYPE %></td>
+          <td><%= lnMessage :TYPE_PRIVATE_ERR %></td>
+        </tr>
+      </table>
+    </ul>
+  </dd>
+</dl>

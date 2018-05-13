@@ -1,0 +1,30 @@
+IMAGE:
+  - PNG: subform_type_001.png
+    CAPTION: 該当の<%= cEXP_INFO %><%= cNASI %>
+  - PNG: subform_type_medi_002.png
+    CAPTION: 該当の<%= cEXP_INFO %><%= cARI  %>
+
+OVERVIEW:
+  - 特定年月・特定<%= lnType %>の<%= cEXP_INFO %>だけを表示するサブフォーム
+  - <%= lnSummary %>から<%= cCOL_TYPE %>ごとの集計結果の内訳を参照するために利用する．
+  - 特定年月内で該当<%= cCOL_TYPE %>の<%= cEXP_INFO %>が存在しない場合，支出DGVは0行とする．
+
+PROPERTY:
+  ICON: <%= cNASI %>
+  TITLE: <%= cTAB_SUMMARY %>で選択した<%= cCOL_TYPE %>
+  SIZABLE: <%= cFUKA %>
+  MINIMUM: <%= cFUKA %>
+  MAXIMUM: <%= cFUKA %>
+  SCREEN_SIZE: (395, 132)
+  START_POSITION: <%= cCENTER_PARENT %>
+  SHOW_IN_TASKBAR: <%= cNASI %>
+
+DGV:
+  CAPTION  : 支出DGVの設定
+  ADD_ROW  : <%= cFUKA %>
+  DEL_ROW  : <%= cFUKA %>
+  READONLY : <%= cMARU %>
+  SORTABLE : <%= cFUKA %>
+  COL_WIDTH: <%= cFUKA %>
+  SELECTION: <%= cSELECT_ROW %>
+  SCROLLBAR: <%= cSCROLL_VERTICAL %>

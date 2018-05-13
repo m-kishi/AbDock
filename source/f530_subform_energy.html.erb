@@ -1,0 +1,36 @@
+---
+title: 光熱費サブフォーム
+header_title: 画面設計
+layouts: f530_subform_energy_layouts.yml
+control: f530_subform_energy_control.yml
+---
+<h1>【<%= cSUB_ENERGY %>】</h1>
+<% form_layouts = load_form_data(current_page.data.layouts) %>
+<% form_control = load_form_data(current_page.data.control) %>
+
+<%# レイアウト %>
+<%= render_layouts({ form: form_layouts }) %>
+
+<%# 画面項目 %>
+<%= render_control({ form: form_control }) %>
+
+<h2>イベント</h2>
+<dl class="event">
+  <dt>初期表示</dt>
+  <dd>
+    <ul class="description">
+      <li><%= lnForm('呼び出し元画面', :FORM_MAIN) %>から<%= cEXP_INFO %>を受け取る．</li>
+      <li>
+        <%= cEXP_INFO %>がnullの場合，エラーダイアログを表示してフォームを閉じる．
+        <table class="subform-load-error">
+          <tr><th class="no">No.</th><th>条件</th><th>メッセージ</th></tr>
+          <tr><td class="no">1</td><td><%= cEXP_INFO %>がnull</td><td><%= lnMessage :EXPENSE_NULL %></td></tr>
+        </table>
+      </li>
+      <li><%= cCOL_NAME %>が"<%= cEL %>"，"<%= cGS %>"，"<%= cWT %>"の<%= cEXP_INFO %>で絞り込む．</li>
+      <li>絞り込んだ<%= cEXP_INFO %>が0件の場合，そのDGVは0行とする．</li>
+      <li>年度ごと月ごとに"<%= cEL %>"，"<%= cGS %>"，"<%= cWT %>"をそれぞれ集計する．</li>
+      <li><%= cEL %>タブを表示して電気代DGV1行目の年度列のセルを選択状態とする．</li>
+    </ul>
+  </dd>
+</dl>

@@ -1,0 +1,104 @@
+---
+title: 月次タブ
+header_title: 画面設計
+layouts: f440_tab_summary_layouts.yml
+control: f440_tab_summary_control.yml
+several: f440_tab_summary_several.yml
+---
+<h1>【<%= cTAB_SUMMARY %>】</h1>
+
+<% form_layouts = load_form_data(current_page.data.layouts) %>
+<% form_control = load_form_data(current_page.data.control) %>
+<% form_several = load_form_data(current_page.data.several) %>
+
+<%# レイアウト %>
+<%= render_layouts({ form: form_layouts }) %>
+
+<%# 画面項目 %>
+<%= render_control({ form: form_control }) %>
+
+<h2>イベント</h2>
+<dl class="event">
+  <dt>初期表示</dt>
+  <dd>
+    <ul class="description">
+      <li><%= lnDBFile %>から読み込んだ<%= cEXP_INFO %>のうち，システム日付の年月の<%= cEXP_INFO %>を対象とする．</li>
+      <li>対象の<%= cEXP_INFO %>がない場合，<%= cCOL_COST %>はすべて&yen;0とする．</li>
+      <li>対象の<%= cEXP_INFO %>の<%= cCOL_COST %>を各<%= cCOL_TYPE %>ごとに集計する．</li>
+      <li>集計した各<%= cCOL_TYPE %>ごとの<%= cCOL_COST %>を画面に表示する．</li>
+      <figure>
+        <figcaption>＜<%= cCOL_TYPE %>ごとの集計方法＞</figcaption>
+        <table class="summary">
+          <tr>
+            <th class="no">No.             </th>
+            <th           ><%= cCOL_TYPE %></th>
+            <th           >計算方法        </th>
+          </tr>
+          <% form_several.SUMMARY.each.with_index(1) do |sum, i| %>
+            <tr>
+              <td class="no"  ><%= i          %></td>
+              <td class="type"><%= sum.TYPE   %></td>
+              <td             ><%= sum.METHOD %></td>
+            </tr>
+          <% end %>
+        </table>
+      </figure>
+    </ul>
+  </dd>
+  <dt>前年ボタン押下</dt>
+  <dd>
+    <ul class="description">
+      <li>現在表示している年月の前年の集計結果を表示する．</li>
+    </ul>
+  <dt>前月ボタン押下</dt>
+  <dd>
+    <ul class="description">
+      <li>現在表示している年月の前月の集計結果を表示する．</li>
+    </ul>
+  <dt>翌月ボタン押下</dt>
+  <dd>
+    <ul class="description">
+      <li>現在表示している年月の翌月の集計結果を表示する．</li>
+    </ul>
+  <dt>翌年ボタン押下</dt>
+  <dd>
+    <ul class="description">
+      <li>現在表示している年月の翌年の集計結果を表示する．</li>
+    </ul>
+  <dt>ラベルコントロールマウスオン</dt>
+  <dd>
+    <ul class="description">
+      <li>ラベルコントロールの<%= cCOL_TYPE %>か<%= cCOL_COST %>にマウスオンした場合，マウスカーソルを手形にして下線を表示する．</li>
+      <table class="mouse-on">
+        <tr>
+          <% form_several.MOUSE.each.with_index(1) do |img, i| %>
+            <td>
+              <figure>
+                <%= image_tag img.PNG %>
+                <figcaption><%= "3-#{i}.#{img.CAPTION}" %></figcaption>
+              </figure>
+            </td>
+          <% end %>
+        </tr>
+      </table>
+    </ul>
+  </dd>
+  <dt>ラベルコントロールのクリック</dt>
+  <dd>
+    <ul class="description">
+      <li>ラベルコントロールの<%= cCOL_TYPE %>か<%= cCOL_COST %>をクリックした場合，<%= lnSubType %>を表示する．</li>
+    </ul>
+    <table class="event">
+      <tr>
+        <% form_several.SUB_FORM_TYPE.each.with_index(1) do |img, i| %>
+          <td>
+            <figure>
+              <%= image_tag img.PNG %>
+              <figcaption><%= "4-#{i}.#{img.CAPTION}" %></figcaption>
+            </figure>
+          </td>
+        <% end %>
+      </tr>
+    </table>
+  </dd>
+</dl>

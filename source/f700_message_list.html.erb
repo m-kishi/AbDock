@@ -1,4 +1,5 @@
 ---
+title: メッセージ
 header_title: メッセージ
 ---
 <h1>【メッセージ一覧】</h1>
@@ -44,7 +45,7 @@ $(window).load(function() {
     <th           >メッセージ</th>
     <th           >書式設定  </th>
   </tr>
-  <% data.mesg.each_with_index do |(k, v), i| %>
+  <% data.message.each_with_index do |(k, v), i| %>
     <tr>
       <td class="no"   ><%= i+1   %></td>
       <td id="<%= k %>"><%= k     %></td>
