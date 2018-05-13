@@ -5,11 +5,14 @@
     <!-- Always force latest IE rendering engine or request Chrome Frame -->
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <!-- Use title if it's in the page YAML frontmatter -->
-    <title>AbDock</title>
+    <title>光熱費サブフォーム</title>
+    <link href="/AbDock/images/abdock.ico" rel="icon" type="image/ico" />
     <link href="/AbDock/stylesheets/normalize.css" rel="stylesheet" /><link href="/AbDock/stylesheets/all.css" rel="stylesheet" />
+    <link href="/AbDock/stylesheets/mermaid.forest.min.css" rel="stylesheet" />
     <script src="/AbDock/javascripts/all.js"></script>
+    <script src="/AbDock/javascripts/mermaid.min.js"></script>
   </head>
-  <body class="f502_subform_energy">
+  <body class="f530_subform_energy">
     <header>
   <table class="header">
     <colgroup>
@@ -28,7 +31,7 @@
         <td class="version">バージョン</td>
       </tr>
       <tr>
-        <td class="version-number">5.5.1</td>
+        <td class="version-number">5.6.0</td>
       </tr>
     </tbody>
   </table>
@@ -37,8 +40,7 @@
     <div class="content">
       <h1>【光熱費サブフォーム】</h1>
 
-<section>
-  <h2>レイアウト</h2>
+<h2>レイアウト</h2>
 
 <table class="layout">
     <tr>
@@ -53,7 +55,7 @@
         <td rowspan="6" class="overview">
           <figure>
             <figcaption>＜概要＞</figcaption>
-              <ul>
+              <ul class="overview">
                   <li>年度ごと月ごとの光熱費を一覧表示するサブフォーム</li>
                   <li>光熱費として電気代，ガス代，水道代を対象とする．</li>
                   <li>各DGVの中で月ごとに最大値を赤字，最小値を青字で表示する．</li>
@@ -66,7 +68,7 @@
                     <tr><th>アイコン        </th><td>なし</td></tr>
                   <tr><th>画面サイズ        </th><td>(704, 306)</td></tr>
                   <tr><th>サイズ変更        </th><td>不可</td></tr>
-                  <tr><th>初期表示位置      </th><td>画面中央</td></tr>
+                  <tr><th>初期表示位置      </th><td>呼び出し元画面中央</td></tr>
                   <tr><th>ウィンドウの最大化</th><td>不可</td></tr>
                   <tr><th>ウィンドウの最小化</th><td>不可</td></tr>
                   <tr><th>タスクバーへの表示</th><td>なし</td></tr>
@@ -139,10 +141,8 @@
     </tr>
 </table>
 
-</section>
 
-<section>
-  <h2>画面項目</h2>
+<h2>画面項目</h2>
 
 
   <table class="controls">
@@ -710,30 +710,36 @@
 
   </table>
 
-</section>
 
-<section>
-  <h2>イベント</h2>
-  <dl class="event">
-    <dt>初期表示</dt>
-    <dd>
-      <ul class="description">
-        <li><a href="/AbDock/f200_dbfile.html">DBファイル</a>から支出情報を読み込み，名称が"電気代"，"ガス代"，"水道代"の支出情報で絞り込む．</li>
-        <li>絞り込んだ支出情報が0件の場合，そのDGVは0行とする．</li>
-        <li>年度ごと月ごとに"電気代"，"ガス代"，"水道代"をそれぞれ集計する．</li>
-        <li>電気代タブを表示して電気代DGV1行目の年度列のセルを選択状態とする．</li>
-        <li>DBファイルの読み込みに失敗した場合，エラーダイアログを表示してフォームを閉じる(エラーダイアログは<a href="/AbDock/f401_form_main.html">メインフォーム</a>の初期表示と同様)．</li>
-      </ul>
-    </dd>
-  </dl>
-</section>
+<h2>イベント</h2>
+<dl class="event">
+  <dt>初期表示</dt>
+  <dd>
+    <ul class="description">
+      <li><a href="/AbDock/f410_form_main.html">呼び出し元画面</a>から支出情報を受け取る．</li>
+      <li>
+        支出情報がnullの場合，エラーダイアログを表示してフォームを閉じる．
+        <table class="subform-load-error">
+          <tr><th class="no">No.</th><th>条件</th><th>メッセージ</th></tr>
+          <tr><td class="no">1</td><td>支出情報がnull</td><td><a href="/AbDock/f700_message_list.html#EXPENSE_NULL">支出情報がありません。</a></td></tr>
+        </table>
+      </li>
+      <li>名称が"電気代"，"ガス代"，"水道代"の支出情報で絞り込む．</li>
+      <li>絞り込んだ支出情報が0件の場合，そのDGVは0行とする．</li>
+      <li>年度ごと月ごとに"電気代"，"ガス代"，"水道代"をそれぞれ集計する．</li>
+      <li>電気代タブを表示して電気代DGV1行目の年度列のセルを選択状態とする．</li>
+    </ul>
+  </dd>
+</dl>
 
     </div>
     <footer>
   <table class="footer">
     <tr>
-      <td>
-        <a href="/AbDock/">トップ</a>
+      <td class="link">
+        <a href="/AbDock/">トップページ</a> | 
+        <a href="https://github.com/m-kishi/Abook">Abook</a> | 
+        <a href="https://github.com/m-kishi/AbDock">GitHub</a>
       </td>
     </tr>
     <tr>
@@ -744,5 +750,6 @@
   </table>
 </footer>
 
+    <script>mermaid.initialize({startOnLoad:true});</script>
   </body>
 </html>

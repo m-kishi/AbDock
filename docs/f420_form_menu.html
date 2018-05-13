@@ -5,11 +5,14 @@
     <!-- Always force latest IE rendering engine or request Chrome Frame -->
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <!-- Use title if it's in the page YAML frontmatter -->
-    <title>AbDock</title>
+    <title>メニュー</title>
+    <link href="/AbDock/images/abdock.ico" rel="icon" type="image/ico" />
     <link href="/AbDock/stylesheets/normalize.css" rel="stylesheet" /><link href="/AbDock/stylesheets/all.css" rel="stylesheet" />
+    <link href="/AbDock/stylesheets/mermaid.forest.min.css" rel="stylesheet" />
     <script src="/AbDock/javascripts/all.js"></script>
+    <script src="/AbDock/javascripts/mermaid.min.js"></script>
   </head>
-  <body class="f402_form_menu">
+  <body class="f420_form_menu">
     <header>
   <table class="header">
     <colgroup>
@@ -28,7 +31,7 @@
         <td class="version">バージョン</td>
       </tr>
       <tr>
-        <td class="version-number">5.5.1</td>
+        <td class="version-number">5.6.0</td>
       </tr>
     </tbody>
   </table>
@@ -37,8 +40,7 @@
     <div class="content">
       <h1>【メニュー】</h1>
 
-<section>
-  <h2>レイアウト</h2>
+<h2>レイアウト</h2>
 
 <table class="layout">
     <tr>
@@ -53,7 +55,7 @@
         <td rowspan="4" class="overview">
           <figure>
             <figcaption>＜概要＞</figcaption>
-              <ul>
+              <ul class="overview">
                   <li>フォーム上部にメニューを表示する．</li>
                   <li>メニューに応じたサブメニューを展開する．</li>
                   <li>選択されたサブメニューごとにそれぞれの処理を行う．</li>
@@ -93,10 +95,8 @@
     </tr>
 </table>
 
-</section>
 
-<section>
-  <h2>画面項目</h2>
+<h2>画面項目</h2>
 
 
   <table class="controls">
@@ -158,6 +158,18 @@
 
     <tr>
   <td                >1-2-1</td>
+  <td                >検索</td>
+  <td                >MenuSearch</td>
+  <td                >検索(S)</td>
+  <td                ></td>
+  <td class="align-c"></td>
+  <td                >MenuItem</td>
+  <td                ></td>
+</tr>
+
+
+    <tr>
+  <td                >1-2-2</td>
   <td                >光熱費</td>
   <td                >MenuEnergy</td>
   <td                >光熱費(E)</td>
@@ -169,7 +181,7 @@
 
 
     <tr>
-  <td                >1-2-2</td>
+  <td                >1-2-3</td>
   <td                >アップロード</td>
   <td                >MenuUpload</td>
   <td                >アップロード(U)</td>
@@ -208,44 +220,49 @@
 
   </table>
 
-</section>
 
-<section>
-  <h2>イベント</h2>
-  <dl class="event">
-    <dt>終了(Q)選択</dt>
-    <dd>
-      <ul class="description">
-        <li>アプリケーションを終了する．</li>
-      </ul>
-    </dd>
-    <dt>光熱費(E)選択</dt>
-    <dd>
-      <ul class="description">
-        <li><a href="/AbDock/f502_subform_energy.html">光熱費サブフォーム</a>を表示する．</li>
-      </ul>
-    </dd>
-    <dt>アップロード(U)選択</dt>
-    <dd>
-      <ul class="description">
-        <li><a href="/AbDock/f503_subform_upload.html">アップロードサブフォーム</a>を表示する．</li>
-      </ul>
-    </dd>
-    <dt>バージョン情報(A)選択</dt>
-    <dd>
-      <ul class="description">
-        <li><a href="/AbDock/f504_subform_version.html">バージョン情報サブフォーム</a>を表示する．</li>
-      </ul>
-    </dd>
-  </dl>
-</section>
+<h2>イベント</h2>
+<dl class="event">
+  <dt>終了(Q)選択</dt>
+  <dd>
+    <ul class="description">
+      <li>アプリケーションを終了する．</li>
+    </ul>
+  </dd>
+  <dt>検索(S)選択</dt>
+  <dd>
+    <ul class="description">
+      <li><a href="/AbDock/f520_subform_search.html">検索サブフォーム</a>を表示する．</li>
+    </ul>
+  </dd>
+  <dt>光熱費(E)選択</dt>
+  <dd>
+    <ul class="description">
+      <li><a href="/AbDock/f530_subform_energy.html">光熱費サブフォーム</a>を表示する．</li>
+    </ul>
+  </dd>
+  <dt>アップロード(U)選択</dt>
+  <dd>
+    <ul class="description">
+      <li><a href="/AbDock/f580_subform_upload.html">アップロードサブフォーム</a>を表示する．</li>
+    </ul>
+  </dd>
+  <dt>バージョン情報(A)選択</dt>
+  <dd>
+    <ul class="description">
+      <li><a href="/AbDock/f590_subform_version.html">バージョン情報サブフォーム</a>を表示する．</li>
+    </ul>
+  </dd>
+</dl>
 
     </div>
     <footer>
   <table class="footer">
     <tr>
-      <td>
-        <a href="/AbDock/">トップ</a>
+      <td class="link">
+        <a href="/AbDock/">トップページ</a> | 
+        <a href="https://github.com/m-kishi/Abook">Abook</a> | 
+        <a href="https://github.com/m-kishi/AbDock">GitHub</a>
       </td>
     </tr>
     <tr>
@@ -256,5 +273,6 @@
   </table>
 </footer>
 
+    <script>mermaid.initialize({startOnLoad:true});</script>
   </body>
 </html>

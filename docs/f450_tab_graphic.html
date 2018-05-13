@@ -5,11 +5,14 @@
     <!-- Always force latest IE rendering engine or request Chrome Frame -->
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <!-- Use title if it's in the page YAML frontmatter -->
-    <title>AbDock</title>
+    <title>推移タブ</title>
+    <link href="/AbDock/images/abdock.ico" rel="icon" type="image/ico" />
     <link href="/AbDock/stylesheets/normalize.css" rel="stylesheet" /><link href="/AbDock/stylesheets/all.css" rel="stylesheet" />
+    <link href="/AbDock/stylesheets/mermaid.forest.min.css" rel="stylesheet" />
     <script src="/AbDock/javascripts/all.js"></script>
+    <script src="/AbDock/javascripts/mermaid.min.js"></script>
   </head>
-  <body class="f405_tab_graphic">
+  <body class="f450_tab_graphic">
     <header>
   <table class="header">
     <colgroup>
@@ -28,7 +31,7 @@
         <td class="version">バージョン</td>
       </tr>
       <tr>
-        <td class="version-number">5.5.1</td>
+        <td class="version-number">5.6.0</td>
       </tr>
     </tbody>
   </table>
@@ -38,8 +41,7 @@
       <h1>【推移タブ】</h1>
 
 
-<section>
-  <h2>レイアウト</h2>
+<h2>レイアウト</h2>
 
 <table class="layout">
     <tr>
@@ -54,7 +56,7 @@
         <td rowspan="2" class="overview">
           <figure>
             <figcaption>＜概要＞</figcaption>
-              <ul>
+              <ul class="overview">
                   <li>1年分の支出の推移をグラフ表示する画面</li>
                   <li>初期表示はシステム日付の年月〜1年前の同月までを表示する．</li>
                   <li>支出情報のない年月はすべて&yen;0とする．</li>
@@ -80,10 +82,8 @@
     </tr>
 </table>
 
-</section>
 
-<section>
-  <h2>画面項目</h2>
+<h2>画面項目</h2>
 
 
   <table class="controls">
@@ -399,109 +399,59 @@
 
   </table>
 
-</section>
 
-<section>
-  <h2>イベント</h2>
-  <dl class="event">
-    <dt>初期表示</dt>
-    <dd>
-      <ul class="description">
-        <li><a href="/AbDock/f200_dbfile.html">DBファイル</a>から読み込んだ支出情報のうち，システム日付の年月〜1年前までの支出情報を対象とする．</li>
-        <li>範囲内の年月で支出情報がない年月の場合，金額はすべて&yen;0とする．</li>
-        <li>範囲内の年月それぞれで以下の項目ごとに金額を集計する．</li>
-        <ul class="event">
-          <li>種別：食費</li>
-          <li>種別：外食費</li>
-          <li>名称：電気代</li>
-          <li>名称：ガス代</li>
-          <li>名称：水道代</li>
-        </ul>
-        <li>集計した結果をグラフ描画領域に表示する．</li>
-        <li>グラフ描画領域の縦軸が集計金額で，描画範囲は&yen;0〜&yen;15,000とする．</li>
-        <li>&yen;2,500ごとに灰色の横点線を描画する．</li>
+<h2>イベント</h2>
+<dl class="event">
+  <dt>初期表示</dt>
+  <dd>
+    <ul class="description">
+      <li><a href="/AbDock/f200_dbfile.html">DBファイル</a>から読み込んだ支出情報のうち，システム日付の年月〜1年前までの支出情報を対象とする．</li>
+      <li>範囲内の年月で支出情報がない年月の場合，金額はすべて&yen;0とする．</li>
+      <li>範囲内の年月それぞれで以下の項目ごとに金額を集計する．</li>
+      <ul class="event">
+        <li>種別：食費</li>
+        <li>種別：外食費</li>
+        <li>名称：電気代</li>
+        <li>名称：ガス代</li>
+        <li>名称：水道代</li>
       </ul>
-    </dd>
-    <dt>前年ボタン押下</dt>
-    <dd>
-      <ul class="description">
-        <li>現在のグラフの表示範囲を-1年分ずらす．</li>
-      <ul>
-    </dd>
-    <dt>前月ボタン押下</dt>
-    <dd>
-      <ul class="description">
-        <li>現在のグラフの表示範囲を-1ヶ月ずらす．</li>
-      <ul>
-    </dd>
-    <dt>翌月ボタン押下</dt>
-    <dd>
-      <ul class="description">
-        <li>現在のグラフの表示範囲を+1ヶ月ずらす．</li>
-      <ul>
-    </dd>
-    <dt>翌年ボタン押下</dt>
-    <dd>
-      <ul class="description">
-        <li>現在のグラフの表示範囲を+1年分ずらす．</li>
-      <ul>
-    </dd>
-  </dl>
-</section>
+      <li>集計した結果をグラフ描画領域に表示する．</li>
+      <li>グラフ描画領域の縦軸が集計金額で，描画範囲は&yen;0〜&yen;15,000とする．</li>
+      <li>&yen;2,500ごとに灰色の横点線を描画する．</li>
+    </ul>
+  </dd>
+  <dt>前年ボタン押下</dt>
+  <dd>
+    <ul class="description">
+      <li>現在のグラフの表示範囲を-1年分ずらす．</li>
+    <ul>
+  </dd>
+  <dt>前月ボタン押下</dt>
+  <dd>
+    <ul class="description">
+      <li>現在のグラフの表示範囲を-1ヶ月ずらす．</li>
+    <ul>
+  </dd>
+  <dt>翌月ボタン押下</dt>
+  <dd>
+    <ul class="description">
+      <li>現在のグラフの表示範囲を+1ヶ月ずらす．</li>
+    <ul>
+  </dd>
+  <dt>翌年ボタン押下</dt>
+  <dd>
+    <ul class="description">
+      <li>現在のグラフの表示範囲を+1年分ずらす．</li>
+    <ul>
+  </dd>
+</dl>
+
 <script>
+  // 画像切り替え処理の設定
   $(function() {
-    var GraphicClass = function() {
-      this.idx = 6;
-      this.prefix = ''
-        this.prefix = '/AbDock';
-      this.arr = [
-        this.prefix + '/images/tab_graphic_arr_001.png',
-        this.prefix + '/images/tab_graphic_arr_002.png',
-        this.prefix + '/images/tab_graphic_arr_003.png',
-        this.prefix + '/images/tab_graphic_arr_004.png',
-        this.prefix + '/images/tab_graphic_arr_005.png',
-        this.prefix + '/images/tab_graphic_arr_006.png',
-        this.prefix + '/images/tab_graphic_arr_007.png',
-        this.prefix + '/images/tab_graphic_arr_008.png',
-        this.prefix + '/images/tab_graphic_arr_009.png',
-        this.prefix + '/images/tab_graphic_arr_010.png',
-        this.prefix + '/images/tab_graphic_arr_011.png',
-        this.prefix + '/images/tab_graphic_arr_012.png',
-        this.prefix + '/images/tab_graphic_arr_013.png',
-      ];
-      this.imgs = function() {
-        return this.arr[this.idx];
-      };
-      this.prev = function() {
-        this.idx = this.idx - 1;
-      };
-      this.next = function() {
-        this.idx = this.idx + 1;
-      };
-      this.nomore_prev = function() {
-        return this.idx == 0;
-      };
-      this.nomore_next = function() {
-        return this.idx == (this.arr.length - 1);
-      };
-    };
-    var graphic_obj = new GraphicClass();
-    $("#btn_prev_month").click(function() {
-      graphic_obj.prev();
-      $("#img_graphic").attr('src', graphic_obj.imgs());
-      if (graphic_obj.nomore_prev()) {
-        $("#btn_prev_month").prop("disabled", true);
-      }
-      $("#btn_next_month").prop("disabled", false);
-    });
-    $("#btn_next_month").click(function() {
-      graphic_obj.next();
-      $("#img_graphic").attr('src', graphic_obj.imgs());
-      if (graphic_obj.nomore_next()) {
-        $("#btn_next_month").prop("disabled", true);
-      }
-      $("#btn_prev_month").prop("disabled", false);
-    });
+    var env = '0';
+    var prefix = '/AbDock';
+    graphic_obj.setup_image(env, prefix);
   });
 </script>
 
@@ -509,8 +459,10 @@
     <footer>
   <table class="footer">
     <tr>
-      <td>
-        <a href="/AbDock/">トップ</a>
+      <td class="link">
+        <a href="/AbDock/">トップページ</a> | 
+        <a href="https://github.com/m-kishi/Abook">Abook</a> | 
+        <a href="https://github.com/m-kishi/AbDock">GitHub</a>
       </td>
     </tr>
     <tr>
@@ -521,5 +473,6 @@
   </table>
 </footer>
 
+    <script>mermaid.initialize({startOnLoad:true});</script>
   </body>
 </html>

@@ -7,7 +7,7 @@ $(function() {
     this.idx = 6;
     this.prefix = ''
     this.setup_image = function(env, prefix) {
-      if (env === 0) {
+      if (env == '0') {
         this.prefix = prefix;
       }
       this.arr = [
