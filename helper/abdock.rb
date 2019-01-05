@@ -34,6 +34,7 @@ module AbDockHelpers
   def cCOL_NAME ; data.term.ABOOK_DB.COLUMNS.NAME end
   def cCOL_TYPE ; data.term.ABOOK_DB.COLUMNS.TYPE end
   def cCOL_COST ; data.term.ABOOK_DB.COLUMNS.COST end
+  def cCOL_NOTE ; data.term.ABOOK_DB.COLUMNS.NOTE end
   # MENU
   def cFILE;  "#{data.term.MENU.FILE   .TEXT}" end
   def cQUIT;  "#{data.term.MENU.QUIT   .TEXT}" end

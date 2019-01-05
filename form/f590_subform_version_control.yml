@@ -15,14 +15,14 @@ CONTROL:
     NOTE:
   - ID: LblVersion
     NAME: バージョン
-    TEXT: Version 5.6.0
+    TEXT: Version <%= data.project.VERSION %>
     ATTR:
     ALGN: <%= cLEFT %>
     TYPE: <%= cLABEL %>
     NOTE:
   - ID: LblCopyright
     NAME: コピーライト
-    TEXT: Copyright @ 2010-2018 m-kishi
+    TEXT: Copyright @ 2010-2019 m-kishi
     ATTR:
     ALGN: <%= cLEFT %>
     TYPE: <%= cLABEL %>
