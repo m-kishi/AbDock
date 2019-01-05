@@ -59,666 +59,670 @@ li {
   margin-bottom: 5px; }
 
 /* line 72, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+.attention {
+  color: red; }
+
+/* line 76, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
 table.header {
   width: 980px;
   height: 100%;
   border: 1px solid #000000;
   table-layout: fixed;
   border-collapse: collapse; }
-  /* line 78, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 82, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.header td {
     border: 1px solid #000000; }
-  /* line 81, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 85, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.header td.bc {
     background-color: #38b48b; }
-  /* line 84, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 88, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.header td.title {
     font-size: 24px;
     color: red;
     font-weight: bold;
     text-align: center;
     background-color: #38b48b; }
-  /* line 91, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 95, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.header td.project {
     text-align: center;
     background-color: white; }
-  /* line 95, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 99, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.header td.appname {
     text-align: center;
     background-color: white; }
-  /* line 99, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 103, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.header td.subname {
     text-align: center;
     background-color: white; }
-  /* line 103, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 107, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.header td.version {
     font-size: 12px;
     text-align: center;
     background-color: #38b48b; }
-  /* line 108, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 112, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.header td.version-number {
     font-size: 12px;
     text-align: center;
     background-color: white; }
 
-/* line 115, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+/* line 119, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
 col.title {
   width: 220px; }
 
-/* line 116, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+/* line 120, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
 col.project {
   width: 220px; }
 
-/* line 117, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+/* line 121, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
 col.appname {
   width: 220px; }
 
-/* line 118, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+/* line 122, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
 col.subname {
   width: 220px; }
 
-/* line 119, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+/* line 123, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
 col.version {
   width: 100px; }
 
-/* line 121, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+/* line 125, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
 table.footer {
   width: 980px;
   height: 100%;
   border: 1px solid #000000;
   table-layout: fixed;
   border-collapse: collapse; }
-  /* line 127, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 131, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.footer td {
     width: 100%;
     color: white;
     font-size: 12px; }
-  /* line 132, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 136, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.footer td.link {
     padding-left: 8px; }
-  /* line 135, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 139, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.footer td.copy-rights {
     padding-right: 8px;
     text-align: right; }
-  /* line 139, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 143, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.footer a {
     font-weight: bold; }
-  /* line 142, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 146, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.footer a:link {
     color: white; }
-  /* line 145, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 149, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.footer a:visited {
     color: white; }
-  /* line 148, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 152, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.footer a:hover {
     color: #fff10f; }
 
-/* line 153, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+/* line 157, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
 ul.menu {
   list-style-type: disc;
   -webkit-margin-after: 0;
   -webkit-margin-before: 0;
   -webkit-padding-start: 18px; }
 
-/* line 160, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+/* line 164, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
 table.general {
   width: 100%;
   border: 1px solid #000000;
   border-collapse: collapse; }
-  /* line 164, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 168, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.general th {
     border: 1px solid #000000;
     text-align: left;
     background-color: #fff10f; }
-  /* line 169, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 173, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.general th.no-s {
     width: 30px; }
-  /* line 172, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 176, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.general td {
     border: 1px dotted #000000; }
-  /* line 175, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 179, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.general td.no-s {
     text-align: center; }
 
-/* line 180, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+/* line 184, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
 table.csv-format {
   width: 100%;
   margin-top: 5px;
   border: 1px solid #000000;
   border-collapse: collapse; }
-  /* line 185, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 189, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.csv-format th {
     width: 100px;
     border: 1px solid #000000;
     text-align: left;
     background-color: #fff10f; }
-  /* line 191, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 195, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.csv-format td {
     border: 1px dotted #000000; }
 
-/* line 196, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+/* line 200, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
 figure.transition {
   margin-top: 30px;
   margin-left: 30px; }
 
-/* line 201, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+/* line 205, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
 table.layout {
   width: 100%; }
 
-/* line 205, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+/* line 209, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
 table.controls {
   width: 950px;
   border: 1px solid #000000;
   border-collapse: collapse; }
-  /* line 209, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 213, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.controls th {
     border: 1px solid #000000;
     text-align: left;
     background-color: #fff10f; }
-  /* line 214, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 218, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.controls th.no-s {
     width: 30px; }
-  /* line 215, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 219, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.controls th.no-m {
     width: 38px; }
-  /* line 216, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 220, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.controls th.no-l {
     width: 46px; }
-  /* line 217, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 221, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.controls td {
     border: 1px dotted #000000; }
-  /* line 220, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 224, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.controls td.no-s {
     text-align: center; }
-  /* line 221, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 225, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.controls td.no-m {
     text-align: left; }
-  /* line 222, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 226, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.controls td.no-l {
     text-align: left; }
-  /* line 223, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 227, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.controls .maru {
     width: 45px; }
-  /* line 226, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 230, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.controls .align-c {
     text-align: center; }
 
-/* line 231, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+/* line 235, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
 td.layout {
   text-align: center;
   padding-bottom: 16px; }
 
-/* line 236, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+/* line 240, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
 td.overview {
   padding-left: 16px;
   vertical-align: top; }
 
-/* line 241, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+/* line 245, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
 ul.overview {
   margin-top: 0px; }
 
-/* line 245, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+/* line 249, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
 table.form-property {
   width: 100%;
   border: 1px solid #000000;
   border-collapse: collapse;
   margin-bottom: 1em; }
-  /* line 250, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 254, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.form-property th {
     width: 160px;
     border: 1px solid #000000;
     text-align: left;
     background-color: #fff10f; }
-  /* line 256, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 260, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.form-property td {
     border: 1px dotted #000000; }
 
-/* line 261, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+/* line 265, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
 table.dgv-property {
   width: 100%;
   border: 1px solid #000000;
   border-collapse: collapse; }
-  /* line 265, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 269, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.dgv-property th {
     width: 160px;
     border: 1px solid #000000;
     text-align: left;
     background-color: #fff10f; }
-  /* line 271, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 275, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.dgv-property td {
     border: 1px dotted #000000; }
 
-/* line 276, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+/* line 280, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
 table.type {
   width: 100%;
   margin-top: 16px;
   border: 1px solid #000000;
   border-collapse: collapse; }
-  /* line 281, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 285, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.type th {
     border: 1px solid #000000;
     text-align: left;
     background-color: #fff10f; }
-  /* line 286, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 290, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.type th.no {
     width: 30px; }
-  /* line 289, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 293, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.type td {
     border: 1px dotted #000000; }
-  /* line 292, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 296, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.type td.no {
     text-align: center; }
-  /* line 295, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 299, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.type .check {
     width: 30px;
     text-align: center; }
 
-/* line 301, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+/* line 305, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
 td.general {
   width: 50%; }
 
-/* line 305, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+/* line 309, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
 img.general {
   width: 98%; }
 
-/* line 309, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+/* line 313, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
 td.dbfile {
   width: 50%; }
 
-/* line 313, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+/* line 317, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
 img.dbfile {
   width: 98%; }
 
-/* line 317, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+/* line 321, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
 td.energy {
   width: 50%; }
 
-/* line 321, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+/* line 325, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
 img.energy {
   width: 98%; }
 
-/* line 325, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+/* line 329, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
 table.message {
   width: 100%;
   margin-top: 16px;
   border: 1px solid #000000;
   border-collapse: collapse; }
-  /* line 330, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 334, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.message tr.fragment {
     color: red; }
-  /* line 333, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 337, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.message th {
     border: 1px solid #000000;
     text-align: left;
     background-color: #fff10f; }
-  /* line 338, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 342, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.message th.no {
     width: 30px; }
-  /* line 341, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 345, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.message td {
     border: 1px dotted #000000; }
-  /* line 344, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 348, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.message td.no {
     width: 30px;
     text-align: center; }
 
-/* line 350, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+/* line 354, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
 dl.event {
   margin-left: 15px; }
-  /* line 352, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 356, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   dl.event dt {
     margin-left: 15px;
     display: list-item;
     list-style: disc; }
-  /* line 357, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 361, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   dl.event dd {
     margin-top: 6px;
     margin-left: 15px;
     margin-bottom: 15px; }
-  /* line 362, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 366, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   dl.event ul.description {
     list-style-type: circle;
     -webkit-margin-after: 0;
     -webkit-margin-before: 0;
     -webkit-padding-start: 18px; }
-  /* line 368, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 372, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   dl.event ul.event {
     list-style-type: none;
     margin-top: 10px;
     margin-left: -30px;
     margin-bottom: 10px; }
-  /* line 375, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 379, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   dl.event ol.event {
     margin-top: 10px;
     margin-bottom: 10px; }
 
-/* line 381, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+/* line 385, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
 table.event {
   width: 100%;
   margin-top: 10px; }
-  /* line 384, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 388, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.event td {
     text-align: center; }
-  /* line 387, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 391, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.event .small {
     width: 80%; }
 
-/* line 392, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+/* line 396, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
 table.db-file-load-error {
   width: 100%;
   border: 1px solid #000000; }
-  /* line 395, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 399, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.db-file-load-error th {
     border: 1px solid #000000;
     text-align: left;
     background-color: #fff10f; }
-  /* line 400, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 404, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.db-file-load-error th.no {
     width: 30px; }
-  /* line 403, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 407, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.db-file-load-error td {
     border: 1px solid #000000; }
-  /* line 406, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 410, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.db-file-load-error td.no {
     width: 30px;
     text-align: center; }
 
-/* line 412, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+/* line 416, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
 table.input-error {
   width: 100%;
   margin-top: 10px;
   margin-bottom: 10px; }
-  /* line 416, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 420, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.input-error td {
     text-align: center; }
-  /* line 419, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 423, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.input-error td.wide {
     width: 38%; }
-  /* line 422, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 426, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.input-error td.diag {
     width: 24%; }
-  /* line 425, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 429, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.input-error td > figure > img {
     width: 98%; }
 
-/* line 430, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+/* line 434, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
 table.db-file-store-error {
   width: 100%;
   border: 1px solid #000000; }
-  /* line 433, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 437, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.db-file-store-error th {
     border: 1px solid #000000;
     text-align: left;
     background-color: #fff10f; }
-  /* line 438, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 442, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.db-file-store-error th.no {
     width: 30px; }
-  /* line 441, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 445, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.db-file-store-error td {
     border: 1px solid #000000; }
-  /* line 444, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 448, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.db-file-store-error td.no {
     width: 30px;
     text-align: center; }
 
-/* line 450, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+/* line 454, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
 table.auto-complete {
   width: 100%;
   margin-top: 10px; }
-  /* line 453, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 457, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.auto-complete td {
     width: 50%;
     text-align: left;
     padding-bottom: 16px; }
-  /* line 458, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 462, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.auto-complete .small {
     width: 90%; }
 
-/* line 463, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+/* line 467, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
 table.subform-auto-complete {
   width: 46%;
   margin-top: 10px; }
-  /* line 466, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 470, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.subform-auto-complete td {
     text-align: center;
     padding-bottom: 16px; }
-  /* line 470, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 474, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.subform-auto-complete .small {
     width: 90%; }
 
-/* line 475, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+/* line 479, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
 table.summary {
   width: 100%;
   border: 1px solid #000000;
   border-collapse: collapse; }
-  /* line 479, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 483, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.summary th {
     border: 1px solid #000000;
     text-align: left;
     background-color: #fff10f; }
-  /* line 484, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 488, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.summary th.no {
     width: 30px; }
-  /* line 487, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 491, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.summary td {
     border: 1px dotted #000000; }
-  /* line 490, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 494, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.summary td.no {
     text-align: center; }
-  /* line 493, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 497, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.summary td.type {
     width: 80px; }
 
-/* line 498, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+/* line 502, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
 table.mouse-on {
   width: 100%;
   margin-top: 10px; }
-  /* line 501, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 505, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.mouse-on td {
     text-align: center; }
 
-/* line 506, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+/* line 510, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
 table.balance {
   width: 100%;
   border: 1px solid #000000;
   border-collapse: collapse;
   margin-bottom: 10px; }
-  /* line 511, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 515, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.balance th {
     border: 1px solid #000000;
     text-align: left;
     background-color: #fff10f; }
-  /* line 516, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 520, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.balance th.no {
     width: 30px;
     text-align: center; }
-  /* line 520, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 524, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.balance td {
     border: 1px dotted #000000; }
-  /* line 523, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 527, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.balance td.no {
     text-align: center; }
 
-/* line 528, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+/* line 532, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
 table.balance-check-error {
   width: 100%;
   border: 1px solid #000000;
   border-collapse: collapse;
   margin-bottom: 10px; }
-  /* line 533, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 537, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.balance-check-error th {
     border: 1px solid #000000;
     text-align: left;
     background-color: #fff10f; }
-  /* line 538, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 542, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.balance-check-error th.no {
     width: 30px;
     text-align: center; }
-  /* line 542, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 546, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.balance-check-error td {
     border: 1px dotted #000000; }
-  /* line 545, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 549, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.balance-check-error td.no {
     text-align: center; }
 
-/* line 550, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+/* line 554, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
 table.private {
   width: 100%;
   border: 1px solid #000000;
   border-collapse: collapse;
   margin-bottom: 10px; }
-  /* line 555, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 559, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.private th {
     border: 1px solid #000000;
     text-align: left;
     background-color: #fff10f; }
-  /* line 560, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 564, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.private th.no {
     width: 30px;
     text-align: center; }
-  /* line 564, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 568, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.private td {
     border: 1px dotted #000000; }
-  /* line 567, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 571, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.private td.no {
     text-align: center; }
 
-/* line 572, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+/* line 576, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
 table.private-check-error {
   width: 100%;
   border: 1px solid #000000;
   border-collapse: collapse;
   margin-bottom: 10px; }
-  /* line 577, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 581, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.private-check-error th {
     border: 1px solid #000000;
     text-align: left;
     background-color: #fff10f; }
-  /* line 582, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 586, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.private-check-error th.no {
     width: 30px;
     text-align: center; }
-  /* line 586, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 590, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.private-check-error td {
     border: 1px dotted #000000; }
-  /* line 589, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 593, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.private-check-error td.no {
     text-align: center; }
 
-/* line 594, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+/* line 598, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
 table.subform-load-error {
   width: 100%;
   border: 1px solid #000000;
   border-collapse: collapse;
   margin-bottom: 10px; }
-  /* line 599, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 603, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.subform-load-error th {
     border: 1px solid #000000;
     text-align: left;
     background-color: #fff10f; }
-  /* line 604, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 608, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.subform-load-error th.no {
     width: 30px; }
-  /* line 607, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 611, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.subform-load-error td {
     border: 1px solid #000000; }
-  /* line 610, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 614, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.subform-load-error td.no {
     width: 30px;
     text-align: center; }
 
-/* line 616, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+/* line 620, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
 table.upload-check-error {
   width: 100%;
   border: 1px solid #000000;
   border-collapse: collapse;
   margin-bottom: 10px; }
-  /* line 621, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 625, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.upload-check-error th {
     border: 1px solid #000000;
     text-align: left;
     background-color: #fff10f; }
-  /* line 626, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 630, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.upload-check-error th.no {
     width: 30px;
     text-align: center; }
-  /* line 630, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 634, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.upload-check-error td {
     border: 1px dotted #000000; }
-  /* line 633, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 637, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.upload-check-error td.no {
     text-align: center; }
 
-/* line 638, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+/* line 642, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
 table.upload-view-change {
   border: 1px solid #000000;
   margin-bottom: 10px; }
-  /* line 641, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 645, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.upload-view-change th {
     border: 1px solid #000000;
     text-align: left;
     background-color: #fff10f; }
-  /* line 646, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 650, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.upload-view-change th.no {
     width: 30px;
     text-align: center; }
-  /* line 650, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 654, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.upload-view-change td {
     border: 1px dotted #000000; }
-  /* line 653, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 657, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.upload-view-change td.no {
     text-align: center; }
 
-/* line 658, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+/* line 662, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
 table.upload-server-error {
   width: 100%;
   border: 1px solid #000000;
   margin-bottom: 10px; }
-  /* line 662, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 666, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.upload-server-error th {
     border: 1px solid #000000;
     text-align: left;
     background-color: #fff10f; }
-  /* line 667, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 671, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.upload-server-error td.message {
     border: 1px solid #000000; }
-  /* line 670, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 674, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.upload-server-error td.example {
     border-style: none none none none; }
 
-/* line 677, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+/* line 681, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
 table.upload-server-error-example {
   width: 100%;
   margin-bottom: 10px; }
-  /* line 680, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 684, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.upload-server-error-example td {
     text-align: center; }
 
-/* line 685, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+/* line 689, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
 table.version-setting {
   width: 100%;
   border: 1px solid #000000;
   border-collapse: collapse; }
-  /* line 689, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 693, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.version-setting th {
     border: 1px solid #000000;
     text-align: left;
     background-color: #fff10f; }
-  /* line 694, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+  /* line 698, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
   table.version-setting td {
     border: 1px dotted #000000; }
 
-/* line 699, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+/* line 703, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
 a.type-description:link {
   color: black;
   font-weight: normal; }
 
-/* line 703, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+/* line 707, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
 a.type-description:visited {
   color: black;
   font-weight: normal; }
 
-/* line 707, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
+/* line 711, /Users/m-kishi/Programs/AbDock/source/stylesheets/all.css.scss */
 a.type-description:hover {
   color: black;
   font-weight: normal; }
