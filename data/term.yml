@@ -15,6 +15,7 @@ ABOOK_DB:
     NAME: 名称
     TYPE: 種別
     COST: 金額
+    NOTE: 備考
 MENU:
   FILE:
     TEXT: ファイル

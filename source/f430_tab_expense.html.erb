@@ -211,4 +211,16 @@ several: f430_tab_expense_several.yml
       <li>現在選択されているセルが<%= cCOL_TYPE %>列の場合，ペースト終了後に<%= cCOL_COST %>の自動補完を行う．</li>
     </ul>
   </dd>
+  <dt>ツールチップの表示</dt>
+  <dd>
+    <% cap = "7" %>
+    <ul class="description">
+      <li><%= cCOL_NAME %>列にマウスオンしたとき，ツールチップを表示する．</li>
+      <li>ツールチップには支出情報の<%= cCOL_NOTE %>を表示する．</li>
+    </ul>
+    <figure>
+      <%= image_tag 'tab_expense_note.png' %>
+      <figcaption><%= "#{cap}-1. ツールチップに#{cCOL_NOTE}を表示" %></figcaption>
+    </figure>
+  </dd>
 </dl>
