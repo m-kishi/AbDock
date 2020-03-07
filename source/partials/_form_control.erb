@@ -1,17 +1,5 @@
 <h2>画面項目</h2>
 
-<% # 画面項目の要素の深さを求める
-  def depth(ctrl)
-    children = 0
-    if ctrl.key?("CHILDREN")
-      children = ctrl.CHILDREN.map do |child|
-        depth(child)
-      end.max
-    end
-    return 1 + children
-  end
-%>
-
 <% if form.key?("CONTROL") %>
   <% max_depth = form.CONTROL.map {|ctrl| depth(ctrl) }.max %>
   <% css = case max_depth

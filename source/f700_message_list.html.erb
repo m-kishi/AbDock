@@ -10,7 +10,7 @@ header_title: メッセージ
 <%# ================================================== %>
 <script type="text/javascript">
 // loadイベントの必要あり
-$(window).load(function() {
+$(window).on('load', function() {
   var header_height = 50; //CSSで定義しているので変更に注意
   var footer_height = 48; //CSSで定義しているので変更に注意
   var scroll_value = header_height * 3;

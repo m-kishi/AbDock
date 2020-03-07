@@ -39,7 +39,7 @@ helpers AbDockHelpers
 
 # Reload the browser automatically whenever files change
 configure :development do
-  activate :livereload, host: 'localhost'
+  #activate :livereload, host: 'localhost'
 end
 
 # Methods defined in the helpers block are available in templates
