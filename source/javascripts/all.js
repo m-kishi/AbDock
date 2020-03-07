@@ -1,5 +1,4 @@
 //= require_tree .
-//= require jquery
 
 var graphic_obj;
 $(function() {

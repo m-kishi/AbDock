@@ -218,4 +218,17 @@ module AbDockHelpers
     return legend
   end
 
+  #==================================================
+  # partial view の共通メソッド
+  #==================================================
+  # 画面項目の要素の深さを求める
+  def depth(ctrl)
+    children = 0
+    if ctrl.key?("CHILDREN")
+      children = ctrl.CHILDREN.map do |child|
+        depth(child)
+      end.max
+    end
+    return 1 + children
+  end
 end

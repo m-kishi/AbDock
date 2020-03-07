@@ -2,7 +2,7 @@
 # the following line to use "http://" instead
 source 'https://rubygems.org'
 
-gem "middleman", "~>3.4.0"
+gem "middleman", "~>4.3.0"
 gem "middleman-jquery"
 gem "json", github: "flori/json", branch: "v1.8"
 
@@ -14,3 +14,6 @@ gem "wdm", "~> 0.1.0", :platforms => [:mswin, :mingw]
 
 # Windows does not come with time zone data
 gem "tzinfo-data", platforms: [:mswin, :mingw, :jruby]
+
+#bundle outdated の出力形式変換
+gem 'bundle_outdated_formatter'
