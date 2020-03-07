@@ -9,6 +9,7 @@
     <link href="/AbDock/images/abdock.ico" rel="icon" type="image/ico" />
     <link href="/AbDock/stylesheets/normalize.css" rel="stylesheet" /><link href="/AbDock/stylesheets/all.css" rel="stylesheet" />
     <link href="/AbDock/stylesheets/mermaid.forest.min.css" rel="stylesheet" />
+    <script src="/AbDock/javascripts/jquery-3.4.1.min.js"></script>
     <script src="/AbDock/javascripts/all.js"></script>
     <script src="/AbDock/javascripts/mermaid.min.js"></script>
   </head>
@@ -42,7 +43,7 @@
 
 <script type="text/javascript">
 // loadイベントの必要あり
-$(window).load(function() {
+$(window).on('load', function() {
   var header_height = 50; //CSSで定義しているので変更に注意
   var footer_height = 48; //CSSで定義しているので変更に注意
   var scroll_value = header_height * 3;

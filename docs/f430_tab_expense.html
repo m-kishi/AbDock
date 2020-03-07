@@ -9,6 +9,7 @@
     <link href="/AbDock/images/abdock.ico" rel="icon" type="image/ico" />
     <link href="/AbDock/stylesheets/normalize.css" rel="stylesheet" /><link href="/AbDock/stylesheets/all.css" rel="stylesheet" />
     <link href="/AbDock/stylesheets/mermaid.forest.min.css" rel="stylesheet" />
+    <script src="/AbDock/javascripts/jquery-3.4.1.min.js"></script>
     <script src="/AbDock/javascripts/all.js"></script>
     <script src="/AbDock/javascripts/mermaid.min.js"></script>
   </head>
@@ -46,7 +47,7 @@
     <tr>
       <td class="layout ">
         <figure>
-            <img class="" src="/AbDock/images/tab_expense_001.png" />
+            <img src="/AbDock/images/tab_expense_001.png" class="" alt="Tab expense 001" />
             <figcaption>
               1.支出情報なし
             </figcaption>
@@ -79,7 +80,7 @@
     <tr>
       <td class="layout ">
         <figure>
-            <img class="" src="/AbDock/images/tab_expense_002.png" />
+            <img src="/AbDock/images/tab_expense_002.png" class="" alt="Tab expense 002" />
             <figcaption>
               2.支出情報あり
             </figcaption>
@@ -90,7 +91,6 @@
 
 
 <h2>画面項目</h2>
-
 
   <table class="controls">
     <tr>
@@ -208,7 +208,7 @@
         <ul class="event">
           <li>
             警告：レコードが1件もありません．
-            <figure><img src="/AbDock/images/tab_expense_err_norecord.png" /></figure>
+            <figure><img src="/AbDock/images/tab_expense_err_norecord.png" alt="Tab expense err norecord" /></figure>
           </li>
         </ul>
       </li>
@@ -250,9 +250,9 @@
         </table>
         <table class="input-error">
           <tr>
-            <td class="wide"><figure><img src="/AbDock/images/tab_expense_err_input_001.png" /></figure></td>
-            <td class="diag"><figure><img src="/AbDock/images/tab_expense_err_input_002.png" /></figure></td>
-            <td class="wide"><figure><img src="/AbDock/images/tab_expense_err_input_003.png" /></figure></td>
+            <td class="wide"><figure><img src="/AbDock/images/tab_expense_err_input_001.png" alt="Tab expense err input 001" /></figure></td>
+            <td class="diag"><figure><img src="/AbDock/images/tab_expense_err_input_002.png" alt="Tab expense err input 002" /></figure></td>
+            <td class="wide"><figure><img src="/AbDock/images/tab_expense_err_input_003.png" alt="Tab expense err input 003" /></figure></td>
           </tr>
           <tr>
             <td><figure><figcaption>3-1.登録ボタンを押下      </figcaption></figure></td>
@@ -266,7 +266,7 @@
         <ul class="event">
           <li>
             登録完了：正常に登録しました．
-            <figure><img src="/AbDock/images/tab_expense_inf_complete.png" /></figure>
+            <figure><img src="/AbDock/images/tab_expense_inf_complete.png" alt="Tab expense inf complete" /></figure>
           </li>
         </ul>
       </li>
@@ -282,13 +282,13 @@
           <tr>
             <td>
               <figure>
-                <img class="small" src="/AbDock/images/tab_expense_add_rows_001.png" />
+                <img src="/AbDock/images/tab_expense_add_rows_001.png" class="small" alt="Tab expense add rows 001" />
                 <figcaption>4-1.追加ボタン押下</figcaption>
               </figure>
             </td>
             <td>
               <figure>
-                <img class="small" src="/AbDock/images/tab_expense_add_rows_002.png" />
+                <img src="/AbDock/images/tab_expense_add_rows_002.png" class="small" alt="Tab expense add rows 002" />
                 <figcaption>4-2.行が追加される</figcaption>
               </figure>
             </td>
@@ -321,7 +321,7 @@
             <tr>
                 <td>
                   <figure>
-                    <img class="small" src="/AbDock/images/tab_expense_complete_001.png" />
+                    <img src="/AbDock/images/tab_expense_complete_001.png" class="small" alt="Tab expense complete 001" />
                     <figcaption>5-1.DBファイルの支出情報</figcaption>
                   </figure>
                 </td>
@@ -330,13 +330,13 @@
             <tr>
                 <td>
                   <figure>
-                    <img src="/AbDock/images/tab_expense_complete_002.png" />
+                    <img src="/AbDock/images/tab_expense_complete_002.png" alt="Tab expense complete 002" />
                     <figcaption>5-2-1.「おにぎり」は「食費」が1件のみ</figcaption>
                   </figure>
                 </td>
                 <td>
                   <figure>
-                    <img src="/AbDock/images/tab_expense_complete_003.png" />
+                    <img src="/AbDock/images/tab_expense_complete_003.png" alt="Tab expense complete 003" />
                     <figcaption>5-2-2.「食費」で補完される</figcaption>
                   </figure>
                 </td>
@@ -344,13 +344,13 @@
             <tr>
                 <td>
                   <figure>
-                    <img src="/AbDock/images/tab_expense_complete_004.png" />
+                    <img src="/AbDock/images/tab_expense_complete_004.png" alt="Tab expense complete 004" />
                     <figcaption>5-3-1.「カレー」は「食費」が2件，「外食費」が1件</figcaption>
                   </figure>
                 </td>
                 <td>
                   <figure>
-                    <img src="/AbDock/images/tab_expense_complete_005.png" />
+                    <img src="/AbDock/images/tab_expense_complete_005.png" alt="Tab expense complete 005" />
                     <figcaption>5-3-2.「食費」で補完される</figcaption>
                   </figure>
                 </td>
@@ -358,13 +358,13 @@
             <tr>
                 <td>
                   <figure>
-                    <img src="/AbDock/images/tab_expense_complete_006.png" />
+                    <img src="/AbDock/images/tab_expense_complete_006.png" alt="Tab expense complete 006" />
                     <figcaption>5-4-1.「うどん」は「食費」と「外食費」が2件ずつ</figcaption>
                   </figure>
                 </td>
                 <td>
                   <figure>
-                    <img src="/AbDock/images/tab_expense_complete_007.png" />
+                    <img src="/AbDock/images/tab_expense_complete_007.png" alt="Tab expense complete 007" />
                     <figcaption>5-4-2.「食費」と「外食費」が空白区切りで補完される</figcaption>
                   </figure>
                 </td>
@@ -390,7 +390,7 @@
             <tr>
                 <td>
                   <figure>
-                    <img class="small" src="/AbDock/images/tab_expense_cost_complete_001.png" />
+                    <img src="/AbDock/images/tab_expense_cost_complete_001.png" class="small" alt="Tab expense cost complete 001" />
                     <figcaption>6-1.DBファイルの支出情報</figcaption>
                   </figure>
                 </td>
@@ -399,13 +399,13 @@
             <tr>
                 <td>
                   <figure>
-                    <img src="/AbDock/images/tab_expense_cost_complete_002.png" />
+                    <img src="/AbDock/images/tab_expense_cost_complete_002.png" alt="Tab expense cost complete 002" />
                     <figcaption>6-2-1.「おにぎり」+「食費」は1件のみ</figcaption>
                   </figure>
                 </td>
                 <td>
                   <figure>
-                    <img src="/AbDock/images/tab_expense_cost_complete_003.png" />
+                    <img src="/AbDock/images/tab_expense_cost_complete_003.png" alt="Tab expense cost complete 003" />
                     <figcaption>6-2-2.「100」で補完される</figcaption>
                   </figure>
                 </td>
@@ -413,13 +413,13 @@
             <tr>
                 <td>
                   <figure>
-                    <img src="/AbDock/images/tab_expense_cost_complete_004.png" />
+                    <img src="/AbDock/images/tab_expense_cost_complete_004.png" alt="Tab expense cost complete 004" />
                     <figcaption>6-3-1.「おにぎり」+「外食費」は2件</figcaption>
                   </figure>
                 </td>
                 <td>
                   <figure>
-                    <img src="/AbDock/images/tab_expense_cost_complete_005.png" />
+                    <img src="/AbDock/images/tab_expense_cost_complete_005.png" alt="Tab expense cost complete 005" />
                     <figcaption>6-3-2.日付の新しい順に「300/200」で補完される</figcaption>
                   </figure>
                 </td>
@@ -427,13 +427,13 @@
             <tr>
                 <td>
                   <figure>
-                    <img src="/AbDock/images/tab_expense_cost_complete_006.png" />
+                    <img src="/AbDock/images/tab_expense_cost_complete_006.png" alt="Tab expense cost complete 006" />
                     <figcaption>6-4-1.「カレー」+「外食費」は4件</figcaption>
                   </figure>
                 </td>
                 <td>
                   <figure>
-                    <img src="/AbDock/images/tab_expense_cost_complete_007.png" />
+                    <img src="/AbDock/images/tab_expense_cost_complete_007.png" alt="Tab expense cost complete 007" />
                     <figcaption>6-4-2.日付の新しい順の3件で補完される</figcaption>
                   </figure>
                 </td>
@@ -441,13 +441,13 @@
             <tr>
                 <td>
                   <figure>
-                    <img src="/AbDock/images/tab_expense_cost_complete_008.png" />
+                    <img src="/AbDock/images/tab_expense_cost_complete_008.png" alt="Tab expense cost complete 008" />
                     <figcaption>6-5-1.「うどん」+「食費」は直近3件の金額がすべて同じ</figcaption>
                   </figure>
                 </td>
                 <td>
                   <figure>
-                    <img src="/AbDock/images/tab_expense_cost_complete_009.png" />
+                    <img src="/AbDock/images/tab_expense_cost_complete_009.png" alt="Tab expense cost complete 009" />
                     <figcaption>6-5-2.一つにまとめて「100」で補完される</figcaption>
                   </figure>
                 </td>
@@ -455,13 +455,13 @@
             <tr>
                 <td>
                   <figure>
-                    <img src="/AbDock/images/tab_expense_cost_complete_010.png" />
+                    <img src="/AbDock/images/tab_expense_cost_complete_010.png" alt="Tab expense cost complete 010" />
                     <figcaption>6-6-1.「うどん」+「外食費」は1件目と3件目の金額が同じ</figcaption>
                   </figure>
                 </td>
                 <td>
                   <figure>
-                    <img src="/AbDock/images/tab_expense_cost_complete_011.png" />
+                    <img src="/AbDock/images/tab_expense_cost_complete_011.png" alt="Tab expense cost complete 011" />
                     <figcaption>6-6-2.同じ金額は一つにまとめられる</figcaption>
                   </figure>
                 </td>
@@ -485,7 +485,7 @@
       <li>ツールチップには支出情報の備考を表示する．</li>
     </ul>
     <figure>
-      <img src="/AbDock/images/tab_expense_note.png" />
+      <img src="/AbDock/images/tab_expense_note.png" alt="Tab expense note" />
       <figcaption>7-1. ツールチップに備考を表示</figcaption>
     </figure>
   </dd>
