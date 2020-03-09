@@ -32,7 +32,7 @@
         <td class="version">バージョン</td>
       </tr>
       <tr>
-        <td class="version-number">5.7.0</td>
+        <td class="version-number">5.8.1</td>
       </tr>
     </tbody>
   </table>
@@ -59,7 +59,8 @@
               <ul class="overview">
                   <li>支出情報を検索するサブフォーム</li>
                   <li>名称コンボボックスには支出情報の名称が初期値設定される．</li>
-                  <li>名称コンボボックスから選択した名称の支出情報を検索して表示する．</li>
+                  <li>種別コンボボックスには支出タブで指定可能な種別(<a href="/AbDock/f600_type_define.html">種別※1</a>)が初期値設定される(未選択可能)．</li>
+                  <li>名称コンボボックスから選択した名称と種別コンボボックスから 選択した種別に合致する支出情報を検索して表示する(AND検索)．</li>
                   <li>名称コンボボックスには直接名称を入力することも可能で，その場合は部分一致検索となる．</li>
               </ul>
               <figure>
@@ -130,6 +131,18 @@
 
       <tr>
   <td                >2</td>
+  <td                >種別コンボボックス</td>
+  <td                >CmbType</td>
+  <td                ></td>
+  <td                ></td>
+  <td class="align-c"></td>
+  <td                >ComboBox</td>
+  <td                ></td>
+</tr>
+
+
+      <tr>
+  <td                >3</td>
   <td                >検索ボタン</td>
   <td                >BtnSearch</td>
   <td                >検索</td>
@@ -141,7 +154,7 @@
 
 
       <tr>
-  <td                >3</td>
+  <td                >4</td>
   <td                >支出DGV</td>
   <td                >DgvExpense</td>
   <td                ></td>
@@ -152,7 +165,7 @@
 </tr>
 
     <tr>
-  <td                >3-1</td>
+  <td                >4-1</td>
   <td                >日付列</td>
   <td                >ColDate</td>
   <td                >日付</td>
@@ -164,7 +177,7 @@
 
 
     <tr>
-  <td                >3-2</td>
+  <td                >4-2</td>
   <td                >名称列</td>
   <td                >ColName</td>
   <td                >名称</td>
@@ -176,7 +189,7 @@
 
 
     <tr>
-  <td                >3-3</td>
+  <td                >4-3</td>
   <td                >種別列</td>
   <td                >ColType</td>
   <td                >種別</td>
@@ -188,7 +201,7 @@
 
 
     <tr>
-  <td                >3-4</td>
+  <td                >4-4</td>
   <td                >金額列</td>
   <td                >ColCost</td>
   <td                >金額</td>
@@ -237,6 +250,19 @@
           </tr>
         </table>
       </li>
+      <li>
+        種別コンボボックスを設定する(空白+<a href="/AbDock/f600_type_define.html">種別※1</a>)．
+        <table class="subform-type-combo">
+          <tr>
+            <td>
+              <figure>
+                <img src="/AbDock/images/subform_search_008.png" class="small" alt="Subform search 008" />
+                <figcaption>4-1.種別コンボボックス</figcaption>
+              </figure>
+            </td>
+          </tr>
+        </table>
+      </li>
       <li>初期値として名称コンボボックスの先頭名称を選択状態に設定する．</li>
     </ul>
   </dd>
@@ -251,7 +277,7 @@
             <td>
               <figure>
                 <img src="/AbDock/images/subform_search_005.png" class="small" alt="Subform search 005" />
-                <figcaption>4-1.オートコンプリート</figcaption>
+                <figcaption>5-1.オートコンプリート</figcaption>
               </figure>
             </td>
           </tr>
@@ -278,18 +304,39 @@
           <td>
             <figure>
               <img src="/AbDock/images/subform_search_006.png" class="small" alt="Subform search 006" />
-              <figcaption>5-1.一致検索</figcaption>
+              <figcaption>6-1.一致検索</figcaption>
             </figure>
           </td>
           <td>
             <figure>
               <img src="/AbDock/images/subform_search_007.png" class="small" alt="Subform search 007" />
-              <figcaption>5-2.曖昧検索</figcaption>
+              <figcaption>6-2.曖昧検索</figcaption>
             </figure>
           </td>
         </tr>
       </table>
     </ol>
+    <ul class="description">
+      <li>
+        種別コンボボックスを選択している場合，選択された種別が検索条件に追加される．(AND)
+        <table class="event">
+          <tr>
+            <td>
+              <figure>
+                <img src="/AbDock/images/subform_search_009.png" class="small" alt="Subform search 009" />
+                <figcaption>7-1.種別のみ</figcaption>
+              </figure>
+            </td>
+            <td>
+              <figure>
+                <img src="/AbDock/images/subform_search_010.png" class="small" alt="Subform search 010" />
+                <figcaption>7-2.名称と種別のAND検索</figcaption>
+              </figure>
+            </td>
+          </tr>
+        </table>
+      </li>
+    </ul>
     <ul class="description">
       <li>検索後の支出DGVは先頭行までスクロールして，先頭行を選択状態とする．</li>
       <li>検索結果が存在しない場合は，支出DGVはクリアされて何も表示されない．</li>
@@ -306,10 +353,8 @@
         <a href="https://github.com/m-kishi/Abook">Abook</a> | 
         <a href="https://github.com/m-kishi/AbDock">GitHub</a>
       </td>
-    </tr>
-    <tr>
       <td class="copy-rights">
-        Copyright &copy; 2016-2019 m-kishi All Rights Reserved.
+        &copy; 2016 Masaaki Kishi
       </td>
     </tr>
   </table>

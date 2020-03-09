@@ -14,7 +14,7 @@ footer {
   left: 0;
   bottom: 0;
   width: 980px;
-  height: 48px;
+  height: 36px;
   z-index: 10;
   position: fixed;
   background-color: #38b48b; }
@@ -24,7 +24,7 @@ footer {
   height: auto;
   padding: 10px 15px;
   margin-top: 50px;
-  margin-bottom: 48px; }
+  margin-bottom: 36px; }
 
 h1 {
   margin: 0;
@@ -468,6 +468,16 @@ table.private-check-error {
     border: 1px dotted #000000; }
   table.private-check-error td.no {
     text-align: center; }
+
+table.subform-type-combo {
+  width: 46%;
+  margin-top: 10px; }
+  table.subform-type-combo td {
+    width: 50%;
+    text-align: center;
+    padding-bottom: 16px; }
+  table.subform-type-combo .small {
+    width: 90%; }
 
 table.subform-load-error {
   width: 100%;
