@@ -8,7 +8,7 @@ CONTROL:
     NOTE:
   - ID: LblProduct
     NAME: 製品名
-    TEXT: Account Book
+    TEXT: Abook
     ATTR:
     ALGN: <%= cLEFT %>
     TYPE: <%= cLABEL %>
@@ -22,7 +22,7 @@ CONTROL:
     NOTE:
   - ID: LblCopyright
     NAME: コピーライト
-    TEXT: Copyright @ 2010-2019 m-kishi
+    TEXT: "&copy; 2010 Masaaki Kishi"
     ATTR:
     ALGN: <%= cLEFT %>
     TYPE: <%= cLABEL %>

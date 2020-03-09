@@ -6,9 +6,11 @@ IMAGE:
 
 OVERVIEW:
   - <%= cEXP_INFO %>を検索するサブフォーム
-  - 名称コンボボックスには<%= cEXP_INFO %>の名称が初期値設定される．
-  - 名称コンボボックスから選択した名称の<%= cEXP_INFO %>を検索して表示する．
-  - 名称コンボボックスには直接名称を入力することも可能で，その場合は部分一致検索となる．
+  - <%= cCOL_NAME %>コンボボックスには<%= cEXP_INFO %>の<%= cCOL_NAME %>が初期値設定される．
+  - <%= cCOL_TYPE %>コンボボックスには<%= cTAB_EXPENSE %>で指定可能な<%= cCOL_TYPE %>(<%= lnType cEXP_TYPE_EXP %>)が初期値設定される(未選択可能)．
+  - <%= cCOL_NAME %>コンボボックスから選択した<%= cCOL_NAME %>と<%= cCOL_TYPE %>コンボボックスから
+    選択した<%= cCOL_TYPE %>に合致する<%= cEXP_INFO %>を検索して表示する(AND検索)．
+  - <%= cCOL_NAME %>コンボボックスには直接<%= cCOL_NAME %>を入力することも可能で，その場合は部分一致検索となる．
 
 PROPERTY:
   ICON: <%= cNASI %>

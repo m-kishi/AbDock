@@ -4,7 +4,7 @@ $page-width: 980px;
 $page-height: 50px;
 
 $header-height: 50px;
-$footer-height: 48px;
+$footer-height: 36px;
 
 $table-th-color: #fff10f;
 $background-color: #38b48b;
@@ -592,6 +592,19 @@ table.private-check-error {
   }
   td.no {
     text-align: center;
+  }
+}
+
+table.subform-type-combo {
+  width: 46%;
+  margin-top: 10px;
+  td {
+    width: 50%;
+    text-align: center;
+    padding-bottom: 16px;
+  }
+  .small {
+    width: 90%;
   }
 }
 
