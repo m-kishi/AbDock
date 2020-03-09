@@ -29,7 +29,7 @@ control: f520_subform_search_control.yml
       </li>
       <li><%= cEXP_INFO %>を<%= cCOL_NAME %>で集約する(SQLでのGROUP BY)．</li>
       <li>
-        集約した<%= cCOL_NAME %>をソートして名称コンボボックスに設定する．<br />
+        集約した<%= cCOL_NAME %>をソートして<%= cCOL_NAME %>コンボボックスに設定する．<br />
         ※ソートは現在のカルチャ依存の自然順ソートとする．
         <table class="event">
           <tr>
@@ -42,19 +42,32 @@ control: f520_subform_search_control.yml
             <td>
               <figure>
                 <%= image_tag 'subform_search_004.png', class: 'small' %>
-                <figcaption>3-2.名称コンボボックスのソート順</figcaption>
+                <figcaption>3-2.<%= cCOL_NAME %>コンボボックスのソート順</figcaption>
               </figure>
             </td>
           </tr>
         </table>
       </li>
-      <li>初期値として名称コンボボックスの先頭<%= cCOL_NAME %>を選択状態に設定する．</li>
+      <li>
+        <%= cCOL_TYPE %>コンボボックスを設定する(空白+<%= lnType cEXP_TYPE_EXP %>)．
+        <table class="subform-type-combo">
+          <tr>
+            <td>
+              <figure>
+                <%= image_tag 'subform_search_008.png', class: 'small' %>
+                <figcaption>4-1.<%= cCOL_TYPE %>コンボボックス</figcaption>
+              </figure>
+            </td>
+          </tr>
+        </table>
+      </li>
+      <li>初期値として<%= cCOL_NAME %>コンボボックスの先頭<%= cCOL_NAME %>を選択状態に設定する．</li>
     </ul>
   </dd>
-  <dt>名称コンボボックスへの直接入力</dt>
+  <dt><%= cCOL_NAME %>コンボボックスへの直接入力</dt>
   <dd>
     <ul class="description">
-      <li>名称コンボボックスは直接入力可能とする．</li>
+      <li><%= cCOL_NAME %>コンボボックスは直接入力可能とする．</li>
       <li>
         直接入力する際はオートコンプリート機能が動作する．
         <table class="subform-auto-complete">
@@ -62,7 +75,7 @@ control: f520_subform_search_control.yml
             <td>
               <figure>
                 <%= image_tag 'subform_search_005.png', class: 'small' %>
-                <figcaption>4-1.オートコンプリート</figcaption>
+                <figcaption>5-1.オートコンプリート</figcaption>
               </figure>
             </td>
           </tr>
@@ -73,15 +86,15 @@ control: f520_subform_search_control.yml
   <dt>検索ボタン押下</dt>
   <dd>
     <ul class="description">
-      <li>検索の方法が名称コンボボックスの選択状態によって2通りに分かれる．</li>
+      <li>検索の方法が<%= cCOL_NAME %>コンボボックスの選択状態によって2通りに分かれる．</li>
     </ul>
     <ol class="description">
       <li>
-        名称コンボボックスから<%= cCOL_NAME %>を選択している場合<br />
+        <%= cCOL_NAME %>コンボボックスから<%= cCOL_NAME %>を選択している場合<br />
         選択された<%= cCOL_NAME %>と一致する<%= cEXP_INFO %>を支出DGVへ表示する．
       </li>
       <li>
-        名称コンボボックスへ直接入力している場合<br />
+        <%= cCOL_NAME %>コンボボックスへ直接入力している場合<br />
         直接入力されたワードと曖昧一致する<%= cEXP_INFO %>を支出DGVへ表示する(SQLでのLIKE '%[ワード]%')．
       </li>
       <table class="event">
@@ -89,18 +102,39 @@ control: f520_subform_search_control.yml
           <td>
             <figure>
               <%= image_tag 'subform_search_006.png', class: 'small' %>
-              <figcaption>5-1.一致検索</figcaption>
+              <figcaption>6-1.一致検索</figcaption>
             </figure>
           </td>
           <td>
             <figure>
               <%= image_tag 'subform_search_007.png', class: 'small' %>
-              <figcaption>5-2.曖昧検索</figcaption>
+              <figcaption>6-2.曖昧検索</figcaption>
             </figure>
           </td>
         </tr>
       </table>
     </ol>
+    <ul class="description">
+      <li>
+        <%= cCOL_TYPE %>コンボボックスを選択している場合，選択された<%= cCOL_TYPE %>が検索条件に追加される．(AND)
+        <table class="event">
+          <tr>
+            <td>
+              <figure>
+                <%= image_tag 'subform_search_009.png', class: 'small' %>
+                <figcaption>7-1.<%= cCOL_TYPE %>のみ</figcaption>
+              </figure>
+            </td>
+            <td>
+              <figure>
+                <%= image_tag 'subform_search_010.png', class: 'small' %>
+                <figcaption>7-2.<%= cCOL_NAME %>と<%= cCOL_TYPE %>のAND検索</figcaption>
+              </figure>
+            </td>
+          </tr>
+        </table>
+      </li>
+    </ul>
     <ul class="description">
       <li>検索後の支出DGVは先頭行までスクロールして，先頭行を選択状態とする．</li>
       <li>検索結果が存在しない場合は，支出DGVはクリアされて何も表示されない．</li>

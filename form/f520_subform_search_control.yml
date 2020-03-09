@@ -1,6 +1,13 @@
 CONTROL:
   - ID: CmbName
-    NAME: 名称コンボボックス
+    NAME: <%= cCOL_NAME %>コンボボックス
+    TEXT:
+    ATTR:
+    ALGN:
+    TYPE: <%= cCOMBO %>
+    NOTE:
+  - ID: CmbType
+    NAME: <%= cCOL_TYPE %>コンボボックス
     TEXT:
     ATTR:
     ALGN:

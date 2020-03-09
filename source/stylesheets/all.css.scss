@@ -595,6 +595,19 @@ table.private-check-error {
   }
 }
 
+table.subform-type-combo {
+  width: 46%;
+  margin-top: 10px;
+  td {
+    width: 50%;
+    text-align: center;
+    padding-bottom: 16px;
+  }
+  .small {
+    width: 90%;
+  }
+}
+
 table.subform-load-error {
   width: 100%;
   border: 1px solid #000000;
