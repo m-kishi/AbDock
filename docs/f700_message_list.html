@@ -1,0 +1,329 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title>メッセージ</title>
+    <link href="/AbDock/images/abdock.ico" rel="icon" type="image/ico" />
+    <link href="/AbDock/stylesheets/normalize.css" rel="stylesheet" /><link href="/AbDock/stylesheets/all.css" rel="stylesheet" />
+    <link href="/AbDock/stylesheets/mermaid.forest.min.css" rel="stylesheet" />
+    <script src="/AbDock/javascripts/jquery-3.4.1.min.js"></script>
+    <script src="/AbDock/javascripts/all.js"></script>
+    <script src="/AbDock/javascripts/mermaid.min.js"></script>
+  </head>
+  <body class="f700_message_list">
+    <header>
+  <table class="header">
+    <colgroup>
+      <col class="title"   />
+      <col class="project" />
+      <col class="appname" />
+      <col class="subname" />
+      <col class="version" />
+    </colgroup>
+    <tbody>
+      <tr>
+        <td class="title"   rowspan="2">メッセージ</td>
+        <td class="project" rowspan="2">project.mk</td>
+        <td class="appname" rowspan="2">Abook</td>
+        <td class="subname" rowspan="2"></td>
+        <td class="version">バージョン</td>
+      </tr>
+      <tr>
+        <td class="version-number">5.8.1</td>
+      </tr>
+    </tbody>
+  </table>
+</header>
+
+    <div class="content">
+      <h1>【メッセージ一覧】</h1>
+
+<script type="text/javascript">
+// loadイベントの必要あり
+$(window).on('load', function() {
+  var header_height = 50; //CSSで定義しているので変更に注意
+  var footer_height = 48; //CSSで定義しているので変更に注意
+  var scroll_value = header_height * 3;
+
+  // 直後はスクロールが効かないため0.1秒待ってから実行
+  setTimeout(function() {
+    var fragment = window.location.hash;
+    if (fragment) {
+      // :targetを指定するとフラグメントのIDを持つ要素が取得可能
+      var elem = document.getElementById($(":target").attr("id"));
+      // ヘッダの高さ*3倍スクロールして...
+      // 3倍なのは画面中央からやや上ぐらいに来てほしいため
+      window.scrollTo(0, window.pageYOffset - scroll_value);
+      // スクロール後の要素がフッタに隠れてしまうなら...
+      var rect = elem.getBoundingClientRect();
+      if ($(window).height() - footer_height < rect.bottom) {
+        // スクロールを撤回
+        window.scrollTo(0, window.pageYOffset + scroll_value);
+      }
+
+      // 該当行を強調表示
+      $(":target").parent("tr").attr("class", "fragment");
+    }
+  }, 100);
+});
+</script>
+
+<table class="message">
+  <tr>
+    <th class="no">No.       </th>
+    <th           >ID        </th>
+    <th           >メッセージ</th>
+    <th           >書式設定  </th>
+  </tr>
+    <tr>
+      <td class="no"   >1</td>
+      <td id="DATE_NULL">DATE_NULL</td>
+      <td              >日付がありません。</td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td class="no"   >2</td>
+      <td id="NAME_NULL">NAME_NULL</td>
+      <td              >名称がありません。</td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td class="no"   >3</td>
+      <td id="TYPE_NULL">TYPE_NULL</td>
+      <td              >種別がありません。</td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td class="no"   >4</td>
+      <td id="COST_NULL">COST_NULL</td>
+      <td              >金額がありません。</td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td class="no"   >5</td>
+      <td id="TYPE_WRONG">TYPE_WRONG</td>
+      <td              >種別が正しくありません。</td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td class="no"   >6</td>
+      <td id="COST_MINUS">COST_MINUS</td>
+      <td              >金額がマイナスです。</td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td class="no"   >7</td>
+      <td id="DATE_FORMAT">DATE_FORMAT</td>
+      <td              >日付が正しくありません。</td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td class="no"   >8</td>
+      <td id="COST_FORMAT">COST_FORMAT</td>
+      <td              >金額が正しくありません。</td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td class="no"   >9</td>
+      <td id="COST_OVERFLOW">COST_OVERFLOW</td>
+      <td              >金額が大き過ぎます。</td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td class="no"   >10</td>
+      <td id="CSV_NULL">CSV_NULL</td>
+      <td              >CSVファイルがありません。</td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td class="no"   >11</td>
+      <td id="CSV_LOAD">CSV_LOAD</td>
+      <td              >{0} 行目: {1}</td>
+      <td>
+            {0}:行番号
+            {1}:エラーメッセージ
+      </td>
+    </tr>
+    <tr>
+      <td class="no"   >12</td>
+      <td id="CSV_STORE">CSV_STORE</td>
+      <td              >{0} 行目: {1}</td>
+      <td>
+            {0}:行番号
+            {1}:エラーメッセージ
+      </td>
+    </tr>
+    <tr>
+      <td class="no"   >13</td>
+      <td id="CSV_CREATE">CSV_CREATE</td>
+      <td              >CSVファイルの作成に失敗しました。</td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td class="no"   >14</td>
+      <td id="CSV_FIELD_LESS">CSV_FIELD_LESS</td>
+      <td              >フィールド数が少ないです。</td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td class="no"   >15</td>
+      <td id="CSV_FIELD_MORE">CSV_FIELD_MORE</td>
+      <td              >フィールド数が多いです。</td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td class="no"   >16</td>
+      <td id="CSV_RECORD_NOTHING">CSV_RECORD_NOTHING</td>
+      <td              >登録するデータがありません。</td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td class="no"   >17</td>
+      <td id="EXPENSE_NULL">EXPENSE_NULL</td>
+      <td              >支出情報がありません。</td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td class="no"   >18</td>
+      <td id="EXPENSES_NULL">EXPENSES_NULL</td>
+      <td              >支出情報リストがありません。</td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td class="no"   >19</td>
+      <td id="SUMMARIES_NULL">SUMMARIES_NULL</td>
+      <td              >集計値リストがありません。</td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td class="no"   >20</td>
+      <td id="YEAR_MINUS">YEAR_MINUS</td>
+      <td              >年度がマイナスです。</td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td class="no"   >21</td>
+      <td id="EARN_MINUS">EARN_MINUS</td>
+      <td              >収入がマイナスです。</td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td class="no"   >22</td>
+      <td id="EXPENSE_MINUS">EXPENSE_MINUS</td>
+      <td              >支出がマイナスです。</td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td class="no"   >23</td>
+      <td id="SPECIAL_MINUS">SPECIAL_MINUS</td>
+      <td              >特出がマイナスです。</td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td class="no"   >24</td>
+      <td id="BALANCE_INCORRECT">BALANCE_INCORRECT</td>
+      <td              >収支が合いません。</td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td class="no"   >25</td>
+      <td id="TYPE_PRIVATE_ERR">TYPE_PRIVATE_ERR</td>
+      <td              >種別が正しくありません。</td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td class="no"   >26</td>
+      <td id="MAIL_NULL">MAIL_NULL</td>
+      <td              >MAILを入力してください。</td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td class="no"   >27</td>
+      <td id="PASS_NULL">PASS_NULL</td>
+      <td              >PASSを入力してください。</td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td class="no"   >28</td>
+      <td id="LOGIN_NULL">LOGIN_NULL</td>
+      <td              >ログインURLがありません。</td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td class="no"   >29</td>
+      <td id="UPLOAD_NULL">UPLOAD_NULL</td>
+      <td              >アップロードURLがありません。</td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td class="no"   >30</td>
+      <td id="DB_DOES_NOT_EXIST">DB_DOES_NOT_EXIST</td>
+      <td              >DBファイルが見つかりませんでした。</td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td class="no"   >31</td>
+      <td id="UPD_REQ_FAILED">UPD_REQ_FAILED</td>
+      <td              >サーバへのアップロードに失敗しました。</td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td class="no"   >32</td>
+      <td id="UPD_RECORD_NOTHING">UPD_RECORD_NOTHING</td>
+      <td              >アップロードするデータがありません。</td>
+      <td>
+      </td>
+    </tr>
+</table>
+
+    </div>
+    <footer>
+  <table class="footer">
+    <tr>
+      <td class="link">
+        <a href="/AbDock/">トップページ</a> | 
+        <a href="https://github.com/m-kishi/Abook">Abook</a> | 
+        <a href="https://github.com/m-kishi/AbDock">GitHub</a>
+      </td>
+      <td class="copy-rights">
+        &copy; 2016 Masaaki Kishi
+      </td>
+    </tr>
+  </table>
+</footer>
+
+    <script>mermaid.initialize({startOnLoad:true});</script>
+  </body>
+</html>

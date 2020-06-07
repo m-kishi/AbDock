@@ -1,0 +1,365 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title>検索サブフォーム</title>
+    <link href="/AbDock/images/abdock.ico" rel="icon" type="image/ico" />
+    <link href="/AbDock/stylesheets/normalize.css" rel="stylesheet" /><link href="/AbDock/stylesheets/all.css" rel="stylesheet" />
+    <link href="/AbDock/stylesheets/mermaid.forest.min.css" rel="stylesheet" />
+    <script src="/AbDock/javascripts/jquery-3.4.1.min.js"></script>
+    <script src="/AbDock/javascripts/all.js"></script>
+    <script src="/AbDock/javascripts/mermaid.min.js"></script>
+  </head>
+  <body class="f520_subform_search">
+    <header>
+  <table class="header">
+    <colgroup>
+      <col class="title"   />
+      <col class="project" />
+      <col class="appname" />
+      <col class="subname" />
+      <col class="version" />
+    </colgroup>
+    <tbody>
+      <tr>
+        <td class="title"   rowspan="2">画面設計</td>
+        <td class="project" rowspan="2">project.mk</td>
+        <td class="appname" rowspan="2">Abook</td>
+        <td class="subname" rowspan="2"></td>
+        <td class="version">バージョン</td>
+      </tr>
+      <tr>
+        <td class="version-number">5.8.1</td>
+      </tr>
+    </tbody>
+  </table>
+</header>
+
+    <div class="content">
+      <h1>【検索サブフォーム】</h1>
+
+<h2>レイアウト</h2>
+
+<table class="layout">
+    <tr>
+      <td class="layout ">
+        <figure>
+            <img src="/AbDock/images/subform_search_001.png" class="" alt="Subform search 001" />
+            <figcaption>
+              1.支出情報なし
+            </figcaption>
+        </figure>
+      </td>
+        <td rowspan="2" class="overview">
+          <figure>
+            <figcaption>＜概要＞</figcaption>
+              <ul class="overview">
+                  <li>支出情報を検索するサブフォーム</li>
+                  <li>名称コンボボックスには支出情報の名称が初期値設定される．</li>
+                  <li>種別コンボボックスには支出タブで指定可能な種別(<a href="/AbDock/f600_type_define.html">種別※1</a>)が初期値設定される(未選択可能)．</li>
+                  <li>名称コンボボックスから選択した名称と種別コンボボックスから 選択した種別に合致する支出情報を検索して表示する(AND検索)．</li>
+                  <li>名称コンボボックスには直接名称を入力することも可能で，その場合は部分一致検索となる．</li>
+              </ul>
+              <figure>
+                <figcaption>＜フォーム属性＞</figcaption>
+                <table class="form-property">
+                  <tr><th>タイトル          </th><td>支出検索</td></tr>
+                    <tr><th>アイコン        </th><td>なし</td></tr>
+                  <tr><th>画面サイズ        </th><td>(416, 284)</td></tr>
+                  <tr><th>サイズ変更        </th><td>不可</td></tr>
+                  <tr><th>初期表示位置      </th><td>呼び出し元画面中央</td></tr>
+                  <tr><th>ウィンドウの最大化</th><td>不可</td></tr>
+                  <tr><th>ウィンドウの最小化</th><td>不可</td></tr>
+                  <tr><th>タスクバーへの表示</th><td>なし</td></tr>
+                </table>
+              </figure>
+              <figure>
+                <figcaption>＜支出DGVの設定＞</figcaption>
+                <table class="dgv-property">
+                  <tr><th>行追加        </th><td>不可</td></tr>
+                  <tr><th>行削除        </th><td>不可</td></tr>
+                  <tr><th>ReadOnly      </th><td>○</td></tr>
+                  <tr><th>列のソート    </th><td>不可</td></tr>
+                  <tr><th>列の幅変更    </th><td>不可</td></tr>
+                  <tr><th>選択モード    </th><td>行選択</td></tr>
+                  <tr><th>スクロールバー</th><td>縦のみ</td></tr>
+                </table>
+              </figure>
+          </figure>
+        </td>
+    </tr>
+    <tr>
+      <td class="layout ">
+        <figure>
+            <img src="/AbDock/images/subform_search_002.png" class="" alt="Subform search 002" />
+            <figcaption>
+              2.初期値設定あり
+            </figcaption>
+        </figure>
+      </td>
+    </tr>
+</table>
+
+
+<h2>画面項目</h2>
+
+  <table class="controls">
+    <tr>
+      <th class="no-m">No.</th>
+      <th>名称</th>
+      <th>ＩＤ</th>
+      <th>テキスト</th>
+      <th>属性</th>
+      <th>align</th>
+      <th>種別</th>
+      <th>備考</th>
+    </tr>
+      <tr>
+  <td                >1</td>
+  <td                >名称コンボボックス</td>
+  <td                >CmbName</td>
+  <td                ></td>
+  <td                ></td>
+  <td class="align-c"></td>
+  <td                >ComboBox</td>
+  <td                ></td>
+</tr>
+
+
+      <tr>
+  <td                >2</td>
+  <td                >種別コンボボックス</td>
+  <td                >CmbType</td>
+  <td                ></td>
+  <td                ></td>
+  <td class="align-c"></td>
+  <td                >ComboBox</td>
+  <td                ></td>
+</tr>
+
+
+      <tr>
+  <td                >3</td>
+  <td                >検索ボタン</td>
+  <td                >BtnSearch</td>
+  <td                >検索</td>
+  <td                ></td>
+  <td class="align-c"></td>
+  <td                >Button</td>
+  <td                ></td>
+</tr>
+
+
+      <tr>
+  <td                >4</td>
+  <td                >支出DGV</td>
+  <td                >DgvExpense</td>
+  <td                ></td>
+  <td                ></td>
+  <td class="align-c"></td>
+  <td                >DataGridView</td>
+  <td                ></td>
+</tr>
+
+    <tr>
+  <td                >4-1</td>
+  <td                >日付列</td>
+  <td                >ColDate</td>
+  <td                >日付</td>
+  <td                >文字列</td>
+  <td class="align-c">左</td>
+  <td                >DataGridViewTextBoxColumn</td>
+  <td                >YYYY-MM-DD</td>
+</tr>
+
+
+    <tr>
+  <td                >4-2</td>
+  <td                >名称列</td>
+  <td                >ColName</td>
+  <td                >名称</td>
+  <td                >文字列</td>
+  <td class="align-c">左</td>
+  <td                >DataGridViewTextBoxColumn</td>
+  <td                ></td>
+</tr>
+
+
+    <tr>
+  <td                >4-3</td>
+  <td                >種別列</td>
+  <td                >ColType</td>
+  <td                >種別</td>
+  <td                >文字列</td>
+  <td class="align-c">中</td>
+  <td                >DataGridViewTextBoxColumn</td>
+  <td                ></td>
+</tr>
+
+
+    <tr>
+  <td                >4-4</td>
+  <td                >金額列</td>
+  <td                >ColCost</td>
+  <td                >金額</td>
+  <td                >数値</td>
+  <td class="align-c">右</td>
+  <td                >DataGridViewTextBoxColumn</td>
+  <td                >Z,ZZ9</td>
+</tr>
+
+
+
+  </table>
+
+
+<h2>イベント</h2>
+<dl class="event">
+  <dt>初期表示</dt>
+  <dd>
+    <ul class="description">
+      <li><a href="/AbDock/f410_form_main.html">呼び出し元画面</a>から支出情報を受け取る．</li>
+      <li>
+        支出情報がnullの場合，エラーダイアログを表示してフォームを閉じる．
+        <table class="subform-load-error">
+          <tr><th class="no">No.</th><th>条件</th><th>メッセージ</th></tr>
+          <tr><td class="no">1</td><td>支出情報がnull</td><td><a href="/AbDock/f700_message_list.html#EXPENSE_NULL">支出情報がありません。</a></td></tr>
+        </table>
+      </li>
+      <li>支出情報を名称で集約する(SQLでのGROUP BY)．</li>
+      <li>
+        集約した名称をソートして名称コンボボックスに設定する．<br />
+        ※ソートは現在のカルチャ依存の自然順ソートとする．
+        <table class="event">
+          <tr>
+            <td>
+              <figure>
+                <img src="/AbDock/images/subform_search_003.png" class="small" alt="Subform search 003" />
+                <figcaption>3-1.支出情報</figcaption>
+              </figure>
+            </td>
+            <td>
+              <figure>
+                <img src="/AbDock/images/subform_search_004.png" class="small" alt="Subform search 004" />
+                <figcaption>3-2.名称コンボボックスのソート順</figcaption>
+              </figure>
+            </td>
+          </tr>
+        </table>
+      </li>
+      <li>
+        種別コンボボックスを設定する(空白+<a href="/AbDock/f600_type_define.html">種別※1</a>)．
+        <table class="subform-type-combo">
+          <tr>
+            <td>
+              <figure>
+                <img src="/AbDock/images/subform_search_008.png" class="small" alt="Subform search 008" />
+                <figcaption>4-1.種別コンボボックス</figcaption>
+              </figure>
+            </td>
+          </tr>
+        </table>
+      </li>
+      <li>初期値として名称コンボボックスの先頭名称を選択状態に設定する．</li>
+    </ul>
+  </dd>
+  <dt>名称コンボボックスへの直接入力</dt>
+  <dd>
+    <ul class="description">
+      <li>名称コンボボックスは直接入力可能とする．</li>
+      <li>
+        直接入力する際はオートコンプリート機能が動作する．
+        <table class="subform-auto-complete">
+          <tr>
+            <td>
+              <figure>
+                <img src="/AbDock/images/subform_search_005.png" class="small" alt="Subform search 005" />
+                <figcaption>5-1.オートコンプリート</figcaption>
+              </figure>
+            </td>
+          </tr>
+        </table>
+      </li>
+    </ul>
+  </dd>
+  <dt>検索ボタン押下</dt>
+  <dd>
+    <ul class="description">
+      <li>検索の方法が名称コンボボックスの選択状態によって2通りに分かれる．</li>
+    </ul>
+    <ol class="description">
+      <li>
+        名称コンボボックスから名称を選択している場合<br />
+        選択された名称と一致する支出情報を支出DGVへ表示する．
+      </li>
+      <li>
+        名称コンボボックスへ直接入力している場合<br />
+        直接入力されたワードと曖昧一致する支出情報を支出DGVへ表示する(SQLでのLIKE '%[ワード]%')．
+      </li>
+      <table class="event">
+        <tr>
+          <td>
+            <figure>
+              <img src="/AbDock/images/subform_search_006.png" class="small" alt="Subform search 006" />
+              <figcaption>6-1.一致検索</figcaption>
+            </figure>
+          </td>
+          <td>
+            <figure>
+              <img src="/AbDock/images/subform_search_007.png" class="small" alt="Subform search 007" />
+              <figcaption>6-2.曖昧検索</figcaption>
+            </figure>
+          </td>
+        </tr>
+      </table>
+    </ol>
+    <ul class="description">
+      <li>
+        種別コンボボックスを選択している場合，選択された種別が検索条件に追加される．(AND)
+        <table class="event">
+          <tr>
+            <td>
+              <figure>
+                <img src="/AbDock/images/subform_search_009.png" class="small" alt="Subform search 009" />
+                <figcaption>7-1.種別のみ</figcaption>
+              </figure>
+            </td>
+            <td>
+              <figure>
+                <img src="/AbDock/images/subform_search_010.png" class="small" alt="Subform search 010" />
+                <figcaption>7-2.名称と種別のAND検索</figcaption>
+              </figure>
+            </td>
+          </tr>
+        </table>
+      </li>
+    </ul>
+    <ul class="description">
+      <li>検索後の支出DGVは先頭行までスクロールして，先頭行を選択状態とする．</li>
+      <li>検索結果が存在しない場合は，支出DGVはクリアされて何も表示されない．</li>
+    </ul>
+  </dd>
+</dl>
+
+    </div>
+    <footer>
+  <table class="footer">
+    <tr>
+      <td class="link">
+        <a href="/AbDock/">トップページ</a> | 
+        <a href="https://github.com/m-kishi/Abook">Abook</a> | 
+        <a href="https://github.com/m-kishi/AbDock">GitHub</a>
+      </td>
+      <td class="copy-rights">
+        &copy; 2016 Masaaki Kishi
+      </td>
+    </tr>
+  </table>
+</footer>
+
+    <script>mermaid.initialize({startOnLoad:true});</script>
+  </body>
+</html>

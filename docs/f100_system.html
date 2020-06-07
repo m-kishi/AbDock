@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title>全体設計</title>
+    <link href="/AbDock/images/abdock.ico" rel="icon" type="image/ico" />
+    <link href="/AbDock/stylesheets/normalize.css" rel="stylesheet" /><link href="/AbDock/stylesheets/all.css" rel="stylesheet" />
+    <link href="/AbDock/stylesheets/mermaid.forest.min.css" rel="stylesheet" />
+    <script src="/AbDock/javascripts/jquery-3.4.1.min.js"></script>
+    <script src="/AbDock/javascripts/all.js"></script>
+    <script src="/AbDock/javascripts/mermaid.min.js"></script>
+  </head>
+  <body class="f100_system">
+    <header>
+  <table class="header">
+    <colgroup>
+      <col class="title"   />
+      <col class="project" />
+      <col class="appname" />
+      <col class="subname" />
+      <col class="version" />
+    </colgroup>
+    <tbody>
+      <tr>
+        <td class="title"   rowspan="2">全体設計</td>
+        <td class="project" rowspan="2">project.mk</td>
+        <td class="appname" rowspan="2">Abook</td>
+        <td class="subname" rowspan="2"></td>
+        <td class="version">バージョン</td>
+      </tr>
+      <tr>
+        <td class="version-number">5.8.1</td>
+      </tr>
+    </tbody>
+  </table>
+</header>
+
+    <div class="content">
+      <h1>【全体設計】</h1>
+
+<h2>ファイル構成</h2>
+<p>Abookはアプリケーション本体であるEXEファイルと，支出情報を保存する<a href="/AbDock/f200_dbfile.html">DBファイル</a>からなる．</p>
+<table class="general">
+  <tr><th class="no-s">No.</th><th>ファイル         </th><th>説明                              </th></tr>
+  <tr><td class="no-s">1  </td><td>Abook.exe</td><td>アプリケーション本体              </td></tr>
+  <tr><td class="no-s">2  </td><td>Abook.db</td><td>支出情報を保存するファイル</td></tr>
+</table>
+<p>アプリケーション起動時に，EXEファイルと同じフォルダにDBファイルが存在しない場合，空のDBファイルを作成する．</p>
+<table>
+  <tr>
+    <td class="layout general">
+      <figure>
+        <img src="/AbDock/images/folder_001.png" class="general" alt="Folder 001" />
+        <figcaption>1.アプリケーションの起動に必要なのはEXEファイルのみ</figcaption>
+      </figure>
+    </td>
+    <td rowspan="2">
+      <!-- ダミーカラム -->
+    </td>
+  </tr>
+  <tr>
+    <td class="layout general">
+      <figure>
+        <img src="/AbDock/images/folder_002.png" class="general" alt="Folder 002" />
+        <figcaption>2.アプリケーション起動時にDBファイルが存在しない場合，空のDBファイルを作成</figcaption>
+      </figure>
+    </td>
+  </tr>
+</table>
+
+    </div>
+    <footer>
+  <table class="footer">
+    <tr>
+      <td class="link">
+        <a href="/AbDock/">トップページ</a> | 
+        <a href="https://github.com/m-kishi/Abook">Abook</a> | 
+        <a href="https://github.com/m-kishi/AbDock">GitHub</a>
+      </td>
+      <td class="copy-rights">
+        &copy; 2016 Masaaki Kishi
+      </td>
+    </tr>
+  </table>
+</footer>
+
+    <script>mermaid.initialize({startOnLoad:true});</script>
+  </body>
+</html>

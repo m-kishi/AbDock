@@ -1,0 +1,476 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title>推移タブ</title>
+    <link href="/AbDock/images/abdock.ico" rel="icon" type="image/ico" />
+    <link href="/AbDock/stylesheets/normalize.css" rel="stylesheet" /><link href="/AbDock/stylesheets/all.css" rel="stylesheet" />
+    <link href="/AbDock/stylesheets/mermaid.forest.min.css" rel="stylesheet" />
+    <script src="/AbDock/javascripts/jquery-3.4.1.min.js"></script>
+    <script src="/AbDock/javascripts/all.js"></script>
+    <script src="/AbDock/javascripts/mermaid.min.js"></script>
+  </head>
+  <body class="f450_tab_graphic">
+    <header>
+  <table class="header">
+    <colgroup>
+      <col class="title"   />
+      <col class="project" />
+      <col class="appname" />
+      <col class="subname" />
+      <col class="version" />
+    </colgroup>
+    <tbody>
+      <tr>
+        <td class="title"   rowspan="2">画面設計</td>
+        <td class="project" rowspan="2">project.mk</td>
+        <td class="appname" rowspan="2">Abook</td>
+        <td class="subname" rowspan="2"></td>
+        <td class="version">バージョン</td>
+      </tr>
+      <tr>
+        <td class="version-number">5.8.1</td>
+      </tr>
+    </tbody>
+  </table>
+</header>
+
+    <div class="content">
+      <h1>【推移タブ】</h1>
+
+
+<h2>レイアウト</h2>
+
+<table class="layout">
+    <tr>
+      <td class="layout ">
+        <figure>
+            <img src="/AbDock/images/tab_graphic_001.png" class="" alt="Tab graphic 001" />
+            <figcaption>
+              1.該当の支出情報のない年月
+            </figcaption>
+        </figure>
+      </td>
+        <td rowspan="2" class="overview">
+          <figure>
+            <figcaption>＜概要＞</figcaption>
+              <ul class="overview">
+                  <li>1年分の支出の推移をグラフ表示する画面</li>
+                  <li>初期表示はシステム日付の年月〜1年前の同月までを表示する．</li>
+                  <li>支出情報のない年月はすべて&yen;0とする．</li>
+                  <li>前年ボタンにより表示範囲を-1年分ずらす．</li>
+                  <li>前月ボタンにより表示範囲を-1ヶ月ずらす．</li>
+                  <li>翌月ボタンにより表示範囲を+1ヶ月ずらす．</li>
+                  <li>翌年ボタンにより表示範囲を+1年分ずらす．</li>
+              </ul>
+          </figure>
+        </td>
+    </tr>
+    <tr>
+      <td class="layout ">
+        <figure>
+            <img src="/AbDock/images/tab_graphic_arr_007.png" id="img_graphic" alt="Tab graphic arr 007" />
+            <figcaption>
+              <button type="button" id="btn_prev_month">&lt;</button>
+              2.該当の支出情報のある年月
+              <button type="button" id="btn_next_month">&gt;</button>
+            </figcaption>
+        </figure>
+      </td>
+    </tr>
+</table>
+
+
+<h2>画面項目</h2>
+
+  <table class="controls">
+    <tr>
+      <th class="no-m">No.</th>
+      <th>名称</th>
+      <th>ＩＤ</th>
+      <th>テキスト</th>
+      <th>属性</th>
+      <th>align</th>
+      <th>種別</th>
+      <th>備考</th>
+    </tr>
+      <tr>
+  <td                >1</td>
+  <td                >ヘッダコントロール</td>
+  <td                >HeadGraphic</td>
+  <td                ></td>
+  <td                ></td>
+  <td class="align-c"></td>
+  <td                >AbHeaderControl</td>
+  <td                ></td>
+</tr>
+
+    <tr>
+  <td                >1-1</td>
+  <td                >タイトル</td>
+  <td                >LblTitle</td>
+  <td                >YYYY年MM月</td>
+  <td                ></td>
+  <td class="align-c"></td>
+  <td                >Label</td>
+  <td                ></td>
+</tr>
+
+
+    <tr>
+  <td                >1-2</td>
+  <td                >前年ボタン</td>
+  <td                >BtnPrevYear</td>
+  <td                >&lt;&lt;</td>
+  <td                ></td>
+  <td class="align-c"></td>
+  <td                >Button</td>
+  <td                ></td>
+</tr>
+
+
+    <tr>
+  <td                >1-3</td>
+  <td                >前月ボタン</td>
+  <td                >BtnPrevMonth</td>
+  <td                >&lt;</td>
+  <td                ></td>
+  <td class="align-c"></td>
+  <td                >Button</td>
+  <td                ></td>
+</tr>
+
+
+    <tr>
+  <td                >1-4</td>
+  <td                >翌月ボタン</td>
+  <td                >BtnNextMonth</td>
+  <td                >&gt;&gt;</td>
+  <td                ></td>
+  <td class="align-c"></td>
+  <td                >Button</td>
+  <td                ></td>
+</tr>
+
+
+    <tr>
+  <td                >1-5</td>
+  <td                >翌年ボタン</td>
+  <td                >BtnNextYear</td>
+  <td                >&gt;</td>
+  <td                ></td>
+  <td class="align-c"></td>
+  <td                >Button</td>
+  <td                ></td>
+</tr>
+
+
+
+      <tr>
+  <td                >2</td>
+  <td                >凡例線(食費)</td>
+  <td                >LblLineRed</td>
+  <td                >--</td>
+  <td                >文字列</td>
+  <td class="align-c">左</td>
+  <td                >Label</td>
+  <td                >文字色：赤色</td>
+</tr>
+
+
+      <tr>
+  <td                >3</td>
+  <td                >凡例名(食費)</td>
+  <td                >LblLineFood</td>
+  <td                >食費</td>
+  <td                >文字列</td>
+  <td class="align-c">左</td>
+  <td                >Label</td>
+  <td                ></td>
+</tr>
+
+
+      <tr>
+  <td                >4</td>
+  <td                >凡例線(外食費)</td>
+  <td                >LblLineOrange</td>
+  <td                >--</td>
+  <td                >文字列</td>
+  <td class="align-c">左</td>
+  <td                >Label</td>
+  <td                >文字色：橙色</td>
+</tr>
+
+
+      <tr>
+  <td                >5</td>
+  <td                >凡例名(外食費)</td>
+  <td                >LblLineOtfd</td>
+  <td                >外食費</td>
+  <td                >文字列</td>
+  <td class="align-c">左</td>
+  <td                >Label</td>
+  <td                ></td>
+</tr>
+
+
+      <tr>
+  <td                >6</td>
+  <td                >凡例線(電気代)</td>
+  <td                >LblLineYellow</td>
+  <td                >--</td>
+  <td                >文字列</td>
+  <td class="align-c">左</td>
+  <td                >Label</td>
+  <td                >文字色：黄色</td>
+</tr>
+
+
+      <tr>
+  <td                >7</td>
+  <td                >凡例名(電気代)</td>
+  <td                >LblLineEl</td>
+  <td                >電気代</td>
+  <td                >文字列</td>
+  <td class="align-c">左</td>
+  <td                >Label</td>
+  <td                ></td>
+</tr>
+
+
+      <tr>
+  <td                >8</td>
+  <td                >凡例線(ガス代)</td>
+  <td                >LblLineGray</td>
+  <td                >--</td>
+  <td                >文字列</td>
+  <td class="align-c">左</td>
+  <td                >Label</td>
+  <td                >文字色：灰色</td>
+</tr>
+
+
+      <tr>
+  <td                >9</td>
+  <td                >凡例名(ガス代)</td>
+  <td                >LblLineGs</td>
+  <td                >ガス代</td>
+  <td                >文字列</td>
+  <td class="align-c">左</td>
+  <td                >Label</td>
+  <td                ></td>
+</tr>
+
+
+      <tr>
+  <td                >10</td>
+  <td                >凡例線(水道代)</td>
+  <td                >LblLineBlue</td>
+  <td                >--</td>
+  <td                >文字列</td>
+  <td class="align-c">左</td>
+  <td                >Label</td>
+  <td                >文字色：青色</td>
+</tr>
+
+
+      <tr>
+  <td                >11</td>
+  <td                >凡例名(水道代)</td>
+  <td                >LblLineWt</td>
+  <td                >水道代</td>
+  <td                >文字列</td>
+  <td class="align-c">左</td>
+  <td                >Label</td>
+  <td                ></td>
+</tr>
+
+
+      <tr>
+  <td                >12</td>
+  <td                >グラフ描画領域</td>
+  <td                >PboxGraph</td>
+  <td                ></td>
+  <td                ></td>
+  <td class="align-c"></td>
+  <td                >PictureBox</td>
+  <td                ></td>
+</tr>
+
+
+      <tr>
+  <td                >13</td>
+  <td                >横軸ラベル1</td>
+  <td                >LblX1</td>
+  <td                >現在表示月-10ヶ月</td>
+  <td                >文字列</td>
+  <td class="align-c">左</td>
+  <td                >Label</td>
+  <td                ></td>
+</tr>
+
+
+      <tr>
+  <td                >14</td>
+  <td                >横軸ラベル2</td>
+  <td                >LblX2</td>
+  <td                >現在表示月-8ヶ月</td>
+  <td                >文字列</td>
+  <td class="align-c">左</td>
+  <td                >Label</td>
+  <td                ></td>
+</tr>
+
+
+      <tr>
+  <td                >15</td>
+  <td                >横軸ラベル3</td>
+  <td                >LblX3</td>
+  <td                >現在表示月-6ヶ月</td>
+  <td                >文字列</td>
+  <td class="align-c">左</td>
+  <td                >Label</td>
+  <td                ></td>
+</tr>
+
+
+      <tr>
+  <td                >16</td>
+  <td                >横軸ラベル4</td>
+  <td                >LblX4</td>
+  <td                >現在表示月-4ヶ月</td>
+  <td                >文字列</td>
+  <td class="align-c">左</td>
+  <td                >Label</td>
+  <td                ></td>
+</tr>
+
+
+      <tr>
+  <td                >17</td>
+  <td                >横軸ラベル5</td>
+  <td                >LblX5</td>
+  <td                >現在表示月-2ヶ月</td>
+  <td                >文字列</td>
+  <td class="align-c">左</td>
+  <td                >Label</td>
+  <td                ></td>
+</tr>
+
+
+      <tr>
+  <td                >18</td>
+  <td                >横軸ラベル6</td>
+  <td                >LblX6</td>
+  <td                >現在表示月</td>
+  <td                >文字列</td>
+  <td class="align-c">左</td>
+  <td                >Label</td>
+  <td                ></td>
+</tr>
+
+
+      <tr>
+  <td                >19</td>
+  <td                >縦軸ラベル1</td>
+  <td                >LblYen5000</td>
+  <td                >&yen;5,000</td>
+  <td                >文字列</td>
+  <td class="align-c">右</td>
+  <td                >Label</td>
+  <td                ></td>
+</tr>
+
+
+      <tr>
+  <td                >20</td>
+  <td                >縦軸ラベル2</td>
+  <td                >LblYen10000</td>
+  <td                >&yen;10,000</td>
+  <td                >文字列</td>
+  <td class="align-c">右</td>
+  <td                >Label</td>
+  <td                ></td>
+</tr>
+
+
+  </table>
+
+
+<h2>イベント</h2>
+<dl class="event">
+  <dt>初期表示</dt>
+  <dd>
+    <ul class="description">
+      <li><a href="/AbDock/f200_dbfile.html">DBファイル</a>から読み込んだ支出情報のうち，システム日付の年月〜1年前までの支出情報を対象とする．</li>
+      <li>範囲内の年月で支出情報がない年月の場合，金額はすべて&yen;0とする．</li>
+      <li>範囲内の年月それぞれで以下の項目ごとに金額を集計する．</li>
+      <ul class="event">
+        <li>種別：食費</li>
+        <li>種別：外食費</li>
+        <li>名称：電気代</li>
+        <li>名称：ガス代</li>
+        <li>名称：水道代</li>
+      </ul>
+      <li>集計した結果をグラフ描画領域に表示する．</li>
+      <li>グラフ描画領域の縦軸が集計金額で，描画範囲は&yen;0〜&yen;15,000とする．</li>
+      <li>&yen;2,500ごとに灰色の横点線を描画する．</li>
+    </ul>
+  </dd>
+  <dt>前年ボタン押下</dt>
+  <dd>
+    <ul class="description">
+      <li>現在のグラフの表示範囲を-1年分ずらす．</li>
+    <ul>
+  </dd>
+  <dt>前月ボタン押下</dt>
+  <dd>
+    <ul class="description">
+      <li>現在のグラフの表示範囲を-1ヶ月ずらす．</li>
+    <ul>
+  </dd>
+  <dt>翌月ボタン押下</dt>
+  <dd>
+    <ul class="description">
+      <li>現在のグラフの表示範囲を+1ヶ月ずらす．</li>
+    <ul>
+  </dd>
+  <dt>翌年ボタン押下</dt>
+  <dd>
+    <ul class="description">
+      <li>現在のグラフの表示範囲を+1年分ずらす．</li>
+    <ul>
+  </dd>
+</dl>
+
+<script>
+  // 画像切り替え処理の設定
+  $(function() {
+    var env = '0';
+    var prefix = '/AbDock';
+    graphic_obj.setup_image(env, prefix);
+  });
+</script>
+
+    </div>
+    <footer>
+  <table class="footer">
+    <tr>
+      <td class="link">
+        <a href="/AbDock/">トップページ</a> | 
+        <a href="https://github.com/m-kishi/Abook">Abook</a> | 
+        <a href="https://github.com/m-kishi/AbDock">GitHub</a>
+      </td>
+      <td class="copy-rights">
+        &copy; 2016 Masaaki Kishi
+      </td>
+    </tr>
+  </table>
+</footer>
+
+    <script>mermaid.initialize({startOnLoad:true});</script>
+  </body>
+</html>
