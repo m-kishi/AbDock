@@ -49,3 +49,13 @@ COST_AUTO_COMPLETE:
     CAPTION1: 「うどん」+「外食費」は1件目と3件目の金額が同じ
     PNG2: tab_expense_cost_complete_011.png
     CAPTION2: 同じ金額は一つにまとめられる
+
+COST_TOTAL:
+  - PNG1: tab_expense_cost_total_001.png
+    CAPTION1: 範囲選択されているセル
+    PNG2: tab_expense_cost_total_002.png
+    CAPTION2: 選択範囲内の<%= cCOL_COST %>合計を表示
+  - PNG1: tab_expense_cost_total_003.png
+    CAPTION1: <%= cCOL_COST %>列が含まれないとき
+    PNG2: tab_expense_cost_total_004.png
+    CAPTION2: 合計は0円

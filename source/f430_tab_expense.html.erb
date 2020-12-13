@@ -203,17 +203,44 @@ several: f430_tab_expense_several.yml
       </li>
     </ul>
   </dd>
-  <dt>支出DGV上でのキー押下(KeyDown)</dt>
+  <dt>支出DGV上でのキー押下(KeyDown)(Ctrl+V)</dt>
   <dd>
     <ul class="description">
       <li>押下されたキーがCtrl+V(ペースト)の場合，現在選択されてるセルにクリップボードの値をペーストする．</li>
       <li>現在選択されているセルが<%= cCOL_NAME %>列の場合，ペースト終了後に<%= cCOL_TYPE %>と<%= cCOL_COST %>の自動補完を行う．</li>
       <li>現在選択されているセルが<%= cCOL_TYPE %>列の場合，ペースト終了後に<%= cCOL_COST %>の自動補完を行う．</li>
     </ul>
-  </dd>
+ </dd>
+  <dt>支出DGV上でのキー押下(KeyDown)(Ctrl+T)</dt>
+  <dd>
+    <ul class="description">
+      <li>押下されたキーがCtrl+Tの場合，範囲選択されているセルの<%= cCOL_COST %>列の値を合計して表示する．</li>
+      <li>空白や不正な値の<%= cCOL_COST %>セルは合計に含めない．</li>
+      <li>範囲選択されているセルに<%= cCOL_COST %>列が含まれていない場合の合計は0円とする．</li>
+    </ul>
+    <table class="cost-total">
+      <% cap = "7" %>
+      <% form_several.COST_TOTAL.each.with_index(1) do |img, i| %>
+        <tr>
+          <td>
+            <figure>
+              <%= image_tag img.PNG1, class: 'small' %>
+              <figcaption><%= "#{cap}-#{i}-1.#{img.CAPTION1}" %></figcaption>
+            </figure>
+          </td>
+          <td>
+            <figure>
+              <%= image_tag img.PNG2, class: 'small' %>
+              <figcaption><%= "#{cap}-#{i}-2.#{img.CAPTION2}" %></figcaption>
+            </figure>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+   </dd>
   <dt>ツールチップの表示</dt>
   <dd>
-    <% cap = "7" %>
+    <% cap = "8" %>
     <ul class="description">
       <li><%= cCOL_NAME %>列にマウスオンしたとき，ツールチップを表示する．</li>
       <li>ツールチップには支出情報の<%= cCOL_NOTE %>を表示する．</li>
