@@ -32,7 +32,7 @@
         <td class="version">バージョン</td>
       </tr>
       <tr>
-        <td class="version-number">5.9.0</td>
+        <td class="version-number">5.10.0</td>
       </tr>
     </tbody>
   </table>
@@ -478,6 +478,47 @@
       <li>現在選択されているセルが種別列の場合，ペースト終了後に金額の自動補完を行う．</li>
     </ul>
  </dd>
+ <dt>支出DGV上でのキー押下(KeyDown)(Ctrl+8，Ctrl+1)</dt>
+ <dd>
+   <ul class="description">
+     <li>押下されたキーがCtrl+8かCtrl+1の場合，範囲選択されているセルの金額列のそれぞれを税込価格に置換して表示する．</li>
+     <li>Ctrl+8の場合は税込8%．</li>
+     <li>Ctrl+1の場合は税込10%．</li>
+     <li>税込計算のとき小数点以下は四捨五入する．</li>
+     <li>空白や不正な値の金額セルは無視する．</li>
+     <li>範囲選択されているセルに金額列が含まれていない場合は何もしない．</li>
+   </ul>
+   <table class="cost-tax">
+       <tr>
+         <td>
+           <figure>
+             <img src="/AbDock/images/tab_expense_cost_tax_001.png" class="small" alt="" />
+             <figcaption>7-1-1.Ctrl+8</figcaption>
+           </figure>
+         </td>
+         <td>
+           <figure>
+             <img src="/AbDock/images/tab_expense_cost_tax_002.png" class="small" alt="" />
+             <figcaption>7-1-2.税込金額(8%)を計算して表示</figcaption>
+           </figure>
+         </td>
+       </tr>
+       <tr>
+         <td>
+           <figure>
+             <img src="/AbDock/images/tab_expense_cost_tax_003.png" class="small" alt="" />
+             <figcaption>7-2-1.Ctrl+1</figcaption>
+           </figure>
+         </td>
+         <td>
+           <figure>
+             <img src="/AbDock/images/tab_expense_cost_tax_004.png" class="small" alt="" />
+             <figcaption>7-2-2.税込金額(10%)を計算して表示</figcaption>
+           </figure>
+         </td>
+       </tr>
+   </table>
+ </dd>
   <dt>支出DGV上でのキー押下(KeyDown)(Ctrl+T)</dt>
   <dd>
     <ul class="description">
@@ -490,13 +531,13 @@
           <td>
             <figure>
               <img src="/AbDock/images/tab_expense_cost_total_001.png" class="small" alt="" />
-              <figcaption>7-1-1.範囲選択されているセル</figcaption>
+              <figcaption>8-1-1.範囲選択されているセル</figcaption>
             </figure>
           </td>
           <td>
             <figure>
               <img src="/AbDock/images/tab_expense_cost_total_002.png" class="small" alt="" />
-              <figcaption>7-1-2.選択範囲内の金額合計を表示</figcaption>
+              <figcaption>8-1-2.選択範囲内の金額合計を表示</figcaption>
             </figure>
           </td>
         </tr>
@@ -504,13 +545,13 @@
           <td>
             <figure>
               <img src="/AbDock/images/tab_expense_cost_total_003.png" class="small" alt="" />
-              <figcaption>7-2-1.金額列が含まれないとき</figcaption>
+              <figcaption>8-2-1.金額列が含まれないとき</figcaption>
             </figure>
           </td>
           <td>
             <figure>
               <img src="/AbDock/images/tab_expense_cost_total_004.png" class="small" alt="" />
-              <figcaption>7-2-2.合計は0円</figcaption>
+              <figcaption>8-2-2.合計は0円</figcaption>
             </figure>
           </td>
         </tr>

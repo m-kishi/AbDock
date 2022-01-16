@@ -369,6 +369,16 @@ table.auto-complete {
   table.auto-complete .small {
     width: 90%; }
 
+table.cost-tax {
+  width: 100%;
+  margin-top: 10px; }
+  table.cost-tax td {
+    width: 50%;
+    text-align: center;
+    padding-bottom: 16px; }
+  table.cost-tax .small {
+    width: 80%; }
+
 table.cost-total {
   width: 100%;
   margin-top: 10px; }
