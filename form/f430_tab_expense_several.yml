@@ -50,6 +50,16 @@ COST_AUTO_COMPLETE:
     PNG2: tab_expense_cost_complete_011.png
     CAPTION2: 同じ金額は一つにまとめられる
 
+COST_TAX:
+  - PNG1: tab_expense_cost_tax_001.png
+    CAPTION1: Ctrl+8
+    PNG2: tab_expense_cost_tax_002.png
+    CAPTION2: 税込金額(8%)を計算して表示
+  - PNG1: tab_expense_cost_tax_003.png
+    CAPTION1: Ctrl+1
+    PNG2: tab_expense_cost_tax_004.png
+    CAPTION2: 税込金額(10%)を計算して表示
+
 COST_TOTAL:
   - PNG1: tab_expense_cost_total_001.png
     CAPTION1: 範囲選択されているセル
