@@ -464,6 +464,19 @@ table.auto-complete {
   }
 }
 
+table.cost-tax {
+  width: 100%;
+  margin-top: 10px;
+  td {
+    width: 50%;
+    text-align: center;
+    padding-bottom: 16px;
+  }
+  .small {
+    width: 80%;
+  }
+}
+
 table.cost-total {
   width: 100%;
   margin-top: 10px;

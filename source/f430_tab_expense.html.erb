@@ -211,6 +211,36 @@ several: f430_tab_expense_several.yml
       <li>現在選択されているセルが<%= cCOL_TYPE %>列の場合，ペースト終了後に<%= cCOL_COST %>の自動補完を行う．</li>
     </ul>
  </dd>
+ <dt>支出DGV上でのキー押下(KeyDown)(Ctrl+8，Ctrl+1)</dt>
+ <dd>
+   <ul class="description">
+     <li>押下されたキーがCtrl+8かCtrl+1の場合，範囲選択されているセルの<%= cCOL_COST %>列のそれぞれを税込価格に置換して表示する．</li>
+     <li>Ctrl+8の場合は税込8%．</li>
+     <li>Ctrl+1の場合は税込10%．</li>
+     <li>税込計算のとき小数点以下は四捨五入する．</li>
+     <li>空白や不正な値の<%= cCOL_COST %>セルは無視する．</li>
+     <li>範囲選択されているセルに<%= cCOL_COST %>列が含まれていない場合は何もしない．</li>
+   </ul>
+   <table class="cost-tax">
+     <% cap = "7" %>
+     <% form_several.COST_TAX.each.with_index(1) do |img, i| %>
+       <tr>
+         <td>
+           <figure>
+             <%= image_tag img.PNG1, class: 'small' %>
+             <figcaption><%= "#{cap}-#{i}-1.#{img.CAPTION1}" %></figcaption>
+           </figure>
+         </td>
+         <td>
+           <figure>
+             <%= image_tag img.PNG2, class: 'small' %>
+             <figcaption><%= "#{cap}-#{i}-2.#{img.CAPTION2}" %></figcaption>
+           </figure>
+         </td>
+       </tr>
+     <% end %>
+   </table>
+ </dd>
   <dt>支出DGV上でのキー押下(KeyDown)(Ctrl+T)</dt>
   <dd>
     <ul class="description">
@@ -219,7 +249,7 @@ several: f430_tab_expense_several.yml
       <li>範囲選択されているセルに<%= cCOL_COST %>列が含まれていない場合の合計は0円とする．</li>
     </ul>
     <table class="cost-total">
-      <% cap = "7" %>
+      <% cap = "8" %>
       <% form_several.COST_TOTAL.each.with_index(1) do |img, i| %>
         <tr>
           <td>
