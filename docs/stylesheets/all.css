@@ -516,57 +516,6 @@ table.subform-load-error {
     width: 30px;
     text-align: center; }
 
-table.upload-check-error {
-  width: 100%;
-  border: 1px solid #000000;
-  border-collapse: collapse;
-  margin-bottom: 10px; }
-  table.upload-check-error th {
-    border: 1px solid #000000;
-    text-align: left;
-    background-color: #fff10f; }
-  table.upload-check-error th.no {
-    width: 30px;
-    text-align: center; }
-  table.upload-check-error td {
-    border: 1px dotted #000000; }
-  table.upload-check-error td.no {
-    text-align: center; }
-
-table.upload-view-change {
-  border: 1px solid #000000;
-  margin-bottom: 10px; }
-  table.upload-view-change th {
-    border: 1px solid #000000;
-    text-align: left;
-    background-color: #fff10f; }
-  table.upload-view-change th.no {
-    width: 30px;
-    text-align: center; }
-  table.upload-view-change td {
-    border: 1px dotted #000000; }
-  table.upload-view-change td.no {
-    text-align: center; }
-
-table.upload-server-error {
-  width: 100%;
-  border: 1px solid #000000;
-  margin-bottom: 10px; }
-  table.upload-server-error th {
-    border: 1px solid #000000;
-    text-align: left;
-    background-color: #fff10f; }
-  table.upload-server-error td.message {
-    border: 1px solid #000000; }
-  table.upload-server-error td.example {
-    border-style: none none none none; }
-
-table.upload-server-error-example {
-  width: 100%;
-  margin-bottom: 10px; }
-  table.upload-server-error-example td {
-    text-align: center; }
-
 table.version-setting {
   width: 100%;
   border: 1px solid #000000;

@@ -33,6 +33,7 @@
 ###
 require 'helper/abdock'
 helpers AbDockHelpers
+require 'helper/uri'
 
 # Automatic image dimensions on image_tag helper
 # activate :automatic_image_sizes
