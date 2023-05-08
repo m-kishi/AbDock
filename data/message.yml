@@ -54,17 +54,3 @@ BALANCE_INCORRECT:
   MSG: '収支が合いません。'
 TYPE_PRIVATE_ERR:
   MSG: '種別が正しくありません。'
-MAIL_NULL:
-  MSG: 'MAILを入力してください。'
-PASS_NULL:
-  MSG: 'PASSを入力してください。'
-LOGIN_NULL:
-  MSG: 'ログインURLがありません。'
-UPLOAD_NULL:
-  MSG: 'アップロードURLがありません。'
-DB_DOES_NOT_EXIST:
-  MSG: 'DBファイルが見つかりませんでした。'
-UPD_REQ_FAILED:
-  MSG: 'サーバへのアップロードに失敗しました。'
-UPD_RECORD_NOTHING:
-  MSG: 'アップロードするデータがありません。'

@@ -33,13 +33,14 @@
 ###
 require 'helper/abdock'
 helpers AbDockHelpers
+require 'helper/uri'
 
 # Automatic image dimensions on image_tag helper
 # activate :automatic_image_sizes
 
 # Reload the browser automatically whenever files change
 configure :development do
-  #activate :livereload, host: 'localhost'
+  activate :livereload, host: '0.0.0.0'
 end
 
 # Methods defined in the helpers block are available in templates

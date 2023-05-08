@@ -13,7 +13,6 @@ module AbDockHelpers
   def cSUB_TYPE   ; data.form.FORM_SUB_TYPE.NAME    end
   def cSUB_SEARCH ; data.form.FORM_SUB_SEARCH.NAME  end
   def cSUB_ENERGY ; data.form.FORM_SUB_ENERGY.NAME  end
-  def cSUB_UPLOAD ; data.form.FORM_SUB_UPLOAD.NAME  end
   def cSUB_VERSION; data.form.FORM_SUB_VERSION.NAME end
 
   #==================================================
@@ -41,7 +40,6 @@ module AbDockHelpers
   def cDATA;  "#{data.term.MENU.DATA   .TEXT}" end
   def cSRCH;  "#{data.term.MENU.SEARCH .TEXT}" end
   def cENGY;  "#{data.term.MENU.ENERGY .TEXT}" end
-  def cUPLD;  "#{data.term.MENU.UPLOAD .TEXT}" end
   def cHELP;  "#{data.term.MENU.HELP   .TEXT}" end
   def cVRSN;  "#{data.term.MENU.VERSION.TEXT}" end
   def cFILE!; "#{cFILE}(#{data.term.MENU.FILE   .ICON})" end
@@ -49,7 +47,6 @@ module AbDockHelpers
   def cDATA!; "#{cDATA}(#{data.term.MENU.DATA   .ICON})" end
   def cSRCH!; "#{cSRCH}(#{data.term.MENU.SEARCH .ICON})" end
   def cENGY!; "#{cENGY}(#{data.term.MENU.ENERGY .ICON})" end
-  def cUPLD!; "#{cUPLD}(#{data.term.MENU.UPLOAD .ICON})" end
   def cHELP!; "#{cHELP}(#{data.term.MENU.HELP   .ICON})" end
   def cVRSN!; "#{cVRSN}(#{data.term.MENU.VERSION.ICON})" end
   # TAB
@@ -143,7 +140,6 @@ module AbDockHelpers
   def lnSubType   ; lnForm :FORM_SUB_TYPE    end
   def lnSubSearch ; lnForm :FORM_SUB_SEARCH  end
   def lnSubEnergy ; lnForm :FORM_SUB_ENERGY  end
-  def lnSubUpload ; lnForm :FORM_SUB_UPLOAD  end
   def lnSubVersion; lnForm :FORM_SUB_VERSION end
   # その他の各ページ
   def lnLink(name, key); link_to name, data.link[key] end
