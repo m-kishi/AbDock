@@ -28,9 +28,6 @@ FORM_SUB_SEARCH:
 FORM_SUB_ENERGY:
   NAME: 光熱費サブフォーム
   LINK: f530_subform_energy.html
-FORM_SUB_UPLOAD:
-  NAME: アップロードサブフォーム
-  LINK: f580_subform_upload.html
 FORM_SUB_VERSION:
   NAME: バージョン情報サブフォーム
   LINK: f590_subform_version.html

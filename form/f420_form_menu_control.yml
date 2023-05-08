@@ -44,13 +44,6 @@ CONTROL:
             ALGN:
             TYPE: <%= cMENU_ITEM %>
             NOTE:
-          - ID: MenuUpload
-            NAME: <%= cUPLD %>
-            TEXT: <%= cUPLD! %>
-            ATTR:
-            ALGN:
-            TYPE: <%= cMENU_ITEM %>
-            NOTE:
       - ID: MenuHelp
         NAME: <%= cHELP %>
         TEXT: <%= cHELP! %>
