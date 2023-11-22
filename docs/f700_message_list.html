@@ -32,7 +32,7 @@
         <td class="version">バージョン</td>
       </tr>
       <tr>
-        <td class="version-number">6.0.0</td>
+        <td class="version-number">6.1.0</td>
       </tr>
     </tbody>
   </table>
@@ -108,58 +108,56 @@ $(window).on('load', function() {
     </tr>
     <tr>
       <td class="no"   >5</td>
+      <td id="NOTE_NULL">NOTE_NULL</td>
+      <td              >備考がNULLです。</td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td class="no"   >6</td>
       <td id="TYPE_WRONG">TYPE_WRONG</td>
       <td              >種別が正しくありません。</td>
       <td>
       </td>
     </tr>
     <tr>
-      <td class="no"   >6</td>
+      <td class="no"   >7</td>
       <td id="COST_MINUS">COST_MINUS</td>
       <td              >金額がマイナスです。</td>
       <td>
       </td>
     </tr>
     <tr>
-      <td class="no"   >7</td>
+      <td class="no"   >8</td>
       <td id="DATE_FORMAT">DATE_FORMAT</td>
       <td              >日付が正しくありません。</td>
       <td>
       </td>
     </tr>
     <tr>
-      <td class="no"   >8</td>
+      <td class="no"   >9</td>
       <td id="COST_FORMAT">COST_FORMAT</td>
       <td              >金額が正しくありません。</td>
       <td>
       </td>
     </tr>
     <tr>
-      <td class="no"   >9</td>
+      <td class="no"   >10</td>
       <td id="COST_OVERFLOW">COST_OVERFLOW</td>
       <td              >金額が大き過ぎます。</td>
       <td>
       </td>
     </tr>
     <tr>
-      <td class="no"   >10</td>
-      <td id="CSV_NULL">CSV_NULL</td>
-      <td              >CSVファイルがありません。</td>
-      <td>
-      </td>
-    </tr>
-    <tr>
       <td class="no"   >11</td>
-      <td id="CSV_LOAD">CSV_LOAD</td>
-      <td              >{0} 行目: {1}</td>
+      <td id="DB_FILE_NULL">DB_FILE_NULL</td>
+      <td              >DBファイルがありません。</td>
       <td>
-            {0}:行番号
-            {1}:エラーメッセージ
       </td>
     </tr>
     <tr>
       <td class="no"   >12</td>
-      <td id="CSV_STORE">CSV_STORE</td>
+      <td id="DB_FILE_LOAD">DB_FILE_LOAD</td>
       <td              >{0} 行目: {1}</td>
       <td>
             {0}:行番号
@@ -168,90 +166,98 @@ $(window).on('load', function() {
     </tr>
     <tr>
       <td class="no"   >13</td>
-      <td id="CSV_CREATE">CSV_CREATE</td>
-      <td              >CSVファイルの作成に失敗しました。</td>
+      <td id="DB_FILE_STORE">DB_FILE_STORE</td>
+      <td              >DBファイル登録エラー: {0}</td>
       <td>
+            {0}:エラーメッセージ
       </td>
     </tr>
     <tr>
       <td class="no"   >14</td>
-      <td id="CSV_FIELD_LESS">CSV_FIELD_LESS</td>
-      <td              >フィールド数が少ないです。</td>
+      <td id="DB_FILE_CREATE">DB_FILE_CREATE</td>
+      <td              >DBファイルの作成に失敗しました。</td>
       <td>
       </td>
     </tr>
     <tr>
       <td class="no"   >15</td>
-      <td id="CSV_FIELD_MORE">CSV_FIELD_MORE</td>
-      <td              >フィールド数が多いです。</td>
+      <td id="DB_FILE_FIELD_LESS">DB_FILE_FIELD_LESS</td>
+      <td              >フィールド数が少ないです。</td>
       <td>
       </td>
     </tr>
     <tr>
       <td class="no"   >16</td>
-      <td id="CSV_RECORD_NOTHING">CSV_RECORD_NOTHING</td>
-      <td              >登録するデータがありません。</td>
+      <td id="DB_FILE_FIELD_MORE">DB_FILE_FIELD_MORE</td>
+      <td              >フィールド数が多いです。</td>
       <td>
       </td>
     </tr>
     <tr>
       <td class="no"   >17</td>
+      <td id="DB_FILE_RECORD_NOTHING">DB_FILE_RECORD_NOTHING</td>
+      <td              >登録するデータがありません。</td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td class="no"   >18</td>
       <td id="EXPENSE_NULL">EXPENSE_NULL</td>
       <td              >支出情報がありません。</td>
       <td>
       </td>
     </tr>
     <tr>
-      <td class="no"   >18</td>
+      <td class="no"   >19</td>
       <td id="EXPENSES_NULL">EXPENSES_NULL</td>
       <td              >支出情報リストがありません。</td>
       <td>
       </td>
     </tr>
     <tr>
-      <td class="no"   >19</td>
+      <td class="no"   >20</td>
       <td id="SUMMARIES_NULL">SUMMARIES_NULL</td>
-      <td              >集計値リストがありません。</td>
+      <td              >月次情報リストがありません。</td>
       <td>
       </td>
     </tr>
     <tr>
-      <td class="no"   >20</td>
+      <td class="no"   >21</td>
       <td id="YEAR_MINUS">YEAR_MINUS</td>
       <td              >年度がマイナスです。</td>
       <td>
       </td>
     </tr>
     <tr>
-      <td class="no"   >21</td>
+      <td class="no"   >22</td>
       <td id="EARN_MINUS">EARN_MINUS</td>
       <td              >収入がマイナスです。</td>
       <td>
       </td>
     </tr>
     <tr>
-      <td class="no"   >22</td>
+      <td class="no"   >23</td>
       <td id="EXPENSE_MINUS">EXPENSE_MINUS</td>
       <td              >支出がマイナスです。</td>
       <td>
       </td>
     </tr>
     <tr>
-      <td class="no"   >23</td>
+      <td class="no"   >24</td>
       <td id="SPECIAL_MINUS">SPECIAL_MINUS</td>
       <td              >特出がマイナスです。</td>
       <td>
       </td>
     </tr>
     <tr>
-      <td class="no"   >24</td>
+      <td class="no"   >25</td>
       <td id="BALANCE_INCORRECT">BALANCE_INCORRECT</td>
       <td              >収支が合いません。</td>
       <td>
       </td>
     </tr>
     <tr>
-      <td class="no"   >25</td>
+      <td class="no"   >26</td>
       <td id="TYPE_PRIVATE_ERR">TYPE_PRIVATE_ERR</td>
       <td              >種別が正しくありません。</td>
       <td>
