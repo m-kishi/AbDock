@@ -33,4 +33,22 @@ control: f510_subform_type_control.yml
       <li>支出DGVの1行目を選択状態とする．<br /></li>
     </ul>
   </dd>
+  <dt>ツールチップの表示</dt>
+  <dd>
+    <ul class="description">
+      <li><%= cCOL_NAME %>列にマウスオンしたとき，ツールチップを表示する．</li>
+      <li>ツールチップには支出情報の<%= cCOL_NOTE %>を表示する．</li>
+      <li><%= cCOL_NOTE %>のある行は背景色を変更する(#DEFCE7)．</li>
+    </ul>
+    <table class="note-tooltip">
+      <tr>
+        <td>
+          <figure>
+            <%= image_tag 'subform_type_note.png' %>
+            <figcaption><%= "3-1. ツールチップに#{cCOL_NOTE}を表示" %></figcaption>
+          </figure>
+        </td>
+      </tr>
+    </table>
+  </dd>
 </dl>

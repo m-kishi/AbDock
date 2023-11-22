@@ -1,9 +1,9 @@
 MESSAGE:
-  - ID: CSV_CREATE
+  - ID: DB_FILE_CREATE
     TERM: 初回起動時の<%= cDB_FILE %>作成に失敗
-  - ID: CSV_FIELD_LESS
+  - ID: DB_FILE_FIELD_LESS
     TERM: <%= cDB_FILE %>のフィールド数が少ない
-  - ID: CSV_FIELD_MORE
+  - ID: DB_FILE_FIELD_MORE
     TERM: <%= cDB_FILE %>のフィールド数が多い
   - ID: DATE_NULL
     TERM: <%= cDB_FILE %>の<%= cCOL_DATE %>フィールドが空

@@ -6,6 +6,8 @@ TYPE_NULL:
   MSG: '種別がありません。'
 COST_NULL:
   MSG: '金額がありません。'
+NOTE_NULL:
+  MSG: '備考がNULLです。'
 TYPE_WRONG:
   MSG: '種別が正しくありません。'
 COST_MINUS:
@@ -16,32 +18,31 @@ COST_FORMAT:
   MSG: '金額が正しくありません。'
 COST_OVERFLOW:
   MSG: '金額が大き過ぎます。'
-CSV_NULL:
-  MSG: 'CSVファイルがありません。'
-CSV_LOAD:
+DB_FILE_NULL:
+  MSG: 'DBファイルがありません。'
+DB_FILE_LOAD:
   MSG: '{0} 行目: {1}'
   ARG:
     - '{0}:行番号'
     - '{1}:エラーメッセージ'
-CSV_STORE:
-  MSG: '{0} 行目: {1}'
+DB_FILE_STORE:
+  MSG: 'DBファイル登録エラー: {0}'
   ARG:
-    - '{0}:行番号'
-    - '{1}:エラーメッセージ'
-CSV_CREATE:
-  MSG: 'CSVファイルの作成に失敗しました。'
-CSV_FIELD_LESS:
+    - '{0}:エラーメッセージ'
+DB_FILE_CREATE:
+  MSG: 'DBファイルの作成に失敗しました。'
+DB_FILE_FIELD_LESS:
   MSG: 'フィールド数が少ないです。'
-CSV_FIELD_MORE:
+DB_FILE_FIELD_MORE:
   MSG: 'フィールド数が多いです。'
-CSV_RECORD_NOTHING:
+DB_FILE_RECORD_NOTHING:
   MSG: '登録するデータがありません。'
 EXPENSE_NULL:
   MSG: '支出情報がありません。'
 EXPENSES_NULL:
   MSG: '支出情報リストがありません。'
 SUMMARIES_NULL:
-  MSG: '集計値リストがありません。'
+  MSG: '月次情報リストがありません。'
 YEAR_MINUS:
   MSG: '年度がマイナスです。'
 EARN_MINUS:

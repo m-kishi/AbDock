@@ -9,6 +9,8 @@ MESSAGE:
     TERM: 支出DGVの<%= cCOL_COST %>列の値がマイナス
   - ID: COST_OVERFLOW
     TERM: 支出DGVの<%= cCOL_COST %>列の値が大き過ぎる
+  - ID: DB_FILE_STORE
+    TERM: <%= cDB_FILE %>への書き出しに失敗する(<%= cDB_FILE %>がロックされているなど)
 
 TYPE_AUTO_COMPLETE:
   - PNG1: tab_expense_complete_001.png
@@ -56,7 +58,7 @@ COST_TAX:
     PNG2: tab_expense_cost_tax_002.png
     CAPTION2: 税込金額(8%)を計算して表示
   - PNG1: tab_expense_cost_tax_003.png
-    CAPTION1: Ctrl+1
+    CAPTION1: Ctrl+0
     PNG2: tab_expense_cost_tax_004.png
     CAPTION2: 税込金額(10%)を計算して表示
 

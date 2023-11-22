@@ -434,6 +434,7 @@ table.input-error {
 table.db-file-store-error {
   width: 100%;
   border: 1px solid #000000;
+  margin-bottom: 20px;
   th {
     border: 1px solid #000000;
     text-align: left;
@@ -487,6 +488,18 @@ table.cost-total {
   }
   .small {
     width: 80%;
+  }
+}
+
+table.note-tooltip {
+  width: 50%;
+  margin-top: 10px;
+  td {
+    width: 100%;
+    text-align: center;
+  }
+  .small {
+    width: 90%;
   }
 }
 
