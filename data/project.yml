@@ -1,6 +1,6 @@
 PROJECT: project.mk
 APPNAME: Abook
 SUBNAME:
-VERSION: 6.0.0
+VERSION: 6.1.0
 GITHUB_ABOOK:  https://github.com/m-kishi/Abook
 GITHUB_ABDOCK: https://github.com/m-kishi/AbDock

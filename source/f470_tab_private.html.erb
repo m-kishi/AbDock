@@ -50,10 +50,17 @@ control: f470_tab_private_control.yml
     <ul class="description">
       <li><%= cCOL_NAME %>列にマウスオンしたとき，ツールチップを表示する．</li>
       <li>ツールチップには支出情報の<%= cCOL_NOTE %>を表示する．</li>
+      <li><%= cCOL_NOTE %>のある行は背景色を変更する(#DEFCE7)．</li>
     </ul>
-    <figure>
-      <%= image_tag 'tab_private_note.png' %>
-      <figcaption><%= "1-1. ツールチップに#{cCOL_NOTE}を表示" %></figcaption>
-    </figure>
+    <table class="note-tooltip">
+      <tr>
+        <td>
+          <figure>
+            <%= image_tag 'tab_private_note.png' %>
+            <figcaption><%= "1-1. ツールチップに#{cCOL_NOTE}を表示" %></figcaption>
+          </figure>
+        </td>
+      </tr>
+    </table>
   </dd>
 </dl>

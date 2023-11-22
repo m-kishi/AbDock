@@ -83,7 +83,7 @@ several: f430_tab_expense_several.yml
   <dt>追加ボタン押下</dt>
   <dd>
     <ul class="description">
-      <li>支出DGVの末尾に新しく15行追加する．</li>
+      <li>支出DGVの末尾に新しく30行追加する．</li>
       <li>
         新しく追加された行の<%= cCOL_DATE %>列にはシステム日付(<%= cYYYY_MM_DD %>)を初期値として設定する．
         <table class="event">
@@ -211,12 +211,12 @@ several: f430_tab_expense_several.yml
       <li>現在選択されているセルが<%= cCOL_TYPE %>列の場合，ペースト終了後に<%= cCOL_COST %>の自動補完を行う．</li>
     </ul>
  </dd>
- <dt>支出DGV上でのキー押下(KeyDown)(Ctrl+8，Ctrl+1)</dt>
+ <dt>支出DGV上でのキー押下(KeyDown)(Ctrl+8，Ctrl+0)</dt>
  <dd>
    <ul class="description">
-     <li>押下されたキーがCtrl+8かCtrl+1の場合，範囲選択されているセルの<%= cCOL_COST %>列のそれぞれを税込価格に置換して表示する．</li>
+     <li>押下されたキーがCtrl+8かCtrl+0の場合，範囲選択されているセルの<%= cCOL_COST %>列のそれぞれを税込価格に置換して表示する．</li>
      <li>Ctrl+8の場合は税込8%．</li>
-     <li>Ctrl+1の場合は税込10%．</li>
+     <li>Ctrl+0の場合は税込10%．</li>
      <li>税込計算のとき小数点以下は四捨五入する．</li>
      <li>空白や不正な値の<%= cCOL_COST %>セルは無視する．</li>
      <li>範囲選択されているセルに<%= cCOL_COST %>列が含まれていない場合は何もしない．</li>
@@ -270,14 +270,21 @@ several: f430_tab_expense_several.yml
    </dd>
   <dt>ツールチップの表示</dt>
   <dd>
-    <% cap = "8" %>
+    <% cap = "9" %>
     <ul class="description">
       <li><%= cCOL_NAME %>列にマウスオンしたとき，ツールチップを表示する．</li>
       <li>ツールチップには支出情報の<%= cCOL_NOTE %>を表示する．</li>
+      <li><%= cCOL_NOTE %>のある行は背景色を変更する(#DEFCE7)．</li>
     </ul>
-    <figure>
-      <%= image_tag 'tab_expense_note.png' %>
-      <figcaption><%= "#{cap}-1. ツールチップに#{cCOL_NOTE}を表示" %></figcaption>
-    </figure>
+    <table class="note-tooltip">
+      <tr>
+        <td>
+          <figure>
+            <%= image_tag 'tab_expense_note.png' %>
+            <figcaption><%= "#{cap}-1. ツールチップに#{cCOL_NOTE}を表示" %></figcaption>
+          </figure>
+        </td>
+      </tr>
+    </table>
   </dd>
 </dl>
