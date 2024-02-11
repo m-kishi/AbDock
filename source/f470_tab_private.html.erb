@@ -28,6 +28,7 @@ control: f470_tab_private_control.yml
         <tr><td class="no">2  </td><td>名称</td><td><%= cEXP_INFO %>の<%= cCOL_NAME %></td></tr>
         <tr><td class="no">3  </td><td>金額</td><td><%= cEXP_INFO %>の<%= cCOL_COST %>(<%= cCOL_TYPE %>が"<%= type_prvo %>"ならマイナス)</td></tr>
         <tr><td class="no">4  </td><td>収支</td><td>秘密DGVの一つ上の行の収支 + <%= cEXP_INFO %>の<%= cCOL_COST %>(<%= cCOL_TYPE %>が"<%= type_prvo %>"ならマイナス)</td></tr>
+        <tr><td class="no">5  </td><td>備考</td><td><%= cEXP_INFO %>の<%= cCOL_NOTE %></td></tr>
       </table>
       <li>秘密DGVを最終行までスクロールして，最終行を選択状態とする．</li>
       <li>表示処理中にチェックエラーが発生した場合，エラーダイアログを表示してアプリケーションを終了する．</li>
@@ -57,7 +58,7 @@ control: f470_tab_private_control.yml
         <td>
           <figure>
             <%= image_tag 'tab_private_note.png' %>
-            <figcaption><%= "1-1. ツールチップに#{cCOL_NOTE}を表示" %></figcaption>
+            <figcaption><%= "3-1. ツールチップに#{cCOL_NOTE}を表示" %></figcaption>
           </figure>
         </td>
       </tr>

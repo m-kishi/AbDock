@@ -1,8 +1,8 @@
 IMAGE:
   - PNG: tab_private_001.png
-    CAPTION: <%= lnType cEXP_TYPE_PRV %>の<%= cEXP_INFO %><%= cNASI %>
+    CAPTION: <%= lnType cEXP_TYPE_PRV %>の<%= cEXP_INFO %><%= cNO %>
   - PNG: tab_private_002.png
-    CAPTION: <%= lnType cEXP_TYPE_PRV %>の<%= cEXP_INFO %><%= cARI %>
+    CAPTION: <%= lnType cEXP_TYPE_PRV %>の<%= cEXP_INFO %><%= cYES %>
 
 OVERVIEW:
   - <%= lnType cEXP_TYPE_PRV %>の<%= cEXP_INFO %>のみの収支を表示する画面

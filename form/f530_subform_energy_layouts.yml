@@ -1,22 +1,22 @@
 IMAGE:
   - PNG: subform_energy_el_001.png
     CSS: energy
-    CAPTION: <%= cEL %>タブ(<%= cEL %>の<%= cEXP_INFO %><%= cNASI %>)
+    CAPTION: <%= cEL %>タブ(<%= cEL %>の<%= cEXP_INFO %><%= cNO %>)
   - PNG: subform_energy_el_002.png
     CSS: energy
-    CAPTION: <%= cEL %>タブ(<%= cEL %>の<%= cEXP_INFO %><%= cARI  %>)
+    CAPTION: <%= cEL %>タブ(<%= cEL %>の<%= cEXP_INFO %><%= cYES  %>)
   - PNG: subform_energy_gs_001.png
     CSS: energy
-    CAPTION: <%= cGS %>タブ(<%= cGS %>の<%= cEXP_INFO %><%= cNASI %>)
+    CAPTION: <%= cGS %>タブ(<%= cGS %>の<%= cEXP_INFO %><%= cNO %>)
   - PNG: subform_energy_gs_002.png
     CSS: energy
-    CAPTION: <%= cGS %>タブ(<%= cGS %>の<%= cEXP_INFO %><%= cARI  %>)
+    CAPTION: <%= cGS %>タブ(<%= cGS %>の<%= cEXP_INFO %><%= cYES  %>)
   - PNG: subform_energy_wt_001.png
     CSS: energy
-    CAPTION: <%= cWT %>タブ(<%= cWT %>の<%= cEXP_INFO %><%= cNASI %>)
+    CAPTION: <%= cWT %>タブ(<%= cWT %>の<%= cEXP_INFO %><%= cNO %>)
   - PNG: subform_energy_wt_002.png
     CSS: energy
-    CAPTION: <%= cWT %>タブ(<%= cWT %>の<%= cEXP_INFO %><%= cARI  %>)
+    CAPTION: <%= cWT %>タブ(<%= cWT %>の<%= cEXP_INFO %><%= cYES  %>)
 
 OVERVIEW:
   - 年度ごと月ごとの光熱費を一覧表示するサブフォーム
@@ -25,14 +25,14 @@ OVERVIEW:
   - 光熱費の<%= cEXP_INFO %>が0件の場合，各DGVは0行とする．
 
 PROPERTY:
-  ICON: <%= cNASI %>
+  ICON: <%= cNO %>
   TITLE: 光熱費
   SIZABLE: <%= cFUKA %>
   MINIMUM: <%= cFUKA %>
   MAXIMUM: <%= cFUKA %>
   SCREEN_SIZE: (704, 306)
   START_POSITION: <%= cCENTER_PARENT %>
-  SHOW_IN_TASKBAR: <%= cNASI %>
+  SHOW_IN_TASKBAR: <%= cNO %>
 
 DGV:
   CAPTION  : 各DGVの設定(<%= cEL %>，<%= cGS %>，<%= cWT %>すべて共通)

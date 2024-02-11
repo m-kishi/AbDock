@@ -35,3 +35,10 @@ CONTROL:
         ALGN: <%= cRIGHT %>
         TYPE: <%= cDGV_TEXT %>
         NOTE: <%= cCURRENCY %>
+      - ID: ColPrvNote
+        NAME: 備考列
+        TEXT: 備考
+        ATTR: <%= cSTR %>
+        ALGN: <%= cLEFT %>
+        TYPE: <%= cDGV_TEXT %>
+        NOTE:

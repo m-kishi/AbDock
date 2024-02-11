@@ -1,8 +1,8 @@
 IMAGE:
   - PNG: tab_balance_001.png
-    CAPTION: <%= cEXP_INFO %><%= cNASI %>
+    CAPTION: <%= cEXP_INFO %><%= cNO %>
   - PNG: tab_balance_002.png
-    CAPTION: <%= cEXP_INFO %><%= cARI %>
+    CAPTION: <%= cEXP_INFO %><%= cYES %>
 
 OVERVIEW:
   - 年度の収支を表示する画面

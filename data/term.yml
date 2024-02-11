@@ -61,8 +61,8 @@ EXPENSE_TYPE:
 CHAR:
   MARU: ○
   BATU: ×
-  ARI : あり
-  NASI: なし
+  'YES': あり
+  'NO' : なし
   KANO: 可能
   FUKA: 不可
 CONTROL:

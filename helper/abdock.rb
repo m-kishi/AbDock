@@ -69,8 +69,8 @@ module AbDockHelpers
   # CHAR
   def cMARU; data.term.CHAR.MARU end
   def cBATU; data.term.CHAR.BATU end
-  def cARI ; data.term.CHAR.ARI  end
-  def cNASI; data.term.CHAR.NASI end
+  def cYES ; data.term.CHAR.YES  end
+  def cNO  ; data.term.CHAR.NO   end
   def cKANO; data.term.CHAR.KANO end
   def cFUKA; data.term.CHAR.FUKA end
   # CONTROL
