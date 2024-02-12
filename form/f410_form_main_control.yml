@@ -49,3 +49,11 @@ CONTROL:
         ALGN:
         TYPE: <%= cTAB_PAGE %>
         NOTE:
+      - ID: TabFinance
+        NAME: <%= lnFinance %>
+        TEXT: <%= cFINANCE %>
+        ATTR:
+        ALGN:
+        TYPE: <%= cTAB_PAGE %>
+        NOTE:
+

@@ -10,6 +10,7 @@ module AbDockHelpers
   def cTAB_GRAPHIC; data.form.FORM_TAB_GRAPHIC.NAME end
   def cTAB_BALANCE; data.form.FORM_TAB_BALANCE.NAME end
   def cTAB_PRIVATE; data.form.FORM_TAB_PRIVATE.NAME end
+  def cTAB_FINANCE; data.form.FORM_TAB_FINANCE.NAME end
   def cSUB_TYPE   ; data.form.FORM_SUB_TYPE.NAME    end
   def cSUB_SEARCH ; data.form.FORM_SUB_SEARCH.NAME  end
   def cSUB_ENERGY ; data.form.FORM_SUB_ENERGY.NAME  end
@@ -55,6 +56,7 @@ module AbDockHelpers
   def cGRAPHIC; data.term.TAB.GRAPHIC end
   def cBALANCE; data.term.TAB.BALANCE end
   def cPRIVATE; data.term.TAB.PRIVATE end
+  def cFINANCE; data.term.TAB.FINANCE end
   # ENERGY
   def cEL; data.term.ENERGY.EL end
   def cGS; data.term.ENERGY.GS end
@@ -137,6 +139,7 @@ module AbDockHelpers
   def lnGraphic   ; lnForm :FORM_TAB_GRAPHIC end
   def lnBalance   ; lnForm :FORM_TAB_BALANCE end
   def lnPrivate   ; lnForm :FORM_TAB_PRIVATE end
+  def lnFinance   ; lnForm :FORM_TAB_FINANCE end;
   def lnSubType   ; lnForm :FORM_SUB_TYPE    end
   def lnSubSearch ; lnForm :FORM_SUB_SEARCH  end
   def lnSubEnergy ; lnForm :FORM_SUB_ENERGY  end
@@ -183,6 +186,9 @@ module AbDockHelpers
   def type_spcl; type_name :SPCL end
   def type_prvi; type_name :PRVI end
   def type_prvo; type_name :PRVO end
+  def type_fnce; type_name :FNCE end
+  def type_gain; type_name :GAIN end
+  def type_loss; type_name :LOSS end
 
   #==================================================
   # 種別の説明を表示するメソッド

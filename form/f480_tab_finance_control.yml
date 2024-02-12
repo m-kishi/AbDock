@@ -1,0 +1,44 @@
+CONTROL:
+  - ID: DgvFinance
+    NAME: 投資DGV
+    TEXT:
+    ATTR:
+    ALGN:
+    TYPE: <%= cDGV %>
+    NOTE:
+    CHILDREN:
+      - ID: ColFncDate
+        NAME: <%= cCOL_DATE %>列
+        TEXT: <%= cCOL_DATE %>
+        ATTR: <%= cSTR %>
+        ALGN: <%= cCENTER %>
+        TYPE: <%= cDGV_TEXT %>
+        NOTE: <%= cYYYY_MM_DD %>
+      - ID: ColFncName
+        NAME: <%= cCOL_NAME %>列
+        TEXT: <%= cCOL_NAME %>
+        ATTR: <%= cSTR %>
+        ALGN: <%= cLEFT %>
+        TYPE: <%= cDGV_TEXT %>
+        NOTE:
+      - ID: ColFncCost
+        NAME: <%= cCOL_COST %>列
+        TEXT: <%= cCOL_COST %>
+        ATTR: <%= cNUM %>
+        ALGN: <%= cRIGHT %>
+        TYPE: <%= cDGV_TEXT %>
+        NOTE: <%= cCURRENCY %>
+      - ID: ColFncTtal
+        NAME: 累計列
+        TEXT: 累計
+        ATTR: <%= cNUM %>
+        ALGN: <%= cRIGHT %>
+        TYPE: <%= cDGV_TEXT %>
+        NOTE: <%= cCURRENCY %>
+      - ID: ColFncNote
+        NAME: <%= cCOL_NOTE %>列
+        TEXT: <%= cCOL_NOTE %>
+        ATTR: <%= cSTR %>
+        ALGN: <%= cLEFT %>
+        TYPE: <%= cDGV_TEXT %>
+        NOTE:

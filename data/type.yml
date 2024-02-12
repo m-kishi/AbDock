@@ -169,3 +169,30 @@ PRVO:
   BALANCE_EXP: false
   SHOW_IN_SUM: false
   DESCRIPTION: 通常の家計管理とは別で扱いたい支出．小遣いを使っての買い物など．
+FNCE:
+  NAME: 投資
+  EXPENSE: true
+  PRIVATE: false
+  SUMMARY_EXP: false
+  BALANCE_ERN: false
+  BALANCE_EXP: false
+  SHOW_IN_SUM: false
+  DESCRIPTION: 投資へ費やした金額．
+GAIN:
+  NAME: 利益
+  EXPENSE: true
+  PRIVATE: false
+  SUMMARY_EXP: false
+  BALANCE_ERN: false
+  BALANCE_EXP: false
+  SHOW_IN_SUM: false
+  DESCRIPTION: 投資で得た利益．年単位で計上する予定．現バージョンでは未使用．
+LOSS:
+  NAME: 損失
+  EXPENSE: true
+  PRIVATE: false
+  SUMMARY_EXP: false
+  BALANCE_ERN: false
+  BALANCE_EXP: false
+  SHOW_IN_SUM: false
+  DESCRIPTION: 投資で被った損失．年単位で計上する予定．現バージョンでは未使用．

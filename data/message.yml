@@ -51,7 +51,11 @@ EXPENSE_MINUS:
   MSG: '支出がマイナスです。'
 SPECIAL_MINUS:
   MSG: '特出がマイナスです。'
+FINANCE_MINUS:
+  MSG: '投資がマイナスです。'
 BALANCE_INCORRECT:
   MSG: '収支が合いません。'
 TYPE_PRIVATE_ERR:
+  MSG: '種別が正しくありません。'
+TYPE_FINANCE_ERR:
   MSG: '種別が正しくありません。'

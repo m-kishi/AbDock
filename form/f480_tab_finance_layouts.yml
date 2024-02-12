@@ -1,0 +1,21 @@
+IMAGE:
+  - PNG: tab_finance_001.png
+    CAPTION: <%= type_fnce %>の<%= cEXP_INFO %><%= cNO %>
+  - PNG: tab_finance_002.png
+    CAPTION: <%= type_fnce %>の<%= cEXP_INFO %><%= cYES %>
+
+OVERVIEW:
+  - <%= type_fnce %>の<%= cEXP_INFO %>のみを表示する画面
+  - この画面では投資状況の管理を行う．
+  - 投資の利益や損失は考慮せず，単純にこれまで投資した<%= cCOL_COST %>を表示する．
+  - 表示対象となる<%= cEXP_INFO %>が0件の場合，投資DGVは0行とする．
+
+DGV:
+  CAPTION  : 投資DGVの設定
+  ADD_ROW  : <%= cFUKA %>
+  DEL_ROW  : <%= cFUKA %>
+  READONLY : <%= cMARU %>
+  SORTABLE : <%= cFUKA %>
+  COL_WIDTH: <%= cFUKA %>
+  SELECTION: <%= cSELECT_ROW %>
+  SCROLLBAR: <%= cSCROLL_VERTICAL %>
