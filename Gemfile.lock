@@ -102,7 +102,7 @@ GEM
     psych (5.1.0)
       stringio
     public_suffix (5.0.1)
-    rack (2.2.7)
+    rack (2.2.8.1)
     rack-livereload (0.3.17)
       rack
     rb-fsevent (0.11.2)
@@ -138,6 +138,7 @@ GEM
 
 PLATFORMS
   aarch64-linux
+  x86_64-linux
 
 DEPENDENCIES
   bundle_outdated_formatter
