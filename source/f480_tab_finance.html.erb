@@ -1,0 +1,67 @@
+---
+title: 投資タブ
+header_title: 画面設計
+layouts: f480_tab_finance_layouts.yml
+control: f480_tab_finance_control.yml
+---
+<h1>【<%= cTAB_FINANCE %>】</h1>
+
+<% form_layouts = load_form_data(current_page.data.layouts) %>
+<% form_control = load_form_data(current_page.data.control) %>
+
+<%# レイアウト %>
+<%= render_layouts({ form: form_layouts }) %>
+
+<%# 画面項目 %>
+<%= render_control({ form: form_control }) %>
+
+<h2>イベント</h2>
+<dl class="event">
+  <dt>初期表示</dt>
+  <dd>
+    <ul class="description">
+      <li><%= lnDBFile %>から読み込んだ<%= cEXP_INFO %>を以下の定義に従って表示する(<%= type_fnce %>のみが対象)．</li>
+      <li>該当する<%= cEXP_INFO %>が0件の場合，投資DGVは0行とする．</li>
+      <table class="private">
+        <tr><th class="no">No.</th><th>列  </th><th>定義</th></tr>
+        <tr><td class="no">1  </td><td>日付</td><td><%= cEXP_INFO %>の<%= cCOL_DATE %>(<%= cYYYY_MM_DD %>形式)</td></tr>
+        <tr><td class="no">2  </td><td>名称</td><td><%= cEXP_INFO %>の<%= cCOL_NAME %></td></tr>
+        <tr><td class="no">3  </td><td>金額</td><td><%= cEXP_INFO %>の<%= cCOL_COST %></td></tr>
+        <tr><td class="no">4  </td><td>累計</td><td>投資DGVの一つ上の行の累計 + <%= cEXP_INFO %>の<%= cCOL_COST %></td></tr>
+        <tr><td class="no">5  </td><td>備考</td><td><%= cEXP_INFO %>の<%= cCOL_NOTE %></td></tr>
+      </table>
+      <li>投資DGVを最終行までスクロールして，最終行を選択状態とする．</li>
+      <li>表示処理中にチェックエラーが発生した場合，エラーダイアログを表示してアプリケーションを終了する．</li>
+      <table class="private-check-error">
+        <tr>
+          <th class="no">No.</th>
+          <th>条件</th>
+          <th>メッセージ</th>
+        </tr>
+        <tr>
+          <td class="no">1</td>
+          <td>"<%= type_fnce %>"以外の<%= cCOL_TYPE %></td>
+          <td><%= lnMessage :TYPE_FINANCE_ERR %></td>
+        </tr>
+      </table>
+    </ul>
+  </dd>
+  <dt>ツールチップの表示</dt>
+  <dd>
+    <ul class="description">
+      <li><%= cCOL_NAME %>列にマウスオンしたとき，ツールチップを表示する．</li>
+      <li>ツールチップには支出情報の<%= cCOL_NOTE %>を表示する．</li>
+      <li><%= cCOL_NOTE %>のある行は背景色を変更する(#DEFCE7)．</li>
+    </ul>
+    <table class="note-tooltip">
+      <tr>
+        <td>
+          <figure>
+            <%= image_tag 'tab_finance_note.png' %>
+            <figcaption><%= "3-1. ツールチップに#{cCOL_NOTE}を表示" %></figcaption>
+          </figure>
+        </td>
+      </tr>
+    </table>
+  </dd>
+</dl>

@@ -6,11 +6,11 @@ OVERVIEW:
   - <%= cABOOK %>のバージョン情報を表示するサブフォーム
 
 PROPERTY:
-  ICON: <%= cNASI %>
+  ICON: <%= cNO %>
   TITLE: <%= cABOOK %>のバージョン情報
   SIZABLE: <%= cFUKA %>
   MINIMUM: <%= cFUKA %>
   MAXIMUM: <%= cFUKA %>
   SCREEN_SIZE: (254, 131)
   START_POSITION: <%= cCENTER_PARENT %>
-  SHOW_IN_TASKBAR: <%= cNASI %>
+  SHOW_IN_TASKBAR: <%= cNO %>

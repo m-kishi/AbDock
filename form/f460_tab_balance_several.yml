@@ -9,3 +9,6 @@ MESSAGE:
     TERM: 特出がマイナス
   - ID: BALANCE_INCORRECT
     TERM: 収支が正しくない[収入 - (支出 + 特出) != 収支]
+  - ID: FINANCE_MINUS
+    TERM: 投資がマイナス
+

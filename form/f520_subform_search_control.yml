@@ -56,3 +56,10 @@ CONTROL:
         ALGN: <%= cRIGHT %>
         TYPE: <%= cDGV_TEXT %>
         NOTE: <%= cCOMMA %>
+      - ID: ColNote
+        NAME: <%= cCOL_NOTE %>列
+        TEXT: <%= cCOL_NOTE %>
+        ATTR: <%= cSTR %>
+        ALGN: <%= cLEFT %>
+        TYPE: <%= cDGV_TEXT %>
+        NOTE:

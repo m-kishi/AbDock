@@ -19,6 +19,9 @@ FORM_TAB_BALANCE:
 FORM_TAB_PRIVATE:
   NAME: 秘密タブ
   LINK: f470_tab_private.html
+FORM_TAB_FINANCE:
+  NAME: 投資タブ
+  LINK: f480_tab_finance.html
 FORM_SUB_TYPE:
   NAME: 種別サブフォーム
   LINK: f510_subform_type.html

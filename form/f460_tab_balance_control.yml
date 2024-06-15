@@ -42,3 +42,11 @@ CONTROL:
         ALGN: <%= cRIGHT %>
         TYPE: <%= cDGV_TEXT %>
         NOTE: <%= cCURRENCY %>
+      - ID: ColFinance
+        NAME: 投資列
+        TEXT: 投資
+        ATTR: <%= cNUM %>
+        ALGN: <%= cRIGHT %>
+        TYPE: <%= cDGV_TEXT %>
+        NOTE: <%= cCURRENCY %>
+

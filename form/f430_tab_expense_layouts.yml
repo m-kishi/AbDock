@@ -1,8 +1,8 @@
 IMAGE:
   - PNG: tab_expense_001.png
-    CAPTION: <%= cEXP_INFO %><%= cNASI %>
+    CAPTION: <%= cEXP_INFO %><%= cNO %>
   - PNG: tab_expense_002.png
-    CAPTION: <%= cEXP_INFO %><%= cARI %>
+    CAPTION: <%= cEXP_INFO %><%= cYES %>
 
 OVERVIEW:
   - <%= cEXP_INFO %>を登録する画面

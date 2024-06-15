@@ -1,8 +1,8 @@
 IMAGE:
   - PNG: subform_search_001.png
-    CAPTION: <%= cEXP_INFO %><%= cNASI %>
+    CAPTION: <%= cEXP_INFO %><%= cNO %>
   - PNG: subform_search_002.png
-    CAPTION: 初期値設定<%= cARI %>
+    CAPTION: 初期値設定<%= cYES %>
 
 OVERVIEW:
   - <%= cEXP_INFO %>を検索するサブフォーム
@@ -13,14 +13,14 @@ OVERVIEW:
   - <%= cCOL_NAME %>コンボボックスには直接<%= cCOL_NAME %>を入力することも可能で，その場合は部分一致検索となる．
 
 PROPERTY:
-  ICON: <%= cNASI %>
+  ICON: <%= cNO %>
   TITLE: 支出検索
   SIZABLE: <%= cFUKA %>
   MINIMUM: <%= cFUKA %>
   MAXIMUM: <%= cFUKA %>
   SCREEN_SIZE: (416, 284)
   START_POSITION: <%= cCENTER_PARENT %>
-  SHOW_IN_TASKBAR: <%= cNASI %>
+  SHOW_IN_TASKBAR: <%= cNO %>
 
 DGV:
   CAPTION  : 支出DGVの設定

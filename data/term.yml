@@ -47,6 +47,7 @@ TAB:
   GRAPHIC: 推移
   BALANCE: 収支
   PRIVATE: 秘密
+  FINANCE: 投資
 ENERGY:
   EL: 電気代
   GS: ガス代
@@ -61,8 +62,8 @@ EXPENSE_TYPE:
 CHAR:
   MARU: ○
   BATU: ×
-  ARI : あり
-  NASI: なし
+  'YES': あり
+  'NO' : なし
   KANO: 可能
   FUKA: 不可
 CONTROL:
