@@ -32,7 +32,7 @@
         <td class="version">バージョン</td>
       </tr>
       <tr>
-        <td class="version-number">6.1.0</td>
+        <td class="version-number">7.0.0</td>
       </tr>
     </tbody>
   </table>
@@ -61,6 +61,7 @@
                   <li>年度の収支を表示する画面</li>
                   <li>年度とはその年の4月〜翌年の3月までをいう．<br />例) 2016年度は2016年4月〜2017年3月</li>
                   <li>該当年度の支出情報が存在しない場合，その年度の収支は表示しない．</li>
+                  <li>ただし，投資列については1月〜12月の範囲を年度とする．<br />例) 2024年度は2024年1月〜2024年12月</li>
                   <li>年度の収支が1行でも存在する場合，収支DGVの末尾に合計行を表示する(年度は9999とする)．</li>
               </ul>
               <figure>
@@ -175,6 +176,18 @@
 </tr>
 
 
+    <tr>
+  <td                >1-6</td>
+  <td                >投資列</td>
+  <td                >ColFinance</td>
+  <td                >投資</td>
+  <td                >数値</td>
+  <td class="align-c">右</td>
+  <td                >DataGridViewTextBoxColumn</td>
+  <td                >通貨形式(&yen;)</td>
+</tr>
+
+
 
   </table>
 
@@ -191,6 +204,7 @@
         <tr><td class="no">2  </td><td>支出</td><td><a href="/AbDock/f600_type_define.html">種別※6</a>に該当する支出情報の金額の合計</td></tr>
         <tr><td class="no">3  </td><td>特出</td><td><a href="/AbDock/f600_type_define.html">種別</a>が"特出"の支出情報の金額の合計</td></tr>
         <tr><td class="no">4  </td><td>収支</td><td>(<a href="/AbDock/f600_type_define.html">種別※5</a>に該当する支出情報の金額の合計) - (<a href="/AbDock/f600_type_define.html">種別※5</a>に該当しない支出情報の金額の合計)</td></tr>
+        <tr><td class="no">5  </td><td>投資</td><td><a href="/AbDock/f600_type_define.html">種別</a>が"投資"の支出情報の金額の合計</td></tr>
       </table>
       <li>合計行を集計して収支DGVへ表示し，収支DGVの1行目を選択状態とする．</li>
       <li>集計処理中にチェックエラーが発生した場合，エラーダイアログを表示してアプリケーションを終了する．</li>
@@ -224,6 +238,11 @@
             <td class="no">5</td>
             <td>収支が正しくない[収入 - (支出 + 特出) != 収支]</td>
             <td><a href="/AbDock/f700_message_list.html#BALANCE_INCORRECT">収支が合いません。</a></td>
+          </tr>
+          <tr>
+            <td class="no">6</td>
+            <td>投資がマイナス</td>
+            <td><a href="/AbDock/f700_message_list.html#FINANCE_MINUS">投資がマイナスです。</a></td>
           </tr>
       </table>
     </ul>
