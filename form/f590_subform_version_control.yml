@@ -22,7 +22,7 @@ CONTROL:
     NOTE:
   - ID: LblCopyright
     NAME: コピーライト
-    TEXT: "&copy; 2010 Masaaki Kishi"
+    TEXT: "&copy; 2010 https://github.com/m-kishi"
     ATTR:
     ALGN: <%= cLEFT %>
     TYPE: <%= cLABEL %>
