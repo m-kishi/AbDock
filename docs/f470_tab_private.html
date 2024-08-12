@@ -32,7 +32,7 @@
         <td class="version">バージョン</td>
       </tr>
       <tr>
-        <td class="version-number">5.10.0</td>
+        <td class="version-number">7.0.0</td>
       </tr>
     </tbody>
   </table>
@@ -164,6 +164,18 @@
 </tr>
 
 
+    <tr>
+  <td                >1-5</td>
+  <td                >備考列</td>
+  <td                >ColPrvNote</td>
+  <td                >備考</td>
+  <td                >文字列</td>
+  <td class="align-c">左</td>
+  <td                >DataGridViewTextBoxColumn</td>
+  <td                ></td>
+</tr>
+
+
 
   </table>
 
@@ -181,6 +193,7 @@
         <tr><td class="no">2  </td><td>名称</td><td>支出情報の名称</td></tr>
         <tr><td class="no">3  </td><td>金額</td><td>支出情報の金額(種別が"秘密出"ならマイナス)</td></tr>
         <tr><td class="no">4  </td><td>収支</td><td>秘密DGVの一つ上の行の収支 + 支出情報の金額(種別が"秘密出"ならマイナス)</td></tr>
+        <tr><td class="no">5  </td><td>備考</td><td>支出情報の備考</td></tr>
       </table>
       <li>秘密DGVを最終行までスクロールして，最終行を選択状態とする．</li>
       <li>表示処理中にチェックエラーが発生した場合，エラーダイアログを表示してアプリケーションを終了する．</li>
@@ -203,11 +216,18 @@
     <ul class="description">
       <li>名称列にマウスオンしたとき，ツールチップを表示する．</li>
       <li>ツールチップには支出情報の備考を表示する．</li>
+      <li>備考のある行は背景色を変更する(#DEFCE7)．</li>
     </ul>
-    <figure>
-      <img src="/AbDock/images/tab_private_note.png" alt="" />
-      <figcaption>1-1. ツールチップに備考を表示</figcaption>
-    </figure>
+    <table class="note-tooltip">
+      <tr>
+        <td>
+          <figure>
+            <img src="/AbDock/images/tab_private_note.png" alt="" />
+            <figcaption>3-1. ツールチップに備考を表示</figcaption>
+          </figure>
+        </td>
+      </tr>
+    </table>
   </dd>
 </dl>
 

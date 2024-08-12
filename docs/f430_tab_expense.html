@@ -32,7 +32,7 @@
         <td class="version">バージョン</td>
       </tr>
       <tr>
-        <td class="version-number">5.10.0</td>
+        <td class="version-number">7.0.0</td>
       </tr>
     </tbody>
   </table>
@@ -186,6 +186,18 @@
 </tr>
 
 
+    <tr>
+  <td                >3-5</td>
+  <td                >備考列</td>
+  <td                >ColNote</td>
+  <td                >備考</td>
+  <td                >文字列</td>
+  <td class="align-c">左</td>
+  <td                >DataGridViewTextBoxColumn</td>
+  <td                ></td>
+</tr>
+
+
 
   </table>
 
@@ -247,6 +259,11 @@
               <td>支出DGVの金額列の値が大き過ぎる</td>
               <td><a href="/AbDock/f700_message_list.html#COST_OVERFLOW">金額が大き過ぎます。</a></td>
             </tr>
+            <tr>
+              <td class="no">6</td>
+              <td>DBファイルへの書き出しに失敗する(DBファイルがロックされているなど)</td>
+              <td><a href="/AbDock/f700_message_list.html#DB_FILE_STORE">DBファイル登録エラー: {0}</a></td>
+            </tr>
         </table>
         <table class="input-error">
           <tr>
@@ -275,7 +292,7 @@
   <dt>追加ボタン押下</dt>
   <dd>
     <ul class="description">
-      <li>支出DGVの末尾に新しく15行追加する．</li>
+      <li>支出DGVの末尾に新しく30行追加する．</li>
       <li>
         新しく追加された行の日付列にはシステム日付(YYYY-MM-DD)を初期値として設定する．
         <table class="event">
@@ -478,12 +495,12 @@
       <li>現在選択されているセルが種別列の場合，ペースト終了後に金額の自動補完を行う．</li>
     </ul>
  </dd>
- <dt>支出DGV上でのキー押下(KeyDown)(Ctrl+8，Ctrl+1)</dt>
+ <dt>支出DGV上でのキー押下(KeyDown)(Ctrl+8，Ctrl+0)</dt>
  <dd>
    <ul class="description">
-     <li>押下されたキーがCtrl+8かCtrl+1の場合，範囲選択されているセルの金額列のそれぞれを税込価格に置換して表示する．</li>
+     <li>押下されたキーがCtrl+8かCtrl+0の場合，範囲選択されているセルの金額列のそれぞれを税込価格に置換して表示する．</li>
      <li>Ctrl+8の場合は税込8%．</li>
-     <li>Ctrl+1の場合は税込10%．</li>
+     <li>Ctrl+0の場合は税込10%．</li>
      <li>税込計算のとき小数点以下は四捨五入する．</li>
      <li>空白や不正な値の金額セルは無視する．</li>
      <li>範囲選択されているセルに金額列が含まれていない場合は何もしない．</li>
@@ -507,7 +524,7 @@
          <td>
            <figure>
              <img src="/AbDock/images/tab_expense_cost_tax_003.png" class="small" alt="" />
-             <figcaption>7-2-1.Ctrl+1</figcaption>
+             <figcaption>7-2-1.Ctrl+0</figcaption>
            </figure>
          </td>
          <td>
@@ -562,11 +579,18 @@
     <ul class="description">
       <li>名称列にマウスオンしたとき，ツールチップを表示する．</li>
       <li>ツールチップには支出情報の備考を表示する．</li>
+      <li>備考のある行は背景色を変更する(#DEFCE7)．</li>
     </ul>
-    <figure>
-      <img src="/AbDock/images/tab_expense_note.png" alt="" />
-      <figcaption>8-1. ツールチップに備考を表示</figcaption>
-    </figure>
+    <table class="note-tooltip">
+      <tr>
+        <td>
+          <figure>
+            <img src="/AbDock/images/tab_expense_note.png" alt="" />
+            <figcaption>9-1. ツールチップに備考を表示</figcaption>
+          </figure>
+        </td>
+      </tr>
+    </table>
   </dd>
 </dl>
 

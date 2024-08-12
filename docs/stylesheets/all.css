@@ -346,7 +346,8 @@ table.input-error {
 
 table.db-file-store-error {
   width: 100%;
-  border: 1px solid #000000; }
+  border: 1px solid #000000;
+  margin-bottom: 20px; }
   table.db-file-store-error th {
     border: 1px solid #000000;
     text-align: left;
@@ -388,6 +389,15 @@ table.cost-total {
     padding-bottom: 16px; }
   table.cost-total .small {
     width: 80%; }
+
+table.note-tooltip {
+  width: 50%;
+  margin-top: 10px; }
+  table.note-tooltip td {
+    width: 100%;
+    text-align: center; }
+  table.note-tooltip .small {
+    width: 90%; }
 
 table.subform-auto-complete {
   width: 46%;

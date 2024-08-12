@@ -32,7 +32,7 @@
         <td class="version">バージョン</td>
       </tr>
       <tr>
-        <td class="version-number">5.10.0</td>
+        <td class="version-number">7.0.0</td>
       </tr>
     </tbody>
   </table>
@@ -212,6 +212,18 @@
 </tr>
 
 
+    <tr>
+  <td                >4-5</td>
+  <td                >備考列</td>
+  <td                >ColNote</td>
+  <td                >備考</td>
+  <td                >文字列</td>
+  <td class="align-c">左</td>
+  <td                >DataGridViewTextBoxColumn</td>
+  <td                ></td>
+</tr>
+
+
 
   </table>
 
@@ -340,6 +352,26 @@
     <ul class="description">
       <li>検索後の支出DGVは先頭行までスクロールして，先頭行を選択状態とする．</li>
       <li>検索結果が存在しない場合は，支出DGVはクリアされて何も表示されない．</li>
+    </ul>
+  </dd>
+  <dt>ツールチップの表示</dt>
+  <dd>
+    <ul class="description">
+      <li>名称列にマウスオンしたとき，ツールチップを表示する．</li>
+      <li>ツールチップには支出情報の備考を表示する．</li>
+      <li>
+        備考のある行は背景色を変更する(#DEFCE7)．
+        <table class="subform-auto-complete">
+          <tr>
+            <td>
+              <figure>
+                <img src="/AbDock/images/subform_search_note.png" class="small" alt="" />
+                <figcaption>8-1. ツールチップに備考を表示</figcaption>
+              </figure>
+            </td>
+          </tr>
+        </table>
+      </li>
     </ul>
   </dd>
 </dl>
