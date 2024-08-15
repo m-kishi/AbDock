@@ -2,5 +2,7 @@ PROJECT: project.mk
 APPNAME: Abook
 SUBNAME:
 VERSION: 7.0.0
+VERSION_JBOOK: 6.1.0
 GITHUB_ABOOK:  https://github.com/m-kishi/Abook
+GITHUB_JBOOK:  https://github.com/m-kishi/Jbook
 GITHUB_ABDOCK: https://github.com/m-kishi/AbDock

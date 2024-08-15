@@ -1,6 +1,20 @@
 module AbDockHelpers
 
   #==================================================
+  # 画面が Abook か判定するメソッド
+  #==================================================
+  def abook? current_page
+    not jbook? current_page
+  end
+
+  #==================================================
+  # 画面が Jbook か判定するメソッド
+  #==================================================
+  def jbook? current_page
+    (defined? current_page.data.jbook) && current_page.data.jbook
+  end
+
+  #==================================================
   # フォーム情報参照用メソッド
   #==================================================
   def cFORM_MAIN  ; data.form.FORM_MAIN.NAME        end
