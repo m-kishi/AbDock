@@ -37,6 +37,7 @@ module AbDockHelpers
   def cABOOK    ; data.term.APP.ABOOK         end
   def cABOOK_DB ; data.term.APP.ABOOK_DB      end
   def cABOOK_EXE; data.term.APP.ABOOK_EXE     end
+  def cABOOK_JAR; data.term.APP.ABOOK_JAR     end
   def cDB_FILE  ; data.term.APP.WORD.DB_FILE  end
   def cEXP_INFO ; data.term.APP.WORD.EXP_INFO end
   # ABOOK_DB
@@ -159,12 +160,16 @@ module AbDockHelpers
   def lnSubEnergy ; lnForm :FORM_SUB_ENERGY  end
   def lnSubVersion; lnForm :FORM_SUB_VERSION end
   # その他の各ページ
-  def lnLink(name, key); link_to name, data.link[key] end
-  def lnGeneral    ; lnLink '全体設計'      , :F100_SYSTEM     end
-  def lnDBFile     ; lnLink cDB_FILE        , :F200_DBFILE     end
-  def lnTransition ; lnLink '画面遷移'      , :F300_TRANSITION end
-  def lnType(n='') ; lnLink '種別'+n        , :F600_TYPE       end
-  def lnMessagePage; lnLink 'メッセージ一覧', :F700_MESSAGE    end
+  def lnLink(name, key, jbook = false)
+    link = data.link
+    link = data.link_j if jbook
+    link_to name, link[key]
+  end
+  def lnGeneral    (jbook = false); lnLink '全体設計'      , :F100_SYSTEM    , jbook end
+  def lnDBFile     (jbook = false); lnLink cDB_FILE        , :F200_DBFILE    , jbook end
+  def lnTransition                ; lnLink '画面遷移'      , :F300_TRANSITION        end
+  def lnType       (n='')         ; lnLink '種別'+n        , :F600_TYPE              end
+  def lnMessagePage(jbook = false); lnLink 'メッセージ一覧', :F700_MESSAGE   , jbook end
   # メッセージリンク
   def lnMessage(key); link_to data.message[key].MSG, "#{data.link.F700_MESSAGE}\##{key}" end
 

@@ -4,10 +4,11 @@ header_title: 設計書
 jbook: true
 ---
 <h1>【<%= current_page.data.title %>】</h1>
+<% jbook = current_page.data.jbook %>
 
 <ol>
-  <li><%= lnGeneral    %></li>
-  <li><%= lnDBFile     %></li>
+  <li><%= lnGeneral jbook %></li>
+  <li><%= lnDBFile  jbook %></li>
   <li><%= lnTransition %></li>
   <li><%= lnForm '画面設計', :FORM_MAIN %>
     <ul class="menu">

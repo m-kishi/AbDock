@@ -2,6 +2,7 @@ APP:
   ABOOK: Abook
   ABOOK_DB: Abook.db
   ABOOK_EXE: Abook.exe
+  ABOOK_JAR: Jbook.jar
   WORD:
     DB_FILE: DBファイル
     EXP_INFO: 支出情報
