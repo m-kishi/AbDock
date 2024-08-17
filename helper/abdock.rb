@@ -165,11 +165,11 @@ module AbDockHelpers
     link = data.link_j if jbook
     link_to name, link[key]
   end
-  def lnGeneral    (jbook = false); lnLink '全体設計'      , :F100_SYSTEM    , jbook end
-  def lnDBFile     (jbook = false); lnLink cDB_FILE        , :F200_DBFILE    , jbook end
-  def lnTransition                ; lnLink '画面遷移'      , :F300_TRANSITION        end
-  def lnType       (n='')         ; lnLink '種別'+n        , :F600_TYPE              end
-  def lnMessagePage(jbook = false); lnLink 'メッセージ一覧', :F700_MESSAGE   , jbook end
+  def lnGeneral    (jbook = false)      ; lnLink '全体設計'      , :F100_SYSTEM    , jbook end
+  def lnDBFile     (jbook = false)      ; lnLink cDB_FILE        , :F200_DBFILE    , jbook end
+  def lnTransition                      ; lnLink '画面遷移'      , :F300_TRANSITION        end
+  def lnType       (n='', jbook = false); lnLink '種別'+n        , :F600_TYPE      , jbook end
+  def lnMessagePage(jbook = false)      ; lnLink 'メッセージ一覧', :F700_MESSAGE   , jbook end
   # メッセージリンク
   def lnMessage(key); link_to data.message[key].MSG, "#{data.link.F700_MESSAGE}\##{key}" end
 
