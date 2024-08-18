@@ -154,7 +154,7 @@ module AbDockHelpers
   def lnGraphic   ; lnForm :FORM_TAB_GRAPHIC end
   def lnBalance   ; lnForm :FORM_TAB_BALANCE end
   def lnPrivate   ; lnForm :FORM_TAB_PRIVATE end
-  def lnFinance   ; lnForm :FORM_TAB_FINANCE end;
+  def lnFinance   ; lnForm :FORM_TAB_FINANCE end
   def lnSubType   ; lnForm :FORM_SUB_TYPE    end
   def lnSubSearch ; lnForm :FORM_SUB_SEARCH  end
   def lnSubEnergy ; lnForm :FORM_SUB_ENERGY  end
@@ -167,7 +167,7 @@ module AbDockHelpers
   end
   def lnGeneral    (jbook = false)      ; lnLink '全体設計'      , :F100_SYSTEM    , jbook end
   def lnDBFile     (jbook = false)      ; lnLink cDB_FILE        , :F200_DBFILE    , jbook end
-  def lnTransition                      ; lnLink '画面遷移'      , :F300_TRANSITION        end
+  def lnTransition (jbook = false)      ; lnLink '画面遷移'      , :F300_TRANSITION, jbook end
   def lnType       (n='', jbook = false); lnLink '種別'+n        , :F600_TYPE      , jbook end
   def lnMessagePage(jbook = false)      ; lnLink 'メッセージ一覧', :F700_MESSAGE   , jbook end
   # メッセージリンク

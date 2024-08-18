@@ -7,9 +7,9 @@ jbook: true
 <% jbook = current_page.data.jbook %>
 
 <ol>
-  <li><%= lnGeneral jbook %></li>
-  <li><%= lnDBFile  jbook %></li>
-  <li><%= lnTransition %></li>
+  <li><%= lnGeneral    jbook %></li>
+  <li><%= lnDBFile     jbook %></li>
+  <li><%= lnTransition jbook %></li>
   <li><%= lnForm '画面設計', :FORM_MAIN %>
     <ul class="menu">
       <% forms.keys.each do |key| %>
