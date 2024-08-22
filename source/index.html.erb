@@ -8,14 +8,14 @@ header_title: 設計書
   <li><%= lnGeneral    %></li>
   <li><%= lnDBFile     %></li>
   <li><%= lnTransition %></li>
-  <li><%= lnForm '画面設計', :FORM_MAIN %>
+  <li><%= lnForm :FORM_MAIN, name: '画面設計' %>
     <ul class="menu">
       <% forms.keys.each do |key| %>
         <li><%= lnForm key %></li>
       <% end %>
     </ul>
   </li>
-  <li><%= lnForm 'サブ画面設計', :FORM_SUB_TYPE %>
+  <li><%= lnForm :FORM_SUB_TYPE, name: 'サブ画面設計' %>
     <ul class="menu">
       <% subforms.keys.each do |key| %>
         <li><%= lnForm key %></li>

@@ -142,34 +142,36 @@ module AbDockHelpers
   #==================================================
   # リンク作成メソッド
   #==================================================
-  def lnForm(name=nil, key)
-    caption = name || data.form[key].NAME
-    link_to caption, data.form[key].LINK
+  def lnForm(key, name: nil, jbook: false)
+    form = data.form[key]
+    form = data.form_j[key] if jbook
+    caption = name || form.NAME
+    link_to caption, form.LINK
   end
   # 画面設計の各ページ
-  def lnMain      ; lnForm :FORM_MAIN        end
-  def lnMenu      ; lnForm :FORM_MENU        end
-  def lnExpense   ; lnForm :FORM_TAB_EXPENSE end
-  def lnSummary   ; lnForm :FORM_TAB_SUMMARY end
-  def lnGraphic   ; lnForm :FORM_TAB_GRAPHIC end
-  def lnBalance   ; lnForm :FORM_TAB_BALANCE end
-  def lnPrivate   ; lnForm :FORM_TAB_PRIVATE end
-  def lnFinance   ; lnForm :FORM_TAB_FINANCE end
-  def lnSubType   ; lnForm :FORM_SUB_TYPE    end
-  def lnSubSearch ; lnForm :FORM_SUB_SEARCH  end
-  def lnSubEnergy ; lnForm :FORM_SUB_ENERGY  end
-  def lnSubVersion; lnForm :FORM_SUB_VERSION end
+  def lnMain      (jbook=false); lnForm :FORM_MAIN       , jbook: jbook end
+  def lnMenu      (jbook=false); lnForm :FORM_MENU       , jbook: jbook end
+  def lnExpense   (jbook=false); lnForm :FORM_TAB_EXPENSE, jbook: jbook end
+  def lnSummary   (jbook=false); lnForm :FORM_TAB_SUMMARY, jbook: jbook end
+  def lnGraphic   (jbook=false); lnForm :FORM_TAB_GRAPHIC, jbook: jbook end
+  def lnBalance   (jbook=false); lnForm :FORM_TAB_BALANCE, jbook: jbook end
+  def lnPrivate   (jbook=false); lnForm :FORM_TAB_PRIVATE, jbook: jbook end
+  def lnFinance   (jbook=false); lnForm :FORM_TAB_FINANCE, jbook: jbook end
+  def lnSubType   (jbook=false); lnForm :FORM_SUB_TYPE   , jbook: jbook end
+  def lnSubSearch (jbook=false); lnForm :FORM_SUB_SEARCH , jbook: jbook end
+  def lnSubEnergy (jbook=false); lnForm :FORM_SUB_ENERGY , jbook: jbook end
+  def lnSubVersion(jbook=false); lnForm :FORM_SUB_VERSION, jbook: jbook end
   # その他の各ページ
-  def lnLink(name, key, jbook = false)
+  def lnLink(name, key, jbook=false)
     link = data.link
     link = data.link_j if jbook
     link_to name, link[key]
   end
-  def lnGeneral    (jbook = false)      ; lnLink '全体設計'      , :F100_SYSTEM    , jbook end
-  def lnDBFile     (jbook = false)      ; lnLink cDB_FILE        , :F200_DBFILE    , jbook end
-  def lnTransition (jbook = false)      ; lnLink '画面遷移'      , :F300_TRANSITION, jbook end
-  def lnType       (n='', jbook = false); lnLink '種別'+n        , :F600_TYPE      , jbook end
-  def lnMessagePage(jbook = false)      ; lnLink 'メッセージ一覧', :F700_MESSAGE   , jbook end
+  def lnGeneral    (jbook=false)      ; lnLink '全体設計'      , :F100_SYSTEM    , jbook end
+  def lnDBFile     (jbook=false)      ; lnLink cDB_FILE        , :F200_DBFILE    , jbook end
+  def lnTransition (jbook=false)      ; lnLink '画面遷移'      , :F300_TRANSITION, jbook end
+  def lnType       (n='', jbook=false); lnLink '種別'+n        , :F600_TYPE      , jbook end
+  def lnMessagePage(jbook=false)      ; lnLink 'メッセージ一覧', :F700_MESSAGE   , jbook end
   # メッセージリンク
   def lnMessage(key); link_to data.message[key].MSG, "#{data.link.F700_MESSAGE}\##{key}" end
 

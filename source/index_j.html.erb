@@ -10,17 +10,17 @@ jbook: true
   <li><%= lnGeneral    jbook %></li>
   <li><%= lnDBFile     jbook %></li>
   <li><%= lnTransition jbook %></li>
-  <li><%= lnForm '画面設計', :FORM_MAIN %>
+  <li><%= lnForm :FORM_MAIN, name: '画面設計', jbook: jbook %>
     <ul class="menu">
       <% forms.keys.each do |key| %>
-        <li><%= lnForm key %></li>
+        <li><%= lnForm key, jbook: jbook %></li>
       <% end %>
     </ul>
   </li>
-  <li><%= lnForm 'サブ画面設計', :FORM_SUB_TYPE %>
+  <li><%= lnForm :FORM_SUB_TYPE, name: 'サブ画面設計', jbook: jbook %>
     <ul class="menu">
       <% subforms.keys.each do |key| %>
-        <li><%= lnForm key %></li>
+        <li><%= lnForm key, jbook: jbook %></li>
       <% end %>
     </ul>
   </li>
