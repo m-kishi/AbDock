@@ -1,0 +1,21 @@
+MESSAGE:
+  - ID: DB_FILE_CREATE
+    TERM: 初回起動時の<%= cDB_FILE %>作成に失敗
+  - ID: DB_FILE_FIELD
+    TERM: <%= cDB_FILE %>のフィールド数が正しくない
+  - ID: DATE_NULL
+    TERM: <%= cDB_FILE %>の<%= cCOL_DATE %>フィールドが空
+  - ID: DATE_FORMAT
+    TERM: <%= cDB_FILE %>の<%= cCOL_DATE %>フィールドが日付形式でない
+  - ID: NAME_NULL
+    TERM: <%= cDB_FILE %>の<%= cCOL_NAME %>フィールドが空
+  - ID: TYPE_NULL
+    TERM: <%= cDB_FILE %>の<%= cCOL_TYPE %>フィールドが空
+  - ID: TYPE_WRONG
+    TERM: <%= cDB_FILE %>の<%= cCOL_TYPE %>フィールドが不正(<%= lnType cEXP_TYPE_EXP, jbook %>以外)
+  - ID: COST_NULL
+    TERM: <%= cDB_FILE %>の<%= cCOL_COST %>フィールドが空
+  - ID: COST_MINUS
+    TERM: <%= cDB_FILE %>の<%= cCOL_COST %>フィールドがマイナス
+  - ID: COST_FORMAT
+    TERM: <%= cDB_FILE %>の<%= cCOL_COST %>フィールドがJavaのInteger型に変換できない

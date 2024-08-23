@@ -241,6 +241,7 @@ table.controls {
 }
 
 td.layout {
+  width: 50%;
   text-align: center;
   padding-bottom: 16px;
 }
@@ -248,6 +249,11 @@ td.layout {
 td.overview {
   padding-left: 16px;
   vertical-align: top;
+}
+
+img.layout {
+  width: 95%;
+  border: 1px solid $anchor-color;
 }
 
 ul.overview {

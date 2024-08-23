@@ -173,7 +173,13 @@ module AbDockHelpers
   def lnType       (n='', jbook=false); lnLink '種別'+n        , :F600_TYPE      , jbook end
   def lnMessagePage(jbook=false)      ; lnLink 'メッセージ一覧', :F700_MESSAGE   , jbook end
   # メッセージリンク
-  def lnMessage(key); link_to data.message[key].MSG, "#{data.link.F700_MESSAGE}\##{key}" end
+  def lnMessage(key, jbook=false)
+    message = data.message
+    message = data.message_j if jbook
+    link = data.link
+    link = data.link_j if jbook
+    link_to message[key].MSG, "#{link.F700_MESSAGE}\##{key}"
+  end
 
   #==================================================
   # パーシャル
