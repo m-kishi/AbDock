@@ -1,0 +1,25 @@
+---
+title: バージョン情報サブフォーム
+header_title: 画面設計
+layouts: f590_subform_version_layouts.yml
+jbook: true
+---
+<h1>【<%= cSUB_VERSION %>】</h1>
+<% jbook = current_page.data.jbook %>
+<% form_layouts = load_form_data(current_page.data.layouts, jbook) %>
+
+<%# レイアウト %>
+<%= render_layouts({ form: form_layouts }) %>
+
+<h2>初期表示</h2>
+<ul class="description">
+  <li>アプリケーションのバージョン情報として以下の項目を表示する．</li>
+  <table class="version-setting">
+    <tr><th>項目        </th><th>表示</th></tr>
+    <tr><td>タイトル    </td><td><%= form_layouts.PROPERTY.TITLE %></td></tr>
+    <tr><td>製品名      </td><td><%= data.project.APPNAME %></td></tr>
+    <tr><td>バージョン  </td><td><%= data.project.VERSION_JBOOK %></td></tr>
+    <tr><td>コピーライト</td><td><%= data.project.COPY_RIGHTS_JBOOK %></td></tr>
+    <tr><td>詳細情報    </td><td><%= data.project.DESCRIPTION %></td></tr>
+  </table>
+</ul>
