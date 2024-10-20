@@ -558,6 +558,9 @@ table.mouse-on {
   td {
     text-align: center;
   }
+  td > figure > img.jbook {
+    width: 80%;
+  }
 }
 
 table.balance {

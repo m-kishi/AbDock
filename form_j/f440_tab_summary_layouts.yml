@@ -1,0 +1,12 @@
+IMAGE:
+  - PNG: tab_summary_j_001.png
+    CAPTION: 該当の<%= cEXP_INFO %>のない年月
+  - PNG: tab_summary_j_002.png
+    CAPTION: 該当の<%= cEXP_INFO %>のある年月
+
+OVERVIEW:
+  - 該当年月の<%= lnType '', true %>ごとの集計値を表示する画面
+  - 初期表示はシステム日付の年月とする．
+  - 該当年月の<%= cEXP_INFO %>がない場合，集計値はすべて&yen;0とする．
+  - 前月ボタン，翌月ボタンにより，前月，翌月の表示に切り替える．
+  - 前年ボタン，翌年ボタンにより，前年，翌年の表示に切り替える．
