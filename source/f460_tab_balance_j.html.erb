@@ -2,13 +2,11 @@
 title: 収支タブ
 header_title: 画面設計
 layouts: f460_tab_balance_layouts.yml
-several: f460_tab_balance_several.yml
 jbook: true
 ---
 <h1>【<%= cTAB_BALANCE %>】</h1>
 <% jbook = current_page.data.jbook %>
 <% form_layouts = load_form_data(current_page.data.layouts, jbook) %>
-<% form_several = load_form_data(current_page.data.several, jbook) %>
 
 <%# レイアウト %>
 <%= render_layouts({ form: form_layouts }) %>
