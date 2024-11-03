@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title>月次タブ</title>
+    <link href="/AbDock/images/abdock.ico" rel="icon" type="image/ico" />
+    <link href="/AbDock/stylesheets/normalize.css" rel="stylesheet" /><link href="/AbDock/stylesheets/all.css" rel="stylesheet" />
+    <link href="/AbDock/stylesheets/mermaid.forest.min.css" rel="stylesheet" />
+    <script src="/AbDock/javascripts/jquery-3.4.1.min.js"></script>
+    <script src="/AbDock/javascripts/all.js"></script>
+    <script src="/AbDock/javascripts/mermaid.min.js"></script>
+  </head>
+  <body class="f440_tab_summary_j">
+    <header>
+  <table class="header">
+    <colgroup>
+      <col class="title"   />
+      <col class="project" />
+      <col class="appname" />
+      <col class="subname" />
+      <col class="version" />
+    </colgroup>
+    <tbody>
+      <tr>
+        <td class="title"   rowspan="2">画面設計</td>
+        <td class="project" rowspan="2">project.mk</td>
+        <td class="appname" rowspan="2">Abook</td>
+          <td class="subname" rowspan="2">Jbook</td>
+        <td class="version">バージョン</td>
+      </tr>
+      <tr>
+          <td class="version-number">6.1.1</td>
+      </tr>
+    </tbody>
+  </table>
+</header>
+
+    <div class="content">
+      <h1>【月次タブ】</h1>
+
+<h2>レイアウト</h2>
+
+<table class="layout">
+    <tr>
+      <td class="layout ">
+        <figure>
+            <img src="/AbDock/images/tab_summary_j_001.png" class="layout " alt="" />
+            <figcaption>
+              1.該当の支出情報のない年月
+            </figcaption>
+        </figure>
+      </td>
+        <td rowspan="2" class="overview">
+          <figure>
+            <figcaption>＜概要＞</figcaption>
+              <ul class="overview">
+                  <li>該当年月の<a href="/AbDock/f600_type_define_j.html">種別</a>ごとの集計値を表示する画面</li>
+                  <li>初期表示はシステム日付の年月とする．</li>
+                  <li>該当年月の支出情報がない場合，集計値はすべて&yen;0とする．</li>
+                  <li>前月ボタン，翌月ボタンにより，前月，翌月の表示に切り替える．</li>
+                  <li>前年ボタン，翌年ボタンにより，前年，翌年の表示に切り替える．</li>
+              </ul>
+          </figure>
+        </td>
+    </tr>
+    <tr>
+      <td class="layout ">
+        <figure>
+            <img src="/AbDock/images/tab_summary_j_002.png" class="layout " alt="" />
+            <figcaption>
+              2.該当の支出情報のある年月
+            </figcaption>
+        </figure>
+      </td>
+    </tr>
+</table>
+
+
+<h2>初期表示</h2>
+<ul class="description">
+  <li><a href="/AbDock/f200_dbfile_j.html">DBファイル</a>から読み込んだ支出情報のうち，システム日付の年月の支出情報を対象とする．</li>
+  <li>対象の支出情報がない場合，金額はすべて&yen;0とする．</li>
+  <li>対象の支出情報の金額を各種別ごとに集計する．</li>
+  <li>集計した各種別ごとの金額を画面に表示する．</li>
+  <figure>
+    <figcaption>＜種別ごとの集計方法＞</figcaption>
+    <table class="summary">
+      <tr>
+        <th class="no">No.             </th>
+        <th           >種別</th>
+        <th           >計算方法        </th>
+      </tr>
+        <tr>
+          <td class="no"  >1</td>
+          <td class="type">食費</td>
+          <td             >種別が食費の金額の合計</td>
+        </tr>
+        <tr>
+          <td class="no"  >2</td>
+          <td class="type">外食費</td>
+          <td             >種別が外食費の金額の合計</td>
+        </tr>
+        <tr>
+          <td class="no"  >3</td>
+          <td class="type">雑貨</td>
+          <td             >種別が雑貨の金額の合計</td>
+        </tr>
+        <tr>
+          <td class="no"  >4</td>
+          <td class="type">交際費</td>
+          <td             >種別が交際費の金額の合計</td>
+        </tr>
+        <tr>
+          <td class="no"  >5</td>
+          <td class="type">交通費</td>
+          <td             >種別が交通費の金額の合計</td>
+        </tr>
+        <tr>
+          <td class="no"  >6</td>
+          <td class="type">遊行費</td>
+          <td             >種別が遊行費の金額の合計</td>
+        </tr>
+        <tr>
+          <td class="no"  >7</td>
+          <td class="type">家賃</td>
+          <td             >種別が家賃の金額の合計</td>
+        </tr>
+        <tr>
+          <td class="no"  >8</td>
+          <td class="type">光熱費</td>
+          <td             >種別が光熱費の金額の合計</td>
+        </tr>
+        <tr>
+          <td class="no"  >9</td>
+          <td class="type">通信費</td>
+          <td             >種別が通信費の金額の合計</td>
+        </tr>
+        <tr>
+          <td class="no"  >10</td>
+          <td class="type">医療費</td>
+          <td             >種別が医療費の金額の合計</td>
+        </tr>
+        <tr>
+          <td class="no"  >11</td>
+          <td class="type">保険料</td>
+          <td             >種別が保険料の金額の合計</td>
+        </tr>
+        <tr>
+          <td class="no"  >12</td>
+          <td class="type">その他</td>
+          <td             >種別がその他の金額の合計</td>
+        </tr>
+        <tr>
+          <td class="no"  >13</td>
+          <td class="type">合計</td>
+          <td             ><a href="/AbDock/f600_type_define_j.html">種別※3</a>に該当する支出情報の金額の合計</td>
+        </tr>
+        <tr>
+          <td class="no"  >14</td>
+          <td class="type">収支</td>
+          <td             >(種別が収入の金額の合計) -  合計</td>
+        </tr>
+    </table>
+  </figure>
+</ul>
+
+<h2>前年ボタン押下</h2>
+<ul class="description">
+  <li>現在表示している年月の前年の集計結果を表示する．</li>
+</ul>
+
+<h2>前月ボタン押下</h2>
+<ul class="description">
+  <li>現在表示している年月の前月の集計結果を表示する．</li>
+</ul>
+
+<h2>翌月ボタン押下</h2>
+<ul class="description">
+  <li>現在表示している年月の翌月の集計結果を表示する．</li>
+</ul>
+
+<h2>翌年ボタン押下</h2>
+<ul class="description">
+  <li>現在表示している年月の翌年の集計結果を表示する．</li>
+</ul>
+
+<h2>ラベルマウスオン</h2>
+<ul class="description">
+  <li>ラベルの種別か金額にマウスオンした場合，マウスカーソルを手形にして下線を表示する．</li>
+  <table class="mouse-on">
+    <tr>
+        <td>
+          <figure>
+            <img src="/AbDock/images/tab_summary_type_j_001.png" class="jbook" alt="" />
+            <figcaption>3-1.通常のカーソル</figcaption>
+          </figure>
+        </td>
+        <td>
+          <figure>
+            <img src="/AbDock/images/tab_summary_type_j_002.png" class="jbook" alt="" />
+            <figcaption>3-2.種別にマウスオン</figcaption>
+          </figure>
+        </td>
+        <td>
+          <figure>
+            <img src="/AbDock/images/tab_summary_type_j_003.png" class="jbook" alt="" />
+            <figcaption>3-3.金額にマウスオン</figcaption>
+          </figure>
+        </td>
+    </tr>
+  </table>
+</ul>
+
+<h2>ラベルのクリック</h2>
+<ul class="description">
+  <li>ラベルの種別か金額をクリックした場合，<a href="/AbDock/f510_subform_type_j.html">種別サブフォーム</a>を表示する．</li>
+  <table class="event">
+    <tr>
+        <td>
+          <figure>
+            <img src="/AbDock/images/subform_type_medi_j_001.png" class="small" alt="" />
+            <figcaption>4-1.種別か金額をクリック</figcaption>
+          </figure>
+        </td>
+        <td>
+          <figure>
+            <img src="/AbDock/images/subform_type_medi_j_002.png" class="large-small" alt="" />
+            <figcaption>4-2.現在表示している年月のクリックされた種別の支出情報を表示</figcaption>
+          </figure>
+        </td>
+    </tr>
+  </table>
+</ul>
+
+    </div>
+    <footer>
+  <table class="footer">
+    <tr>
+      <td class="link">
+          <a href="/AbDock/index_j.html">トップページ</a> | 
+          <a href="https://github.com/m-kishi/Jbook">Jbook</a> | 
+          <a href="/AbDock/">Abook設計書</a> |
+        <a href="https://github.com/m-kishi/AbDock">GitHub</a>
+      </td>
+      <td class="copy-rights">
+        &copy; 2016 Masaaki Kishi
+      </td>
+    </tr>
+  </table>
+</footer>
+
+    <script>mermaid.initialize({startOnLoad:true});</script>
+  </body>
+</html>

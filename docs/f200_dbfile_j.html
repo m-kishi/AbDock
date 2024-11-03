@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title>DBファイル</title>
+    <link href="/AbDock/images/abdock.ico" rel="icon" type="image/ico" />
+    <link href="/AbDock/stylesheets/normalize.css" rel="stylesheet" /><link href="/AbDock/stylesheets/all.css" rel="stylesheet" />
+    <link href="/AbDock/stylesheets/mermaid.forest.min.css" rel="stylesheet" />
+    <script src="/AbDock/javascripts/jquery-3.4.1.min.js"></script>
+    <script src="/AbDock/javascripts/all.js"></script>
+    <script src="/AbDock/javascripts/mermaid.min.js"></script>
+  </head>
+  <body class="f200_dbfile_j">
+    <header>
+  <table class="header">
+    <colgroup>
+      <col class="title"   />
+      <col class="project" />
+      <col class="appname" />
+      <col class="subname" />
+      <col class="version" />
+    </colgroup>
+    <tbody>
+      <tr>
+        <td class="title"   rowspan="2">DBファイル</td>
+        <td class="project" rowspan="2">project.mk</td>
+        <td class="appname" rowspan="2">Abook</td>
+          <td class="subname" rowspan="2">Jbook</td>
+        <td class="version">バージョン</td>
+      </tr>
+      <tr>
+          <td class="version-number">6.1.1</td>
+      </tr>
+    </tbody>
+  </table>
+</header>
+
+    <div class="content">
+      <h1>【DBファイル】</h1>
+
+<h2>概要</h2>
+<p>
+  Abookのデータはすべて1つのファイルに保存される(図1)．
+  このファイルをDBファイルと呼び，DBファイルに保存されるデータを支出情報と呼ぶ．
+</p>
+<div class="mermaid">
+  graph LR
+    A(Abook.app) -->|保存| B(DBファイル)
+</div>
+
+<h2>ファイル設計</h2>
+<table>
+  <tr>
+    <td class="layout dbfile">
+      <figure>
+        <img src="/AbDock/images/dbfile_jbook.png" class="dbfile" alt="" />
+        <figcaption>2.DBファイルと支出情報</figcaption>
+      </figure>
+    </td>
+    <td class="overview">
+      <figure>
+        <figcaption>DBファイル仕様</figcaption>
+        <ul>
+          <li>ファイル名は"Abook.db"</li>
+          <li>DBファイルはCSV形式とする．</li>
+          <li>CSVフォーマットは<a href="http://www.kasai.fm/wiki/rfc4180jp" target="_blank">RFC4180</a>に準拠する．</li>
+          <li>ただし，以下の通りとする．
+            <table class="csv-format">
+              <tr><th>文字コード</th><td>UTF-8</td></tr>
+              <tr><th>改行コード</th><td>LF</td></tr>
+              <tr><th>ヘッダ行  </th><td>なし</td></tr>
+              <tr><th>フィールド</th><td>常にダブルクォートで囲む</td></tr>
+            </table>
+          </li>
+        </ul>
+      </figure>
+    </td>
+  </tr>
+</table>
+
+<h2>ファイル項目</h2>
+<table class="controls">
+  <tr><th class="no-s">No.</th><th>フィールド      </th><th class="maru"   >必須        </th><th>入力制限                             </th></tr>
+  <tr><td class="no-s">1  </td><td>日付</td><td class="align-c">○</td><td>YYYY-MM-DD                   </td></tr>
+  <tr><td class="no-s">2  </td><td>名称</td><td class="align-c">○</td><td>                                     </td></tr>
+  <tr><td class="no-s">3  </td><td>種別</td><td class="align-c">○</td><td><a href="/AbDock/f600_type_define_j.html">種別※1</a>のみ</td></tr>
+  <tr><td class="no-s">4  </td><td>金額</td><td class="align-c">○</td><td>数値，マイナス不可，*1</td></tr>
+  <tr><td class="no-s">5  </td><td>備考</td><td class="align-c">            </td><td class="attention">特殊文字のエスケープはサポートしない</td></tr>
+</table>
+*1: JavaのInteger.MAX_VALUE(2,147,483,647)以下
+
+    </div>
+    <footer>
+  <table class="footer">
+    <tr>
+      <td class="link">
+          <a href="/AbDock/index_j.html">トップページ</a> | 
+          <a href="https://github.com/m-kishi/Jbook">Jbook</a> | 
+          <a href="/AbDock/">Abook設計書</a> |
+        <a href="https://github.com/m-kishi/AbDock">GitHub</a>
+      </td>
+      <td class="copy-rights">
+        &copy; 2016 Masaaki Kishi
+      </td>
+    </tr>
+  </table>
+</footer>
+
+    <script>mermaid.initialize({startOnLoad:true});</script>
+  </body>
+</html>

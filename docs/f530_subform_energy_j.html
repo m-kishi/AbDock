@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title>光熱費サブフォーム</title>
+    <link href="/AbDock/images/abdock.ico" rel="icon" type="image/ico" />
+    <link href="/AbDock/stylesheets/normalize.css" rel="stylesheet" /><link href="/AbDock/stylesheets/all.css" rel="stylesheet" />
+    <link href="/AbDock/stylesheets/mermaid.forest.min.css" rel="stylesheet" />
+    <script src="/AbDock/javascripts/jquery-3.4.1.min.js"></script>
+    <script src="/AbDock/javascripts/all.js"></script>
+    <script src="/AbDock/javascripts/mermaid.min.js"></script>
+  </head>
+  <body class="f530_subform_energy_j">
+    <header>
+  <table class="header">
+    <colgroup>
+      <col class="title"   />
+      <col class="project" />
+      <col class="appname" />
+      <col class="subname" />
+      <col class="version" />
+    </colgroup>
+    <tbody>
+      <tr>
+        <td class="title"   rowspan="2">画面設計</td>
+        <td class="project" rowspan="2">project.mk</td>
+        <td class="appname" rowspan="2">Abook</td>
+          <td class="subname" rowspan="2">Jbook</td>
+        <td class="version">バージョン</td>
+      </tr>
+      <tr>
+          <td class="version-number">6.1.1</td>
+      </tr>
+    </tbody>
+  </table>
+</header>
+
+    <div class="content">
+      <h1>【光熱費サブフォーム】</h1>
+
+<h2>レイアウト</h2>
+
+<table class="layout">
+    <tr>
+      <td class="layout energy">
+        <figure>
+            <img src="/AbDock/images/subform_energy_el_j_001.png" class="layout energy" alt="" />
+            <figcaption>
+              1.支出情報なしの例
+            </figcaption>
+        </figure>
+      </td>
+        <td rowspan="2" class="overview">
+          <figure>
+            <figcaption>＜概要＞</figcaption>
+              <ul class="overview">
+                  <li>年度ごと月ごとの光熱費を一覧表示するサブフォーム</li>
+                  <li>光熱費として電気代，ガス代，水道代を対象とする．</li>
+                  <li>各テーブルの中で月ごとに最大値を赤字，最小値を青字で表示する．</li>
+                  <li>光熱費の支出情報が0件の場合，各テーブルは0行とする．</li>
+              </ul>
+              <figure>
+                <figcaption>＜フォーム属性＞</figcaption>
+                <table class="form-property">
+                  <tr><th>タイトル          </th><td>光熱費</td></tr>
+                    <tr><th>アイコン        </th><td>なし</td></tr>
+                  <tr><th>画面サイズ        </th><td>(866, 360)</td></tr>
+                  <tr><th>サイズ変更        </th><td>不可</td></tr>
+                  <tr><th>初期表示位置      </th><td>呼び出し元画面中央</td></tr>
+                  <tr><th>ウィンドウの最大化</th><td>不可</td></tr>
+                  <tr><th>ウィンドウの最小化</th><td>不可</td></tr>
+                </table>
+              </figure>
+              <figure>
+                <figcaption>＜各テーブルの設定(電気代，ガス代，水道代すべて共通)＞</figcaption>
+                <table class="dgv-property">
+                  <tr><th>行追加        </th><td>不可</td></tr>
+                  <tr><th>行削除        </th><td>不可</td></tr>
+                  <tr><th>ReadOnly      </th><td>○</td></tr>
+                  <tr><th>列のソート    </th><td>不可</td></tr>
+                  <tr><th>列の幅変更    </th><td>不可</td></tr>
+                  <tr><th>選択モード    </th><td>セル選択</td></tr>
+                  <tr><th>スクロールバー</th><td>縦のみ</td></tr>
+                </table>
+              </figure>
+          </figure>
+        </td>
+    </tr>
+    <tr>
+      <td class="layout energy">
+        <figure>
+            <img src="/AbDock/images/subform_energy_el_j_002.png" class="layout energy" alt="" />
+            <figcaption>
+              2.電気代タブの例
+            </figcaption>
+        </figure>
+      </td>
+    </tr>
+</table>
+
+
+<h2>初期表示</h2>
+<ul class="description">
+  <li><a href="/AbDock/f410_form_main_j.html">呼び出し元画面</a>から支出情報を受け取る．</li>
+  <li>該当年月の支出情報がない年度は行を表示しない．</li>
+  <li>名称が"電気代"，"ガス代"，"水道代"の支出情報で絞り込む．</li>
+  <li>年度ごと月ごとに"電気代"，"ガス代"，"水道代"をそれぞれ集計する．</li>
+  <li>該当年月の支出情報に"電気代"，"ガス代"，"水道代"がない月は&yen;0とする．</li>
+  <li>電気代タブを初期表示する．</li>
+</ul>
+
+    </div>
+    <footer>
+  <table class="footer">
+    <tr>
+      <td class="link">
+          <a href="/AbDock/index_j.html">トップページ</a> | 
+          <a href="https://github.com/m-kishi/Jbook">Jbook</a> | 
+          <a href="/AbDock/">Abook設計書</a> |
+        <a href="https://github.com/m-kishi/AbDock">GitHub</a>
+      </td>
+      <td class="copy-rights">
+        &copy; 2016 Masaaki Kishi
+      </td>
+    </tr>
+  </table>
+</footer>
+
+    <script>mermaid.initialize({startOnLoad:true});</script>
+  </body>
+</html>
