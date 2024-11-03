@@ -1,0 +1,131 @@
+---
+title: 検索サブフォーム
+header_title: 画面設計
+layouts: f520_subform_search_layouts.yml
+jbook: true
+---
+<h1>【<%= cSUB_SEARCH %>】</h1>
+<% jbook = current_page.data.jbook %>
+<% form_layouts = load_form_data(current_page.data.layouts, jbook) %>
+
+<%# レイアウト %>
+<%= render_layouts({ form: form_layouts }) %>
+
+<h2>初期表示</h2>
+<ul class="description">
+  <li><%= lnForm(:FORM_MAIN, name: '呼び出し元画面', jbook: jbook) %>から<%= cEXP_INFO %>を受け取る．</li>
+  <li><%= cEXP_INFO %>を<%= cCOL_NAME %>で集約する(SQLでのGROUP BY)．</li>
+  <li>
+    集約した<%= cCOL_NAME %>をソートして<%= cCOL_NAME %>コンボボックスに設定する(先頭は空白とする)．<br />
+    ※ソートは現在のカルチャ依存の自然順ソートとする．
+    <table class="event">
+      <tr>
+        <td>
+          <figure>
+            <%= image_tag 'subform_search_j_002.png', class: 'small' %>
+            <figcaption>2-1.<%= cEXP_INFO %></figcaption>
+          </figure>
+        </td>
+        <td>
+          <figure>
+            <%= image_tag 'subform_search_j_003.png', class: 'small' %>
+            <figcaption>2-2.<%= cCOL_NAME %>コンボボックスのソート順</figcaption>
+          </figure>
+        </td>
+      </tr>
+    </table>
+  </li>
+  <li>
+    <%= cCOL_TYPE %>コンボボックスを設定する(空白+<%= lnType cEXP_TYPE_EXP, jbook %>)．
+    <table class="subform-type-combo">
+      <tr>
+        <td>
+          <figure>
+            <%= image_tag 'subform_search_j_004.png', class: 'small' %>
+            <figcaption>3-1.<%= cCOL_TYPE %>コンボボックス</figcaption>
+          </figure>
+        </td>
+      </tr>
+    </table>
+  </li>
+</ul>
+
+<h2><%= cCOL_NAME %>コンボボックスへの直接入力</h2>
+<ul class="description">
+  <li><%= cCOL_NAME %>コンボボックスは直接入力可能とする．</li>
+</ul>
+
+<h2>検索ボタン押下</h2>
+<ul class="description">
+  <li>検索の方法が<%= cCOL_NAME %>コンボボックスの選択状態によって2通りに分かれる．</li>
+</ul>
+<ol class="description">
+  <li>
+    <%= cCOL_NAME %>コンボボックスから<%= cCOL_NAME %>を選択している場合<br />
+    選択された<%= cCOL_NAME %>と一致する<%= cEXP_INFO %>を支出テーブルへ表示する．
+  </li>
+  <li>
+    <%= cCOL_NAME %>コンボボックスへ直接入力している場合<br />
+    直接入力されたワードと曖昧一致する<%= cEXP_INFO %>を支出テーブルへ表示する(SQLでのLIKE '%[ワード]%')．
+  </li>
+  <table class="event">
+    <tr>
+      <td>
+        <figure>
+          <%= image_tag 'subform_search_j_005.png', class: 'small' %>
+          <figcaption>4-1.一致検索</figcaption>
+        </figure>
+      </td>
+      <td>
+        <figure>
+          <%= image_tag 'subform_search_j_006.png', class: 'small' %>
+          <figcaption>4-2.曖昧検索</figcaption>
+        </figure>
+      </td>
+    </tr>
+  </table>
+</ol>
+<ul class="description">
+  <li>
+    <%= cCOL_TYPE %>コンボボックスを選択している場合，選択された<%= cCOL_TYPE %>が検索条件に追加される．(AND)
+    <table class="event">
+      <tr>
+        <td>
+          <figure>
+            <%= image_tag 'subform_search_j_007.png', class: 'small' %>
+            <figcaption>5-1.<%= cCOL_TYPE %>のみ</figcaption>
+          </figure>
+        </td>
+        <td>
+          <figure>
+            <%= image_tag 'subform_search_j_008.png', class: 'small' %>
+            <figcaption>5-2.<%= cCOL_NAME %>と<%= cCOL_TYPE %>のAND検索</figcaption>
+          </figure>
+        </td>
+      </tr>
+    </table>
+  </li>
+</ul>
+<ul class="description">
+  <li>検索後の支出テーブルは先頭行までスクロールする．</li>
+  <li>検索結果が存在しない場合は，支出テーブルはクリアされて何も表示されない．</li>
+</ul>
+
+<h2>ツールチップの表示</h2>
+<ul class="description">
+  <li><%= cCOL_NOTE %>のある行にマウスオンしたとき，ツールチップを表示する．</li>
+  <li>ツールチップには支出情報の<%= cCOL_NOTE %>を表示する．</li>
+  <li>
+    <%= cCOL_NOTE %>のある行は背景色を変更する(#DEFCE7)．
+    <table class="subform-auto-complete">
+      <tr>
+        <td>
+          <figure>
+            <%= image_tag 'subform_search_note_j.png', class: 'small' %>
+            <figcaption><%= "6.ツールチップに#{cCOL_NOTE}を表示" %></figcaption>
+          </figure>
+        </td>
+      </tr>
+    </table>
+  </li>
+</ul>

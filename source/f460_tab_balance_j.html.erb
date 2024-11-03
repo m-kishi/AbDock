@@ -1,0 +1,26 @@
+---
+title: 収支タブ
+header_title: 画面設計
+layouts: f460_tab_balance_layouts.yml
+jbook: true
+---
+<h1>【<%= cTAB_BALANCE %>】</h1>
+<% jbook = current_page.data.jbook %>
+<% form_layouts = load_form_data(current_page.data.layouts, jbook) %>
+
+<%# レイアウト %>
+<%= render_layouts({ form: form_layouts }) %>
+
+<h2>初期表示</h2>
+<ul class="description">
+  <li><%= lnDBFile jbook %>から読み込んだ<%= cEXP_INFO %>を年度ごとに以下の定義に従って集計する(<%= lnType cEXP_TYPE_PRV, jbook %>に該当する<%= cEXP_INFO %>は除く)．</li>
+  <table class="balance">
+    <tr><th class="no">No.</th><th>列  </th><th>集計方法</th></tr>
+    <tr><td class="no">1  </td><td>収入</td><td><%= lnType cEXP_TYPE_BLN_ERN, jbook %>に該当する<%= cEXP_INFO %>の<%= cCOL_COST %>の合計</td></tr>
+    <tr><td class="no">2  </td><td>支出</td><td><%= lnType cEXP_TYPE_BLN_EXP, jbook %>に該当する<%= cEXP_INFO %>の<%= cCOL_COST %>の合計</td></tr>
+    <tr><td class="no">3  </td><td>収支</td><td>(<%= lnType cEXP_TYPE_BLN_ERN, jbook %>に該当する<%= cEXP_INFO %>の<%= cCOL_COST %>の合計) - (<%= lnType cEXP_TYPE_BLN_ERN %>に該当しない<%= cEXP_INFO %>の<%= cCOL_COST %>の合計)</td></tr>
+    <tr><td class="no">4  </td><td>投資</td><td><%= lnType '', jbook %>が"<%= type_fnce %>"の<%= cEXP_INFO %>の<%= cCOL_COST %>の合計</td></tr>
+  </table>
+  <li>合計行を集計する．</li>
+  <li>収支テーブルを最終行までスクロールする．</li>
+</ul>

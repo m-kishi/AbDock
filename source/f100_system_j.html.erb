@@ -1,0 +1,21 @@
+---
+title: 全体設計
+header_title: 全体設計
+jbook: true
+---
+<h1>【<%= current_page.data.title %>】</h1>
+<% jbook = current_page.data.jbook %>
+
+<h2>ファイル構成</h2>
+<p><%= cABOOK %>はmacOS向けAPPファイルとして提供する．</p>
+<div><%= image_tag 'mac_app_001.png', class: 'mac-app' %></div>
+
+<p>APPファイル内の構成は以下の通り．</p>
+<div><%= image_tag 'mac_app_002.png', class: 'mac-app-folder' %></div>
+
+<p>アプリケーション起動時に，JARファイルと同じフォルダに<%= lnDBFile jbook %>が存在しない場合，空の<%= cDB_FILE %>を作成する．</p>
+<table class="general">
+  <tr><th class="no-s">No.</th><th>ファイル         </th><th>説明                              </th></tr>
+  <tr><td class="no-s">1  </td><td><%= cABOOK_JAR %></td><td>アプリケーション本体              </td></tr>
+  <tr><td class="no-s">2  </td><td><%= cABOOK_DB  %></td><td><%= cEXP_INFO %>を保存するファイル</td></tr>
+</table>

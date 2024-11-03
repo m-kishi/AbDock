@@ -1,0 +1,22 @@
+IMAGE:
+  - PNG: tab_private_j_001.png
+    CAPTION: <%= lnType cEXP_TYPE_PRV, true %>の<%= cEXP_INFO %><%= cNO %>
+  - PNG: tab_private_j_002.png
+    CAPTION: <%= lnType cEXP_TYPE_PRV, true %>の<%= cEXP_INFO %><%= cYES %>
+
+OVERVIEW:
+  - <%= lnType cEXP_TYPE_PRV, true %>の<%= cEXP_INFO %>のみの収支を表示する画面
+  - <%= type_prvi %>は通常の家計管理には含めない収入を意味する．
+  - <%= type_prvo %>は通常の家計管理には含めない支出を意味する．
+  - すなわち，この画面では通常の家計には含めたくない収支の管理を行う．
+  - 表示対象となる<%= cEXP_INFO %>が0件の場合，秘密テーブルは0行とする．
+
+DGV:
+  CAPTION  : 秘密テーブルの設定
+  ADD_ROW  : <%= cFUKA %>
+  DEL_ROW  : <%= cFUKA %>
+  READONLY : <%= cMARU %>
+  SORTABLE : <%= cFUKA %>
+  COL_WIDTH: <%= cFUKA %>
+  SELECTION: <%= cSELECT_ROW %>
+  SCROLLBAR: <%= cSCROLL_VERTICAL %>

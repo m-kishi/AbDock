@@ -1,0 +1,58 @@
+---
+title: DBファイル
+header_title: DBファイル
+jbook: true
+---
+<h1>【<%= current_page.data.title %>】</h1>
+<% jbook = current_page.data.jbook %>
+
+<h2>概要</h2>
+<p>
+  <%= cABOOK %>のデータはすべて1つのファイルに保存される(図1)．
+  このファイルを<%= cDB_FILE %>と呼び，<%= cDB_FILE %>に保存されるデータを<%= cEXP_INFO %>と呼ぶ．
+</p>
+<div class="mermaid">
+  graph LR
+    A(Abook.app) -->|保存| B(DBファイル)
+</div>
+
+<h2>ファイル設計</h2>
+<table>
+  <tr>
+    <td class="layout dbfile">
+      <figure>
+        <%= image_tag 'dbfile_jbook.png', class: 'dbfile' %>
+        <figcaption>2.<%= cDB_FILE %>と<%= cEXP_INFO %></figcaption>
+      </figure>
+    </td>
+    <td class="overview">
+      <figure>
+        <figcaption><%= cDB_FILE %>仕様</figcaption>
+        <ul>
+          <li>ファイル名は"<%= cABOOK_DB %>"</li>
+          <li><%= cDB_FILE %>はCSV形式とする．</li>
+          <li>CSVフォーマットは<%= link_to 'RFC4180', 'http://www.kasai.fm/wiki/rfc4180jp', target: '_blank' %>に準拠する．</li>
+          <li>ただし，以下の通りとする．
+            <table class="csv-format">
+              <tr><th>文字コード</th><td><%= cCHAR_CODE %></td></tr>
+              <tr><th>改行コード</th><td><%= cLINE_CODE %></td></tr>
+              <tr><th>ヘッダ行  </th><td><%= cNO        %></td></tr>
+              <tr><th>フィールド</th><td><%= cCSV_FIELD %></td></tr>
+            </table>
+          </li>
+        </ul>
+      </figure>
+    </td>
+  </tr>
+</table>
+
+<h2>ファイル項目</h2>
+<table class="controls">
+  <tr><th class="no-s">No.</th><th>フィールド      </th><th class="maru"   >必須        </th><th>入力制限                             </th></tr>
+  <tr><td class="no-s">1  </td><td><%= cCOL_DATE %></td><td class="align-c"><%= cMARU %></td><td><%= cYYYY_MM_DD %>                   </td></tr>
+  <tr><td class="no-s">2  </td><td><%= cCOL_NAME %></td><td class="align-c"><%= cMARU %></td><td>                                     </td></tr>
+  <tr><td class="no-s">3  </td><td><%= cCOL_TYPE %></td><td class="align-c"><%= cMARU %></td><td><%= lnType cEXP_TYPE_EXP, jbook %>のみ</td></tr>
+  <tr><td class="no-s">4  </td><td><%= cCOL_COST %></td><td class="align-c"><%= cMARU %></td><td><%= cNUM %>，<%= cNOT_NEGATIVE %>，*1</td></tr>
+  <tr><td class="no-s">5  </td><td><%= cCOL_NOTE %></td><td class="align-c">            </td><td class="attention">特殊文字のエスケープはサポートしない</td></tr>
+</table>
+*1: JavaのInteger.MAX_VALUE(2,147,483,647)以下

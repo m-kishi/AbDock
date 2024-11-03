@@ -1,0 +1,32 @@
+---
+title: メニュー
+header_title: 画面設計
+layouts: f420_form_menu_layouts.yml
+jbook: true
+---
+<h1>【<%= cFORM_MENU %>】</h1>
+<% jbook = current_page.data.jbook %>
+<% form_layouts = load_form_data(current_page.data.layouts, jbook) %>
+
+<%# レイアウト %>
+<%= render_layouts({ form: form_layouts }) %>
+
+<h2><%= cQUIT %></h2>
+<ul class="description">
+  <li>アプリケーションを終了する．</li>
+</ul>
+
+<h2><%= cSRCH %></h2>
+<ul class="description">
+  <li><%= lnSubSearch jbook %>を表示する．</li>
+</ul>
+
+<h2><%= cENGY %></h2>
+<ul class="description">
+  <li><%= lnSubEnergy jbook %>を表示する．</li>
+</ul>
+
+<h2><%= cVRSN %></h2>
+<ul class="description">
+  <li><%= lnSubVersion jbook %>を表示する．</li>
+</ul>

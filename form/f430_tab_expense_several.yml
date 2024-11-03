@@ -16,39 +16,39 @@ TYPE_AUTO_COMPLETE:
   - PNG1: tab_expense_complete_001.png
     CAPTION1: <%= cDB_FILE %>の<%= cEXP_INFO %>
   - PNG1: tab_expense_complete_002.png
-    CAPTION1: 「おにぎり」は「食費」が1件のみ
+    CAPTION1: 「おにぎり」は「<%= type_food %>」が1件のみ
     PNG2: tab_expense_complete_003.png
-    CAPTION2: 「食費」で補完される
+    CAPTION2: 「<%= type_food %>」で補完される
   - PNG1: tab_expense_complete_004.png
-    CAPTION1: 「カレー」は「食費」が2件，「外食費」が1件
+    CAPTION1: 「カレー」は「<%= type_food %>」が2件，「<%= type_otfd %>」が1件
     PNG2: tab_expense_complete_005.png
-    CAPTION2: 「食費」で補完される
+    CAPTION2: 「<%= type_food %>」で補完される
   - PNG1: tab_expense_complete_006.png
-    CAPTION1: 「うどん」は「食費」と「外食費」が2件ずつ
+    CAPTION1: 「うどん」は「<%= type_food %>」と「<%= type_otfd %>」が2件ずつ
     PNG2: tab_expense_complete_007.png
-    CAPTION2: 「食費」と「外食費」が空白区切りで補完される
+    CAPTION2: 「<%= type_food %>」と「<%= type_otfd %>」が空白区切りで補完される
 
 COST_AUTO_COMPLETE:
   - PNG1: tab_expense_cost_complete_001.png
     CAPTION1: <%= cDB_FILE %>の<%= cEXP_INFO %>
   - PNG1: tab_expense_cost_complete_002.png
-    CAPTION1: 「おにぎり」+「食費」は1件のみ
+    CAPTION1: 「おにぎり」+「<%= type_food %>」は1件のみ
     PNG2: tab_expense_cost_complete_003.png
     CAPTION2: 「100」で補完される
   - PNG1: tab_expense_cost_complete_004.png
-    CAPTION1: 「おにぎり」+「外食費」は2件
+    CAPTION1: 「おにぎり」+「<%= type_otfd %>」は2件
     PNG2: tab_expense_cost_complete_005.png
     CAPTION2: 日付の新しい順に「300/200」で補完される
   - PNG1: tab_expense_cost_complete_006.png
-    CAPTION1: 「カレー」+「外食費」は4件
+    CAPTION1: 「カレー」+「<%= type_otfd %>」は4件
     PNG2: tab_expense_cost_complete_007.png
     CAPTION2: 日付の新しい順の3件で補完される
   - PNG1: tab_expense_cost_complete_008.png
-    CAPTION1: 「うどん」+「食費」は直近3件の金額がすべて同じ
+    CAPTION1: 「うどん」+「<%= type_food %>」は直近3件の金額がすべて同じ
     PNG2: tab_expense_cost_complete_009.png
     CAPTION2: 一つにまとめて「100」で補完される
   - PNG1: tab_expense_cost_complete_010.png
-    CAPTION1: 「うどん」+「外食費」は1件目と3件目の金額が同じ
+    CAPTION1: 「うどん」+「<%= type_otfd %>」は1件目と3件目の金額が同じ
     PNG2: tab_expense_cost_complete_011.png
     CAPTION2: 同じ金額は一つにまとめられる
 

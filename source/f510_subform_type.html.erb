@@ -19,7 +19,7 @@ control: f510_subform_type_control.yml
   <dt>初期表示</dt>
   <dd>
     <ul class="description">
-      <li><%= lnForm('呼び出し元画面', :FORM_TAB_SUMMARY) %>から<%= cEXP_INFO %>を受け取る．</li>
+      <li><%= lnForm(:FORM_TAB_SUMMARY, name: '呼び出し元画面') %>から<%= cEXP_INFO %>を受け取る．</li>
       <li>
         <%= cEXP_INFO %>がnullの場合，エラーダイアログを表示してフォームを閉じる．
         <table class="subform-load-error">
@@ -45,7 +45,7 @@ control: f510_subform_type_control.yml
         <td>
           <figure>
             <%= image_tag 'subform_type_note.png' %>
-            <figcaption><%= "3-1. ツールチップに#{cCOL_NOTE}を表示" %></figcaption>
+            <figcaption><%= "3.ツールチップに#{cCOL_NOTE}を表示" %></figcaption>
           </figure>
         </td>
       </tr>

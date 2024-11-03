@@ -1,0 +1,49 @@
+---
+title: 推移タブ
+header_title: 画面設計
+layouts: f450_tab_graphic_layouts.yml
+jbook: true
+---
+<h1>【<%= cTAB_GRAPHIC %>】</h1>
+<% jbook = current_page.data.jbook %>
+<% form_layouts = load_form_data(current_page.data.layouts, jbook) %>
+
+<%# レイアウト %>
+<%= render_layouts({ form: form_layouts }) %>
+
+<h2>初期表示</h2>
+<ul class="description">
+  <li><%= lnDBFile jbook %>から読み込んだ<%= cEXP_INFO %>のうち，システム日付の年月〜1年前までの<%= cEXP_INFO %>を対象とする．</li>
+  <li>範囲内の年月で<%= cEXP_INFO %>がない年月の場合，<%= cCOL_COST %>はすべて&yen;0とする．</li>
+  <li>範囲内の年月それぞれで以下の項目ごとに<%= cCOL_COST %>を集計する．</li>
+  <ul class="event style-none">
+    <li>種別：<%= type_food %></li>
+    <li>種別：<%= type_otfd %></li>
+    <li>名称：<%= cEL %></li>
+    <li>名称：<%= cGS %></li>
+    <li>名称：<%= cWT %></li>
+  </ul>
+  <li>集計した結果をグラフ描画領域に表示する．</li>
+  <li>グラフ描画領域の縦軸が集計金額で，描画範囲は&yen;0〜&yen;15,000とする．</li>
+  <li>&yen;2,500ごとに灰色の横点線を描画する．</li>
+</ul>
+
+<h2>前年ボタン押下</h2>
+<ul class="description">
+  <li>現在のグラフの表示範囲を-1年分ずらす．</li>
+</ul>
+
+<h2>前月ボタン押下</h2>
+<ul class="description">
+  <li>現在のグラフの表示範囲を-1ヶ月ずらす．</li>
+</ul>
+
+<h2>翌月ボタン押下</h2>
+<ul class="description">
+  <li>現在のグラフの表示範囲を+1ヶ月ずらす．</li>
+</ul>
+
+<h2>翌年ボタン押下</h2>
+<ul class="description">
+  <li>現在のグラフの表示範囲を+1年分ずらす．</li>
+</ul>

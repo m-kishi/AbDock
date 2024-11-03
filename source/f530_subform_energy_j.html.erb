@@ -1,0 +1,22 @@
+---
+title: 光熱費サブフォーム
+header_title: 画面設計
+layouts: f530_subform_energy_layouts.yml
+jbook: true
+---
+<h1>【<%= cSUB_ENERGY %>】</h1>
+<% jbook = current_page.data.jbook %>
+<% form_layouts = load_form_data(current_page.data.layouts, jbook) %>
+
+<%# レイアウト %>
+<%= render_layouts({ form: form_layouts }) %>
+
+<h2>初期表示</h2>
+<ul class="description">
+  <li><%= lnForm(:FORM_MAIN, name: '呼び出し元画面', jbook: jbook) %>から<%= cEXP_INFO %>を受け取る．</li>
+  <li>該当年月の支出情報がない年度は行を表示しない．</li>
+  <li><%= cCOL_NAME %>が"<%= cEL %>"，"<%= cGS %>"，"<%= cWT %>"の<%= cEXP_INFO %>で絞り込む．</li>
+  <li>年度ごと月ごとに"<%= cEL %>"，"<%= cGS %>"，"<%= cWT %>"をそれぞれ集計する．</li>
+  <li>該当年月の支出情報に"<%= cEL %>"，"<%= cGS %>"，"<%= cWT %>"がない月は&yen;0とする．</li>
+  <li><%= cEL %>タブを初期表示する．</li>
+</ul>

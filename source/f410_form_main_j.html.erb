@@ -1,0 +1,34 @@
+---
+title: メインフォーム
+header_title: 画面設計
+layouts: f410_form_main_layouts.yml
+several: f410_form_main_several.yml
+jbook: true
+---
+<h1>【<%= cFORM_MAIN %>】</h1>
+<% jbook = current_page.data.jbook %>
+<% form_layouts = load_form_data(current_page.data.layouts, jbook) %>
+<% form_several = load_form_data(current_page.data.several, jbook) %>
+
+<%# レイアウト %>
+<%= render_layouts({ form: form_layouts }) %>
+
+<h2>初期表示</h2>
+<ul class="description">
+  <li><%= lnDBFile jbook %>から<%= cEXP_INFO %>を読み込んで各タブを初期化し，<%= cEXPENSE %>タブを表示する．</li>
+  <li>DBファイルの読み込みに失敗した場合，エラーダイアログを表示してアプリケーションを終了する．</li>
+  <table class="db-file-load-error">
+    <tr>
+      <th class="no">No.</th>
+      <th>条件</th>
+      <th>メッセージ</th>
+    </tr>
+    <% form_several.MESSAGE.each.with_index(1) do |chk, i| %>
+      <tr>
+        <td class="no"><%= i %></td>
+        <td><%= chk.TERM         %></td>
+        <td><%= lnMessage chk.ID, jbook %></td>
+      </tr>
+    <% end %>
+  </table>
+</ul>

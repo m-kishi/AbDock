@@ -1,0 +1,330 @@
+---
+title: 支出タブ
+header_title: 画面設計
+layouts: f430_tab_expense_layouts.yml
+several: f430_tab_expense_several.yml
+jbook: true
+---
+<h1>【<%= cTAB_EXPENSE %>】</h1>
+<% jbook = current_page.data.jbook %>
+<% form_layouts = load_form_data(current_page.data.layouts, jbook) %>
+<% form_several = load_form_data(current_page.data.several, jbook) %>
+
+<%# レイアウト %>
+<%= render_layouts({ form: form_layouts }) %>
+
+<h2>初期表示</h2>
+<ul class="description">
+  <li><%= cDB_FILE %>から読み込んだ<%= cEXP_INFO %>を支出テーブルへ表示する．</li>
+  <li><%= cDB_FILE %>から読み込んだ<%= cEXP_INFO %>が0件の場合，支出テーブルは0行とする．</li>
+  <li>支出テーブルの最終行までスクロールする．</li>
+</ul>
+
+<h2>日付の入力</h2>
+<ul class="description">
+  <li>javax.swing.JSpinner.DateEditorによる入力を提供する．</li>
+  <li><%= cCOL_DATE %>セルをクリックで日にち(dd)部分を選択状態にする．</li>
+  <li>上下矢印で<%= cCOL_DATE %>を切り替える．</li>
+  <table class="column single">
+    <% cap = 3 %>
+    <tr>
+      <td>
+        <figure>
+          <%= image_tag 'tab_expense_date_column_j.png', class: 'small' %>
+          <figcaption><%= "#{cap}."%><%= cCOL_DATE %>セル</figcaption>
+        </figure>
+      </td>
+    </tr>
+  </table>
+</ul>
+
+<h2>種別の選択</h2>
+<ul class="description">
+  <li><%= cCOL_TYPE %>セルをダブルクリックで種別コンボボックスを表示する．</li>
+  <li>選択できる<%= cCOL_TYPE %>は<%= lnType("※1", jbook) %>とする．</li>
+  <table class="column single">
+    <% cap = cap + 1 %>
+    <tr>
+      <td>
+        <figure>
+          <%= image_tag 'tab_expense_type_column_j.png', class: 'small' %>
+          <figcaption><%= "#{cap}."%><%= cCOL_TYPE %>セル</figcaption>
+        </figure>
+      </td>
+    </tr>
+  </table>
+</ul>
+
+<h2>金額の入力</h2>
+<ul class="description">
+  <li><%= cCOL_COST %>セルをクリックで円記号とカンマのフォーマットを無効とする．</li>
+  <li>入力後は円記号とカンマでフォーマットする．</li>
+  <li>入力が<%= cCOL_COST %>として正しくないときはセルの枠を赤くして入力を完了させない．</li>
+  <table class="column multiple">
+    <% cap = cap + 1 %>
+    <tr>
+      <td>
+        <figure>
+          <%= image_tag 'tab_expense_cost_column_j_001.png', class: 'small' %>
+          <figcaption><%= "#{cap}-1."%><%= cCOL_COST %>セル</figcaption>
+        </figure>
+      </td>
+      <td>
+        <figure>
+          <%= image_tag 'tab_expense_cost_column_j_002.png', class: 'small' %>
+          <figcaption><%= "#{cap}-2."%>入力エラー</figcaption>
+        </figure>
+      </td>
+    </tr>
+  </table>
+</ul>
+
+<h2>登録ボタン押下</h2>
+<ul class="description">
+  <li>支出テーブルの<%= cEXP_INFO %>を<%= cDB_FILE %>へ出力する(すべての列が空白でない行のみを対象とする)．</li>
+  <li>支出テーブルが0行の場合，エラーとせず<%= cDB_FILE %>を空ファイルとする．</li>
+  <li><%= cDB_FILE %>への書き出しに失敗した場合，エラーダイアログを表示して処理を終了する．</li>
+  <li>
+    このとき，エラーとなった行が支出テーブルの表示領域へ含まれるようにスクロールする．
+    <table class="db-file-store-error">
+      <tr>
+        <th class="no">No.</th>
+        <th>条件</th>
+        <th>備考</th>
+        <th>メッセージ</th>
+      </tr>
+      <% form_several.MESSAGE.each.with_index(1) do |chk, i| %>
+        <tr>
+          <td class="no"><%= i %></td>
+          <td><%= chk.TERM                %></td>
+          <td><%= chk.NOTE                %></td>
+          <td><%= lnMessage chk.ID, jbook %></td>
+        </tr>
+      <% end %>
+    </table>
+    <table class="input-error">
+      <% cap = cap + 1 %>
+      <tr>
+        <td class="diag"><figure><%= image_tag 'tab_expense_err_input_j_001.png'%></figure></td>
+        <td class="wide"></figure></td>
+        <td class="wide"></figure></td>
+      </tr>
+      <tr>
+        <td><figcaption><%= "#{cap}." %>エラーダイアログ</figcaption></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </li>
+  <li>
+    <%= cDB_FILE %>への書き出しが成功した場合，各タブを初期化してダイアログを表示する．
+    <table class="input-error">
+      <% cap = cap + 1 %>
+      <tr>
+        <td class="diag"><figure><%= image_tag 'tab_expense_inf_complete_j.png' %></figure></td>
+        <td class="wide"></td>
+        <td class="wide"></td>
+      </tr>
+      <tr>
+        <td><figcaption><%= "#{cap}." %>登録完了ダイアログ</figcaption></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </li>
+</ul>
+
+<h2>追加ボタン押下</h2>
+<ul class="description">
+  <li>支出テーブルの末尾に新しく30行追加する．</li>
+  <li>
+    新しく追加された行の<%= cCOL_DATE %>列にはシステム日付(<%= cYYYY_MM_DD %>)を初期値として設定する．
+    <table class="event">
+      <% cap = cap + 1 %>
+      <tr>
+        <td>
+          <figure>
+            <%= image_tag 'tab_expense_add_rows_j_001.png', class: 'small' %>
+            <figcaption><%= "#{cap}-1." %>追加ボタン押下</figcaption>
+          </figure>
+        </td>
+        <td>
+          <figure>
+            <%= image_tag 'tab_expense_add_rows_j_002.png', class: 'small' %>
+            <figcaption><%= "#{cap}-2." %>行が追加される</figcaption>
+          </figure>
+        </td>
+      </tr>
+    </table>
+  </li>
+</ul>
+
+<h2>支出テーブルのセル編集終了</h2>
+<ul class="description">
+  <li>編集したセルが<%= cCOL_NAME %>列ならば，<%= cCOL_TYPE %>と<%= cCOL_COST %>の自動補完を行う．</li>
+  <li>編集したセルが<%= cCOL_TYPE %>列ならば，<%= cCOL_COST %>の自動補完を行う．</li>
+  <li>入力された<%= cCOL_NAME %>が既に<%= cEXP_INFO %>に登録されているなら，<%= cCOL_TYPE %>もそれと同じだろうという推測に基づく．</li>
+  <li>金額は<%= cCOL_NAME %>と<%= cCOL_TYPE %>の組み合せで直近の金額と同じだろうという推測に基づく．</li>
+  <li>
+    <%= cCOL_TYPE %>の具体的な補完手順は以下の通り．
+    <ol class="event">
+      <li><%= cDB_FILE %>から読み込んだ<%= cEXP_INFO %>で編集したセルの<%= cCOL_NAME %>と同じ<%= cEXP_INFO %>をすべて取得する．<br />
+          ※支出テーブルに現在表示されている<%= cEXP_INFO %>でないことに注意</li>
+      <li>取得した<%= cEXP_INFO %>が0件の場合，編集したセルの行の<%= cCOL_TYPE %>列を空白に設定する．</li>
+      <li>取得した<%= cEXP_INFO %>が1件以上の場合，それらを<%= cCOL_TYPE %>ごとにグループ分けする．</li>
+      <li>グループ分けした中で件数が最大の<%= cCOL_TYPE %>を編集したセルの行の<%= cCOL_TYPE %>列に設定する．</li>
+      <li>
+        件数が最大の<%= cCOL_TYPE %>が複数存在する場合，最新日付を含む<%= cCOL_TYPE %>を編集したセルの行の<%= cCOL_TYPE %>列に設定する．<br />
+        ※最新の同日に複数種別は存在しない想定
+      </li>
+    </ol>
+  </li>
+  <li>
+    <%= cCOL_TYPE %>の自動補完の例を以下に示す．
+    <table class="auto-complete">
+      <% cap = cap + 1 %>
+      <% form_several.TYPE_AUTO_COMPLETE.each.with_index(1) do |img, i| %>
+        <tr>
+          <% unless img.key?("PNG2") %>
+            <td class="jbook">
+              <figure>
+                <%= image_tag img.PNG1, class: 'small' %>
+                <figcaption><%= "#{cap}-#{i}.#{img.CAPTION1}" %></figcaption>
+              </figure>
+            </td>
+            <%# colspanを指定すると中央に大きく表示されてしまうのでダメ %>
+            <td class="jbook"></td>
+          <% else %>
+            <td class="jbook">
+              <figure>
+                <%= image_tag img.PNG1, class: 'small' %>
+                <figcaption><%= "#{cap}-#{i}-1.#{img.CAPTION1}" %></figcaption>
+              </figure>
+            </td>
+            <td class="jbook">
+              <figure>
+                <%= image_tag img.PNG2, class: 'small' %>
+                <figcaption><%= "#{cap}-#{i}-2.#{img.CAPTION2}" %></figcaption>
+              </figure>
+            </td>
+          <% end %>
+        </tr>
+      <% end %>
+    </table>
+  </li>
+  <li>
+    <%= cCOL_COST %>の具体的な補完手順は以下の通り．
+    <ol class="event">
+      <li><%= cDB_FILE %>から読み込んだ<%= cEXP_INFO %>のうち，編集したセルの<%= cCOL_NAME %> + <%= cCOL_TYPE %>の組み合せに当てはまる<%= cEXP_INFO %>をすべて取得する．<br />
+          ※支出テーブルに現在表示されている<%= cEXP_INFO %>でないことに注意</li>
+      </li>
+      <li>取得した<%= cEXP_INFO %>が0件の場合，編集したセルの行の<%= cCOL_COST %>列を空白に設定する．</li>
+      <li>取得した<%= cEXP_INFO %>が1件以上の場合，最新日付の<%= cCOL_COST %>を<%= cCOL_COST %>列に設定する．</li>
+    </ol>
+  </li>
+  <li>
+    <%= cCOL_COST %>の自動補完の例を以下に示す．
+    <table class="auto-complete">
+      <% cap = cap + 1 %>
+      <% form_several.COST_AUTO_COMPLETE.each.with_index(1) do |img, i| %>
+        <tr>
+          <% unless img.key?("PNG2") %>
+            <td class="jbook">
+              <figure>
+                <%= image_tag img.PNG1, class: 'small' %>
+                <figcaption><%= "#{cap}-#{i}.#{img.CAPTION1}" %></figcaption>
+              </figure>
+            </td>
+            <td class="jbook"></td>
+          <% else %>
+            <td class="jbook">
+              <figure>
+                <%= image_tag img.PNG1, class: 'small' %>
+                <figcaption><%= "#{cap}-#{i}-1.#{img.CAPTION1}" %></figcaption>
+              </figure>
+            </td>
+            <td class="jbook">
+              <figure>
+                <%= image_tag img.PNG2, class: 'small' %>
+                <figcaption><%= "#{cap}-#{i}-2.#{img.CAPTION2}" %></figcaption>
+              </figure>
+            </td>
+          <% end %>
+        </tr>
+      <% end %>
+    </table>
+  </li>
+</ul>
+
+<h2>支出テーブル上でのキー押下(Ctrl + 8，Ctrl + 0)</h2>
+<ul class="description">
+  <li>押下されたキーが「Ctrl + 8」か「Ctrl + 0」の場合，範囲選択されているセルの<%= cCOL_COST %>列のそれぞれを税込価格に置換して表示する．</li>
+  <li>Ctrl + 8 の場合は税込8%．</li>
+  <li>Ctrl + 0 の場合は税込10%．</li>
+  <li>税込計算のとき小数点以下は四捨五入する．</li>
+  <li>空白の<%= cCOL_COST %>セルは無視する．</li>
+  <li>範囲選択されているセルに<%= cCOL_COST %>列が含まれていない場合は何もしない．</li>
+  <table class="cost-tax">
+    <% cap = cap + 1 %>
+    <% form_several.COST_TAX.each.with_index(1) do |img, i| %>
+      <tr>
+        <td>
+          <figure>
+            <%= image_tag img.PNG1, class: 'small' %>
+            <figcaption><%= "#{cap}-#{i}-1.#{img.CAPTION1}" %></figcaption>
+          </figure>
+        </td>
+        <td>
+          <figure>
+            <%= image_tag img.PNG2, class: 'small' %>
+            <figcaption><%= "#{cap}-#{i}-2.#{img.CAPTION2}" %></figcaption>
+          </figure>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+</ul>
+
+<h2>支出テーブル上でのキー押下(Ctrl + T)</h2>
+<ul class="description">
+  <li>押下されたキーが「Ctrl + T」の場合，範囲選択されているセルの<%= cCOL_COST %>列の値を合計して表示する．</li>
+  <li>空白の<%= cCOL_COST %>セルは合計に含めない．</li>
+  <li>範囲選択されているセルに<%= cCOL_COST %>列が含まれていない場合やすべて空白の場合，合計ダイアログを表示しない．</li>
+  <table class="cost-total">
+    <% cap = cap + 1 %>
+    <% form_several.COST_TOTAL.each.with_index(1) do |img, i| %>
+      <tr>
+        <td>
+          <figure>
+            <%= image_tag img.PNG1, class: 'small' %>
+            <figcaption><%= "#{cap}-1.#{img.CAPTION1}" %></figcaption>
+          </figure>
+        </td>
+        <td>
+          <figure>
+            <%= image_tag img.PNG2, class: 'small' %>
+            <figcaption><%= "#{cap}-2.#{img.CAPTION2}" %></figcaption>
+          </figure>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+</ul>
+
+<h2>ツールチップの表示</h2>
+<% cap = cap + 1 %>
+<ul class="description">
+  <li><%= cCOL_NOTE %>のある行にマウスオンしたとき，ツールチップを表示する．</li>
+  <li>ツールチップには支出情報の<%= cCOL_NOTE %>を表示する．</li>
+  <li><%= cCOL_NOTE %>のある行は背景色を変更する(#DEFCE7)．</li>
+  <table class="note-tooltip">
+    <tr>
+      <td>
+        <figure>
+          <%= image_tag 'tab_expense_note_j.png', class: 'small' %>
+          <figcaption><%= "#{cap}.ツールチップに#{cCOL_NOTE}を表示" %></figcaption>
+        </figure>
+      </td>
+    </tr>
+  </table>
+</ul>

@@ -3,8 +3,16 @@
   <table class="footer">
     <tr>
       <td class="link">
-        <%= link_to 'トップページ', 'index.html' %> | 
-        <%= link_to 'Abook', data.project.GITHUB_ABOOK %> | 
+        <% if abook? current_page %>
+          <%= link_to 'トップページ', 'index.html' %> | 
+          <%= link_to 'Abook', data.project.GITHUB_ABOOK %> | 
+          <%= link_to 'Jbook設計書', 'index_j.html' %> |
+        <% end %>
+        <% if jbook? current_page %>
+          <%= link_to 'トップページ', 'index_j.html' %> | 
+          <%= link_to 'Jbook', data.project.GITHUB_JBOOK %> | 
+          <%= link_to 'Abook設計書', 'index.html' %> |
+        <% end %>
         <%= link_to 'GitHub', data.project.GITHUB_ABDOCK %>
       </td>
       <td class="copy-rights">

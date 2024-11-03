@@ -19,7 +19,7 @@ control: f530_subform_energy_control.yml
   <dt>初期表示</dt>
   <dd>
     <ul class="description">
-      <li><%= lnForm('呼び出し元画面', :FORM_MAIN) %>から<%= cEXP_INFO %>を受け取る．</li>
+      <li><%= lnForm(:FORM_MAIN, name: '呼び出し元画面') %>から<%= cEXP_INFO %>を受け取る．</li>
       <li>
         <%= cEXP_INFO %>がnullの場合，エラーダイアログを表示してフォームを閉じる．
         <table class="subform-load-error">

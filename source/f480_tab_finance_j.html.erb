@@ -1,0 +1,44 @@
+---
+title: 投資タブ
+header_title: 画面設計
+layouts: f480_tab_finance_layouts.yml
+jbook: true
+---
+<h1>【<%= cTAB_FINANCE %>】</h1>
+<% jbook = current_page.data.jbook %>
+<% form_layouts = load_form_data(current_page.data.layouts, jbook) %>
+
+<%# レイアウト %>
+<%= render_layouts({ form: form_layouts }) %>
+
+<h2>初期表示</h2>
+<ul class="description">
+  <li><%= lnDBFile jbook %>から読み込んだ<%= cEXP_INFO %>を以下の定義に従って表示する(<%= type_fnce %>のみが対象)．</li>
+  <li>該当する<%= cEXP_INFO %>が0件の場合，投資テーブルは0行とする．</li>
+  <table class="private">
+    <tr><th class="no">No.</th><th>列  </th><th>定義</th></tr>
+    <tr><td class="no">1  </td><td>日付</td><td><%= cEXP_INFO %>の<%= cCOL_DATE %>(<%= cYYYY_MM_DD %>形式)</td></tr>
+    <tr><td class="no">2  </td><td>名称</td><td><%= cEXP_INFO %>の<%= cCOL_NAME %></td></tr>
+    <tr><td class="no">3  </td><td>金額</td><td><%= cEXP_INFO %>の<%= cCOL_COST %></td></tr>
+    <tr><td class="no">4  </td><td>累計</td><td>投資テーブルの一つ上の行の累計 + <%= cEXP_INFO %>の<%= cCOL_COST %></td></tr>
+    <tr><td class="no">5  </td><td>備考</td><td><%= cEXP_INFO %>の<%= cCOL_NOTE %></td></tr>
+  </table>
+  <li>投資DGVを最終行までスクロールする．</li>
+</ul>
+
+<h2>ツールチップの表示</h2>
+<ul class="description">
+  <li><%= cCOL_NOTE %>のある行にマウスオンしたとき，ツールチップを表示する．</li>
+  <li>ツールチップには支出情報の<%= cCOL_NOTE %>を表示する．</li>
+  <li><%= cCOL_NOTE %>のある行は背景色を変更する(#DEFCE7)．</li>
+  <table class="note-tooltip">
+    <tr>
+      <td>
+        <figure>
+          <%= image_tag 'tab_finance_note_j.png', class: 'small' %>
+          <figcaption><%= "3.ツールチップに#{cCOL_NOTE}を表示" %></figcaption>
+        </figure>
+      </td>
+    </tr>
+  </table>
+</ul>
