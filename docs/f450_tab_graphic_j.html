@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title>推移タブ</title>
+    <link href="/AbDock/images/abdock.ico" rel="icon" type="image/ico" />
+    <link href="/AbDock/stylesheets/normalize.css" rel="stylesheet" /><link href="/AbDock/stylesheets/all.css" rel="stylesheet" />
+    <link href="/AbDock/stylesheets/mermaid.forest.min.css" rel="stylesheet" />
+    <script src="/AbDock/javascripts/jquery-3.4.1.min.js"></script>
+    <script src="/AbDock/javascripts/all.js"></script>
+    <script src="/AbDock/javascripts/mermaid.min.js"></script>
+  </head>
+  <body class="f450_tab_graphic_j">
+    <header>
+  <table class="header">
+    <colgroup>
+      <col class="title"   />
+      <col class="project" />
+      <col class="appname" />
+      <col class="subname" />
+      <col class="version" />
+    </colgroup>
+    <tbody>
+      <tr>
+        <td class="title"   rowspan="2">画面設計</td>
+        <td class="project" rowspan="2">project.mk</td>
+        <td class="appname" rowspan="2">Abook</td>
+          <td class="subname" rowspan="2">Jbook</td>
+        <td class="version">バージョン</td>
+      </tr>
+      <tr>
+          <td class="version-number">6.1.1</td>
+      </tr>
+    </tbody>
+  </table>
+</header>
+
+    <div class="content">
+      <h1>【推移タブ】</h1>
+
+<h2>レイアウト</h2>
+
+<table class="layout">
+    <tr>
+      <td class="layout ">
+        <figure>
+            <img src="/AbDock/images/tab_graphic_j_001.png" class="layout " alt="" />
+            <figcaption>
+              1.該当の支出情報のない年月
+            </figcaption>
+        </figure>
+      </td>
+        <td rowspan="2" class="overview">
+          <figure>
+            <figcaption>＜概要＞</figcaption>
+              <ul class="overview">
+                  <li>1年分の支出の推移をグラフ表示する画面</li>
+                  <li>初期表示はシステム日付の年月〜1年前の同月までを表示する．</li>
+                  <li>支出情報のない年月はすべて&yen;0とする．</li>
+                  <li>前年ボタンにより表示範囲を-1年分ずらす．</li>
+                  <li>前月ボタンにより表示範囲を-1ヶ月ずらす．</li>
+                  <li>翌月ボタンにより表示範囲を+1ヶ月ずらす．</li>
+                  <li>翌年ボタンにより表示範囲を+1年分ずらす．</li>
+              </ul>
+          </figure>
+        </td>
+    </tr>
+    <tr>
+      <td class="layout ">
+        <figure>
+            <img src="/AbDock/images/tab_graphic_j_002.png" class="layout " alt="" />
+            <figcaption>
+              2.該当の支出情報のある年月
+            </figcaption>
+        </figure>
+      </td>
+    </tr>
+</table>
+
+
+<h2>初期表示</h2>
+<ul class="description">
+  <li><a href="/AbDock/f200_dbfile_j.html">DBファイル</a>から読み込んだ支出情報のうち，システム日付の年月〜1年前までの支出情報を対象とする．</li>
+  <li>範囲内の年月で支出情報がない年月の場合，金額はすべて&yen;0とする．</li>
+  <li>範囲内の年月それぞれで以下の項目ごとに金額を集計する．</li>
+  <ul class="event style-none">
+    <li>種別：食費</li>
+    <li>種別：外食費</li>
+    <li>名称：電気代</li>
+    <li>名称：ガス代</li>
+    <li>名称：水道代</li>
+  </ul>
+  <li>集計した結果をグラフ描画領域に表示する．</li>
+  <li>グラフ描画領域の縦軸が集計金額で，描画範囲は&yen;0〜&yen;15,000とする．</li>
+  <li>&yen;2,500ごとに灰色の横点線を描画する．</li>
+</ul>
+
+<h2>前年ボタン押下</h2>
+<ul class="description">
+  <li>現在のグラフの表示範囲を-1年分ずらす．</li>
+</ul>
+
+<h2>前月ボタン押下</h2>
+<ul class="description">
+  <li>現在のグラフの表示範囲を-1ヶ月ずらす．</li>
+</ul>
+
+<h2>翌月ボタン押下</h2>
+<ul class="description">
+  <li>現在のグラフの表示範囲を+1ヶ月ずらす．</li>
+</ul>
+
+<h2>翌年ボタン押下</h2>
+<ul class="description">
+  <li>現在のグラフの表示範囲を+1年分ずらす．</li>
+</ul>
+
+    </div>
+    <footer>
+  <table class="footer">
+    <tr>
+      <td class="link">
+          <a href="/AbDock/index_j.html">トップページ</a> | 
+          <a href="https://github.com/m-kishi/Jbook">Jbook</a> | 
+          <a href="/AbDock/">Abook設計書</a> |
+        <a href="https://github.com/m-kishi/AbDock">GitHub</a>
+      </td>
+      <td class="copy-rights">
+        &copy; 2016 Masaaki Kishi
+      </td>
+    </tr>
+  </table>
+</footer>
+
+    <script>mermaid.initialize({startOnLoad:true});</script>
+  </body>
+</html>

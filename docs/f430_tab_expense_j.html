@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title>支出タブ</title>
+    <link href="/AbDock/images/abdock.ico" rel="icon" type="image/ico" />
+    <link href="/AbDock/stylesheets/normalize.css" rel="stylesheet" /><link href="/AbDock/stylesheets/all.css" rel="stylesheet" />
+    <link href="/AbDock/stylesheets/mermaid.forest.min.css" rel="stylesheet" />
+    <script src="/AbDock/javascripts/jquery-3.4.1.min.js"></script>
+    <script src="/AbDock/javascripts/all.js"></script>
+    <script src="/AbDock/javascripts/mermaid.min.js"></script>
+  </head>
+  <body class="f430_tab_expense_j">
+    <header>
+  <table class="header">
+    <colgroup>
+      <col class="title"   />
+      <col class="project" />
+      <col class="appname" />
+      <col class="subname" />
+      <col class="version" />
+    </colgroup>
+    <tbody>
+      <tr>
+        <td class="title"   rowspan="2">画面設計</td>
+        <td class="project" rowspan="2">project.mk</td>
+        <td class="appname" rowspan="2">Abook</td>
+          <td class="subname" rowspan="2">Jbook</td>
+        <td class="version">バージョン</td>
+      </tr>
+      <tr>
+          <td class="version-number">6.1.1</td>
+      </tr>
+    </tbody>
+  </table>
+</header>
+
+    <div class="content">
+      <h1>【支出タブ】</h1>
+
+<h2>レイアウト</h2>
+
+<table class="layout">
+    <tr>
+      <td class="layout ">
+        <figure>
+            <img src="/AbDock/images/tab_expense_j_001.png" class="layout " alt="" />
+            <figcaption>
+              1.支出情報なし
+            </figcaption>
+        </figure>
+      </td>
+        <td rowspan="2" class="overview">
+          <figure>
+            <figcaption>＜概要＞</figcaption>
+              <ul class="overview">
+                  <li>支出情報を登録する画面</li>
+                  <li><a href="/AbDock/f410_form_main_j.html">メインフォーム</a>の初期表示時に<a href="/AbDock/f200_dbfile_j.html">DBファイル</a>から読み込んだ支出情報を表示する．</li>
+                  <li>DBファイルから読み込んだ支出情報が0件の場合，支出テーブルは0行とする．</li>
+                  <li>支出情報を初期表示するとき，支出テーブルは最終行までスクロールする．</li>
+              </ul>
+              <figure>
+                <figcaption>＜支出テーブルの設定＞</figcaption>
+                <table class="dgv-property">
+                  <tr><th>行追加        </th><td>不可</td></tr>
+                  <tr><th>行削除        </th><td>不可</td></tr>
+                  <tr><th>ReadOnly      </th><td>×</td></tr>
+                  <tr><th>列のソート    </th><td>不可</td></tr>
+                  <tr><th>列の幅変更    </th><td>不可</td></tr>
+                  <tr><th>選択モード    </th><td>セル選択</td></tr>
+                  <tr><th>スクロールバー</th><td>縦のみ</td></tr>
+                </table>
+              </figure>
+          </figure>
+        </td>
+    </tr>
+    <tr>
+      <td class="layout ">
+        <figure>
+            <img src="/AbDock/images/tab_expense_j_002.png" class="layout " alt="" />
+            <figcaption>
+              2.支出情報あり
+            </figcaption>
+        </figure>
+      </td>
+    </tr>
+</table>
+
+
+<h2>初期表示</h2>
+<ul class="description">
+  <li>DBファイルから読み込んだ支出情報を支出テーブルへ表示する．</li>
+  <li>DBファイルから読み込んだ支出情報が0件の場合，支出テーブルは0行とする．</li>
+  <li>支出テーブルの最終行までスクロールする．</li>
+</ul>
+
+<h2>日付の入力</h2>
+<ul class="description">
+  <li>javax.swing.JSpinner.DateEditorによる入力を提供する．</li>
+  <li>日付セルをクリックで日にち(dd)部分を選択状態にする．</li>
+  <li>上下矢印で日付を切り替える．</li>
+  <table class="column single">
+    <tr>
+      <td>
+        <figure>
+          <img src="/AbDock/images/tab_expense_date_column_j.png" class="small" alt="" />
+          <figcaption>3.日付セル</figcaption>
+        </figure>
+      </td>
+    </tr>
+  </table>
+</ul>
+
+<h2>種別の選択</h2>
+<ul class="description">
+  <li>種別セルをダブルクリックで種別コンボボックスを表示する．</li>
+  <li>選択できる種別は<a href="/AbDock/f600_type_define_j.html">種別※1</a>とする．</li>
+  <table class="column single">
+    <tr>
+      <td>
+        <figure>
+          <img src="/AbDock/images/tab_expense_type_column_j.png" class="small" alt="" />
+          <figcaption>4.種別セル</figcaption>
+        </figure>
+      </td>
+    </tr>
+  </table>
+</ul>
+
+<h2>金額の入力</h2>
+<ul class="description">
+  <li>金額セルをクリックで円記号とカンマのフォーマットを無効とする．</li>
+  <li>入力後は円記号とカンマでフォーマットする．</li>
+  <li>入力が金額として正しくないときはセルの枠を赤くして入力を完了させない．</li>
+  <table class="column multiple">
+    <tr>
+      <td>
+        <figure>
+          <img src="/AbDock/images/tab_expense_cost_column_j_001.png" class="small" alt="" />
+          <figcaption>5-1.金額セル</figcaption>
+        </figure>
+      </td>
+      <td>
+        <figure>
+          <img src="/AbDock/images/tab_expense_cost_column_j_002.png" class="small" alt="" />
+          <figcaption>5-2.入力エラー</figcaption>
+        </figure>
+      </td>
+    </tr>
+  </table>
+</ul>
+
+<h2>登録ボタン押下</h2>
+<ul class="description">
+  <li>支出テーブルの支出情報をDBファイルへ出力する(すべての列が空白でない行のみを対象とする)．</li>
+  <li>支出テーブルが0行の場合，エラーとせずDBファイルを空ファイルとする．</li>
+  <li>DBファイルへの書き出しに失敗した場合，エラーダイアログを表示して処理を終了する．</li>
+  <li>
+    このとき，エラーとなった行が支出テーブルの表示領域へ含まれるようにスクロールする．
+    <table class="db-file-store-error">
+      <tr>
+        <th class="no">No.</th>
+        <th>条件</th>
+        <th>備考</th>
+        <th>メッセージ</th>
+      </tr>
+        <tr>
+          <td class="no">1</td>
+          <td>金額列の値がマイナス</td>
+          <td></td>
+          <td><a href="/AbDock/f700_message_list_j.html#COST_MINUS">金額がマイナスです．</a></td>
+        </tr>
+        <tr>
+          <td class="no">2</td>
+          <td>DBファイルへの書き出しに失敗する</td>
+          <td>例)DBファイルがロックされているなど</td>
+          <td><a href="/AbDock/f700_message_list_j.html#DB_FILE_STORE">DBファイル登録エラー：%s</a></td>
+        </tr>
+    </table>
+    <table class="input-error">
+      <tr>
+        <td class="diag"><figure><img src="/AbDock/images/tab_expense_err_input_j_001.png" alt="" /></figure></td>
+        <td class="wide"></figure></td>
+        <td class="wide"></figure></td>
+      </tr>
+      <tr>
+        <td><figcaption>6.エラーダイアログ</figcaption></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </li>
+  <li>
+    DBファイルへの書き出しが成功した場合，各タブを初期化してダイアログを表示する．
+    <table class="input-error">
+      <tr>
+        <td class="diag"><figure><img src="/AbDock/images/tab_expense_inf_complete_j.png" alt="" /></figure></td>
+        <td class="wide"></td>
+        <td class="wide"></td>
+      </tr>
+      <tr>
+        <td><figcaption>7.登録完了ダイアログ</figcaption></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </li>
+</ul>
+
+<h2>追加ボタン押下</h2>
+<ul class="description">
+  <li>支出テーブルの末尾に新しく30行追加する．</li>
+  <li>
+    新しく追加された行の日付列にはシステム日付(YYYY-MM-DD)を初期値として設定する．
+    <table class="event">
+      <tr>
+        <td>
+          <figure>
+            <img src="/AbDock/images/tab_expense_add_rows_j_001.png" class="small" alt="" />
+            <figcaption>8-1.追加ボタン押下</figcaption>
+          </figure>
+        </td>
+        <td>
+          <figure>
+            <img src="/AbDock/images/tab_expense_add_rows_j_002.png" class="small" alt="" />
+            <figcaption>8-2.行が追加される</figcaption>
+          </figure>
+        </td>
+      </tr>
+    </table>
+  </li>
+</ul>
+
+<h2>支出テーブルのセル編集終了</h2>
+<ul class="description">
+  <li>編集したセルが名称列ならば，種別と金額の自動補完を行う．</li>
+  <li>編集したセルが種別列ならば，金額の自動補完を行う．</li>
+  <li>入力された名称が既に支出情報に登録されているなら，種別もそれと同じだろうという推測に基づく．</li>
+  <li>金額は名称と種別の組み合せで直近の金額と同じだろうという推測に基づく．</li>
+  <li>
+    種別の具体的な補完手順は以下の通り．
+    <ol class="event">
+      <li>DBファイルから読み込んだ支出情報で編集したセルの名称と同じ支出情報をすべて取得する．<br />
+          ※支出テーブルに現在表示されている支出情報でないことに注意</li>
+      <li>取得した支出情報が0件の場合，編集したセルの行の種別列を空白に設定する．</li>
+      <li>取得した支出情報が1件以上の場合，それらを種別ごとにグループ分けする．</li>
+      <li>グループ分けした中で件数が最大の種別を編集したセルの行の種別列に設定する．</li>
+      <li>
+        件数が最大の種別が複数存在する場合，最新日付を含む種別を編集したセルの行の種別列に設定する．<br />
+        ※最新の同日に複数種別は存在しない想定
+      </li>
+    </ol>
+  </li>
+  <li>
+    種別の自動補完の例を以下に示す．
+    <table class="auto-complete">
+        <tr>
+            <td class="jbook">
+              <figure>
+                <img src="/AbDock/images/tab_expense_complete_j_001.png" class="small" alt="" />
+                <figcaption>9-1.DBファイルの支出情報</figcaption>
+              </figure>
+            </td>
+            <td class="jbook"></td>
+        </tr>
+        <tr>
+            <td class="jbook">
+              <figure>
+                <img src="/AbDock/images/tab_expense_complete_j_002.png" class="small" alt="" />
+                <figcaption>9-2-1.「おにぎり」は「食費」が1件のみ</figcaption>
+              </figure>
+            </td>
+            <td class="jbook">
+              <figure>
+                <img src="/AbDock/images/tab_expense_complete_j_003.png" class="small" alt="" />
+                <figcaption>9-2-2.「食費」で補完される</figcaption>
+              </figure>
+            </td>
+        </tr>
+        <tr>
+            <td class="jbook">
+              <figure>
+                <img src="/AbDock/images/tab_expense_complete_j_004.png" class="small" alt="" />
+                <figcaption>9-3-1.「カレー」は「食費」が1件，「外食費」が2件</figcaption>
+              </figure>
+            </td>
+            <td class="jbook">
+              <figure>
+                <img src="/AbDock/images/tab_expense_complete_j_005.png" class="small" alt="" />
+                <figcaption>9-3-2.「外食費」で補完される</figcaption>
+              </figure>
+            </td>
+        </tr>
+        <tr>
+            <td class="jbook">
+              <figure>
+                <img src="/AbDock/images/tab_expense_complete_j_006.png" class="small" alt="" />
+                <figcaption>9-4-1.「うどん」は「食費」と「外食費」が2件ずつ</figcaption>
+              </figure>
+            </td>
+            <td class="jbook">
+              <figure>
+                <img src="/AbDock/images/tab_expense_complete_j_007.png" class="small" alt="" />
+                <figcaption>9-4-2.最新日(2024-11-07)の「食費」で補完される</figcaption>
+              </figure>
+            </td>
+        </tr>
+    </table>
+  </li>
+  <li>
+    金額の具体的な補完手順は以下の通り．
+    <ol class="event">
+      <li>DBファイルから読み込んだ支出情報のうち，編集したセルの名称 + 種別の組み合せに当てはまる支出情報をすべて取得する．<br />
+          ※支出テーブルに現在表示されている支出情報でないことに注意</li>
+      </li>
+      <li>取得した支出情報が0件の場合，編集したセルの行の金額列を空白に設定する．</li>
+      <li>取得した支出情報が1件以上の場合，最新日付の金額を金額列に設定する．</li>
+    </ol>
+  </li>
+  <li>
+    金額の自動補完の例を以下に示す．
+    <table class="auto-complete">
+        <tr>
+            <td class="jbook">
+              <figure>
+                <img src="/AbDock/images/tab_expense_cost_complete_j_001.png" class="small" alt="" />
+                <figcaption>10-1.DBファイルの支出情報</figcaption>
+              </figure>
+            </td>
+            <td class="jbook"></td>
+        </tr>
+        <tr>
+            <td class="jbook">
+              <figure>
+                <img src="/AbDock/images/tab_expense_cost_complete_j_002.png" class="small" alt="" />
+                <figcaption>10-2-1.「おにぎり」+「外食費」は存在しない</figcaption>
+              </figure>
+            </td>
+            <td class="jbook">
+              <figure>
+                <img src="/AbDock/images/tab_expense_cost_complete_j_003.png" class="small" alt="" />
+                <figcaption>10-2-2.金額はクリアされる</figcaption>
+              </figure>
+            </td>
+        </tr>
+        <tr>
+            <td class="jbook">
+              <figure>
+                <img src="/AbDock/images/tab_expense_cost_complete_j_004.png" class="small" alt="" />
+                <figcaption>10-3-1.「カレー」+「食費」は1件</figcaption>
+              </figure>
+            </td>
+            <td class="jbook">
+              <figure>
+                <img src="/AbDock/images/tab_expense_cost_complete_j_005.png" class="small" alt="" />
+                <figcaption>10-3-2.「400」で補完される</figcaption>
+              </figure>
+            </td>
+        </tr>
+        <tr>
+            <td class="jbook">
+              <figure>
+                <img src="/AbDock/images/tab_expense_cost_complete_j_006.png" class="small" alt="" />
+                <figcaption>10-4-1.「カレー」+「外食費」は2件</figcaption>
+              </figure>
+            </td>
+            <td class="jbook">
+              <figure>
+                <img src="/AbDock/images/tab_expense_cost_complete_j_007.png" class="small" alt="" />
+                <figcaption>10-4-2.最新日付(2024-11-03)の「820」で補完される</figcaption>
+              </figure>
+            </td>
+        </tr>
+    </table>
+  </li>
+</ul>
+
+<h2>支出テーブル上でのキー押下(Ctrl + 8，Ctrl + 0)</h2>
+<ul class="description">
+  <li>押下されたキーが「Ctrl + 8」か「Ctrl + 0」の場合，範囲選択されているセルの金額列のそれぞれを税込価格に置換して表示する．</li>
+  <li>Ctrl + 8 の場合は税込8%．</li>
+  <li>Ctrl + 0 の場合は税込10%．</li>
+  <li>税込計算のとき小数点以下は四捨五入する．</li>
+  <li>空白の金額セルは無視する．</li>
+  <li>範囲選択されているセルに金額列が含まれていない場合は何もしない．</li>
+  <table class="cost-tax">
+      <tr>
+        <td>
+          <figure>
+            <img src="/AbDock/images/tab_expense_cost_tax_j_001.png" class="small" alt="" />
+            <figcaption>11-1-1.Ctrl+8</figcaption>
+          </figure>
+        </td>
+        <td>
+          <figure>
+            <img src="/AbDock/images/tab_expense_cost_tax_j_002.png" class="small" alt="" />
+            <figcaption>11-1-2.税込金額(8%)を計算して表示</figcaption>
+          </figure>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <figure>
+            <img src="/AbDock/images/tab_expense_cost_tax_j_001.png" class="small" alt="" />
+            <figcaption>11-2-1.Ctrl+0</figcaption>
+          </figure>
+        </td>
+        <td>
+          <figure>
+            <img src="/AbDock/images/tab_expense_cost_tax_j_003.png" class="small" alt="" />
+            <figcaption>11-2-2.税込金額(10%)を計算して表示</figcaption>
+          </figure>
+        </td>
+      </tr>
+  </table>
+</ul>
+
+<h2>支出テーブル上でのキー押下(Ctrl + T)</h2>
+<ul class="description">
+  <li>押下されたキーが「Ctrl + T」の場合，範囲選択されているセルの金額列の値を合計して表示する．</li>
+  <li>空白の金額セルは合計に含めない．</li>
+  <li>範囲選択されているセルに金額列が含まれていない場合やすべて空白の場合，合計ダイアログを表示しない．</li>
+  <table class="cost-total">
+      <tr>
+        <td>
+          <figure>
+            <img src="/AbDock/images/tab_expense_cost_total_j_001.png" class="small" alt="" />
+            <figcaption>12-1.範囲選択されているセル</figcaption>
+          </figure>
+        </td>
+        <td>
+          <figure>
+            <img src="/AbDock/images/tab_expense_cost_total_j_002.png" class="small" alt="" />
+            <figcaption>12-2.選択範囲内の金額合計を表示</figcaption>
+          </figure>
+        </td>
+      </tr>
+  </table>
+</ul>
+
+<h2>ツールチップの表示</h2>
+<ul class="description">
+  <li>備考のある行にマウスオンしたとき，ツールチップを表示する．</li>
+  <li>ツールチップには支出情報の備考を表示する．</li>
+  <li>備考のある行は背景色を変更する(#DEFCE7)．</li>
+  <table class="note-tooltip">
+    <tr>
+      <td>
+        <figure>
+          <img src="/AbDock/images/tab_expense_note_j.png" class="small" alt="" />
+          <figcaption>13.ツールチップに備考を表示</figcaption>
+        </figure>
+      </td>
+    </tr>
+  </table>
+</ul>
+
+    </div>
+    <footer>
+  <table class="footer">
+    <tr>
+      <td class="link">
+          <a href="/AbDock/index_j.html">トップページ</a> | 
+          <a href="https://github.com/m-kishi/Jbook">Jbook</a> | 
+          <a href="/AbDock/">Abook設計書</a> |
+        <a href="https://github.com/m-kishi/AbDock">GitHub</a>
+      </td>
+      <td class="copy-rights">
+        &copy; 2016 Masaaki Kishi
+      </td>
+    </tr>
+  </table>
+</footer>
+
+    <script>mermaid.initialize({startOnLoad:true});</script>
+  </body>
+</html>
