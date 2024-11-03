@@ -1,0 +1,59 @@
+ENTRY_COMPLETE:
+  MSG: '正常に登録しました．'
+  NOTE:
+DB_FILE_CREATE:
+  MSG: 'DBファイル作成エラー：%s'
+  ARG:
+    - '%s:エラーメッセージ'
+  NOTE:
+DB_FILE_READ:
+  MSG: 'DBファイル読込エラー：%s'
+  ARG:
+    - '%s:エラーメッセージ'
+  NOTE:
+DB_FILE_LOAD:
+  MSG: 'DBファイルエラー：%d行目：%s'
+  ARG:
+    - '%d:行番号'
+    - '%s:エラーメッセージ'
+  NOTE:
+DB_FILE_STORE:
+  MSG: 'DBファイル登録エラー：%s'
+  ARG:
+    - '%s:エラーメッセージ'
+  NOTE:
+EXPENSE_ERROR:
+  MSG: '%d行目：%s'
+  ARG:
+    - '%d:行番号'
+    - '%s:エラーメッセージ'
+  NOTE:
+DB_FILE_FIELD:
+  MSG: '列数が「%d」ではありません．'
+  ARG:
+    - '%d:フィールド数(5)'
+  NOTE:
+DATE_NULL:
+  MSG: '日付がありません．'
+  NOTE: '基本的に発生しない'
+DATE_FORMAT:
+  MSG: '日付が正しくありません．'
+  NOTE: '基本的に発生しない'
+NAME_NULL:
+  MSG: '名称がありません．'
+  NOTE: '基本的に発生しない'
+TYPE_NULL:
+  MSG: '種別がありません．'
+  NOTE: '基本的に発生しない'
+TYPE_WRONG:
+  MSG: '種別が正しくありません．'
+  NOTE: '基本的に発生しない'
+COST_NULL:
+  MSG: '金額がありません．'
+  NOTE: '基本的に発生しない'
+COST_MINUS:
+  MSG: '金額がマイナスです．'
+  NOTE:
+COST_FORMAT:
+  MSG: '金額が正しくありません．'
+  NOTE: '基本的に発生しない'

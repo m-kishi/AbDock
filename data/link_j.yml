@@ -1,0 +1,5 @@
+F100_SYSTEM    : '/f100_system_j.html'
+F200_DBFILE    : '/f200_dbfile_j.html'
+F300_TRANSITION: '/f300_transition_j.html'
+F600_TYPE      : '/f600_type_define_j.html'
+F700_MESSAGE   : '/f700_message_list_j.html'

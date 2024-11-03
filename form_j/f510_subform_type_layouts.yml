@@ -1,0 +1,29 @@
+IMAGE:
+  - PNG: subform_type_j_001.png
+    CAPTION: 該当の<%= cEXP_INFO %><%= cNO %>
+  - PNG: subform_type_medi_j_002.png
+    CAPTION: 該当の<%= cEXP_INFO %><%= cYES %>
+
+OVERVIEW:
+  - 特定年月・特定<%= lnType '', true %>の<%= cEXP_INFO %>だけを表示するサブフォーム
+  - <%= lnSummary true %>から<%= cCOL_TYPE %>ごとの集計結果の内訳を参照するために利用する．
+
+PROPERTY:
+  ICON: <%= cNO %>
+  TITLE: <%= cTAB_SUMMARY %>で選択した<%= cCOL_TYPE %>
+  SIZABLE: <%= cFUKA %>
+  MINIMUM: <%= cFUKA %>
+  MAXIMUM: <%= cFUKA %>
+  SCREEN_SIZE: (478, 280)
+  START_POSITION: <%= cCENTER_PARENT %>
+  SHOW_IN_TASKBAR: <%= cNO %>
+
+DGV:
+  CAPTION  : 支出テーブルの設定
+  ADD_ROW  : <%= cFUKA %>
+  DEL_ROW  : <%= cFUKA %>
+  READONLY : <%= cMARU %>
+  SORTABLE : <%= cFUKA %>
+  COL_WIDTH: <%= cFUKA %>
+  SELECTION: <%= cSELECT_ROW %>
+  SCROLLBAR: <%= cSCROLL_VERTICAL %>

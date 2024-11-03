@@ -1,0 +1,29 @@
+---
+title: Jbook 機能設計書
+header_title: 設計書
+jbook: true
+---
+<h1>【<%= current_page.data.title %>】</h1>
+<% jbook = current_page.data.jbook %>
+
+<ol>
+  <li><%= lnGeneral    jbook %></li>
+  <li><%= lnDBFile     jbook %></li>
+  <li><%= lnTransition jbook %></li>
+  <li><%= lnForm :FORM_MAIN, name: '画面設計', jbook: jbook %>
+    <ul class="menu">
+      <% forms.keys.each do |key| %>
+        <li><%= lnForm key, jbook: jbook %></li>
+      <% end %>
+    </ul>
+  </li>
+  <li><%= lnForm :FORM_SUB_TYPE, name: 'サブ画面設計', jbook: jbook %>
+    <ul class="menu">
+      <% subforms.keys.each do |key| %>
+        <li><%= lnForm key, jbook: jbook %></li>
+      <% end %>
+    </ul>
+  </li>
+  <li><%= lnType '一覧', jbook %></li>
+  <li><%= lnMessagePage jbook %></li>
+</ol>

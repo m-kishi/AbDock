@@ -1,0 +1,33 @@
+IMAGE:
+  - PNG: subform_energy_el_j_001.png
+    CSS: energy
+    CAPTION: <%= cEXP_INFO %><%= cNO %>の例
+  - PNG: subform_energy_el_j_002.png
+    CSS: energy
+    CAPTION: <%= cEL %>タブの例
+
+OVERVIEW:
+  - 年度ごと月ごとの<%= type_engy %>を一覧表示するサブフォーム
+  - <%= type_engy %>として<%= cEL %>，<%= cGS %>，<%= cWT %>を対象とする．
+  - 各テーブルの中で月ごとに最大値を赤字，最小値を青字で表示する．
+  - <%= type_engy %>の<%= cEXP_INFO %>が0件の場合，各テーブルは0行とする．
+
+PROPERTY:
+  ICON: <%= cNO %>
+  TITLE: <%= type_engy %>
+  SIZABLE: <%= cFUKA %>
+  MINIMUM: <%= cFUKA %>
+  MAXIMUM: <%= cFUKA %>
+  SCREEN_SIZE: (866, 360)
+  START_POSITION: <%= cCENTER_PARENT %>
+  SHOW_IN_TASKBAR: <%= cNO %>
+
+DGV:
+  CAPTION  : 各テーブルの設定(<%= cEL %>，<%= cGS %>，<%= cWT %>すべて共通)
+  ADD_ROW  : <%= cFUKA %>
+  DEL_ROW  : <%= cFUKA %>
+  READONLY : <%= cMARU %>
+  SORTABLE : <%= cFUKA %>
+  COL_WIDTH: <%= cFUKA %>
+  SELECTION: <%= cSELECT_CEL %>
+  SCROLLBAR: <%= cSCROLL_VERTICAL %>

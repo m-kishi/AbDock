@@ -1,0 +1,45 @@
+SUMMARY:
+  - TYPE  : <%= type_food %>
+    METHOD: <%= cCOL_TYPE %>が<%= type_food %>の<%= cCOL_COST %>の合計
+  - TYPE  : <%= type_otfd %>
+    METHOD: <%= cCOL_TYPE %>が<%= type_otfd %>の<%= cCOL_COST %>の合計
+  - TYPE  : <%= type_good %>
+    METHOD: <%= cCOL_TYPE %>が<%= type_good %>の<%= cCOL_COST %>の合計
+  - TYPE  : <%= type_frnd %>
+    METHOD: <%= cCOL_TYPE %>が<%= type_frnd %>の<%= cCOL_COST %>の合計
+  - TYPE  : <%= type_trfc %>
+    METHOD: <%= cCOL_TYPE %>が<%= type_trfc %>の<%= cCOL_COST %>の合計
+  - TYPE  : <%= type_play %>
+    METHOD: <%= cCOL_TYPE %>が<%= type_play %>の<%= cCOL_COST %>の合計
+  - TYPE  : <%= type_hous %>
+    METHOD: <%= cCOL_TYPE %>が<%= type_hous %>の<%= cCOL_COST %>の合計
+  - TYPE  : <%= type_engy %>
+    METHOD: <%= cCOL_TYPE %>が<%= type_engy %>の<%= cCOL_COST %>の合計
+  - TYPE  : <%= type_cnct %>
+    METHOD: <%= cCOL_TYPE %>が<%= type_cnct %>の<%= cCOL_COST %>の合計
+  - TYPE  : <%= type_medi %>
+    METHOD: <%= cCOL_TYPE %>が<%= type_medi %>の<%= cCOL_COST %>の合計
+  - TYPE  : <%= type_insu %>
+    METHOD: <%= cCOL_TYPE %>が<%= type_insu %>の<%= cCOL_COST %>の合計
+  - TYPE  : <%= type_othr %>
+    METHOD: <%= cCOL_TYPE %>が<%= type_othr %>の<%= cCOL_COST %>の合計
+  - TYPE  : <%= type_ttal %>
+    METHOD: <%= lnType(cEXP_TYPE_SUM_EXP, true) %>に該当する<%= cEXP_INFO %>の<%= cCOL_COST %>の合計
+  - TYPE  : <%= type_blnc %>
+    METHOD: (<%= cCOL_TYPE %>が<%= type_earn %>の<%= cCOL_COST %>の合計) -  <%= type_ttal %>
+
+MOUSE:
+  - PNG: tab_summary_type_j_001.png
+    CAPTION: 通常のカーソル
+  - PNG: tab_summary_type_j_002.png
+    CAPTION: <%= cCOL_TYPE %>にマウスオン
+  - PNG: tab_summary_type_j_003.png
+    CAPTION: <%= cCOL_COST %>にマウスオン
+
+SUB_FORM_TYPE:
+  - PNG: subform_type_medi_j_001.png
+    CLASS: small
+    CAPTION: <%= cCOL_TYPE %>か<%= cCOL_COST %>をクリック
+  - PNG: subform_type_medi_j_002.png
+    CLASS: large-small
+    CAPTION: 現在表示している年月のクリックされた<%= cCOL_TYPE %>の<%= cEXP_INFO %>を表示

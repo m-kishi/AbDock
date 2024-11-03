@@ -73,6 +73,14 @@ li {
   color: red;
 }
 
+img.mac-app {
+  width: 90px;
+}
+
+img.mac-app-folder {
+  width: 70%;
+}
+
 table.header {
   width: $page-width;
   height: 100%;
@@ -233,13 +241,21 @@ table.controls {
 }
 
 td.layout {
+  width: 50%;
   text-align: center;
+  vertical-align: top;
+  padding-top: 1rem;
   padding-bottom: 16px;
 }
 
 td.overview {
   padding-left: 16px;
   vertical-align: top;
+}
+
+img.layout {
+  width: 95%;
+  border: 1px solid $anchor-color;
 }
 
 ul.overview {
@@ -382,6 +398,13 @@ dl.event {
   }
 }
 
+ul.style-none {
+  list-style-type: none;
+  margin-top: 10px;
+  margin-left: -30px;
+  margin-bottom: 10px;
+}
+
 table.event {
   width: 100%;
   margin-top: 10px;
@@ -391,8 +414,26 @@ table.event {
   .small {
     width: 80%;
   }
+  .large-small {
+    width: 50%;
+  }
 }
 
+table.column {
+  margin-top: 10px;
+  text-align: center;
+  .small {
+    width: 90%;
+  }
+}
+
+table.single {
+  width: 50%;
+}
+
+table.multiple {
+  width: 100%;
+}
 table.db-file-load-error {
   width: 100%;
   border: 1px solid #000000;
@@ -458,6 +499,11 @@ table.auto-complete {
   td {
     width: 50%;
     text-align: left;
+    padding-bottom: 16px;
+  }
+  td.jbook {
+    width: 30% !important;
+    text-align: center !important;
     padding-bottom: 16px;
   }
   .small {
@@ -543,6 +589,9 @@ table.mouse-on {
   margin-top: 10px;
   td {
     text-align: center;
+  }
+  td > figure > img.jbook {
+    width: 80%;
   }
 }
 

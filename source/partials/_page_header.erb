@@ -13,11 +13,21 @@
         <td class="title"   rowspan="2"><%= current_page.data.header_title %></td>
         <td class="project" rowspan="2"><%= data.project.PROJECT %></td>
         <td class="appname" rowspan="2"><%= data.project.APPNAME %></td>
-        <td class="subname" rowspan="2"><%= data.project.SUBNAME %></td>
+        <% if abook? current_page %>
+          <td class="subname" rowspan="2"><%= data.project.SUBNAME %></td>
+        <% end %>
+        <% if jbook? current_page %>
+          <td class="subname" rowspan="2">Jbook</td>
+        <% end %>
         <td class="version">バージョン</td>
       </tr>
       <tr>
-        <td class="version-number"><%= data.project.VERSION %></td>
+        <% if abook? current_page %>
+          <td class="version-number"><%= data.project.VERSION %></td>
+        <% end %>
+        <% if jbook? current_page %>
+          <td class="version-number"><%= data.project.VERSION_JBOOK %></td>
+        <% end %>
       </tr>
     </tbody>
   </table>

@@ -1,0 +1,36 @@
+---
+title: 種別サブフォーム
+header_title: 画面設計
+layouts: f510_subform_type_layouts.yml
+jbook: true
+---
+<h1>【<%= cSUB_TYPE %>】</h1>
+<% jbook = current_page.data.jbook %>
+<% form_layouts = load_form_data(current_page.data.layouts, jbook) %>
+
+<%# レイアウト %>
+<%= render_layouts({ form: form_layouts }) %>
+
+<h2>初期表示</h2>
+<ul class="description">
+  <li><%= lnSummary jbook %>で選択された年月と<%= cCOL_TYPE %>で<%= cEXP_INFO %>を絞り込む．</li>
+  <li>絞り込んだ<%= cEXP_INFO %>を支出テーブルへ表示する．<br /></li>
+  <li>絞り込んだ<%= cEXP_INFO %>が0件の場合，支出テーブルは0行とする．<br /></li>
+</ul>
+
+<h2>ツールチップの表示</h2>
+<ul class="description">
+  <li><%= cCOL_NOTE %>のある行にマウスオンしたとき，ツールチップを表示する．</li>
+  <li>ツールチップには支出情報の<%= cCOL_NOTE %>を表示する．</li>
+  <li><%= cCOL_NOTE %>のある行は背景色を変更する(#DEFCE7)．</li>
+  <table class="note-tooltip">
+    <tr>
+      <td>
+        <figure>
+          <%= image_tag 'subform_type_note_j.png', class: 'small' %>
+          <figcaption><%= "3.ツールチップに#{cCOL_NOTE}を表示" %></figcaption>
+        </figure>
+      </td>
+    </tr>
+  </table>
+</ul>

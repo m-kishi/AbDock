@@ -1,0 +1,55 @@
+MESSAGE:
+  - ID: COST_MINUS
+    TERM: <%= cCOL_COST %>列の値がマイナス
+    NOTE:
+  - ID: DB_FILE_STORE
+    TERM: <%= cDB_FILE %>への書き出しに失敗する
+    NOTE: 例)<%= cDB_FILE %>がロックされているなど
+
+TYPE_AUTO_COMPLETE:
+  - PNG1: tab_expense_complete_j_001.png
+    CAPTION1: <%= cDB_FILE %>の<%= cEXP_INFO %>
+  - PNG1: tab_expense_complete_j_002.png
+    CAPTION1: 「おにぎり」は「<%= type_food %>」が1件のみ
+    PNG2: tab_expense_complete_j_003.png
+    CAPTION2: 「<%= type_food %>」で補完される
+  - PNG1: tab_expense_complete_j_004.png
+    CAPTION1: 「カレー」は「<%= type_food %>」が1件，「<%= type_otfd %>」が2件
+    PNG2: tab_expense_complete_j_005.png
+    CAPTION2: 「<%= type_otfd %>」で補完される
+  - PNG1: tab_expense_complete_j_006.png
+    CAPTION1: 「うどん」は「<%= type_food %>」と「<%= type_otfd %>」が2件ずつ
+    PNG2: tab_expense_complete_j_007.png
+    CAPTION2: 最新日(2024-11-07)の「<%= type_food %>」で補完される
+
+COST_AUTO_COMPLETE:
+  - PNG1: tab_expense_cost_complete_j_001.png
+    CAPTION1: <%= cDB_FILE %>の<%= cEXP_INFO %>
+  - PNG1: tab_expense_cost_complete_j_002.png
+    CAPTION1: 「おにぎり」+「<%= type_otfd %>」は存在しない
+    PNG2: tab_expense_cost_complete_j_003.png
+    CAPTION2: <%= cCOL_COST %>はクリアされる
+  - PNG1: tab_expense_cost_complete_j_004.png
+    CAPTION1: 「カレー」+「<%= type_food %>」は1件
+    PNG2: tab_expense_cost_complete_j_005.png
+    CAPTION2: 「400」で補完される
+  - PNG1: tab_expense_cost_complete_j_006.png
+    CAPTION1: 「カレー」+「<%= type_otfd %>」は2件
+    PNG2: tab_expense_cost_complete_j_007.png
+    CAPTION2: 最新日付(2024-11-03)の「820」で補完される
+
+COST_TAX:
+  - PNG1: tab_expense_cost_tax_j_001.png
+    CAPTION1: Ctrl+8
+    PNG2: tab_expense_cost_tax_j_002.png
+    CAPTION2: 税込金額(8%)を計算して表示
+  - PNG1: tab_expense_cost_tax_j_001.png
+    CAPTION1: Ctrl+0
+    PNG2: tab_expense_cost_tax_j_003.png
+    CAPTION2: 税込金額(10%)を計算して表示
+
+COST_TOTAL:
+  - PNG1: tab_expense_cost_total_j_001.png
+    CAPTION1: 範囲選択されているセル
+    PNG2: tab_expense_cost_total_j_002.png
+    CAPTION2: 選択範囲内の<%= cCOL_COST %>合計を表示

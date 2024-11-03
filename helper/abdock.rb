@@ -1,6 +1,20 @@
 module AbDockHelpers
 
   #==================================================
+  # 画面が Abook か判定するメソッド
+  #==================================================
+  def abook? current_page
+    not jbook? current_page
+  end
+
+  #==================================================
+  # 画面が Jbook か判定するメソッド
+  #==================================================
+  def jbook? current_page
+    (defined? current_page.data.jbook) && current_page.data.jbook
+  end
+
+  #==================================================
   # フォーム情報参照用メソッド
   #==================================================
   def cFORM_MAIN  ; data.form.FORM_MAIN.NAME        end
@@ -23,6 +37,7 @@ module AbDockHelpers
   def cABOOK    ; data.term.APP.ABOOK         end
   def cABOOK_DB ; data.term.APP.ABOOK_DB      end
   def cABOOK_EXE; data.term.APP.ABOOK_EXE     end
+  def cABOOK_JAR; data.term.APP.ABOOK_JAR     end
   def cDB_FILE  ; data.term.APP.WORD.DB_FILE  end
   def cEXP_INFO ; data.term.APP.WORD.EXP_INFO end
   # ABOOK_DB
@@ -95,7 +110,7 @@ module AbDockHelpers
   def cCENTER_SCREEN  ; data.term.ATTRIBUTE.FORM.CENTER_SCREEN   end
   def cCENTER_PARENT  ; data.term.ATTRIBUTE.FORM.CENTER_PARENT   end
   def cSELECT_ROW     ; data.term.ATTRIBUTE.GRID.SELECT_ROW      end
-  def cSELECT_CEL     ; data.term.ATTRIBUTE.GRID.SELECT_ROW      end
+  def cSELECT_CEL     ; data.term.ATTRIBUTE.GRID.SELECT_CEL      end
   def cSCROLL_VERTICAL; data.term.ATTRIBUTE.GRID.SCROLL_VERTICAL end
   # ALIGN
   def cLEFT  ; data.term.ATTRIBUTE.ALIGN.LEFT   end
@@ -127,32 +142,44 @@ module AbDockHelpers
   #==================================================
   # リンク作成メソッド
   #==================================================
-  def lnForm(name=nil, key)
-    caption = name || data.form[key].NAME
-    link_to caption, data.form[key].LINK
+  def lnForm(key, name: nil, jbook: false)
+    form = data.form[key]
+    form = data.form_j[key] if jbook
+    caption = name || form.NAME
+    link_to caption, form.LINK
   end
   # 画面設計の各ページ
-  def lnMain      ; lnForm :FORM_MAIN        end
-  def lnMenu      ; lnForm :FORM_MENU        end
-  def lnExpense   ; lnForm :FORM_TAB_EXPENSE end
-  def lnSummary   ; lnForm :FORM_TAB_SUMMARY end
-  def lnGraphic   ; lnForm :FORM_TAB_GRAPHIC end
-  def lnBalance   ; lnForm :FORM_TAB_BALANCE end
-  def lnPrivate   ; lnForm :FORM_TAB_PRIVATE end
-  def lnFinance   ; lnForm :FORM_TAB_FINANCE end;
-  def lnSubType   ; lnForm :FORM_SUB_TYPE    end
-  def lnSubSearch ; lnForm :FORM_SUB_SEARCH  end
-  def lnSubEnergy ; lnForm :FORM_SUB_ENERGY  end
-  def lnSubVersion; lnForm :FORM_SUB_VERSION end
+  def lnMain      (jbook=false); lnForm :FORM_MAIN       , jbook: jbook end
+  def lnMenu      (jbook=false); lnForm :FORM_MENU       , jbook: jbook end
+  def lnExpense   (jbook=false); lnForm :FORM_TAB_EXPENSE, jbook: jbook end
+  def lnSummary   (jbook=false); lnForm :FORM_TAB_SUMMARY, jbook: jbook end
+  def lnGraphic   (jbook=false); lnForm :FORM_TAB_GRAPHIC, jbook: jbook end
+  def lnBalance   (jbook=false); lnForm :FORM_TAB_BALANCE, jbook: jbook end
+  def lnPrivate   (jbook=false); lnForm :FORM_TAB_PRIVATE, jbook: jbook end
+  def lnFinance   (jbook=false); lnForm :FORM_TAB_FINANCE, jbook: jbook end
+  def lnSubType   (jbook=false); lnForm :FORM_SUB_TYPE   , jbook: jbook end
+  def lnSubSearch (jbook=false); lnForm :FORM_SUB_SEARCH , jbook: jbook end
+  def lnSubEnergy (jbook=false); lnForm :FORM_SUB_ENERGY , jbook: jbook end
+  def lnSubVersion(jbook=false); lnForm :FORM_SUB_VERSION, jbook: jbook end
   # その他の各ページ
-  def lnLink(name, key); link_to name, data.link[key] end
-  def lnGeneral    ; lnLink '全体設計'      , :F100_SYSTEM     end
-  def lnDBFile     ; lnLink cDB_FILE        , :F200_DBFILE     end
-  def lnTransition ; lnLink '画面遷移'      , :F300_TRANSITION end
-  def lnType(n='') ; lnLink '種別'+n        , :F600_TYPE       end
-  def lnMessagePage; lnLink 'メッセージ一覧', :F700_MESSAGE    end
+  def lnLink(name, key, jbook=false)
+    link = data.link
+    link = data.link_j if jbook
+    link_to name, link[key]
+  end
+  def lnGeneral    (jbook=false)      ; lnLink '全体設計'      , :F100_SYSTEM    , jbook end
+  def lnDBFile     (jbook=false)      ; lnLink cDB_FILE        , :F200_DBFILE    , jbook end
+  def lnTransition (jbook=false)      ; lnLink '画面遷移'      , :F300_TRANSITION, jbook end
+  def lnType       (n='', jbook=false); lnLink '種別'+n        , :F600_TYPE      , jbook end
+  def lnMessagePage(jbook=false)      ; lnLink 'メッセージ一覧', :F700_MESSAGE   , jbook end
   # メッセージリンク
-  def lnMessage(key); link_to data.message[key].MSG, "#{data.link.F700_MESSAGE}\##{key}" end
+  def lnMessage(key, jbook=false)
+    message = data.message
+    message = data.message_j if jbook
+    link = data.link
+    link = data.link_j if jbook
+    link_to message[key].MSG, "#{link.F700_MESSAGE}\##{key}"
+  end
 
   #==================================================
   # パーシャル

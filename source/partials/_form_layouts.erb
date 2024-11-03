@@ -7,7 +7,7 @@
       <td class="layout <%= img.CSS if img.key?("CSS") %>">
         <figure>
           <% if !img.key?("GRAPHIC_OPTION") %>
-            <%= image_tag img.PNG, class: (img.CSS if img.key?("CSS")).to_s %>
+            <%= image_tag img.PNG, class: "layout " + (img.CSS if img.key?("CSS")).to_s %>
             <figcaption>
               <%= "#{i+1}.#{img.CAPTION}" %>
             </figcaption>
@@ -47,7 +47,9 @@
                   <tr><th>初期表示位置      </th><td><%= form.PROPERTY.START_POSITION  %></td></tr>
                   <tr><th>ウィンドウの最大化</th><td><%= form.PROPERTY.MAXIMUM         %></td></tr>
                   <tr><th>ウィンドウの最小化</th><td><%= form.PROPERTY.MINIMUM         %></td></tr>
-                  <tr><th>タスクバーへの表示</th><td><%= form.PROPERTY.SHOW_IN_TASKBAR %></td></tr>
+                  <% if abook? current_page %>
+                    <tr><th>タスクバーへの表示</th><td><%= form.PROPERTY.SHOW_IN_TASKBAR %></td></tr>
+                  <% end %>
                 </table>
               </figure>
             <% end %>

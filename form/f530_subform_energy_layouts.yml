@@ -19,14 +19,14 @@ IMAGE:
     CAPTION: <%= cWT %>タブ(<%= cWT %>の<%= cEXP_INFO %><%= cYES  %>)
 
 OVERVIEW:
-  - 年度ごと月ごとの光熱費を一覧表示するサブフォーム
-  - 光熱費として<%= cEL %>，<%= cGS %>，<%= cWT %>を対象とする．
+  - 年度ごと月ごとの<%= type_engy %>を一覧表示するサブフォーム
+  - <%= type_engy %>として<%= cEL %>，<%= cGS %>，<%= cWT %>を対象とする．
   - 各DGVの中で月ごとに最大値を赤字，最小値を青字で表示する．
-  - 光熱費の<%= cEXP_INFO %>が0件の場合，各DGVは0行とする．
+  - <%= type_engy %>の<%= cEXP_INFO %>が0件の場合，各DGVは0行とする．
 
 PROPERTY:
   ICON: <%= cNO %>
-  TITLE: 光熱費
+  TITLE: <%= type_engy %>
   SIZABLE: <%= cFUKA %>
   MINIMUM: <%= cFUKA %>
   MAXIMUM: <%= cFUKA %>

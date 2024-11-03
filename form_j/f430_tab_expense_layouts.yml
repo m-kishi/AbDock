@@ -1,0 +1,21 @@
+IMAGE:
+  - PNG: tab_expense_j_001.png
+    CAPTION: <%= cEXP_INFO %><%= cNO %>
+  - PNG: tab_expense_j_002.png
+    CAPTION: <%= cEXP_INFO %><%= cYES %>
+
+OVERVIEW:
+  - <%= cEXP_INFO %>を登録する画面
+  - <%= lnMain true %>の初期表示時に<%= lnDBFile true %>から読み込んだ<%= cEXP_INFO %>を表示する．
+  - <%= cDB_FILE %>から読み込んだ<%= cEXP_INFO %>が0件の場合，支出テーブルは0行とする．
+  - <%= cEXP_INFO %>を初期表示するとき，支出テーブルは最終行までスクロールする．
+
+DGV:
+  CAPTION  : 支出テーブルの設定
+  ADD_ROW  : <%= cFUKA %>
+  DEL_ROW  : <%= cFUKA %>
+  READONLY : <%= cBATU %>
+  SORTABLE : <%= cFUKA %>
+  COL_WIDTH: <%= cFUKA %>
+  SELECTION: <%= cSELECT_CEL %>
+  SCROLLBAR: <%= cSCROLL_VERTICAL %>

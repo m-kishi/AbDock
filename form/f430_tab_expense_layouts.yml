@@ -17,5 +17,5 @@ DGV:
   READONLY : <%= cBATU %>
   SORTABLE : <%= cFUKA %>
   COL_WIDTH: <%= cFUKA %>
-  SELECTION: <%= cSELECT_ROW %>
+  SELECTION: <%= cSELECT_CEL %>
   SCROLLBAR: <%= cSCROLL_VERTICAL %>
