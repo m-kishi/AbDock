@@ -15,11 +15,11 @@ gem "wdm", "~> 0.1.0", :platforms => [:mswin, :mingw]
 # Windows does not come with time zone data
 gem "tzinfo-data", platforms: [:mswin, :mingw, :jruby]
 
-#bundle outdated の出力形式変換
-gem 'bundle_outdated_formatter'
-
 # ruby 3 以降は標準ライブラリから削除されたので明示的にインストール
 gem 'webrick'
 
 # 6.0以上だとmiddlemanが起動しないのでバージョン指定
 gem "haml", ">= 4.0.5", "< 6.0"
+
+# ruby 3.0 との互換性のためバージョン指定
+gem "thor", ">= 1.2.2"
