@@ -32,7 +32,7 @@
         <td class="version">バージョン</td>
       </tr>
       <tr>
-          <td class="version-number">6.1.1</td>
+          <td class="version-number">6.2.1</td>
       </tr>
     </tbody>
   </table>
@@ -60,6 +60,7 @@
                   <li>投資の支出情報のみを表示する画面</li>
                   <li>この画面では投資状況の管理を行う．</li>
                   <li>投資の利益や損失は考慮せず，単純にこれまで投資した金額を表示する．</li>
+                  <li>年＋名称＋備考単位で表示する．</li>
                   <li>表示対象となる支出情報が0件の場合，投資テーブルは0行とする．</li>
               </ul>
               <figure>
@@ -94,32 +95,14 @@
 <ul class="description">
   <li><a href="/AbDock/f200_dbfile_j.html">DBファイル</a>から読み込んだ支出情報を以下の定義に従って表示する(投資のみが対象)．</li>
   <li>該当する支出情報が0件の場合，投資テーブルは0行とする．</li>
-  <table class="private">
+  <table class="finance">
     <tr><th class="no">No.</th><th>列  </th><th>定義</th></tr>
-    <tr><td class="no">1  </td><td>日付</td><td>支出情報の日付(YYYY-MM-DD形式)</td></tr>
-    <tr><td class="no">2  </td><td>名称</td><td>支出情報の名称</td></tr>
-    <tr><td class="no">3  </td><td>金額</td><td>支出情報の金額</td></tr>
-    <tr><td class="no">4  </td><td>累計</td><td>投資テーブルの一つ上の行の累計 + 支出情報の金額</td></tr>
-    <tr><td class="no">5  </td><td>備考</td><td>支出情報の備考</td></tr>
+    <tr><td class="no">1  </td><td>年  </td><td>キー</td></tr>
+    <tr><td class="no">2  </td><td>名称</td><td>キー</td></tr>
+    <tr><td class="no">3  </td><td>備考</td><td>キー</td></tr>
+    <tr><td class="no">4  </td><td>金額</td><td>金額の合計</td></tr>
   </table>
   <li>投資DGVを最終行までスクロールする．</li>
-</ul>
-
-<h2>ツールチップの表示</h2>
-<ul class="description">
-  <li>備考のある行にマウスオンしたとき，ツールチップを表示する．</li>
-  <li>ツールチップには支出情報の備考を表示する．</li>
-  <li>備考のある行は背景色を変更する(#DEFCE7)．</li>
-  <table class="note-tooltip">
-    <tr>
-      <td>
-        <figure>
-          <img src="/AbDock/images/tab_finance_note_j.png" class="small" alt="" />
-          <figcaption>3.ツールチップに備考を表示</figcaption>
-        </figure>
-      </td>
-    </tr>
-  </table>
 </ul>
 
     </div>
