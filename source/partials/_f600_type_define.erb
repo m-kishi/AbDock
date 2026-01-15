@@ -12,6 +12,7 @@
     <th class="check"><%= cEXP_TYPE_TAB_SUM %></th>
     <th class="check"><%= cEXP_TYPE_BLN_ERN %></th>
     <th class="check"><%= cEXP_TYPE_BLN_EXP %></th>
+    <th class="check"><%= cEXP_TYPE_MONTHLY %></th>
     <th>説明(マウスオンで全文を表示)</th>
   </tr>
   <% data.type.each_with_index do |(k, v), i| %>
@@ -25,6 +26,7 @@
       <td class="check"><%= v.SHOW_IN_SUM ? cMARU : '' %></td>
       <td class="check"><%= v.BALANCE_ERN ? cMARU : '' %></td>
       <td class="check"><%= v.BALANCE_EXP ? cMARU : '' %></td>
+      <td class="check"><%= v.MONTHLY_HIT ? cMARU : '' %></td>
       <td><%= type_description(v.DESCRIPTION) %></td>
     </tr>
   <% end %>
@@ -36,4 +38,5 @@
   <li><%= cEXP_TYPE_TAB_SUM %>：<%= lnSummary jbook %>での表示対象かどうか．                  </li>
   <li><%= cEXP_TYPE_BLN_ERN %>：<%= lnBalance jbook %>での収入対象かどうか．                  </li>
   <li><%= cEXP_TYPE_BLN_EXP %>：<%= lnBalance jbook %>での支出対象かどうか．                  </li>
+  <li><%= cEXP_TYPE_MONTHLY %>：<%= lnExpense jbook %>での月次ボタン押下の処理対象かどうか．  </li>
 </ul>
