@@ -683,6 +683,28 @@ table.private-check-error {
   }
 }
 
+table.finance {
+  width: 100%;
+  border: 1px solid #000000;
+  border-collapse: collapse;
+  margin-bottom: 10px;
+  th {
+    border: 1px solid #000000;
+    text-align: left;
+    background-color: $table-th-color;
+  }
+  th.no {
+    width: 30px;
+    text-align: center;
+  }
+  td {
+    border: 1px dotted #000000;
+  }
+  td.no {
+    text-align: center;
+  }
+}
+
 table.subform-type-combo {
   width: 46%;
   margin-top: 10px;

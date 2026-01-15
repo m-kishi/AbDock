@@ -159,6 +159,47 @@ jbook: true
   </li>
 </ul>
 
+<h2>月次ボタン押下</h2>
+<ul class="description">
+  <li>システム日付の月末日＆<%= lnType cEXP_TYPE_MONTHLY, true %>の<%= cEXP_INFO %>を取得する．</li>
+  <li>取得結果が1件以上存在する場合，それらを<%= cEXP_INFO %>の末尾に移動させる．</li>
+  <li>取得結果が0件の場合，システム日付の前月の月末日＆<%= lnType cEXP_TYPE_MONTHLY, true %>の<%= cEXP_INFO %>を取得する．</li>
+  <li>取得結果が1件以上存在する場合，それらをコピーして<%= cCOL_DATE %>をシステム日付の月末日に設定し，<%= cEXP_INFO %>の末尾に追加する．</li>
+  <li>取得結果が0件の場合，何もせずに処理を終了する．
+    <table class="event">
+      <% cap = cap + 1 %>
+      <tr>
+        <td>
+          <figure>
+            <%= image_tag 'tab_expense_monthly_j_001.png', class: 'small' %>
+            <figcaption><%= "#{cap}-1." %>当月月末が存在する</figcaption>
+          </figure>
+        </td>
+        <td>
+          <figure>
+            <%= image_tag 'tab_expense_monthly_j_002.png', class: 'small' %>
+            <figcaption><%= "#{cap}-2." %>末尾に移動する</figcaption>
+          </figure>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <figure>
+            <%= image_tag 'tab_expense_monthly_j_003.png', class: 'small' %>
+            <figcaption><%= "#{cap}-3." %>前月月末が存在する</figcaption>
+          </figure>
+        </td>
+        <td>
+          <figure>
+            <%= image_tag 'tab_expense_monthly_j_004.png', class: 'small' %>
+            <figcaption><%= "#{cap}-4." %>前月からコピーして末尾に追加する</figcaption>
+          </figure>
+        </td>
+      </tr>
+    </table>
+  </li>
+</ul>
+
 <h2>支出テーブルのセル編集終了</h2>
 <ul class="description">
   <li>編集したセルが<%= cCOL_NAME %>列ならば，<%= cCOL_TYPE %>と<%= cCOL_COST %>の自動補完を行う．</li>

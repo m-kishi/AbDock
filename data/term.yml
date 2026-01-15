@@ -60,6 +60,7 @@ EXPENSE_TYPE:
   TAB_SUM: '※4'
   BLN_ERN: '※5'
   BLN_EXP: '※6'
+  MONTHLY: '※7'
 CHAR:
   MARU: ○
   BATU: ×

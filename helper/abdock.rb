@@ -83,6 +83,7 @@ module AbDockHelpers
   def cEXP_TYPE_TAB_SUM; data.term.EXPENSE_TYPE.TAB_SUM end
   def cEXP_TYPE_BLN_ERN; data.term.EXPENSE_TYPE.BLN_ERN end
   def cEXP_TYPE_BLN_EXP; data.term.EXPENSE_TYPE.BLN_EXP end
+  def cEXP_TYPE_MONTHLY; data.term.EXPENSE_TYPE.MONTHLY end
   # CHAR
   def cMARU; data.term.CHAR.MARU end
   def cBATU; data.term.CHAR.BATU end
