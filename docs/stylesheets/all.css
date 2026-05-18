@@ -538,6 +538,23 @@ table.private-check-error {
   table.private-check-error td.no {
     text-align: center; }
 
+table.finance {
+  width: 100%;
+  border: 1px solid #000000;
+  border-collapse: collapse;
+  margin-bottom: 10px; }
+  table.finance th {
+    border: 1px solid #000000;
+    text-align: left;
+    background-color: #fff10f; }
+  table.finance th.no {
+    width: 30px;
+    text-align: center; }
+  table.finance td {
+    border: 1px dotted #000000; }
+  table.finance td.no {
+    text-align: center; }
+
 table.subform-type-combo {
   width: 46%;
   margin-top: 10px; }
