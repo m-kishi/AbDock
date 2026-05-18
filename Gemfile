@@ -2,6 +2,7 @@
 # the following line to use "http://" instead
 source 'https://rubygems.org'
 
+gem "rack", "< 3"
 gem "middleman", "~>4.3.0"
 gem "middleman-jquery"
 gem "json", github: "flori/json", branch: "v1.8"
