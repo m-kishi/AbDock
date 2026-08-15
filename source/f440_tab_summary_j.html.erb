@@ -5,7 +5,7 @@ layouts: f440_tab_summary_layouts.yml
 several: f440_tab_summary_several.yml
 jbook: true
 ---
-<h1>【<%= cTAB_SUMMARY %>】</h1>
+<h1>【<%= cTAB_SUMMARY true %>】</h1>
 <% jbook = current_page.data.jbook %>
 <% form_layouts = load_form_data(current_page.data.layouts, jbook) %>
 <% form_several = load_form_data(current_page.data.several, jbook) %>

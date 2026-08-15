@@ -4,7 +4,7 @@ header_title: 画面設計
 layouts: f480_tab_finance_layouts.yml
 jbook: true
 ---
-<h1>【<%= cTAB_FINANCE %>】</h1>
+<h1>【<%= cTAB_FINANCE true %>】</h1>
 <% jbook = current_page.data.jbook %>
 <% form_layouts = load_form_data(current_page.data.layouts, jbook) %>
 
@@ -19,8 +19,8 @@ jbook: true
     <tr><th class="no">No.</th><th>列  </th><th>定義</th></tr>
     <tr><td class="no">1  </td><td>年  </td><td>キー</td></tr>
     <tr><td class="no">2  </td><td>名称</td><td>キー</td></tr>
-    <tr><td class="no">3  </td><td>備考</td><td>キー</td></tr>
-    <tr><td class="no">4  </td><td>金額</td><td><%= cCOL_COST %>の合計</td></tr>
+    <tr><td class="no">3  </td><td>金額</td><td><%= cCOL_COST %>の合計</td></tr>
+    <tr><td class="no">4  </td><td>合計</td><td>該当年までの<%= cCOL_COST %>の累計</td></tr>
   </table>
-  <li>投資DGVを最終行までスクロールする．</li>
+  <li>投資テーブルを最終行までスクロールする．</li>
 </ul>

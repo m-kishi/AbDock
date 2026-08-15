@@ -1,0 +1,26 @@
+IMAGE:
+  - PNG: subform_balance_j_001.png
+    CAPTION: <%= cSUB_BALANCE true %>
+
+OVERVIEW:
+  - <%= cTAB_BALANCE %> の詳細を表示する画面
+
+PROPERTY:
+  ICON: <%= cNO %>
+  TITLE: <%= type_blnc %>
+  SIZABLE: <%= cFUKA %>
+  MINIMUM: <%= cFUKA %>
+  MAXIMUM: <%= cFUKA %>
+  SCREEN_SIZE: (794, 368)
+  START_POSITION: <%= cCENTER_PARENT %>
+  SHOW_IN_TASKBAR: <%= cNO %>
+
+DGV:
+  CAPTION  : <%= type_blnc %>テーブルの設定
+  ADD_ROW  : <%= cFUKA %>
+  DEL_ROW  : <%= cFUKA %>
+  READONLY : <%= cMARU %>
+  SORTABLE : <%= cFUKA %>
+  COL_WIDTH: <%= cFUKA %>
+  SELECTION: <%= cSELECT_ROW %>
+  SCROLLBAR: <%= cSCROLL_VERTICAL %>

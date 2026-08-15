@@ -5,7 +5,7 @@ layouts: f410_form_main_layouts.yml
 several: f410_form_main_several.yml
 jbook: true
 ---
-<h1>【<%= cFORM_MAIN %>】</h1>
+<h1>【<%= cFORM_MAIN true %>】</h1>
 <% jbook = current_page.data.jbook %>
 <% form_layouts = load_form_data(current_page.data.layouts, jbook) %>
 <% form_several = load_form_data(current_page.data.several, jbook) %>

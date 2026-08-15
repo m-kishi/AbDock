@@ -1,5 +1,6 @@
 <h1>【<%= current_page.data.title %>】</h1>
+<% jbook = jbook? current_page %>
 
 <figure class="transition">
-  <%= image_tag 'screen_transition.png' %>
+  <%= image_tag (jbook ? 'screen_transition_j.png' : 'screen_transition.png') %>
 </figure>
