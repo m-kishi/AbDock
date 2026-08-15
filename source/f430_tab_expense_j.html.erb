@@ -5,7 +5,7 @@ layouts: f430_tab_expense_layouts.yml
 several: f430_tab_expense_several.yml
 jbook: true
 ---
-<h1>【<%= cTAB_EXPENSE %>】</h1>
+<h1>【<%= cTAB_EXPENSE true %>】</h1>
 <% jbook = current_page.data.jbook %>
 <% form_layouts = load_form_data(current_page.data.layouts, jbook) %>
 <% form_several = load_form_data(current_page.data.several, jbook) %>

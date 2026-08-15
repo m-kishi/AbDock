@@ -19,7 +19,7 @@ jbook: true
   </li>
   <li><%= lnForm :FORM_SUB_TYPE, name: 'サブ画面設計', jbook: jbook %>
     <ul class="menu">
-      <% subforms.keys.each do |key| %>
+      <% subforms(jbook: jbook).keys.each do |key| %>
         <li><%= lnForm key, jbook: jbook %></li>
       <% end %>
     </ul>

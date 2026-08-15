@@ -1,6 +1,6 @@
 IMAGE:
   - PNG: subform_version_j.png
-    CAPTION: <%= cSUB_VERSION %>
+    CAPTION: <%= cSUB_VERSION true %>
 
 OVERVIEW:
   - <%= cABOOK %>のバージョン情報を表示するサブフォーム

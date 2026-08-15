@@ -3,7 +3,7 @@ IMAGE:
     CAPTION: <%= cFORM_MAIN %>
 
 OVERVIEW:
-  - <%= cABOOK %>の<%= cFORM_MAIN %>
+  - <%= cABOOK %>の<%= cFORM_MAIN true %>
   - サブフォームで表示すべき情報以外はすべてこのフォーム上に表示する．
 
 PROPERTY:

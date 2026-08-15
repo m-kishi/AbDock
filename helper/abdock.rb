@@ -17,18 +17,26 @@ module AbDockHelpers
   #==================================================
   # フォーム情報参照用メソッド
   #==================================================
-  def cFORM_MAIN  ; data.form.FORM_MAIN.NAME        end
-  def cFORM_MENU  ; data.form.FORM_MENU.NAME        end
-  def cTAB_EXPENSE; data.form.FORM_TAB_EXPENSE.NAME end
-  def cTAB_SUMMARY; data.form.FORM_TAB_SUMMARY.NAME end
-  def cTAB_GRAPHIC; data.form.FORM_TAB_GRAPHIC.NAME end
-  def cTAB_BALANCE; data.form.FORM_TAB_BALANCE.NAME end
-  def cTAB_PRIVATE; data.form.FORM_TAB_PRIVATE.NAME end
-  def cTAB_FINANCE; data.form.FORM_TAB_FINANCE.NAME end
-  def cSUB_TYPE   ; data.form.FORM_SUB_TYPE.NAME    end
-  def cSUB_SEARCH ; data.form.FORM_SUB_SEARCH.NAME  end
-  def cSUB_ENERGY ; data.form.FORM_SUB_ENERGY.NAME  end
-  def cSUB_VERSION; data.form.FORM_SUB_VERSION.NAME end
+  def form_name(key, jbook: false)
+    puts key
+    puts jbook
+    form = data.form[key]
+    form = data.form_j[key] if jbook
+    form.NAME
+  end
+  def cFORM_MAIN  (jbook=false); form_name :FORM_MAIN       , jbook: jbook end
+  def cFORM_MENU  (jbook=false); form_name :FORM_MENU       , jbook: jbook end
+  def cTAB_EXPENSE(jbook=false); form_name :FORM_TAB_EXPENSE, jbook: jbook end
+  def cTAB_SUMMARY(jbook=false); form_name :FORM_TAB_SUMMARY, jbook: jbook end
+  def cTAB_GRAPHIC(jbook=false); form_name :FORM_TAB_GRAPHIC, jbook: jbook end
+  def cTAB_BALANCE(jbook=false); form_name :FORM_TAB_BALANCE, jbook: jbook end
+  def cTAB_PRIVATE(jbook=false); form_name :FORM_TAB_PRIVATE, jbook: jbook end
+  def cTAB_FINANCE(jbook=false); form_name :FORM_TAB_FINANCE, jbook: jbook end
+  def cSUB_TYPE   (jbook=false); form_name :FORM_SUB_TYPE   , jbook: jbook end
+  def cSUB_SEARCH (jbook=false); form_name :FORM_SUB_SEARCH , jbook: jbook end
+  def cSUB_ENERGY (jbook=false); form_name :FORM_SUB_ENERGY , jbook: jbook end
+  def cSUB_BALANCE(jbook=false); form_name :FORM_SUB_BALANCE, jbook: jbook end
+  def cSUB_VERSION(jbook=false); form_name :FORM_SUB_VERSION, jbook: jbook end
 
   #==================================================
   # 定数参照用メソッド
@@ -136,8 +144,12 @@ module AbDockHelpers
   #==================================================
   # サブフォーム一覧取得
   #==================================================
-  def subforms
-    data.form.select {|k, v| k.to_s.include?("_SUB_") }
+  def subforms(jbook: false)
+    if jbook
+      data.form_j.select {|k, v| k.to_s.include?("_SUB_") }
+    else
+      data.form.select {|k, v| k.to_s.include?("_SUB_") }
+    end
   end
 
   #==================================================
@@ -161,6 +173,7 @@ module AbDockHelpers
   def lnSubType   (jbook=false); lnForm :FORM_SUB_TYPE   , jbook: jbook end
   def lnSubSearch (jbook=false); lnForm :FORM_SUB_SEARCH , jbook: jbook end
   def lnSubEnergy (jbook=false); lnForm :FORM_SUB_ENERGY , jbook: jbook end
+  def lnSubBalance(jbook=false); lnForm :FORM_SUB_BALANCE, jbook: jbook end
   def lnSubVersion(jbook=false); lnForm :FORM_SUB_VERSION, jbook: jbook end
   # その他の各ページ
   def lnLink(name, key, jbook=false)

@@ -1,0 +1,40 @@
+---
+title: 収支サブフォーム
+header_title: 画面設計
+layouts: f540_subform_balance_layouts.yml
+jbook: true
+---
+<h1>【<%= cSUB_BALANCE true %>】</h1>
+<% jbook = current_page.data.jbook %>
+<% form_layouts = load_form_data(current_page.data.layouts, jbook) %>
+
+<%# レイアウト %>
+<%= render_layouts({ form: form_layouts }) %>
+
+<h2>初期表示</h2>
+<ul class="description">
+  <li><%= lnForm(:FORM_MAIN, name: '呼び出し元画面', jbook: jbook) %>から<%= cEXP_INFO %>を受け取る．</li>
+  <li>受け取った<%= cEXP_INFO %>を年度ごとに以下の定義に従って集計する(<%= lnType cEXP_TYPE_PRV, jbook %>に該当する<%= cEXP_INFO %>は除く)．</li>
+  <table class="balance-subform">
+    <tr><th class="no">No.</th><th class="col">列</th><th class="method">集計方法</th></tr>
+    <tr><td class="no">1</td><td>収入</td><td><%= cCOL_TYPE %>が<%= type_earn %>の<%= cCOL_COST %>の合計</td></tr>
+    <tr><td class="no">2</td><td>特入</td><td><%= cCOL_TYPE %>が<%= type_bnus %>の<%= cCOL_COST %>の合計</td></tr>
+    <tr><td class="no">3</td><td>支出</td><td><%= lnType cEXP_TYPE_SUM_EXP, jbook %>に該当する<%= cEXP_INFO %>の<%= cCOL_COST %>の合計</td></tr>
+    <tr><td class="no">4</td><td>特出</td><td><%= cCOL_TYPE %>が<%= type_spcl %>の<%= cCOL_COST %>の合計</td></tr>
+    <tr><td class="no">5</td><td>収支</td><td>(No.1の収入 + No.2の特入) - (No.3の支出 + No.4の特出)</td></tr>
+    <tr><td class="no">6</td><td>投資</td><td><%= cCOL_TYPE %>が<%= type_gain %>の<%= cCOL_COST %>の合計 - <%= cCOL_TYPE %>が<%= type_loss %>の<%= cCOL_COST %>の合計</td></tr>
+    <tr><td class="no">7</td><td>合計</td><td>No.5の収支 + No.6の投資</td></tr>
+  </table>
+  <li>合計行を集計する．</li>
+  <table class="balance-subform">
+    <tr><th class="no">No.</th><th class="col">列</th><th class="method">集計方法</th></tr>
+    <tr><td class="no">1</td><td>収入</td><td>各年度の合計</td></tr>
+    <tr><td class="no">2</td><td>特入</td><td>各年度の合計</td></tr>
+    <tr><td class="no">3</td><td>支出</td><td>各年度の合計</td></tr>
+    <tr><td class="no">4</td><td>特出</td><td>各年度の合計</td></tr>
+    <tr><td class="no">5</td><td>収支</td><td>各年度の合計</td></tr>
+    <tr><td class="no">6</td><td>投資</td><td>最終年度の投資の金額</td></tr>
+    <tr><td class="no">7</td><td>合計</td><td>No.5の収支 + No.6の投資</td></tr>
+  </table>
+  <li>収支テーブルを最終行までスクロールする．</li>
+</ul>

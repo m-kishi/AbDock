@@ -28,6 +28,9 @@ FORM_SUB_TYPE:
 FORM_SUB_SEARCH:
   NAME: 検索サブフォーム
   LINK: f520_subform_search_j.html
+FORM_SUB_BALANCE:
+  NAME: 収支サブフォーム
+  LINK: f540_subform_balance_j.html
 FORM_SUB_ENERGY:
   NAME: 光熱費サブフォーム
   LINK: f530_subform_energy_j.html
