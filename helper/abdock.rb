@@ -18,8 +18,6 @@ module AbDockHelpers
   # フォーム情報参照用メソッド
   #==================================================
   def form_name(key, jbook: false)
-    puts key
-    puts jbook
     form = data.form[key]
     form = data.form_j[key] if jbook
     form.NAME
